@@ -1,0 +1,35 @@
+/* body{
+    border: 1px solid #B1A8A8;
+} */
+
+#adminMain{
+    font-weight: 600;
+    width: 100%;
+    height: auto;
+    background-color: #F6F6F6;
+    text-align: center;
+}
+
+#adminMain>div{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: auto;
+    width: 1000px;
+}
+
+#adminMain>div>div{
+    background-color: #E7E5DF;
+    width: 300px;
+    height: 100px;
+    border-radius: 10px;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#adminMain>div>div>a{
+    font-size: 20px;
+    font-weight: 600;
+}
