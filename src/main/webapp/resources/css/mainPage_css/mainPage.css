@@ -1,0 +1,135 @@
+/* <!-- 큰 메인 사진 --> */
+.main-pic{
+    height: 500px;
+    width: 1320px;
+    margin: auto;
+    background: url(https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp) no-repeat center/contain;
+    background-size: cover;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;            
+}
+body>main>div>p {
+    margin-bottom: 0;
+    color: white;
+    font-family: 'WAGURITTF';
+    font-size: 50px;
+    font-weight: 500;
+}
+body>main>div>h3{
+    margin-top: 0;
+    color: white;
+    font-family: 'WAGURITTF';
+    font-size: 25px;
+    font-weight: 500;
+}
+.best5-font{
+    font-size: 25px;
+    padding-bottom: 10px;
+}
+
+.best5-font-small{
+    font-size: 18px;
+    padding-bottom: 10px;
+
+}
+
+
+/*  <!-- 왕밥빵 BEST5 -->*/
+.best5{
+    width: 1320px;
+    margin: auto;
+    margin-bottom: 5px;
+    padding: 10px;
+    background-color: #FAF7F7;
+}
+
+.best5-slide-set{
+    background: white;
+    margin-left: 10px;
+    padding: 6px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+
+}
+
+/* <!-- 요즘 핫한 검색어 --> */
+/* <!-- 목적에 따라 찾는 맞집 --> */
+.hotSearch{
+    width: 1320px;
+    margin: auto;
+    margin-bottom: 5px;
+    background-color: #F6F6F6;
+    padding: 30px;
+}
+
+.purposeRes{
+    width: 1320px;
+    margin: auto;
+    margin-bottom: 5px;
+    background-color: #F6F6F6;
+    padding: 30px;
+}
+
+.recentRes{
+    width: 1320px;
+    margin: auto;
+    margin-bottom: 5px;
+    background-color: #F6F6F6;
+    padding: 30px;
+}
+table{
+    width: 1320px;
+    margin: auto;
+    height: 300px;
+}
+
+tr>td>button{
+
+    width: 200px;
+    height: 55px;
+    left: 197px;
+    top: 252px;
+    
+    background: #FFFFFF;
+    border: 2px solid #164066;
+    border-radius: 35px;
+
+    font-size: 20px;
+    font-family: 'NanumSquare';
+    font-weight: 900;
+}
+
+
+.slider {
+overflow: hidden;
+}
+
+.slides {
+display: flex;
+/* 슬라이드 항목이 가로로 배치되도록 flex 속성을 사용합니다 */
+}
+.slides img {
+padding-left: 3px;
+padding-right: 3px;
+width: 100%;
+height: 100%;
+
+/* 이미지가 슬라이더에 꽉 차도록 설정합니다 */
+transition: transform 3s;
+/* 슬라이드 전환에 사용될 트랜지션을 설정합니다 */
+}
+
+@keyframes slide {
+0% {
+    transform: translateX(0);
+}
+100% {
+    transform: translateX(-100%);
+    /* 슬라이드가 왼쪽으로 이동합니다 */
+}
+}
+
+.slides > div {
+animation: slide 5s infinite alternate;
+/* 슬라이드 애니메이션을 설정하고, 3초마다 슬라이드가 반복되도록 합니다 */
+}

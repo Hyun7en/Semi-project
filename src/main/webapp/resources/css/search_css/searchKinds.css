@@ -1,0 +1,120 @@
+        .search-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .search-nav img {
+            height: 70px;
+            width: 70px;
+        }
+
+        .search-nav p {
+            text-align: center;
+        }
+
+
+        .search-best-img {
+            display: flex;
+            margin: 20px 0 20px 0;
+
+        }
+
+        .search-best-crown {
+            position: relative;
+        }
+
+        #crown {
+            top: 10px;
+            right: 30px;
+            width: 40px;
+            height: 30px;
+            position: absolute;
+        }
+
+        .res-name {
+            font-size: 20px;
+        }
+
+        .res-location {
+            font-size: 18px;
+            color: grey;
+        }
+
+        .res-explain {}
+
+
+
+        .search-best img,
+        .search-result img {
+            width: 400px;
+            height: 220px;
+            border-radius: 8px;
+        }
+
+        .search-best,
+        .search-result,
+        p,
+        h1,
+        h3,
+        h4 {
+            line-height: 180%;
+        }
+
+        .search-best h1,
+        h3 {
+            margin-top: 40px;
+        }
+
+        .search-best h3 {
+            padding-left: 20px;
+
+        }
+
+        /* .vedio-time{
+        position: absolute;
+        right: 6px;
+        bottom: 8px;
+        font-size: 11px;
+        font-weight: 500;
+        background: black;
+        padding: 2px 4px;
+        border-radius: 4px;
+    } */
+
+
+
+
+
+        .search-result {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            column-gap: 0px;
+            row-gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .search-best-crownSmall {
+            position: relative;
+        }
+
+        #smallCrown {
+            top: 0px;
+            left: 10px;
+            width: 80px;
+            height: 40px;
+            position: absolute;
+        }
+
+        /* @media(min-width: 485px){
+    .search-result{ grid-template-columns: 1fr; }
+    }
+
+    @media (min-width: 485px) and (max-width: 749px){
+    .search-result{ grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (min-width: 750px) and (max-width: 1000px){
+    .search-result{ grid-template-columns: 1fr 1fr 1fr; }
+    } */
