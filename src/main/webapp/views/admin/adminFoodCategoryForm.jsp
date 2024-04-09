@@ -6,12 +6,11 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="../../resources/css/common_css/style.css">
-<link rel="stylesheet" href="../../resources/css/common_css/footer.css">
 <link rel="stylesheet" href="../../resources/css/admin_css/adminView.css">
 <link rel="stylesheet" href="../../resources/css/admin_css/adminFoodCategoryForm.css">
 
 <body>
-    <div id="main-outer">
+    <div id="wrap">
         <%@ include file="adminHeader.jsp"%>
         <div id="admin-title">
             음식 카테고리 관리
