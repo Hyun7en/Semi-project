@@ -1,0 +1,525 @@
+@charset "UTF-8";
+
+@font-face {
+	font-family: 'WAGURITTF';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/2403@1.0/WAGURITTF.woff2')
+		format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@import
+	url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+* {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+	background-color: #FBFAF6;
+}
+
+.Mypage {
+  position: relative;
+  width: 754px;
+  background-color: #fbfaf6;
+
+  margin: 0 auto;
+  width: 754px;
+  padding: 80px;
+  padding-top: 40px;
+  padding-bottom: 120px;
+}
+
+/*메인페이지 상단*/
+.MyPage .Mypage-main-logo{
+ letter-spacing: 0;
+ line-height: normal;
+
+ width: 754px;
+ height: auto;
+}
+
+.Mypage .Mypage-username {
+  font-weight: 600;
+  color: #313d40;
+  text-align: center;
+
+  font-size: 30px;
+}
+
+.Mypage .Mypage-usergrade {
+  font-weight: 400;
+  color: #313d40;
+  font-size: 25px;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: normal;
+}
+
+
+
+.Mypage .Mypage-main-icon {
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+
+  width: 754px;
+}
+
+.Mypage .Mypage-icon-crown {
+  object-fit: cover;
+
+  width: 69px;
+  height: 100px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.Mypage .Mypage-line {
+  width: 1px;
+  height: 25px;
+  object-fit: cover;
+}
+
+.Mypage .Mypage-icon-number {
+  height: auto;
+  font-weight: 400;
+  color: #313d40;
+  font-size: 30px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+
+/*내프로필*/
+.Mypage .Mypage-profile {
+  height: auto;
+
+  width: 754px;
+  margin-top: 10px;
+}
+
+.Mypage .Mypage-profile-box {
+  width: 754px;
+  height: auto;
+  background-color: #f8f8f8;
+  border-radius: 8px 8px 0px 0px;
+  border: 1px solid;
+  border-color: #b1a8a8;
+  display: flex;
+  align-items: center; 
+
+  width: 754px;
+  height: auto;
+}
+
+.Mypage .profile-myprofile {
+  font-weight: 600;
+  color: #0d0d0d;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+
+  padding: 20px;
+}
+
+/*사용자 이름수정*/
+.Mypage .Mypage-username-box {
+  background-color: #fffefe;
+  border: 1px solid;
+  border-color: #b1a8a8;
+  display: flex;
+  align-items: center; 
+
+  width: 754px;
+  height: auto;
+}
+
+.Mypage .profile-username {
+  font-weight: 300;
+  color: #000000;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: normal;
+
+  padding: 15px;
+}
+
+.Mypage .profile-username-checkbox {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  border-radius: 8px;
+  border: 1px solid;
+  border-color: #b1a8a8;
+
+  width: 65px;
+  height: 28px;
+  margin-left: 565px;
+ 
+}
+
+.Mypage .profile-username-checkbox-title {
+  font-weight: 300;
+  color: #000000;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+/*아이디 수정*/
+.Mypage .Mypage-userid-box {
+  background-color: #fffefe;
+  border: 1px solid;
+  border-color: #b1a8a8;
+  display: flex;
+  align-items: center; 
+
+  width: 754px;
+  height: auto;
+}
+
+.Mypage .profile-userid {
+  font-weight: 300;
+  color: #000000;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: normal;
+
+  padding: 15px;
+}
+
+.Mypage .profile-userid-checkbox {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  border-radius: 8px;
+  border: 1px solid;
+  border-color: #b1a8a8;
+
+  width: 65px;
+  height: 28px;
+  margin-left: 500px;
+ 
+}
+
+.Mypage .profile-userid-checkbox-title {
+  font-weight: 300;
+  color: #000000;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+
+/*비밀번호 수정*/
+.Mypage .Mypage-userpwd-box {
+  background-color: #fffefe;
+  border-radius: 0px 0px 8px 8px;
+  border: 1px solid;
+  border-color: #b1a8a8;
+  display: flex;
+  align-items: center; 
+
+  width: 754px;
+  height: auto;
+}
+
+.Mypage .profile-userpwd {
+  font-weight: 300;
+  color: #000000;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: normal;
+
+  padding: 15px;
+}
+
+.Mypage .profile-userpwd-checkbox {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  border-radius: 8px;
+  border: 1px solid;
+  border-color: #b1a8a8;
+
+  width: 65px;
+  height: 28px;
+  margin-left: 550px;
+ 
+}
+
+.Mypage .profile-userpwd-checkbox-title {
+  font-weight: 300;
+  color: #000000;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+
+
+/*활동이력 조회*/
+.Mypage .Mypage-history {
+  height: auto;
+
+  width: 754px;
+  margin-top: 50px;
+}
+
+.Mypage .Mypage-history-box {
+  width: 754px;
+  height: auto;
+  background-color: #f8f8f8;
+  border-radius: 8px 8px 0px 0px;
+  border: 1px solid;
+  border-color: #b1a8a8;
+  display: flex;
+  align-items: center; 
+
+  width: 754px;
+  height: auto;
+}
+
+.Mypage .profile-myhistory {
+  font-weight: 600;
+  color: #0d0d0d;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+
+  padding: 20px;
+}
+
+
+/*추천한 리뷰*/
+.Mypage .Mypage-goodreview-box {
+  background-color: #fffefe;
+  border: 1px solid;
+  border-color: #b1a8a8;
+  display: flex;
+  align-items: center; 
+
+  width: 754px;
+  height: auto;
+}
+
+.Mypage .history-goodreview {
+  font-weight: 300;
+  color: #000000;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: normal;
+
+  padding: 15px;
+}
+
+.Mypage .history-goodreview-checkbox {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  border-radius: 8px;
+  border: 1px solid;
+  border-color: #b1a8a8;
+
+  width: 65px;
+  height: 28px;
+  margin-left: 530px;
+ 
+}
+
+.Mypage .history-goodreview-checkbox-title {
+  font-weight: 300;
+  color: #000000;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+
+/*작성한 리뷰*/
+.Mypage .Mypage-writereview-box {
+  background-color: #fffefe;
+  border: 1px solid;
+  border-color: #b1a8a8;
+  display: flex;
+  align-items: center; 
+
+  width: 754px;
+  height: auto;
+}
+
+.Mypage .history-writereview {
+  font-weight: 300;
+  color: #000000;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: normal;
+
+  padding: 15px;
+}
+
+.Mypage .history-writereview-checkbox {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  border-radius: 8px;
+  border: 1px solid;
+  border-color: #b1a8a8;
+
+  width: 65px;
+  height: 28px;
+  margin-left: 530px;
+ 
+}
+
+.Mypage .history-writereview-checkbox-title {
+  font-weight: 300;
+  color: #000000;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+/*찜 조회*/
+.Mypage .Mypage-cart-box {
+  background-color: #fffefe;
+  border: 1px solid;
+  border-color: #b1a8a8;
+  display: flex;
+  align-items: center; 
+
+  width: 754px;
+  height: auto;
+}
+
+.Mypage .history-cart {
+  font-weight: 300;
+  color: #000000;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: normal;
+
+  padding: 15px;
+}
+
+.Mypage .history-cart-checkbox {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  border-radius: 8px;
+  border: 1px solid;
+  border-color: #b1a8a8;
+
+  width: 65px;
+  height: 28px;
+  margin-left: 560px;
+}
+
+.Mypage .history-cart-checkbox-title {
+  font-weight: 300;
+  color: #000000;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+
+/*내 쿠폰 관리*/
+.Mypage .Mypage-coupon-box {
+    background-color: #fffefe;
+    border-radius: 0px 0px 8px 8px;
+    border: 1px solid;
+    border-color: #b1a8a8;
+    display: flex;
+    align-items: center; 
+  
+    width: 754px;
+    height: auto;
+  }
+  
+  .Mypage .history-coupon {
+    font-weight: 300;
+    color: #000000;
+    font-size: 15px;
+    letter-spacing: 0;
+    line-height: normal;
+  
+    padding: 15px;
+  }
+  
+  .Mypage .history-coupon-checkbox {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    border-radius: 8px;
+    border: 1px solid;
+    border-color: #817878;
+  
+    width: 65px;
+    height: 28px;
+    margin-left: 525px;
+   
+  }
+  
+  .Mypage .history-coupon-checkbox-title {
+    font-weight: 300;
+    color: #000000;
+    font-size: 15px;
+    letter-spacing: 0;
+    line-height: normal;
+  }  
+
+/*로그아웃, 고객센터*/
+.Mypage .Mypage-option {
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+
+  margin-top: 40px;
+  height: auto;
+  width: 754px;
+}
+
+.Mypage .Mypage-option-logout {
+  font-weight: 300;
+  color: #000000;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: normal;
+
+  margin-left: 100px;
+  margin-right: 150px;
+}
+
+.Mypage .Mypage-option-img {
+  width: 1px;
+  height: 20px;
+  object-fit: cover;
+}
+
+.Mypage .Mypage-option-service {
+  font-weight: 300;
+  color: #000000;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: normal;
+
+  margin-left: 150px;
+  margin-right: 100px;
+}
