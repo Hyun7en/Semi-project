@@ -1,0 +1,166 @@
+@charset "UTF-8";
+
+@font-face {
+	font-family: 'WAGURITTF';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/2403@1.0/WAGURITTF.woff2')
+		format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@import
+	url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+* {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+	background-color: #FBFAF6;
+}
+
+.SearchPwd {
+  position: relative;
+  background-color: #fbfaf6;
+  height: auto;
+
+  margin: 0 auto;
+  width: 754px;
+  padding: 80px;
+  padding-top: 40px;
+  padding-bottom: 120px;
+}
+
+/* 로고 */
+.SearchPwd .SearchPwd-main {
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+
+  width: 754px;
+  height: 150px;
+  padding: 0px;
+}
+
+.SearchPwd .SearchPwd-main-image {
+  object-fit: cover;
+
+  width: 150px;
+  height: 244px;
+  padding: 0px;
+}
+
+
+.SearchPwd .SearchPwd-main-title {
+  clear: both;
+  font-weight: 500;
+  color: #000000;
+  font-size: 35px;
+  letter-spacing: 0;
+  line-height: normal;
+  text-align: center;
+
+  width: 754px;
+  height: auto;
+  padding: 0px;
+  margin-bottom: 20px;
+}
+
+.SearchPwd .SearchPwd-text-wrapper {
+  clear: both;
+  font-weight: 500;
+  color: #000000;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+  text-align: center;
+
+  margin-top: 20px;
+}
+
+/*아이디 입력*/
+.SearchPwd .inputPwd-wrapper {
+  display: flex;
+  align-items: center;  
+  justify-content: center;
+}
+
+.SearchPwd .inputPwd-box {
+  clear: both;
+  display: flex;
+  align-items: center;  
+  background-color: #fffefe;
+  border-radius: 8px;
+  border: 1px solid;
+  border-color: #b1a8a8;
+
+  margin-top: 10px;
+  width: 624px;
+  height: 40px;
+}
+
+.SearchPwd .inputPwd-text {
+  position: relative;
+  font-weight: 300;
+  color: #b0a4a4;
+  letter-spacing: 0;
+  line-height: normal;
+
+  padding-top: 0px;
+  padding-left: 10px;
+  width: auto;
+}
+
+.SearchPwd .inputPwd-phone {
+  border: none;
+  background-color: #fffefe;
+  color: #b0a4a4;
+
+  width: 325px;
+  height: 20px;
+}
+
+/* 다음 */
+.SearchPwd .SearchPwd-checkbox-wrapper {
+  display: flex;
+  align-items: center;  
+  justify-content: center;
+}
+
+.SearchPwd .SearchPwd-checkbox {
+  background-color: #164066;
+  border-radius: 8px;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+
+  margin-top: 20px;
+  width: 625px;
+  height: 50px;
+}
+
+.SearchPwd .SearchPwd-checkbox-title {
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+  @media screen and (min-width:576px) {
+    /* 스마트폰 가로 */
+    }
+    
+    @media screen and (min-width:768px) {
+    /* 타블렛 */
+    }
+
+    @media screen and (min-width:992px) {
+    /* 데스크탑 */
+    }
+    
+    @media screen and (min-width:1200px) {
+    /* 큰 데스크탑 */
+    }
