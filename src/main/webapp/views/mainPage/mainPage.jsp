@@ -10,9 +10,11 @@
     </head>
 
     <body>
-        <main>
-            <div class="wrap">
-                <%@ include file="../common/header.jsp" %>
+        <div class="wrap"></div>
+            <%@ include file="../common/header.jsp" %>
+                <main>
+            
+                
 
                     <!-- 큰 메인 사진 -->
                     <div class="main-pic">
