@@ -49,6 +49,9 @@
     font-size: 17px;
     text-align: center;
     border-collapse: collapse;
+}
+
+#adminRestList table *{
     vertical-align: middle;
 }
 

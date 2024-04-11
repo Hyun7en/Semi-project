@@ -6,12 +6,11 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="../../resources/css/common_css/style.css">
-<link rel="stylesheet" href="../../resources/css/common_css/footer.css">
 <link rel="stylesheet" href="../../resources/css/admin_css/adminView.css">
 <link rel="stylesheet" href="../../resources/css/admin_css/adminRestRegistForm.css">
 
 <body>
-    <div id="main-outer">
+    <div id="wrap">
         <%@ include file="adminHeader.jsp"%>
         <div id="admin-title">
             가게 등록/수정
@@ -50,22 +49,28 @@
                     </tr>
                     <tr>
                         <th>가게 사진</th>
-                        <td></td>
+                        <td class="rest-regist-img">
+                            <img src="../../resources/file/common_img/free-icon-plus-5054075.png" alt="" name="restImg1" onclick="restImg()">
+                            <img src="../../resources/file/common_img/free-icon-plus-5054075.png" alt="" onclick="restImg()">
+                            <img src="../../resources/file/common_img/free-icon-plus-5054075.png" alt="" onclick="restImg()">
+                            <img src="../../resources/file/common_img/free-icon-plus-5054075.png" alt="" onclick="restImg()">
+                            <img src="../../resources/file/common_img/free-icon-plus-5054075.png" alt="" onclick="restImg()">
+                        </td>
 
+                        <script>
+                            function restImg(){
+                                
+                            }
+                        </script>
                     </tr>
                     <tr>
-                        <td colspan="2"><button type="" class="black-button" onclick="adminRestMenuRegist()">메뉴 등록 가기</button></td>
+                        <td colspan="2"><button type="" class="black-button">메뉴 등록 가기</button></td>
                     </tr>
                 </table>
-                <script>
-                    function adminRestMenuRegist(){
-                        location.href = "${pageContext.request.contextPath}/views/admin/adminRestMenuRegistView.jsp";
-                    }
-                </script>
+            
             </form>
         </main>
-        <%@ include file="../common/footer.jsp" %>
     </div>
-    
+    <%@ include file="../common/footer.jsp" %>
 </body>
 </html>
