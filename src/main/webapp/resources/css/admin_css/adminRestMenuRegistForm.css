@@ -22,6 +22,10 @@
     border-collapse: collapse;
 }
 
+table *{
+    vertical-align: middle;
+}
+
 .rest-menu-regist-main tr{
     height: 40px;
     border: 1px solid #B1A8A8;

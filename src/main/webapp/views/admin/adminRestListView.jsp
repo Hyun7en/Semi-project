@@ -6,12 +6,11 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="../../resources/css/common_css/style.css">
-<link rel="stylesheet" href="../../resources/css/common_css/footer.css">
 <link rel="stylesheet" href="../../resources/css/admin_css/adminView.css">
 <link rel="stylesheet" href="../../resources/css/admin_css/adminRestListView.css">
 
 <body>
-    <div id="main-outer">
+    <div id="wrap">
         <%@ include file="adminHeader.jsp"%>
         <div id="admin-title">
             가게 관리
@@ -93,6 +92,7 @@
                     <td>2024-03-20</td>
                 </tr>
             </table>
+            
             <div class="paging-area" align="center">
                 <!-- for문으로 수정 필요 -->
                 <button onclick="">&lt;</button>
@@ -117,8 +117,7 @@
                 }
             </script>
         </main>
-        <%@ include file="../common/footer.jsp" %>
     </div>
-    
+    <%@ include file="../common/footer.jsp" %>  
 </body>
 </html>

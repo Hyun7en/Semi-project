@@ -6,12 +6,11 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="../../resources/css/admin_css/style.css">
-<link rel="stylesheet" href="../../resources/css/common_css/footer.css">
 <link rel="stylesheet" href="../../resources/css/admin_css/adminView.css">
 <link rel="stylesheet" href="../../resources/css/admin_css/adminNoticeRegistForm.css">
 
 <body>
-    <div id="main-outer">
+    <div id="wrap">
         <%@ include file="adminHeader.jsp"%>
         <div id="admin-title">
             공지사항 등록/수정
@@ -33,7 +32,7 @@
                 </table>
             </form>
         </main>
-        <%@ include file="../common/footer.jsp" %>
     </div>
+    <%@ include file="../common/footer.jsp" %>
 </body>
 </html>
