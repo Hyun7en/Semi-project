@@ -1,14 +1,14 @@
 *{
-    /* border: 1px solid #B1A8A8; */
+    border: 1px solid #B1A8A8;
 }
-
 
 #rest-regist-main{
     width: 1320px;
-    height: 1100px;
+    height: auto;
     background-color: #F6F6F6;
     text-align: center;
-    padding-top: 40px;
+    margin: 0px auto;
+    padding-top: 0px;
 }
 
 .main-form{
@@ -22,6 +22,10 @@ table{
     font-size: 17px;
     text-align: center;
     border-collapse: collapse;
+}
+
+table *{
+    vertical-align: middle;
 }
 
 tr{
@@ -46,6 +50,16 @@ textarea{
     height: 200px;
     padding: 10px 10px;
     resize: none;
+}
+
+.rest-regist-img{
+    width: 100%;
+    display: flex;
+}
+.rest-regist-img>img{
+    width: 10%;
+    margin: 30px 20px 30px 45px;
+    cursor: pointer;
 }
 
 .black-button{

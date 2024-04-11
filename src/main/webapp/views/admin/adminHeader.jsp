@@ -9,11 +9,11 @@
 <link rel="stylesheet" href="../../resources/css/admin_css/adminView.css">
 
 <body>
-        <header>
-            <div>
-                <img src="../../resources/file/common_img/왕밥빵로고 컬러.png" alt="">
-                <div>관리자 페이지</div>
-            </div>
-        </header>
+    <header>
+        <div>
+            <img src="../../resources/file/common_img/왕밥빵로고 컬러.png" alt="">
+            <div>관리자 페이지</div>
+        </div>
+    </header>
 </body>
 </html>
