@@ -1,13 +1,13 @@
 package com.always5.common;
 
 public class PageInfo {
-	private int listCount;
-	private int currentPage;
-	private int pageLimit;
-	private int boardLimit;
-	private int maxPage;
-	private int startPage;
-	private int endPage;
+	private int listCount; // 총 게시글 수
+	private int currentPage; // 현재 페이지 번호
+	private int pageLimit; // 한 번에 출력할 페이징 바 최대 개수
+	private int boardLimit; // 한 페이지 내에 보여질 게시글 최대 개수
+	private int maxPage; // 총 게시글 수로 정해지는 가장 마지막 페이징 바 번호
+	private int startPage; // 한 페이지 안의 시작 페이징 바 번호
+	private int endPage; // 한 페이지 안의 마지막 페이징 바 번호
 
 	public PageInfo() {
 		super();
