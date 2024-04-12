@@ -13,7 +13,10 @@ public class Restaurant {
 	private String restLikeNo;
 	private Date restEnrollDate;
 	private Date restModifyDate;
+	private String restOperDate;
 	private String FoodCategoryNo;
+	
+	
 	
 	
 	public Restaurant() {
@@ -21,8 +24,11 @@ public class Restaurant {
 	}
 
 
+
+
 	public Restaurant(int restNo, String restName, String restAddress, String restPhone, String restIntro,
-			String restGrade, String restLikeNo, Date restEnrollDate, Date restModifyDate, String foodCategoryNo) {
+			String restGrade, String restLikeNo, Date restEnrollDate, Date restModifyDate, String restOperDate,
+			String foodCategoryNo) {
 		super();
 		this.restNo = restNo;
 		this.restName = restName;
@@ -33,8 +39,12 @@ public class Restaurant {
 		this.restLikeNo = restLikeNo;
 		this.restEnrollDate = restEnrollDate;
 		this.restModifyDate = restModifyDate;
+		this.restOperDate = restOperDate;
 		FoodCategoryNo = foodCategoryNo;
 	}
+
+
+	
 
 
 	public int getRestNo() {
@@ -42,9 +52,13 @@ public class Restaurant {
 	}
 
 
+
+
 	public void setRestNo(int restNo) {
 		this.restNo = restNo;
 	}
+
+
 
 
 	public String getRestName() {
@@ -52,14 +66,19 @@ public class Restaurant {
 	}
 
 
+
+
 	public void setRestName(String restName) {
 		this.restName = restName;
 	}
 
 
+
+
 	public String getRestAddress() {
 		return restAddress;
 	}
+
 
 
 
@@ -69,9 +88,11 @@ public class Restaurant {
 
 
 
+
 	public String getRestPhone() {
 		return restPhone;
 	}
+
 
 
 
@@ -81,9 +102,11 @@ public class Restaurant {
 
 
 
+
 	public String getRestIntro() {
 		return restIntro;
 	}
+
 
 
 
@@ -121,9 +144,11 @@ public class Restaurant {
 
 
 
+
 	public Date getRestEnrollDate() {
 		return restEnrollDate;
 	}
+
 
 
 
@@ -133,9 +158,11 @@ public class Restaurant {
 
 
 
+
 	public Date getRestModifyDate() {
 		return restModifyDate;
 	}
+
 
 
 
@@ -145,9 +172,25 @@ public class Restaurant {
 
 
 
+
+	public String getRestOperDate() {
+		return restOperDate;
+	}
+
+
+
+
+	public void setRestOperDate(String restOperDate) {
+		this.restOperDate = restOperDate;
+	}
+
+
+
+
 	public String getFoodCategoryNo() {
 		return FoodCategoryNo;
 	}
+
 
 
 
@@ -157,12 +200,14 @@ public class Restaurant {
 
 
 
+
 	@Override
 	public String toString() {
 		return "Restaurant [restNo=" + restNo + ", restName=" + restName + ", restAddress=" + restAddress
 				+ ", restPhone=" + restPhone + ", restIntro=" + restIntro + ", restGrade=" + restGrade + ", restLikeNo="
 				+ restLikeNo + ", restEnrollDate=" + restEnrollDate + ", restModifyDate=" + restModifyDate
-				+ ", FoodCategoryNo=" + FoodCategoryNo + "]";
+				+ ", restOperDate=" + restOperDate + ", FoodCategoryNo=" + FoodCategoryNo + "]";
 	}
 	
-}
+	
+	
