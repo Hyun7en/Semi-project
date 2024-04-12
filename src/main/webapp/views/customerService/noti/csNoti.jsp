@@ -17,7 +17,7 @@
     
     <!-- header, nav -->
 
-    <jsp:include page="/${pageContext.request.contextPath/header.jsp}"  />
+    <jsp:include page="../../common/header.jsp" />
 
     <!-- main -->
 
