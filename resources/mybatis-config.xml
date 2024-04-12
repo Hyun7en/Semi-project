@@ -6,7 +6,7 @@
 	<settings>
 		<setting name="jdbcTypeForNull" value="NULL"/>
 	</settings>
-
+	
 	<typeAliases>
 		<!-- <typeAlias type="com.always5.User.model.vo.User" alias="User" /> -->
 		<!-- 각자 별칭 생성 -->
@@ -29,6 +29,6 @@
 
 	<mappers>
 		<!-- <mapper resource="/mappers/user-mapper.xml"/> -->
-		<!-- 각자 mapper 삽입 -->
+		<!-- 각자 mapper 삽입1 -->
 	</mappers>
 </configuration>
