@@ -1,4 +1,4 @@
-package com.always5.rest.model.vo;
+package com.always5.review.rest.model.vo;
 
 import java.sql.Date;
 
