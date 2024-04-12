@@ -17,7 +17,7 @@
     
     <!-- header, nav -->
 
-    <%@ include file="../../common/header.jsp" %>
+    <jsp:include page="../../common/header.jsp" />
 
     <!-- main -->
 
@@ -84,31 +84,31 @@
                 
             </div>
 
-            <script>
-                $(".qa_box > div").click(function(){
-                    //this => 클릭이벤트가 발생한 요소(div)
-                    //$(this).next() => 선택된 요소의 뒤에있는 요소(p)
-                    let tmp;
-                    
-                    const $p = $(this).next();
-                    
-                    if($p.css("display") === "none") {
-                        $(".qa_box > p").slideUp();
-        
-                        $p.slideDown();
-                    } else { //보여지고있는 상태
-                        $p.slideUp();
-                    }
-                })
-            </script>
         </section>
     </main>        
 
     <!-- footer -->
 
-    <%@ include file="../../common/footer.jsp" %>
+    <%-- <jsp:include page="${pageContext.request.contextPath/footer.jsp}" /> --%>
     
     </div>
+    
+    <script>
+        $(" #section-2 > .qa_box > div").click(function(){
+            
+            let tmp;
+            
+            const $p = $(this).next();
+            
+            if($p.css("display") === "none") {
+                $(".qa_box > p").slideUp();
+
+                $p.slideDown();
+            } else { //보여지고있는 상태
+                $p.slideUp();
+            }
+        })
+    </script>
     
 </body>
 
