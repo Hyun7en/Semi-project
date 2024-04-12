@@ -29,6 +29,6 @@
 
 	<mappers>
 		<!-- <mapper resource="/mappers/user-mapper.xml"/> -->
-		<!-- 각자 mapper 삽입 -->
+		<!-- 각자 mapper 삽입1 -->
 	</mappers>
 </configuration>
