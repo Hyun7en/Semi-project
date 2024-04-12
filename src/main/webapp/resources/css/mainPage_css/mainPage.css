@@ -9,14 +9,14 @@
     flex-direction: column; 
     justify-content: center;            
 }
-body>main>div>p {
+.main-pic>p {
     margin-bottom: 0;
     color: white;
     font-family: 'WAGURITTF';
     font-size: 50px;
     font-weight: 500;
 }
-body>main>div>h3{
+.main-pic>h3{
     margin-top: 0;
     color: white;
     font-family: 'WAGURITTF';
