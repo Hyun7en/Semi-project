@@ -17,7 +17,7 @@
     
     <!-- header, nav -->
 
-    <jsp:include page="../../common/header.jspddd" />
+   <%@  include file="../../common/header.jsp" %>
 
     <!-- main -->
 
@@ -89,7 +89,7 @@
 
     <!-- footer -->
 
-    <%-- <jsp:include page="${pageContext.request.contextPath/footer.jsp}" /> --%>
+    <%@  include file="../../common/footer.jsp" %>
     
     </div>
     
