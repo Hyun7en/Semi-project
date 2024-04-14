@@ -1,4 +1,4 @@
-package com.always5.common;
+package com.always5.common.vo;
 
 import java.io.File;
 import java.text.SimpleDateFormat;

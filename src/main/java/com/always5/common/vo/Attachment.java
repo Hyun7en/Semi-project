@@ -1,4 +1,4 @@
-package com.always5.common;
+package com.always5.common.vo;
 
 public class Attachment {
 	private int fileNo; // 파일 번호
