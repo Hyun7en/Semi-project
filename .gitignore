@@ -151,5 +151,5 @@ $RECYCLE.BIN/
 ## 폴더 무시
 */WEB-INF/classes/
 */WEB-INF/lib/
-*src/main/webapp/index.jsp
+src/main/webapp/index.jsp
 src/main/webapp/WEB-INF/classes/
