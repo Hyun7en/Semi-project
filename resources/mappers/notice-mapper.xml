@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="noticeMapper">
+	<resultMap id="noticeResultSet" type="Notice">
+		<result column="NOTI_NO" property="notiNo"/>
+		<result column="NOTI_TITLE" property="notiTitle"/>
+		<result column="NOTI_CONTENT" property="notiContent"/>
+		<result column="NOTI_ENROLL_DATE" property="notiEnrollDate"/>
+		<result column="NOTI_MODIFY_DATE" property="notiModifyDate"/>
+		<result column="NOTI_STATUS" property="notiStatus"/>
+		<result column="USER_ID" property="notiWriter"/>
+	</resultMap>
+	<select id="selectList" resultMap="notiResultSet">
+		SELECT BOARD_NO,
+				BOARD_TITLE,
+				USER_ID,
+				COUNT,
+				CREATE_DATE
+		FROM BOARD B
+		JOIN MEMBER ON (BOARD_WRITER = USER_NO)
+		WHERE B.STATUS = 'Y'
+		ORDER BY BOARD_NO DESC
+	</select>
+</mapper>

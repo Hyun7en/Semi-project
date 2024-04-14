@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="qnaMapper">
+	<resultMap id="QNAResultSet" type="QNA">
+		<result column="QNA_NO" property="qnaNo"/>
+		<result column="QNA_TITLE" property="qnaTitle"/>
+		<result column="QNA_CONTENT" property="qnaContent"/>
+		<result column="QNA_ENROLL_DATE" property="qnaEnrollDate"/>
+		<result column="QNA_MODIFY_DATE" property="qnaModifyDate"/>
+		<result column="QNA_STATUS" property="qnaStatus"/>
+		<result column="USER_ID" property="qnaWriter"/>
+	</resultMap>
+	<select id="selectList" resultMap="qnaResultSet">
+		SELECT BOARD_NO,
+				BOARD_TITLE,
+				USER_ID,
+				COUNT,
+				CREATE_DATE
+		FROM BOARD B
+		JOIN MEMBER ON (BOARD_WRITER = USER_NO)
+		WHERE B.STATUS = 'Y'
+		ORDER BY BOARD_NO DESC
+	</select>
+</mapper>
