@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  	<!-- <typeAliases>
+		<typeAlias type="com.always5.review.rest.model.vo.Rest" alias="Rest" />
+		<typeAlias type="com.always5.review.rest.model.vo.Menu" alias="Menu" />
+	</typeAliases> -->
+	<!-- <mappers>
+		<mapper resource="/mappers/rest-mapper.xml"/>
+	</mappers> -->
+<mapper namespace="restMapper">
+	<resultMap id="restResultSet" type="Rest">
+		<result column="REST_NAME" property="restName"/>
+		<result column="REST_ADDRESS" property="boardTitle"/>
+		<result column="REST_PHONE" property="boardWriter"/>
+		<result column="REST_INTRO" property="count"/>
+		<result column="REST_GRADE" property="createDate"/>
+		<result column="LIKE_NO" property="boardContent"/>
+		<result column="REST_ENROLL_DATE" property="boardContent"/>
+		<result column="REST_MODIFY_DATE" property="boardContent"/>
+		<result column="REST_OPER_TIME" property="boardContent"/>
+		<result column="FOOD_CATEGORY_NO" property="boardContent"/>
+	</resultMap>
+	<select id="selectRest" resultMap="restResultSet">
+		SELECT REST_NAME,
+			   REST_ADDRESS,
+			   REST_PHONE,
+			   REST_INTRO,
+			   REST_GRADE,
+			   LIKE_NO,
+			   REST_ENROLL_DATE,
+			   REST_MODIFY_DATE,
+			   REST_OPER_TIME,
+			   FOOD_CATEGORY_NO
+		FROM REST_INFO
+		JOIN FOOD_CATEGORY USING (FOOD_CATEGORY_NO)
+		WHERE REST_NO = #{restNo}
+		AND REST_STATUS = 'Y'
+	</select>
+	
+</mapper>

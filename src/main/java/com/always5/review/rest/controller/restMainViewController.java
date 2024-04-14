@@ -1,6 +1,7 @@
 package com.always5.review.rest.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.always5.review.rest.model.vo.Menu;
 import com.always5.review.rest.model.vo.Restaurant;
 import com.always5.review.rest.service.RestService;
 
@@ -32,6 +34,7 @@ public class restMainViewController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int restNo = Integer.parseInt(request.getParameter("rno"));
 		Restaurant rest = new RestService().selectRest(restNo);
+		ArrayList<Menu> list = new RestService().selectMenuList(restNo);
 		
 		request.setAttribute("rest", rest);
 		request.getRequestDispatcher("WEB-INF/views/rest/restMainView.jsp").forward(request, response);
