@@ -1,4 +1,4 @@
-package com.always5.common;
+package com.always5.common.vo;
 
 public class PageInfo {
 	private int listCount; // 총 게시글 수
