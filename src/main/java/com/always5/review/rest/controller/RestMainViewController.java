@@ -9,21 +9,22 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.always5.review.rest.model.vo.Menu;
+import com.always5.review.model.vo.Review;
+import com.always5.review.rest.model.vo.MenuCategory;
 import com.always5.review.rest.model.vo.Restaurant;
-import com.always5.review.rest.service.RestService;
+import com.always5.review.rest.service.RestServiceImpl;
 
 /**
  * Servlet implementation class restMainViewController
  */
 @WebServlet("/main.re")
-public class restMainViewController extends HttpServlet {
+public class RestMainViewController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public restMainViewController() {
+    public RestMainViewController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,8 +34,13 @@ public class restMainViewController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int restNo = Integer.parseInt(request.getParameter("rno"));
-		Restaurant rest = new RestService().selectRest(restNo);
-		ArrayList<Menu> list = new RestService().selectMenuList(restNo);
+		
+		RestServiceImpl rService = new RestServiceImpl();
+		
+		Restaurant rest = rService.selectRest(restNo);
+//		ArrayList<Menu> list = new RestService().selectMenuList(restNo);
+		ArrayList<MenuCategory> mcList = rService.selectMenuCategoryList(restNo);
+		ArrayList<Review> reviewList = rService.selectReviewList(restNo);
 		
 		request.setAttribute("rest", rest);
 		request.getRequestDispatcher("WEB-INF/views/rest/restMainView.jsp").forward(request, response);
