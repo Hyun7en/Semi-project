@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-    <%@ include file="WEB-INF/views/customerService/noti/csNoti.jsp" %>
+    <%@ include file="WEB-INF/views/mainPage/mainPage.jsp" %>
 </body>
 </html>

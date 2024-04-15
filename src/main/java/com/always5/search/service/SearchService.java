@@ -7,9 +7,9 @@ import com.always5.search.dao.SearchDao;
 
 public class SearchService {
 	
-	public int searchRestListCount() {
+	public  searchRestList() {
 		SqlSession sqlSession = Template.getSqlSession();
-		int listCount = SearchDao.searchRestListCount(sqlSession);
+		int listCount = SearchDao.searchRestList(sqlSession);
 		sqlSession.close();
 		return listCount;
 	}
