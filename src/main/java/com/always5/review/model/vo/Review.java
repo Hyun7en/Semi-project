@@ -102,6 +102,14 @@ public class Review {
 		super();
 		this.reviewAtList = reviewAtList;
 	}
+	
+	public void setReviewAtList(ArrayList<Attachment> reviewAtList) {
+		this.reviewAtList = reviewAtList;
+	}
+	
+	public ArrayList<Attachment> getReviewAtList(){
+		return reviewAtList;
+	}
 
 	@Override
 	public String toString() {
