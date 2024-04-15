@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="csMapper">
+	<resultMap id="noticeResultSet" type="Notice">
+		<result column="NOTI_NO" property="notiNo"/>
+		<result column="NOTI_TITLE" property="notiTitle"/>
+		<result column="NOTI_CONTENT" property="notiContent"/>
+		<result column="NOTI_ENROLL_DATE" property="notiEnrollDate"/>
+		<result column="NOTI_MODIFY_DATE" property="notiModifyDate"/>
+		<result column="NOTI_STATUS" property="notiStatus"/>
+		<result column="USER_ID" property="notiWriter"/>
+	</resultMap>
+	<resultMap id="QNAResultSet" type="QNA">
+		<result column="QNA_NO" property="qnaNo"/>
+		<result column="QNA_TITLE" property="qnaTitle"/>
+		<result column="QNA_CONTENT" property="qnaContent"/>
+		<result column="QNA_ENROLL_DATE" property="qnaEnrollDate"/>
+		<result column="QNA_MODIFY_DATE" property="qnaModifyDate"/>
+		<result column="QNA_STATUS" property="qnaStatus"/>
+		<result column="USER_ID" property="qnaWriter"/>
+	</resultMap>
+	<select id="selectList" resultMap="notiResultSet">
+		SELECT NOTI_NO,
+				NOTI_TITLE,
+				USER_ID,
+		FROM Notice
+		JOIN  ON (Notice_WRITER = USER_NO)
+		WHERE NOTI_STATUS = 'Y'
+		ORDER BY NOTI_NO DESC
+	</select>
+	<select id="selectList" resultMap="qnaResultSet">
+		SELECT QNA_NO,
+				QNA_TITLE,
+				USER_ID,
+		FROM QNA
+		JOIN USER_INFO ON (QNA_WRITER = USER_NO)
+		WHERE QNA_STATUS = 'Y'
+		ORDER BY QNA_NO DESC
+	</select>
+</mapper>

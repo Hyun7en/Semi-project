@@ -8,6 +8,7 @@
 
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/common_css/style.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/cs_css/cs.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 </head>
 
@@ -61,46 +62,31 @@
                 <ul id="navi-2">
                     <li><a href="#">전체</a></li>
                     <li><a href="#">로그인/회원정보 문의</a></li>
-                    <li><a href="#">구폰문의</a></li>
+                    <li><a href="#">쿠폰문의</a></li>
                     <li><a href="#">서비스/기타</a></li>
                 </ul>                    
             </nav>
 
             <div class="qa_box">
-                <div>이벤트 공지 쿠폰 발행</div>
-                <p>A. 택배사의 사정에따라 2~3일 소요됩니다.</p>
-        
-                <div>이벤트 공지 쿠폰 발행</div>
-                <p>A. 택배사의 사정에따라 2~3일 소요됩니다.</p>
-
-                <div>이벤트 공지 쿠폰 발행</div>
-                <p>A. 택배사의 사정에따라 2~3일 소요됩니다.</p>
-
-                <div>이벤트 공지 쿠폰 발행</div>
-                <p>A. 택배사의 사정에따라 2~3일 소요됩니다.</p>
-
-                <div>이벤트 공지 쿠폰 발행</div>
-                <p>A. 택배사의 사정에따라 2~3일 소요됩니다.</p>
+                <!-- <c:forEach var="b" items="${list}"> -->
                 
-            </div>
+                    <div>이벤트 공지 쿠폰 발행</div>
+                    <p>A. 택배사의 사정에따라 2~3일 소요됩니다.</p>
+            
+                    <div>이벤트 공지 쿠폰 발행</div>
+                    <p>A. 택배사의 사정에따라 2~3일 소요됩니다.</p>
 
-            <script>
-                $(".qa_box > div").click(function(){
-                    //this => 클릭이벤트가 발생한 요소(div)
-                    //$(this).next() => 선택된 요소의 뒤에있는 요소(p)
-                    let tmp;
+                    <div>이벤트 공지 쿠폰 발행</div>
+                    <p>A. 택배사의 사정에따라 2~3일 소요됩니다.</p>
+
+                    <div>이벤트 공지 쿠폰 발행</div>
+                    <p>A. 택배사의 사정에따라 2~3일 소요됩니다.</p>
+
+                    <div>이벤트 공지 쿠폰 발행</div>
+                    <p>A. 택배사의 사정에따라 2~3일 소요됩니다.</p>
                     
-                    const $p = $(this).next();
-                    
-                    if($p.css("display") === "none") {
-                        $(".qa_box > p").slideUp();
-        
-                        $p.slideDown();
-                    } else { //보여지고있는 상태
-                        $p.slideUp();
-                    }
-                })
-            </script>
+                <!-- </c:forEach> -->
+            </div>
         </section>
     </main>        
 
@@ -110,6 +96,24 @@
     
     </div>
     
+    <script>
+        $(".qa_box > div").click(function(){
+            //this => 클릭이벤트가 발생한 요소(div)
+            //$(this).next() => 선택된 요소의 뒤에있는 요소(p)
+            let tmp;
+            
+            const $p = $(this).next();
+            
+            if($p.css("display") === "none") {
+                $(".qa_box > p").slideUp();
+
+                $p.slideDown();
+            } else { //보여지고있는 상태
+                $p.slideUp();
+            }
+        })
+    </script>
+
 </body>
 
 </html>
