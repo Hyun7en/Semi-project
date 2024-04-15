@@ -83,6 +83,11 @@
         font-weight: 900;
     }
 
+    #section-2 > div > a:hover{
+        color: rgb(124, 124, 124);
+        scale: 1.08;
+    }
+
     #section-2 > div > .a2{
         margin-left: 20px;
     }
