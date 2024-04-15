@@ -5,19 +5,19 @@ public class Attachment {
 	private String changeName; // 바꿔서 저장한 파일 이름 (원본 이름 X)
 	private String filePath; // 사진이 저장 되어 있는 경로
 	private String reviewNo; // 리뷰 프라이머리 키
-	private String storeNo; // 가게 프라이머리 키
+	private String restNo; // 가게 프라이머리 키
 	
 	public Attachment() {
 		super();
 	}
 
-	public Attachment(int fileNo, String changeName, String filePath, String reviewNo, String storeNo) {
+	public Attachment(int fileNo, String changeName, String filePath, String reviewNo, String restNo) {
 		super();
 		this.fileNo = fileNo;
 		this.changeName = changeName;
 		this.filePath = filePath;
 		this.reviewNo = reviewNo;
-		this.storeNo = storeNo;
+		this.restNo = restNo;
 	}
 
 	public int getFileNo() {
@@ -53,17 +53,17 @@ public class Attachment {
 	}
 
 	public String getStoreNo() {
-		return storeNo;
+		return restNo;
 	}
 
 	public void setStoreNo(String storeNo) {
-		this.storeNo = storeNo;
+		this.restNo = storeNo;
 	}
 
 	@Override
 	public String toString() {
 		return "Attachment [fileNo=" + fileNo + ", changeName=" + changeName + ", filePath=" + filePath + ", reviewNo="
-				+ reviewNo + ", storeNo=" + storeNo + "]";
+				+ reviewNo + ", restNo=" + restNo + "]";
 	}
 
 	

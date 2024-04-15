@@ -1,6 +1,9 @@
 package com.always5.review.rest.model.vo;
 
 import java.sql.Date;
+import java.util.ArrayList;
+
+import com.always5.common.vo.Attachment;
 
 public class Restaurant {
 	
@@ -15,7 +18,8 @@ public class Restaurant {
 	private Date restModifyDate;
 	private String restOperDate;
 	private String restStatus;
-	private String FoodCategoryNo;
+	private String foodCategoryNo;
+	private ArrayList<Attachment> restAtList;
 	
 	
 	public Restaurant() {
@@ -25,7 +29,7 @@ public class Restaurant {
 
 	public Restaurant(int restNo, String restName, String restAddress, String restPhone, String restIntro,
 			String restGrade, String restLikeNo, Date restEnrollDate, Date restModifyDate, String restOperDate,
-			String restStatus, String foodCategoryNo) {
+			String restStatus, String foodCategoryNo, ArrayList<Attachment> restAtList) {
 		super();
 		this.restNo = restNo;
 		this.restName = restName;
@@ -38,7 +42,8 @@ public class Restaurant {
 		this.restModifyDate = restModifyDate;
 		this.restOperDate = restOperDate;
 		this.restStatus = restStatus;
-		FoodCategoryNo = foodCategoryNo;
+		this.foodCategoryNo = foodCategoryNo;
+		this.restAtList = restAtList;
 	}
 
 
@@ -153,21 +158,26 @@ public class Restaurant {
 
 
 	public String getFoodCategoryNo() {
-		return FoodCategoryNo;
+		return foodCategoryNo;
 	}
 
 
 	public void setFoodCategoryNo(String foodCategoryNo) {
-		FoodCategoryNo = foodCategoryNo;
+		this.foodCategoryNo = foodCategoryNo;
 	}
 
+
+	public Restaurant(ArrayList<Attachment> restAtList) {
+		super();
+		this.restAtList = restAtList;
+	}
 
 	@Override
 	public String toString() {
 		return "Restaurant [restNo=" + restNo + ", restName=" + restName + ", restAddress=" + restAddress
 				+ ", restPhone=" + restPhone + ", restIntro=" + restIntro + ", restGrade=" + restGrade + ", restLikeNo="
 				+ restLikeNo + ", restEnrollDate=" + restEnrollDate + ", restModifyDate=" + restModifyDate
-				+ ", restOperDate=" + restOperDate + ", restStatus=" + restStatus + ", FoodCategoryNo=" + FoodCategoryNo
+				+ ", restOperDate=" + restOperDate + ", restStatus=" + restStatus + ", FoodCategoryNo=" + foodCategoryNo
 				+ "]";
 	}
 

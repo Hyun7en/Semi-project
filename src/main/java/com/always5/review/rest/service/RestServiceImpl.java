@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.apache.ibatis.session.SqlSession;
 
 import com.always5.common.template.Template;
+import com.always5.common.vo.Attachment;
 import com.always5.review.model.vo.Review;
 import com.always5.review.rest.model.dao.RestDao;
 import com.always5.review.rest.model.vo.MenuCategory;
@@ -34,6 +35,24 @@ public class RestServiceImpl implements RestService{
 		
 		sqlSession.close();
 		return reviewList;
+	}
+
+	@Override
+	public ArrayList<Attachment> selectRestAttachmentList(int restNo) {
+		SqlSession sqlSession = Template.getSqlSession();
+		ArrayList<Attachment> restAtList = new RestDao().selectRestAttachmentList(sqlSession, restNo);
+		
+		sqlSession.close();
+		return restAtList;
+	}
+
+	@Override
+	public ArrayList<Attachment> selectReviewAttachmentList(int restNo) {
+		SqlSession sqlSession = Template.getSqlSession();
+		ArrayList<Attachment> reviewAtList = new RestDao().selectReviewAttachmentList(sqlSession, restNo);
+		
+		sqlSession.close();
+		return reviewAtList;
 	}
 	
 //	public ArrayList<Menu> selectMenuList(int restNo) {

@@ -3,14 +3,8 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
   	<!-- <typeAliases>
-		<typeAlias type="com.always5.review.rest.model.vo.Rest" alias="Rest" />
-		<typeAlias type="com.always5.review.rest.model.vo.MenuCategory" alias="MenuCategory" />
-		<typeAlias type="com.always5.review.rest.model.vo.Review" alias="Review" />
-		<typeAlias type="com.always5.review.rest.model.vo.Menu" alias="Menu" />
-	</typeAliases> -->
-	<!-- <mappers>
-		<mapper resource="/mappers/rest-mapper.xml"/>
-	</mappers> -->
+		<typeAlias type="com.always5.common.vo.Attachment" alias="Attachment" />
+	-->
 <mapper namespace="restMapper">
 	<resultMap id="restResultSet" type="Rest">
 		<result column="REST_NO" property="restNo"/>
@@ -26,18 +20,37 @@
 		<result column="REST_STATUS" property="restStatus"/>
 		<result column="FOOD_CATEGORY_NAME" property="foodCategoryNo"/>
 	</resultMap>
+	
 	<resultMap id="menuCategoryResultSet" type="MenuCategory">
 		<result column="MENU_CATEGORY_NO" property="restNo"/>
-		<result column="MENU_CATEGORY_" property="restName"/>
+		<result column="MENU_CATEGORY_NAME" property="restName"/>
 	</resultMap>
+	
 	<resultMap id="menuResultSet" type="Menu">
 		<result column="MENU_NO" property="menuNo"/>
 		<result column="MENU_NAME" property="menuName"/>
-		<result column="MENU_PRICE" property="menuName"/>
-		<result column="MENU_STATUS" property="menuName"/>
-		<result column="REST_NO" property="menuName"/>
-		<result column="MENU_NAME" property="menuName"/>
+		<result column="MENU_PRICE" property="menuPrice"/>
+		<result column="REST_NO" property="restNo"/>
+		<result column="MENU_CATEGORY_NAME" property="menuCategoryNo"/>
 	</resultMap>
+	
+	<resultMap id="reviewResultSet" type="Review">
+		<result column="REVIEW_NO" property="reviewNo"/>
+		<result column="REVIEW_RATING" property="reviewRating"/>
+		<result column="REVIEW_CONTENT" property="reviewContent"/>
+		<result column="REVIEW_ENROLL_DATE" property="reviewEnrollDate"/>
+		<result column="REST_NO" property="restNo"/>
+		<result column="USER_NAME" property="userNo"/>
+	</resultMap>
+	
+	<resultMap id="attachmentResultSet" type="Attachment">
+		<result column="IMG_LIST_NO" property="fileNo"/>
+		<result column="IMG" property="changeName"/>
+		<result column="IMG_URL" property="filePath"/>
+		<result column="REVIEW_NO" property="reviewEnrollDate"/>
+		<result column="REST_NO" property="restNo"/>
+	</resultMap>
+	
 	<select id="selectRest" resultMap="restResultSet">
 		SELECT REST_NAME,
 			   REST_ADDRESS,
@@ -54,7 +67,7 @@
 		WHERE REST_NO = #{restNo}
 		AND REST_STATUS = 'Y'
 	</select>
-	<select id="selectMenuCategoryList" resultMap="menuCategoryResultSet">
+	<select id="selectMenuCategoryList" resultMap="menuResultSet">
 		SELECT MENU_NO,
 			   MENU_CATEGORY_NAME
 		FROM MENU
@@ -63,5 +76,32 @@
 		AND REST_STATUS = 'Y'
 		AND MENU_STATUS = 'Y'
 	</select>
-	
+	<select id="selectReviewList" resultMap="reviewResultSet">
+		SELECT REVIEW_NO,
+			   REVIEW_RATING,
+			   REVIEW_CONTENT,
+			   REVIEW_ENROLL_DATE,
+			   NICKNAME
+		FROM REVIEW
+		JOIN USER_INFO USING (USER_NO)
+		WHERE REST_NO = #{restNo}
+		AND REST_STATUS = 'Y'
+		AND REVIEW_STATUS = 'Y'
+	</select>
+	<select id="selectRestAttachmentList" resultMap="attachmentResultSet">
+		SELECT IMG_LIST_NO,
+			   IMG,
+			   IMG_URL
+		FROM IMG_LIST
+		WHERE REST_NO = #{restNo}
+		AND REST_STATUS = 'Y'
+	</select>
+	<select id="selectReviewAttachmentList" resultMap="attachmentResultSet">
+		SELECT IMG_LIST_NO,
+			   IMG,
+			   IMG_URL
+		FROM IMG_LIST
+		WHERE REST_NO = #{restNo}
+		AND REST_STATUS = 'Y'
+	</select>
 </mapper>
