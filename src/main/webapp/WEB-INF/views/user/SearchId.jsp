@@ -11,13 +11,13 @@
 	href="http://localhost:8001/always5/resources/css/user_css/SearchId.css" />
 </head>
 <body>
-	<form action="" class="SearchId-Container">
+	<form action="/SearchId.ui" class="SearchId-Container">
 		<div class="SearchId">
 
 			<!-- 로고 -->
 			<div class="SearchId-main">
 				<img class="SearchId-main-image"
-					src="http://localhost:8001/always5/resources/file/user_img/searchId-img/2x.png" />
+					src="http://localhost:8001/always5/resources/file/user_img/SearchId-img/2x.png" />
 			</div>
 
 			<div class="SearchId-main-title">아이디 찾기</div>
@@ -26,9 +26,6 @@
 			<div class="phone-Verification">
 				<div class="phone-Verification-box">
 					<div class="phone-Verification-titlebox">
-						<input type="radio" name="phone-Verification-radio"
-							class="phone-Verification-radio" value="phone-Verification-radio"
-							checked>
 						<div class="phone-Verification-title">본인명의 휴대전화로 인증</div>
 					</div>
 
@@ -50,7 +47,7 @@
 
 
 					<img class="Verification-line"
-						src="http://localhost:8001/always5/resources/file/user_img/searchId-img/line-45.svg" />
+						src="http://localhost:8001/always5/resources/file/user_img/SearchId-img/line-45.svg" />
 
 					<div class="email-Verification-titlebox">
 						<input type="radio" name="email-Verification-radio"

@@ -1,0 +1,194 @@
+@charset "UTF-8";
+
+@font-face {
+	font-family: 'WAGURITTF';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/2403@1.0/WAGURITTF.woff2')
+		format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@import
+	url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+* {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+	margin: 0px;
+	background-color: #FBFAF6;
+	width: 100vw;
+	height: 100vh;
+}
+
+input:focus {
+	outline: none;
+}
+
+[type="radio"] {
+	appearance: none;
+	width: 15px;
+	height: 15px;
+	box-shadow: 0 0 0 1px black;
+	border: 4px solid white;
+	border-radius: 50%;
+	background-color: white;
+}
+
+[type="radio"]:checked {
+	border: 4px solid white;
+	background-color: black;
+}
+
+/*배경*/
+.updateName-Container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fbfaf6;
+  width: calc(100% - 48px);
+  height: calc(100% - 48px);
+  margin: 24px;
+  box-sizing: border-box;
+}
+
+.updateName {
+  position: relative;
+	height: auto;
+	width: max-content;
+}
+
+/*로고 이미지*/
+.updateName .updateName-logo-main {
+  display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 754px;
+	height: 150px;
+	padding: 0px;
+}
+
+.updateName .logo-image {
+  object-fit: cover;
+	width: 150px;
+	height: 244px;
+	padding: 0px;
+}
+
+.updateName .updateName-title {
+  clear: both;
+	font-weight: 500;
+	color: #000000;
+	font-size: 35px;
+	letter-spacing: 0;
+	line-height: normal;
+	text-align: center;
+
+	width: 754px;
+	height: auto;
+	padding: 0px;
+	margin-bottom: 20px;
+}
+
+.updateName .updateName-notice {
+  font-weight: 500;
+  color: #000000;
+  font-size: 25px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+
+  width: 754px;
+  
+}
+
+/*닉네임 변경 입력*/
+.updateName .inputupdateName-wrapper {
+  display: flex;
+  align-items: center;  
+  justify-content: center;
+}
+
+.updateName .inputupdateName-box {
+  clear: both;
+  display: flex;
+  align-items: center;  
+  background-color: #fffefe;
+  border-radius: 8px;
+  border: 1px solid #b1a8a8;
+
+  margin-top: 10px;
+  width: 624px;
+  height: 40px;
+}
+
+.updateName .inputupdateName-text {
+  position: relative;
+  font-weight: 300;
+  color: #b0a4a4;
+  letter-spacing: 0;
+  line-height: normal;
+
+  padding-top: 0px;
+  padding-left: 10px;
+  width: auto;
+}
+
+.updateName .inputupdateName-phone {
+  border: none;
+  background-color: #fffefe;
+  color: #b0a4a4;
+
+  width: 325px;
+  height: 20px;
+}
+
+/*확인*/
+.updateName .updateName-checkbox-wrapper {
+  display: flex;
+  align-items: center;  
+  justify-content: center;
+}
+
+.updateName .updateName-checkbox {
+  background-color: #164066;
+  border-radius: 8px;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+
+  margin-top: 20px;
+  width: 625px;
+  height: 50px;
+}
+
+.updateName .updateName-checkbox-title {
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+@media screen and (min-width:576px) {
+  /* 스마트폰 가로 */
+  }
+  
+  @media screen and (min-width:768px) {
+  /* 타블렛 */
+  }
+
+  @media screen and (min-width:992px) {
+  /* 데스크탑 */
+  }
+  
+  @media screen and (min-width:1200px) {
+  /* 큰 데스크탑 */
+  }
