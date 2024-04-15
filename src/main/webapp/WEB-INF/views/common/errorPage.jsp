@@ -7,8 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%@ include file="bootstrap.jsp" %>
-	
 	<br><br>
 	
 	<h1 align="center" style="color:red"><%=request.getAttribute("errorMsg") %></h1>

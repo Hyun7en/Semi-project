@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 미구현 -->
+<mapper namespace="userMapper">
+	<resultMap id="userResultSet" type="User">
+		<result column="USER_NO" property="userNo" />
+		<result column="AUTHORITY" property="authority" />
+		<result column="USER_ID" property="userId" />
+		<result column="USER_PWD" property="userPwd" />
+		<result column="USER_NAME" property="userName" />
+		<result column="NICKNAME" property="nickname" />
+		<result column="USER_BIRTH" property="userBirth" />
+		<result column="USER_GENDER" property="userGender" />
+		<result column="USER_PHONE" property="userPhone" />
+		<result column="USER_EMAIL" property="userEmail" />
+		<result column="USER_ADDRESS" property="userAddress" />
+		<result column="USER_ENROLL_DATE" property="userEnrollDate" />
+		<result column="USER_MODIFY_DATE" property="userModifyDate" />
+		<result column="USER_STATUS" property="userStatus" />
+		<result column="POINT" property="point" />
+	</resultMap>
+
+	<insert id="insertUser" parameterType="User">
+		INSERT INTO USER
+		(
+		USER_NO,
+		AUTHORITY,
+		USER_ID,
+		USER_PWD,
+		USER_NAME,
+		NICKNAME,
+		USER_BIRTH,
+		USER_GENDER,
+		USER_PHONE,
+		USER_EMAIL,
+		USER_ADDRESS,
+		USER_ENROLL_DATE,
+		USER_MODIFY_DATE,
+		USER_STATUS,
+		POINT
+
+		)
+		VALUES
+		(
+		SEQ_UNO.NEXTVAL,
+		#{userId},
+		#{authority},
+		#{userId},
+		#{userPwd},
+		#{userName},
+		#{nickname},
+		#{userBirth},
+		#{userGender},
+		#{userPhone},
+		#{userEmail},
+		#{userAddress},
+		#{userEnrollDate},
+		#{userModifyDate},
+		#{userStatus},
+		#{point})
+	</insert>
+
+	<insert id="loginUser" parameterType="User">
+		SELECT USER_ID
+		FROM USER U
+		WHERE USER_ID = #{userId}
+		AND USER_PWD = #{userPwd}
+		AND STATUS = 'Y'
+	</insert>
+
+	<update id="deleteUser" parameterType="User">
+		UPDATE USER
+		SET STATUS = 'N'
+		, MODIFY_DATE = SYASDATE
+		WHERE USER_ID = #{userId}
+		AND USER_PWD = #{userPwd}
+	</update>
+
+	<insert id="updateUser" parameterType="User">
+		UPDATE USER
+		SET USER_NAME = #{userName}
+		, NICKNAME = #{nickName}
+		, USER_BIRTH = #{userBirth}
+		, USER_GENGER = #{userGender}
+		, USER_PHONE = #{userPhone}
+		, USER_EMAIL = #{userEmail}
+		, USER_ADDRESS = #{userAddress}
+		, MODIFY_DATE = SYSDATE
+		WHERE USER_ID = #{userId}
+		AND USER_PWD = #{userPwd}
+	</insert>
+
+
+	<insert id="updatePwdUser" parameterType="User">
+		UPDATE USER
+		SET USER_PWD = #{userPwd}
+		, MODIFY_DATE = SYSDATE
+		WHERE USER_ID = #{userId}
+		AND USER_PWD = #{userPwd}
+	</insert>
+
+	<insert id="updateIdUser" parameterType="User">
+		UPDATE USER
+		SET USER_ID = #{userId}
+		, MODIFY_DATE = SYSDATE
+		WHERE USER_ID = #{userId}
+		AND USER_PWD = #{userPwd}
+	</insert>
+
+</mapper>
