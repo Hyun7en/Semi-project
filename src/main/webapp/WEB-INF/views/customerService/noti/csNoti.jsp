@@ -53,7 +53,7 @@
         </section>
         <section id="section-2">
             <div>
-                <a class="a1" href="1">공지사항</a>
+                <a class="a1" href="">공지사항</a>
                 <a class="a2" href="">자주하는 질문</a>
             </div>
 
