@@ -17,19 +17,32 @@
 }
 
 body {
+	margin: 0px;
 	background-color: #FBFAF6;
+	width: 100vw;
+	height: 100vh;
 }
 
-.Signin {
-  position: relative;
-  background-color: #fbfaf6;
+input:focus {outline: none;}
 
-  margin: 0 auto;
-  width: 754px;
-  height: auto;
-  padding: 80px;
-  padding-top: 40px;
-  padding-bottom: 120px;
+/*background*/
+
+.Signin-Container{
+	display: flex;
+    align-items: center;
+    justify-content: center;
+	background-color: #fbfaf6;
+	width: calc(100% - 48px);
+    height: auto;
+    margin: 24px;
+    box-sizing: border-box; 
+	
+}
+
+.Signin{
+	position: relative;
+	height: auto;
+	width: max-content;
 }
 
 /* 로고 */
@@ -79,8 +92,8 @@ body {
   align-items: center;
   border-radius: 8px 8px 0px 0px;
   background-color: #fffefe;
-  border: 1px solid;
-  border-color: #b1a8a8;
+  border: 1px solid #b1a8a8;
+  border-bottom: none;
 }
 
 .Signin .input-UserId {
@@ -99,8 +112,8 @@ body {
   display: flex;
   align-items: center;
   background-color: #fffefe;
-  border: 1px solid;
-  border-color: #b1a8a8;
+  border: 1px solid #b1a8a8;
+  border-bottom: none;
 }
 
 .Signin .input-UserPwd {
@@ -120,8 +133,7 @@ body {
   height: 55px;
   border-radius: 0px 0px 8px 8px;
   background-color: #fffefe;
-  border: 1px solid;
-  border-color: #b1a8a8;
+  border: 1px solid #b1a8a8;
 }
 
 .Signin .input-nickName {
@@ -149,8 +161,8 @@ body {
   align-items: center;
   border-radius: 8px 8px 0px 0px;
   background-color: #fffefe;
-  border: 1px solid;
-  border-color: #b1a8a8;
+  border: 1px solid #b1a8a8;
+  border-bottom: none;
 }
 
 .Signin .input-UserName {
@@ -171,6 +183,7 @@ body {
   background-color: #fffefe;
   border: 1px solid;
   border-color: #b1a8a8;
+  border-bottom: none;
 }
 
 .Signin .input-birth {
@@ -189,8 +202,8 @@ body {
   display: flex;
   align-items: center;
   background-color: #fffefe;
-  border: 1px solid;
-  border-color: #b1a8a8;
+  border: 1px solid #b1a8a8;
+  border-bottom: none;
 }
 
 .Signin .input-phone {
@@ -209,8 +222,8 @@ body {
   display: flex;
   align-items: center;
   background-color: #fffefe;
-  border: 1px solid;
-  border-color: #b1a8a8;
+  border: 1px solid #b1a8a8;
+  border-bottom: none;
 }
 
 .Signin .input-address {
@@ -237,8 +250,8 @@ body {
 .Signin .gender-male-submit {
   border-radius: 8px 0px 0px 8px;
   background-color: #fffefe;
-  border: 1px solid;
-  border-color: #b1a8a8;
+  border: 1px solid #b1a8a8;
+  border-right: none;
 
   margin: 10px;
   margin-right: 0px;
