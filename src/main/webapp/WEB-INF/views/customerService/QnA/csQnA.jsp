@@ -60,10 +60,10 @@
 
             <nav id="nav-2">
                 <ul id="navi-2">
-                    <li><a href="#">전체</a></li>
-                    <li><a href="#">로그인/회원정보 문의</a></li>
-                    <li><a href="#">쿠폰문의</a></li>
-                    <li><a href="#">서비스/기타</a></li>
+                    <li><a href="#" onclick="return false" class="fcode" id="f1">전체</a></li>
+                    <li><a href="#" onclick="return false" class="fcode" id="f2">로그인/회원정보 문의</a></li>
+                    <li><a href="#" onclick="return false" class="fcode" id="f3">쿠폰문의</a></li>
+                    <li><a href="#" onclick="return false" class="fcode" id="f4">서비스/기타</a></li>
                 </ul>                    
             </nav>
 
