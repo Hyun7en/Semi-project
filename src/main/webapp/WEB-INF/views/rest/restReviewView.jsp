@@ -15,10 +15,10 @@
                 <div class="rest-review-title">
                     <!-- 왼쪽 총평점 -->
                     <div id="review-title-left">
-                        <p>왕밥빵 1호점</p>
+                        <p>${restName}</p>
                         <div>
                             <img src="../../resources/file/common_img/왕관 컬러.png" alt="">
-                            <h2>4.9</h2>
+                            <h2>${restRating}</h2>
                         </div>
                     </div>
                     <!-- 오른쪽 평점별 횟수 -->
@@ -51,6 +51,8 @@
 
                         <!-- 횟수 -->
                         <div id="review-crown-count">
+                            <!-- 가져온 reviewList 안의 review 중 reviewRating이 5인 사람, 4인 사람, 3인 사람 ... -->
+                            <!-- 파싱해서 만든다? -->
                             <p>59</p>
                             <p>3</p>
                             <p>0</p>
@@ -61,8 +63,43 @@
                 </div>
 
                 <!-- 리뷰 컨텐츠 -->
-                <div class="rest-review-content">
-                    <!-- 리뷰 작성자, 등급, 날짜 -->
+
+                <c:forEach var="review" items="${reviewList}">
+                    <div class="rest-review-content">
+                        <!-- 리뷰 작성자, 등급, 날짜 -->
+                        <div id="review-content-title">
+                            <div>
+                                <h2>${review.userNo}</h2>
+                            </div>
+                            <p>${review.reviewEnrollDate}/p>
+                        </div>
+    
+                        <hr>
+    
+                        <!-- 리뷰 평점 -->
+                        <div id="review-content-crown">
+                            <p>평점 ${review.reviewRating}</p>
+                            <div>
+                                <img src="../../resources/file/common_img/왕관 컬러.png" alt="">
+                                <img src="../../resources/file/common_img/왕관 컬러.png" alt="">
+                                <img src="../../resources/file/common_img/왕관 컬러.png" alt="">
+                                <img src="../../resources/file/common_img/왕관 컬러.png" alt="">
+                                <img src="../../resources/file/common_img/왕관 컬러.png" alt="">
+                            </div>
+                        </div>
+                        <!-- 리뷰 사진 -->
+                        <div id="review-content-image">
+                            <c:forEach var="reviewAt" items="${review.restAtList}">
+                                <img src="${contextPath}/${reviewAt.filePath}/${reviewAt.changeName}" alt="">
+                            </c:forEach>
+                        </div>
+    
+                        <!-- 리뷰 글 -->
+                        <p>${review.reviewContent}</p>
+                    </div>
+                </c:forEach>
+
+                <!-- <div class="rest-review-content">
                     <div id="review-content-title">
                         <div>
                             <h2>왕고기</h2>
@@ -73,7 +110,6 @@
 
                     <hr>
 
-                    <!-- 리뷰 평점 -->
                     <div id="review-content-crown">
                         <p>평점 5.0</p>
                         <div>
@@ -84,14 +120,13 @@
                             <img src="../../resources/file/common_img/왕관 컬러.png" alt="">
                         </div>
                     </div>
-                    <!-- 리뷰 사진 -->
+
                     <div id="review-content-image">
                         <img src="../../resources/file/upfile/review_upfile/rest202404042242.jpg" alt="">
                         <img src="../../resources/file/upfile/review_upfile/rest202404042242.jpg" alt="">
                         <img src="../../resources/file/upfile/review_upfile/rest202404042242.jpg" alt="">
                     </div>
 
-                    <!-- 리뷰 글 -->
                     <p>너무 맛있어요! 너무 맛있어요! 너무 맛있어요! 너무 맛있어요! 너무 맛있어요! 너무 맛있어요! 너무 맛있어요! 너무 맛있어요! 너무 맛있어요! 너무 맛있어요! 너무 맛있어요! 너무 맛있어요! 너무 맛있어요! 너무 맛있어요! 너무 맛있어요! 너무 맛있어요! 너무 맛있어요! 너무 맛있어요!</p>
                 </div>
 
@@ -174,7 +209,7 @@
                         <img src="../../resources/file/upfile/review_upfile/rest202404042242.jpg" alt="">
                     </div>
                     <p>너무 맛있어요! 너무 맛있어요! 너무 맛있어요! 너무 맛있어요! 너무 맛있어요! 너무 맛있어요! 너무 맛있어요! 너무 맛있어요! 너무 맛있어요! 너무 맛있어요! 너무 맛있어요! 너무 맛있어요! 너무 맛있어요! 너무 맛있어요! 너무 맛있어요! 너무 맛있어요! 너무 맛있어요! 너무 맛있어요!</p>
-                </div>
+                </div> -->
 
                 <!-- 더보기 버튼 -->
                 <div class="more-content"><a href="">더보기</a></div>

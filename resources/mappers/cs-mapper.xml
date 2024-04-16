@@ -4,6 +4,7 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="csMapper">
+<!-- 
 	<resultMap id="noticeResultSet" type="Notice">
 		<result column="NOTI_NO" property="notiNo"/>
 		<result column="NOTI_TITLE" property="notiTitle"/>
@@ -40,4 +41,5 @@
 		WHERE QNA_STATUS = 'Y'
 		ORDER BY QNA_NO DESC
 	</select>
+	 -->
 </mapper>

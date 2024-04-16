@@ -2,21 +2,17 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-  	<!-- <typeAliases>
-		<typeAlias type="com.always5.common.vo.Attachment" alias="Attachment" />
-	-->
 <mapper namespace="restMapper">
-	<resultMap id="restResultSet" type="Rest">
+	<resultMap id="restResultSet" type="Restaurant">
 		<result column="REST_NO" property="restNo"/>
 		<result column="REST_NAME" property="restName"/>
 		<result column="REST_ADDRESS" property="restAddress"/>
 		<result column="REST_PHONE" property="restPhone"/>
 		<result column="REST_INTRO" property="restIntro"/>
-		<result column="REST_GRADE" property="restGrade"/>
-		<result column="LIKE_NO" property="likeNo"/>
+		<result column="LIKE_NO" property="restLikeNo"/>
 		<result column="REST_ENROLL_DATE" property="restEnrollDate"/>
 		<result column="REST_MODIFY_DATE" property="restModifyDate"/>
-		<result column="REST_OPER_TIME" property="restOperTime"/>
+		<result column="REST_OPER_TIME" property="restOperDate"/>
 		<result column="REST_STATUS" property="restStatus"/>
 		<result column="FOOD_CATEGORY_NAME" property="foodCategoryNo"/>
 	</resultMap>
@@ -30,10 +26,7 @@
 	</resultMap>
 	
 	<resultMap id="dibsResultSet" type="Dibs">
-		<result column="IMG_LIST_NO" property="fileNo"/>
-		<result column="IMG" property="changeName"/>
-		<result column="IMG_URL" property="filePath"/>
-		<result column="REVIEW_NO" property="reviewEnrollDate"/>
+		<result column="USER_NO" property="userNo"/>
 		<result column="REST_NO" property="restNo"/>
 	</resultMap>
 	
@@ -43,7 +36,7 @@
 		<result column="REVIEW_CONTENT" property="reviewContent"/>
 		<result column="REVIEW_ENROLL_DATE" property="reviewEnrollDate"/>
 		<result column="REST_NO" property="restNo"/>
-		<result column="USER_NAME" property="userNo"/>
+		<result column="NICKNAME" property="userNo"/>
 	</resultMap>
 	
 	<resultMap id="attachmentResultSet" type="Attachment">
@@ -53,8 +46,6 @@
 		<result column="REVIEW_NO" property="reviewEnrollDate"/>
 		<result column="REST_NO" property="restNo"/>
 	</resultMap>
-	
-	
 	
 	<!-- <resultMap id="menuCategoryResultSet" type="MenuCategory">
 		<result column="MENU_CATEGORY_NO" property="restNo"/>
@@ -66,7 +57,6 @@
 			   REST_ADDRESS,
 			   REST_PHONE,
 			   REST_INTRO,
-			   REST_GRADE,
 			   LIKE_NO,
 			   REST_ENROLL_DATE,
 			   REST_MODIFY_DATE,
@@ -84,7 +74,6 @@
 			   IMG_URL
 		FROM IMG_LIST
 		WHERE REST_NO = #{restNo}
-		AND REST_STATUS = 'Y'
 	</select>
 	
 	<select id="selectMenuCategoryList" resultMap="menuResultSet">
@@ -93,18 +82,15 @@
 		FROM MENU
 		JOIN MENU_CATEGORY USING (MENU_CATEGORY_NO)
 		WHERE REST_NO = #{restNo}
-		AND REST_STATUS = 'Y'
 		AND MENU_STATUS = 'Y'
 	</select>
 	
-	<select id="selectTotalDibs" resultMap="dibsResultSet">
-		SELECT MENU_NO,
-			   MENU_CATEGORY_NAME
-		FROM MENU
-		JOIN MENU_CATEGORY USING (MENU_CATEGORY_NO)
-		WHERE REST_NO = #{restNo}
-		AND REST_STATUS = 'Y'
-		AND MENU_STATUS = 'Y'
+	<select id="selectDibsForUserNo" resultMap="dibsResultSet">
+		SELECT USER_NO,
+			   REST_NO
+		FROM DIBS
+		WHERE USER_NO = #{userNo}
+		AND REST_NO = #{restNo}
 	</select>
 	
 	<select id="selectReviewList" resultMap="reviewResultSet">
@@ -116,7 +102,6 @@
 		FROM REVIEW
 		JOIN USER_INFO USING (USER_NO)
 		WHERE REST_NO = #{restNo}
-		AND REST_STATUS = 'Y'
 		AND REVIEW_STATUS = 'Y'
 	</select>
 	
@@ -126,6 +111,29 @@
 			   IMG_URL
 		FROM IMG_LIST
 		WHERE REST_NO = #{restNo}
-		AND REST_STATUS = 'Y'
+	</select>
+	
+	<select id="selectRatingCount" resultType="_int">
+		SELECT COUNT(*)
+		FROM REVIEW
+		WHERE REST_NO = #{restNo}
+		AND REVIEW_STATUS = 'Y'
+		<choose>
+			<when test="ratingCount == '1'">
+				AND REVIEW_RATING = 1
+			</when>
+			<when test="ratingCount == '2'">
+				AND REVIEW_RATING = 2
+			</when>
+			<when test="ratingCount == '3'">
+				AND REVIEW_RATING = 3
+			</when>
+			<when test="ratingCount == '4'">
+				AND REVIEW_RATING = 4
+			</when>
+			<when test="ratingCount == '5'">
+				AND REVIEW_RATING = 5
+			</when>
+		</choose>
 	</select>
 </mapper>

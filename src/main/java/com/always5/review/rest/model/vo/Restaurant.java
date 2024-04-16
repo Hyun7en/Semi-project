@@ -167,23 +167,24 @@ public class Restaurant {
 	}
 
 
-	public Restaurant(ArrayList<Attachment> restAtList) {
-		super();
+	public ArrayList<Attachment> getRestAtList(){
+		return restAtList;
+	}
+	
+	public void setRestAtList(ArrayList<Attachment> restAtList) {
 		this.restAtList = restAtList;
 	}
+
 
 	@Override
 	public String toString() {
 		return "Restaurant [restNo=" + restNo + ", restName=" + restName + ", restAddress=" + restAddress
 				+ ", restPhone=" + restPhone + ", restIntro=" + restIntro + ", restGrade=" + restGrade + ", restLikeNo="
 				+ restLikeNo + ", restEnrollDate=" + restEnrollDate + ", restModifyDate=" + restModifyDate
-				+ ", restOperDate=" + restOperDate + ", restStatus=" + restStatus + ", FoodCategoryNo=" + foodCategoryNo
-				+ "]";
+				+ ", restOperDate=" + restOperDate + ", restStatus=" + restStatus + ", foodCategoryNo=" + foodCategoryNo
+				+ ", restAtList=" + restAtList + "]";
 	}
 
-	
-	 
-	
 	
 }
 	
