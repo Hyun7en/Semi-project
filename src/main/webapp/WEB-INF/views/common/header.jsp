@@ -39,7 +39,7 @@
         <!-- nav -->
         <nav id="nav-1">
                 <ul id="navi-1">
-                    <li><a href="searchKinds.sc" name="searchKinds">음식별</a></li>
+                    <li><a onclick="location.href='searchKinds.sc?rpage=1'">음식별</a></li>
                     <li><a href="#">메뉴별</a></li>
                     <li><a href="#">지역별</a></li>
                     <li><a href="#">고객센터</a></li>

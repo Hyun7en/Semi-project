@@ -10,12 +10,13 @@ public class Restaurant {
 	private String restPhone;
 	private String restIntro;
 	private String restGrade;
-	private String restLikeNo;
+	private String likeNo;
 	private Date restEnrollDate;
 	private Date restModifyDate;
 	private String restOperDate;
 	private String restStatus;
-	private String FoodCategoryNo;
+	private String foodCategoryNo;
+	
 	
 	
 	public Restaurant() {
@@ -23,8 +24,9 @@ public class Restaurant {
 	}
 
 
+
 	public Restaurant(int restNo, String restName, String restAddress, String restPhone, String restIntro,
-			String restGrade, String restLikeNo, Date restEnrollDate, Date restModifyDate, String restOperDate,
+			String restGrade, String likeNo, Date restEnrollDate, Date restModifyDate, String restOperDate,
 			String restStatus, String foodCategoryNo) {
 		super();
 		this.restNo = restNo;
@@ -33,13 +35,14 @@ public class Restaurant {
 		this.restPhone = restPhone;
 		this.restIntro = restIntro;
 		this.restGrade = restGrade;
-		this.restLikeNo = restLikeNo;
+		this.likeNo = likeNo;
 		this.restEnrollDate = restEnrollDate;
 		this.restModifyDate = restModifyDate;
 		this.restOperDate = restOperDate;
 		this.restStatus = restStatus;
-		FoodCategoryNo = foodCategoryNo;
+		this.foodCategoryNo = foodCategoryNo;
 	}
+
 
 
 	public int getRestNo() {
@@ -47,9 +50,11 @@ public class Restaurant {
 	}
 
 
+
 	public void setRestNo(int restNo) {
 		this.restNo = restNo;
 	}
+
 
 
 	public String getRestName() {
@@ -57,9 +62,11 @@ public class Restaurant {
 	}
 
 
+
 	public void setRestName(String restName) {
 		this.restName = restName;
 	}
+
 
 
 	public String getRestAddress() {
@@ -67,9 +74,11 @@ public class Restaurant {
 	}
 
 
+
 	public void setRestAddress(String restAddress) {
 		this.restAddress = restAddress;
 	}
+
 
 
 	public String getRestPhone() {
@@ -77,9 +86,11 @@ public class Restaurant {
 	}
 
 
+
 	public void setRestPhone(String restPhone) {
 		this.restPhone = restPhone;
 	}
+
 
 
 	public String getRestIntro() {
@@ -87,9 +98,11 @@ public class Restaurant {
 	}
 
 
+
 	public void setRestIntro(String restIntro) {
 		this.restIntro = restIntro;
 	}
+
 
 
 	public String getRestGrade() {
@@ -97,19 +110,23 @@ public class Restaurant {
 	}
 
 
+
 	public void setRestGrade(String restGrade) {
 		this.restGrade = restGrade;
 	}
 
 
-	public String getRestLikeNo() {
-		return restLikeNo;
+
+	public String getLikeNo() {
+		return likeNo;
 	}
 
 
-	public void setRestLikeNo(String restLikeNo) {
-		this.restLikeNo = restLikeNo;
+
+	public void setLikeNo(String likeNo) {
+		this.likeNo = likeNo;
 	}
+
 
 
 	public Date getRestEnrollDate() {
@@ -117,9 +134,11 @@ public class Restaurant {
 	}
 
 
+
 	public void setRestEnrollDate(Date restEnrollDate) {
 		this.restEnrollDate = restEnrollDate;
 	}
+
 
 
 	public Date getRestModifyDate() {
@@ -127,9 +146,11 @@ public class Restaurant {
 	}
 
 
+
 	public void setRestModifyDate(Date restModifyDate) {
 		this.restModifyDate = restModifyDate;
 	}
+
 
 
 	public String getRestOperDate() {
@@ -137,9 +158,11 @@ public class Restaurant {
 	}
 
 
+
 	public void setRestOperDate(String restOperDate) {
 		this.restOperDate = restOperDate;
 	}
+
 
 
 	public String getRestStatus() {
@@ -147,32 +170,35 @@ public class Restaurant {
 	}
 
 
+
 	public void setRestStatus(String restStatus) {
 		this.restStatus = restStatus;
 	}
 
 
+
 	public String getFoodCategoryNo() {
-		return FoodCategoryNo;
+		return foodCategoryNo;
 	}
+
 
 
 	public void setFoodCategoryNo(String foodCategoryNo) {
-		FoodCategoryNo = foodCategoryNo;
+		this.foodCategoryNo = foodCategoryNo;
 	}
+
 
 
 	@Override
 	public String toString() {
 		return "Restaurant [restNo=" + restNo + ", restName=" + restName + ", restAddress=" + restAddress
-				+ ", restPhone=" + restPhone + ", restIntro=" + restIntro + ", restGrade=" + restGrade + ", restLikeNo="
-				+ restLikeNo + ", restEnrollDate=" + restEnrollDate + ", restModifyDate=" + restModifyDate
-				+ ", restOperDate=" + restOperDate + ", restStatus=" + restStatus + ", FoodCategoryNo=" + FoodCategoryNo
+				+ ", restPhone=" + restPhone + ", restIntro=" + restIntro + ", restGrade=" + restGrade + ", likeNo="
+				+ likeNo + ", restEnrollDate=" + restEnrollDate + ", restModifyDate=" + restModifyDate
+				+ ", restOperDate=" + restOperDate + ", restStatus=" + restStatus + ", foodCategoryNo=" + foodCategoryNo
 				+ "]";
 	}
-
 	
-	 
+	
 	
 	
 }

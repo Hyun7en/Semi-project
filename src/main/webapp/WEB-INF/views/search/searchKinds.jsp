@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <!DOCTYPE html>
     <html>
 
@@ -17,7 +18,7 @@
                 <main>
                     <section class="search-nav" style="padding: 0px;">
                         <div>
-                        	<a href="searchKinds.sc?spage=한식">
+                        	<a>
                         		<img src="${pageContext.request.contextPath}/resources/file/search_img/kindsKorean.png"
                                 alt="">
                             	<p>한식</p>
@@ -111,21 +112,30 @@
                     </section>
 
 
+   
+
                     <section class="search-result">
-                        <div>
-                            <div class="search-best-crownSmall">
-                                <img src="https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp"
-                                    alt="">
-                                <img id="smallCrown"
-                                    src="${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png"
-                                    alt="">
-                            </div>
-                            <div>
-                                <p class="res-name"><span><b>할머니백반</span><span>&nbsp;&nbsp;4.0</span></b></p>
-                                <p class="res-location"><span>한식집</span><span>&nbsp;&nbsp;청담동</span></p>
-                                <p class="res-explain"><b>백반이 유명한 할머니집</b></p>
-                            </div>
-                        </div>
+                        <c:forEach var="sr" begin="1" end="9" items="${list}">
+	                        <div>
+	                            <div class="search-best-crownSmall">
+	                                <img src="https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp"
+	                                    alt="">
+	                                <img id="smallCrown"
+	                                    src="${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png"
+	                                    alt="">
+	                            </div>
+	                            <div>
+	                                <p class="res-name"><span><b>${sr.restName}</span><span>&nbsp;&nbsp;</span></b></p>
+	                                <p class="res-location"><span>한식집</span><span>&nbsp;&nbsp;${sr.restAddress}</span></p>
+	                                <p class="res-explain"><b>${sr.restIntro}</b></p>
+	                            </div>
+	                        </div>
+	                    </c:forEach>
+	                    
+	                    
+	                    
+	                    
+	                    
                         <div>
                             <div class="search-best-crownSmall">
                                 <img src="https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp"
@@ -369,6 +379,7 @@
 
 
                     </section>
+                    
 
 
                 </main>

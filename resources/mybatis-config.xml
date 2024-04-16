@@ -8,13 +8,9 @@
 	</settings>
 
 	<typeAliases>
-		<typeAlias type="com.always5.user.model.vo.User" alias="User" />
-		<typeAlias type="com.always5.review.rest.model.vo.Rest" alias="Rest" />
-		<typeAlias type="com.always5.review.rest.model.vo.MenuCategory" alias="MenuCategory" />
-		<typeAlias type="com.always5.review.rest.model.vo.Review" alias="Review" />
-		<typeAlias type="com.always5.review.rest.model.vo.Menu" alias="Menu" />
-		<typeAlias type="com.kh.always5.customerService.model.vo.CsNoti" alias="Notice" />
-		<typeAlias type="com.kh.always5.customerService.model.vo.CsQnA" alias="QNA" />
+
+		<typeAlias type="com.always5.review.rest.model.vo.Restaurant" alias="Restaurant" />
+
 	</typeAliases>
 		
 	<environments default="development">
@@ -33,8 +29,7 @@
 	</environments>
 
 	<mappers>
-	   <mapper resource="/mappers/user-mapper.xml"/>	
-	   <mapper resource="/mappers/cs-mapper.xml"/>	
-	   <mapper resource="/mappers/rest-mapper.xml"/>
+
+	   <mapper resource="/mappers/search-mapper.xml"/>
 	</mappers>
 </configuration>
