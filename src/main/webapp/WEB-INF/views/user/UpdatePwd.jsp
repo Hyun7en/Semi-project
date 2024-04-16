@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="com.always5.user.model.vo.User" %>
 <!DOCTYPE html>
 
 <html>
@@ -9,31 +8,31 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet"
-	href="http://localhost:8001/always5/resources/css/user_css/ChangeId.css" />
+	href="http://localhost:8001/always5/resources/css/user_css/UpdatePwd.css" />
 </head>
 
 <body>
-		<form action="/userIdUpdate.me" class="changeId-Container">
-		<div class="changeId">
+		<form action="/UpdatePwd.ui" class="updatePwd-Container">
+		<div class="updatePwd">
 			<!-- X버튼 -->
 			<img class="logo"
-				src="http://localhost:8001/always5/resources/file/user_img/changeId-img/ph-x-thin.svg" />
+				src="http://localhost:8001/always5/resources/file/user_img/UpdatePwd-img/ph-x-thin.svg" />
 
 			<!-- 상단 텍스트 -->
 			<div class="id-preview">
-				<div class="id-UserName">${user.userName}</div>
+				<div class="id-UserName">${user.userPwd}</div>
 				<div class="id-UserName-text01">님의 회원정보 중</div>
-				<div class="id-UserName-text02">이메일을 수정하기 위해 인증절차가 필요합니다.</div>
+				<div class="id-UserName-text02">비밀번호를 수정하기 위해 인증절차가 필요합니다.</div>
 			</div>
 
 			<img class="line-pass"
-				src="http://localhost:8001/always5/resources/file/user_img/changeId-img/line-47.svg" />
+				src="http://localhost:8001/always5/resources/file/user_img/UpdatePwd-img/line-47.svg" />
 
 			<!-- 사용자 이메일 입력 -->
 			<div class="email-preview">
 				<img class="mdi-email-icon"
-					src="http://localhost:8001/always5/resources/file/user_img/changeId-img/mdi-light-email.svg" />
-				<div class="user-email">${user.useremail}</div>
+					src="http://localhost:8001/always5/resources/file/user_img/UpdatePwd-img/mdi-light-email.svg" />
+				<div class="user-email">${user.userId}</div>
 			</div>
 
 			<div class="input-email-box">
@@ -75,12 +74,12 @@
 				</div>
 			</div>
 
-			<div class="ChangeId-checkbox">
-				<div class="ChangeId-checkbox-title">변경</div>
+			<div class="updatePwd-checkbox">
+				<div class="updatePwd-checkbox-title">변경</div>
 			</div>
 		</div>
 	</form>
-	<script src="http://localhost:8001/always5/resources/js/user_js/ChangeId.js"></script>
+	<script src="http://localhost:8001/always5/resources/js/user_js/UpdatePwd.js"></script>
 </body>
 
 </html>

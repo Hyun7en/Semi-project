@@ -10,7 +10,7 @@
 	href="http://localhost:8001/always5/resources/css/user_css/Verification.css" />
 </head>
 <body>
-	<form class="Verification-Container">
+	<form action="Verification.ui" class="Verification-Container">
 		<div class="Verification">
 
 			<!-- X버튼 -->
@@ -79,9 +79,6 @@
 
 			<!-- 공지사항 -->
 			<div class="Verification-notice-titlebox">
-				<input type="radio" name="Verification-notice-radio"
-					class="Verification-notice-radio" value="Verification-notice-radio"
-					checked>
 				<div class="Verification-notice-title">인증받은 휴대전화 번호는 내 회원정보에
 					등록하겠습니다.</div>
 			</div>

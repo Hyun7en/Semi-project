@@ -12,7 +12,7 @@
 
 <body>
 	<%@ include file="../common/header.jsp" %>
-	<form action="/myPage.me" class="Mypage-Container">
+	<form action="/MyPage.ui" class="Mypage-Container">
 		<div class="Mypage">
 
 			<!-- 회원정보 상단 -->

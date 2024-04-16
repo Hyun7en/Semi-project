@@ -16,6 +16,10 @@
 	font-family: 'Noto Sans KR', sans-serif;
 }
 
+a {
+    text-decoration: none;
+}
+
 body {
 	margin: 0px;
 	background-color: #FBFAF6;
@@ -65,11 +69,13 @@ input:focus {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	width: 754px;
 	height: 150px;
 	padding: 0px;
 }
 
 .SearchId .SearchId-main-image {
+	object-fit: cover;
 	width: 150px;
 	height: 244px;
 	padding: 0px;

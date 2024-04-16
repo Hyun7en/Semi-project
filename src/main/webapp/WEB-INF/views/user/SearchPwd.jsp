@@ -12,13 +12,13 @@
 </head>
 
 <body>
-	<form action="" class="SearchPwd-Container">
+	<form action="SearchPwd.ui" class="SearchPwd-Container">
 		<div class="SearchPwd">
 
 			<!-- 로고 -->
 			<div class="SearchPwd-main">
 				<img class="SearchPwd-main-image"
-					src="http://localhost:8001/always5/resources/file/user_img/searchpwd-img/2x.png" />
+					src="http://localhost:8001/always5/resources/file/user_img/SearchPwd-img/2x.png" />
 			</div>
 
 			<div class="SearchPwd-main-title">비밀번호 찾기</div>
@@ -30,7 +30,7 @@
 				<div class="inputPwd-box">
 					<div class="inputPwd-text">
 						<input type="text" name="inputPwd-phone" class="inputPwd-phone"
-							value="네이버 아이디 또는 단체 아이디">
+							value="왕밥빵 아이디 또는 단체 아이디">
 					</div>
 				</div>
 			</div>
