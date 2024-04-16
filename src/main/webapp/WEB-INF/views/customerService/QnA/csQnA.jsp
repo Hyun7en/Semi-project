@@ -54,8 +54,8 @@
         </section>
         <section id="section-2">
             <div>
-                <a class="a1" href="">공지사항</a>
-                <a class="a2" href="">자주하는 질문</a>
+                <a class="a1" href="#" onclick="return false" class="fcode" id="f1">공지사항</a>
+                <a class="a2" href="#" onclick="return false" class="fcode" id="f2">자주하는 질문</a>
             </div>
 
             <nav id="nav-2">
