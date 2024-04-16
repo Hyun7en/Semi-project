@@ -10,13 +10,13 @@
 	href="http://localhost:8001/always5/resources/css/user_css/logIn.css" />
 </head>
 <body>
-	<form class="login-Container">
+	<form action="/Login.ui" class="login-Container">
 		<div class="login">
 
 			<!-- 로고 -->
 			<div class="login-logo-main">
 				<img class="logo-image"
-					src="http://localhost:8001/always5/resources/file/user_img/login-img/logo.png" />
+					src="http://localhost:8001/always5/resources/file/user_img/Login-img/logo.png" />
 			</div>
 
 			<div class="login-title">로그인</div>
@@ -28,7 +28,7 @@
 				<div class="authority-box">
 					<div class="authority-common">일반회원</div>
 					<img class="authority-line"
-						src="http://localhost:8001/always5/resources/file/user_img/login-img/line-40.svg" />
+						src="http://localhost:8001/always5/resources/file/user_img/Login-img/line-40.svg" />
 					<div class="authority-admin">관리자</div>
 				</div>
 
@@ -53,11 +53,11 @@
 						<div class="login-option">
 							<div class="login-option-searchId"><a href="">아이디 찾기</a></div>
 							<img class="login-option-line1"
-								src="http://localhost:8001/always5/resources/file/user_img/login-img/line-41.svg" />
+								src="http://localhost:8001/always5/resources/file/user_img/Login-img/line-41.svg" />
 							<div class="login-option-searchPwd"><a href="">비밀번호 찾기</a></div>
 							<img class="login-option-line2"
-								src="http://localhost:8001/always5/resources/file/user_img/login-img/line-42.svg" />
-							<div class="login-option-signin"><a href="">회원가입</a></div>
+								src="http://localhost:8001/always5/resources/file/user_img/Login-img/line-42.svg" />
+							<div class="login-option-signin"><a href="insert.me">회원가입</a></div>
 						</div>
 
 					</div>
@@ -66,6 +66,6 @@
 			</div>
 		</div>
 	</form>
-	<script src="http://localhost:8001/always5/resources/js/user_js/login.js"></script>
+	<script src="http://localhost:8001/always5/resources/js/user_js/Login.js"></script>
 </body>
 </html>

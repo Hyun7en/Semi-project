@@ -12,7 +12,7 @@
 </head>
 
 <body>
-	<form action="/userPwdUpdate.me" class="SearchPwd02-Container">
+	<form action="/searchPwd02.ui" class="SearchPwd02-Container">
 	
 		<div class="SearchPwd02">
 
@@ -20,7 +20,7 @@
 			<div class="SearchPwd02-Verification">
 				<div class="SearchPwd02-main">
 					<img class="SearchPwd02-main-image"
-						src="http://localhost:8001/always5/resources/file/user_img/searchpwd02-img/2x.png" />
+						src="http://localhost:8001/always5/resources/file/user_img/SearchPwd02-img/2x.png" />
 				</div>
 			</div>
 
