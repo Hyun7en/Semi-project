@@ -16,20 +16,32 @@
 	font-family: 'Noto Sans KR', sans-serif;
 }
 
-body {
-	background-color: #FBFAF6;
+a {
+    text-decoration: none;
 }
 
-.SearchPwd {
-  position: relative;
-  background-color: #fbfaf6;
-  height: auto;
+body {
+	margin: 0px;
+	background-color: #FBFAF6;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+}
 
-  margin: 0 auto;
-  width: 754px;
-  padding: 80px;
-  padding-top: 40px;
-  padding-bottom: 120px;
+input:focus {outline: none;}
+
+/*background*/
+
+.SearchPwd-Container{
+	display: flex;
+    align-items: center;
+    justify-content: center;
+	background-color: #fbfaf6;
+	width: calc(100% - 48px);
+    height: auto;
+    margin: 24px;
+    box-sizing: border-box; 
+	
 }
 
 /* 로고 */
@@ -92,8 +104,7 @@ body {
   align-items: center;  
   background-color: #fffefe;
   border-radius: 8px;
-  border: 1px solid;
-  border-color: #b1a8a8;
+  border: 1px solid #b1a8a8;
 
   margin-top: 10px;
   width: 624px;

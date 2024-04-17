@@ -7,9 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<br><br>
-	
-	<h1 align="center" style="color:red"><%=request.getAttribute("errorMsg") %></h1>
-	
+    <%@ include file="WEB-INF/views/customerService/noti/csNoti.jsp" %>
 </body>
 </html>

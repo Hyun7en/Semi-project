@@ -83,6 +83,11 @@
         font-weight: 900;
     }
 
+    #section-2 > div > a:hover{
+        color: rgb(124, 124, 124);
+        scale: 1.08;
+    }
+
     #section-2 > div > .a2{
         margin-left: 20px;
     }
@@ -99,7 +104,7 @@
 
     #navi-2>li{
         float: left;
-        width: 100px;
+        width: 160px;
         height: 100%;
         display: flex;
         align-items: center;
@@ -117,6 +122,27 @@
         color: rgb(124, 124, 124);
         scale: 1.08;
     } 
+
+    .noti_box > div{
+        background: beige;
+        border: 1px solid lavenderblush;
+        height: 60px;
+        line-height: 30px;
+        border-radius: 10px;
+        margin-top: 20px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+    }
+
+    .noti_box > p{
+        display: none; 
+        border: 1px solid whitesmoke;
+        height: 100px;
+        border-radius: 10px;
+        padding: 10px;
+        /* box-sizing: border-box; */
+    }
 
     .qa_box > div{
         background: beige;

@@ -16,20 +16,37 @@
 	font-family: 'Noto Sans KR', sans-serif;
 }
 
+a {
+    text-decoration: none;
+}
+
 body {
+	margin: 0px;
 	background-color: #FBFAF6;
+	width: 100vw;
+	height: 100vh;
+}
+
+input:focus {outline: none;}
+
+/*background*/
+
+.SearchPwd02-Container{
+	display: flex;
+    align-items: center;
+    justify-content: center;
+	background-color: #fbfaf6;
+	width: calc(100% - 48px);
+    height: auto;
+    margin: 24px;
+    box-sizing: border-box; 
+	
 }
 
 .SearchPwd02 {
   position: relative;
   background-color: #fbfaf6;
-
-  width: 754px;
   height: auto;
-  margin: 0 auto;
-  padding: 80px;
-  padding-top: 40px;
-  padding-bottom: 120px;
 }
 
 [type="radio"] {
@@ -86,8 +103,7 @@ body {
 .SearchPwd02 .password-Verification {
   background-color: #fffefe;
   border-radius: 8px;
-  border: 1px solid;
-  border-color: #b1a8a8;
+  border: 1px solid #b1a8a8;
 
   margin-top: 50px;
   width: 754px;
@@ -232,9 +248,8 @@ body {
   font-weight: 400;
   color: black;
   border-radius: 8px;
-  border: 1px solid;
+  border: 1px solid #b1a8a8;
   background-color: #fbfaf6;
-  border-color: #b1a8a8;
 
   padding: 20px;
 }

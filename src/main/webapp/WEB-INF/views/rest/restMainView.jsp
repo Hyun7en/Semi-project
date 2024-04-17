@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="com.always5.review.rest.model.vo.Restaurant, com.always5.review.rest.model.vo.Menu"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,11 +19,9 @@
 <link rel="stylesheet" href="../../resources/css/rest_css/restMainView.css">
 <!-- <link rel="stylesheet" href="../../resources/js/restMainView.js"> -->
 <body>
-    <%@ include file="../common/header.jsp" %>
     <div id="wrap">
         <main>
             <div id="rest-img">
-                <!-- 가게 사진 출력 -->
                 <img src="../../resources/file/upfile/rest_upfile/rest202404042242.jpg" alt="">
             </div>
 
