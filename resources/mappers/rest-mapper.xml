@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  	<!-- <typeAliases>
+		<typeAlias type="com.always5.review.rest.model.vo.Rest" alias="Rest" />
+		<typeAlias type="com.always5.review.rest.model.vo.MenuCategory" alias="MenuCategory" />
+		<typeAlias type="com.always5.review.rest.model.vo.Review" alias="Review" />
+		<typeAlias type="com.always5.review.rest.model.vo.Menu" alias="Menu" />
+	</typeAliases> -->
+	<!-- <mappers>
+		<mapper resource="/mappers/rest-mapper.xml"/>
+	</mappers> -->
+<mapper namespace="restMapper">
+	<resultMap id="restResultSet" type="Rest">
+		<result column="REST_NO" property="restNo"/>
+		<result column="REST_NAME" property="restName"/>
+		<result column="REST_ADDRESS" property="restAddress"/>
+		<result column="REST_PHONE" property="restPhone"/>
+		<result column="REST_INTRO" property="restIntro"/>
+		<result column="REST_GRADE" property="restGrade"/>
+		<result column="LIKE_NO" property="likeNo"/>
+		<result column="REST_ENROLL_DATE" property="restEnrollDate"/>
+		<result column="REST_MODIFY_DATE" property="restModifyDate"/>
+		<result column="REST_OPER_TIME" property="restOperTime"/>
+		<result column="REST_STATUS" property="restStatus"/>
+		<result column="FOOD_CATEGORY_NAME" property="foodCategoryNo"/>
+	</resultMap>
+	<resultMap id="menuCategoryResultSet" type="MenuCategory">
+		<result column="MENU_CATEGORY_NO" property="restNo"/>
+		<result column="MENU_CATEGORY_" property="restName"/>
+	</resultMap>
+	<resultMap id="menuResultSet" type="Menu">
+		<result column="MENU_NO" property="menuNo"/>
+		<result column="MENU_NAME" property="menuName"/>
+		<result column="MENU_PRICE" property="menuName"/>
+		<result column="MENU_STATUS" property="menuName"/>
+		<result column="REST_NO" property="menuName"/>
+		<result column="MENU_NAME" property="menuName"/>
+	</resultMap>
+	<select id="selectRest" resultMap="restResultSet">
+		SELECT REST_NAME,
+			   REST_ADDRESS,
+			   REST_PHONE,
+			   REST_INTRO,
+			   REST_GRADE,
+			   LIKE_NO,
+			   REST_ENROLL_DATE,
+			   REST_MODIFY_DATE,
+			   REST_OPER_TIME,
+			   FOOD_CATEGORY_NAME
+		FROM REST_INFO
+		JOIN FOOD_CATEGORY USING (FOOD_CATEGORY_NO)
+		WHERE REST_NO = #{restNo}
+		AND REST_STATUS = 'Y'
+	</select>
+	<select id="selectMenuCategoryList" resultMap="menuCategoryResultSet">
+		SELECT MENU_NO,
+			   MENU_CATEGORY_NAME
+		FROM MENU
+		JOIN MENU_CATEGORY USING (MENU_CATEGORY_NO)
+		WHERE REST_NO = #{restNo}
+		AND REST_STATUS = 'Y'
+		AND MENU_STATUS = 'Y'
+	</select>
+	
+</mapper>

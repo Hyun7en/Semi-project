@@ -1,0 +1,334 @@
+@charset "UTF-8";
+
+@font-face {
+	font-family: 'WAGURITTF';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/2403@1.0/WAGURITTF.woff2')
+		format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@import
+	url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+* {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+	margin: 0px;
+	background-color: #FBFAF6;
+	width: 100vw;
+	height: 100vh;
+}
+
+input:focus {
+	outline: none;
+}
+
+/*background*/
+.updatePwd-Container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #fbfaf6;
+	width: calc(100% - 48px);
+	height: calc(100% - 48px);
+	margin: 24px;
+	box-sizing: border-box;
+}
+
+.updatePwd {
+	position: relative;
+	height: auto;
+	width: max-content;
+}
+
+/*끄기 아이콘*/
+.updatePwd .logo {
+	position: absolute;
+	right: 5px;
+	top: 20px;
+	width: 50px;
+	height: 50px;
+}
+
+/* 상단 텍스트 */
+.updatePwd .id-preview {
+	width: 100px;
+	margin-top: 80px;
+}
+
+.updatePwd .id-UserName {
+	float: left;
+	font-weight: 500;
+	color: #000000;
+	font-size: 30px;
+	letter-spacing: 0;
+	line-height: normal;
+	width: 100px;
+}
+
+.updatePwd .id-UserName-text01 {
+	font-weight: 300;
+	color: #000000;
+	font-size: 25px;
+	letter-spacing: 0;
+	line-height: normal;
+	padding-top: 5px;
+	width: 300px;
+}
+
+.updatePwd .id-UserName-text02 {
+	clear: both;
+	position: relative;
+	font-weight: 300;
+	color: #000000;
+	font-size: 25px;
+	line-height: normal;
+	width: 604px;
+	margin: 5px;
+	margin-left: 0px;
+}
+
+/* 구분선 */
+.updatePwd .line-pass {
+	margin: 15px 0px;
+	width: 100%;
+	height: 1px;
+}
+
+/* 이메일 입력 */
+.email-preview {
+	width: 100px;
+	padding-bottom: 20px;
+}
+
+.updatePwd .mdi-email-icon {
+	width: 50px;
+	height: 50px;
+	float: left;
+}
+
+.updatePwd .user-email {
+	font-weight: 300;
+	color: #000000;
+	font-size: 15px;
+	letter-spacing: 0;
+	padding-top: 15px;
+	width: 250px;
+}
+
+.updatePwd .input-email-box {
+	clear: both;
+	display: flex;
+	align-items: center;
+	background-color: #fffefe;
+	border-radius: 8px;
+	border: 1px solid #b1a8a8;
+	margin-top: 10px;
+	width: 624px;
+	height: 40px;
+}
+
+.updatePwd .input-email-text {
+	position: relative;
+	font-weight: 300;
+	color: #b0a4a4;
+	letter-spacing: 0;
+	line-height: normal;
+	padding-top: 0px;
+	padding-left: 10px;
+	width: auto;
+}
+
+.updatePwd .input-email {
+	border: none;
+	background-color: #fffefe;
+	color: #b0a4a4;
+	width: 325px;
+	height: 20px;
+}
+
+.updatePwd .input-email-checkbox {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #d9d9d9;
+	border-radius: 8px;
+	border: 1px solid #b1a8a8;
+	width: 65px;
+	height: 28px;
+	margin-left: 200px;
+}
+
+.updatePwd .input-email-checkbox-text {
+	font-weight: 400;
+	color: #ffffff;
+	font-size: 15px;
+	letter-spacing: 0;
+	line-height: normal;
+}
+
+/* 주의사항 안내 */
+.updatePwd .service-preview {
+	font-weight: 400;
+	color: #b0a4a4;
+	font-size: 15px;
+	letter-spacing: 0;
+	line-height: normal;
+	width: 624px;
+	padding-top: 10px;
+	padding-bottom: 20px;
+}
+
+/*전화번호 인증*/
+.updatePwd .phone-title {
+	font-weight: 500;
+	font-size: 20px;
+	line-height: normal;
+	width: 200px;
+	margin-bottom: 30px;
+}
+
+/*전화번호 입력*/
+.updatePwd .input-phone-box {
+	clear: both;
+	display: flex;
+	align-items: center;
+	background-color: #fffefe;
+	border-radius: 8px;
+	border: 1px solid #b1a8a8;
+	margin-top: 10px;
+	width: 624px;
+	height: 40px;
+}
+
+.updatePwd .input-phone-text {
+	position: relative;
+	font-weight: 300;
+	color: #b0a4a4;
+	letter-spacing: 0;
+	line-height: normal;
+	padding-top: 0px;
+	padding-left: 10px;
+	width: auto;
+}
+
+.updatePwd .input-phone {
+	border: none;
+	background-color: #fffefe;
+	color: #b0a4a4;
+	width: 325px;
+	height: 20px;
+}
+
+.updatePwd .input-phone-checkbox {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #d9d9d9;
+	border-radius: 8px;
+	border: 1px solid #929292;
+	width: 65px;
+	height: 28px;
+	margin-left: 200px;
+}
+
+.updatePwd .input-phone-checkbox-text {
+	font-weight: 400;
+	color: #ffffff;
+	font-size: 15px;
+	letter-spacing: 0;
+	line-height: normal;
+}
+
+/*휴대전화 인증번호 입력*/
+.updatePwd .input-phone-box2 {
+	clear: both;
+	display: flex;
+	align-items: center;
+	background-color: #fffefe;
+	border-radius: 8px;
+	border: 1px solid #b1a8a8;
+	margin-top: 10px;
+	width: 624px;
+	height: 40px;
+}
+
+.updatePwd .input-phone-text2 {
+	position: relative;
+	font-weight: 300;
+	color: #b0a4a4;
+	letter-spacing: 0;
+	line-height: normal;
+	padding-top: 0px;
+	padding-left: 10px;
+	width: auto;
+}
+
+.updatePwd .input-phone2 {
+	border: none;
+	background-color: #fffefe;
+	color: #b0a4a4;
+	width: 325px;
+	height: 20px;
+}
+
+.updatePwd .input-phone-checkbox2 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #d9d9d9;
+	border-radius: 8px;
+	border: 1px solid #b1a8a8;
+	width: 65px;
+	height: 28px;
+	margin-left: 200px;
+}
+
+.updatePwd .input-phone-checkbox-text2 {
+	font-weight: 400;
+	color: #ffffff;
+	font-size: 15px;
+	letter-spacing: 0;
+	line-height: normal;
+}
+
+/* 변경 */
+.updatePwd .updatePwd-checkbox {
+	background-color: #164066;
+	border-radius: 8px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 20px;
+	width: 625px;
+	height: 60px;
+}
+
+.updatePwd .updatePwd-checkbox-title {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 20px;
+	font-weight: 400;
+	color: #ffffff;
+}
+
+@media screen and (min-width:576px) { /* 스마트폰 가로 */
+}
+
+@media screen and (min-width:768px) { /* 타블렛 */
+}
+
+@media screen and (min-width:992px) { /* 데스크탑 */
+}
+
+@media screen and (min-width:1200px) { /* 큰 데스크탑 */
+}
