@@ -1,12 +1,21 @@
 package com.always5.admin.service;
 
-import com.always5.common.vo.PageInfo;
+import java.sql.Connection;
 
-public interface AdminService {
+import com.always5.review.rest.model.dao.RestDao;
 
-	public int selectRest();
+public class AdminService {
+	public int selectListCount() {
+		Connection conn = getConnection();
+		
+		int listCount = new RestDao().selectListCount(conn);
+		close(conn);
+		
+		return listCount;
+	}
 
-	int selectRest(PageInfo pi);
-
-	
+	private Connection getConnection() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
