@@ -31,7 +31,6 @@
 			   REST_ADDRESS,
 			   REST_INTRO
 		FROM REST_INFO
-		WHERE REST_STATUS = 'Y'
 	</select>
 
 	<select id="searchListCount" resultType="_int">
