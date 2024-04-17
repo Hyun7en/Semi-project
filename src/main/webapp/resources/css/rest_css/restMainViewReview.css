@@ -5,22 +5,6 @@
     background-color: #FAF7F7;
 }
 
-#rest-review{
-    border: 1px solid #B1A8A8;
-    background-color: #FAF7F7;
-    width: 100%;
-    height: auto;
-    padding: 20px 40px;
-    display: flex;
-    flex-direction: column;
-}
-#rest-review *{
-    margin: 0px;
-}
-#rest-review>*{
-    margin: 20px auto;
-}
-
 .rest-review-title{
     background-color: white;
     border: 1px solid #B1A8A8;

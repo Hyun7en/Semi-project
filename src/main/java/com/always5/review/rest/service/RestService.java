@@ -15,5 +15,5 @@ public interface RestService {
 	public Dibs selectDibsForUserNo(Dibs dibsInfo);
 	public ArrayList<Review> selectReviewList(int restNo);
 	public ArrayList<Integer> selectRatingCount(int restNo);
-	public int operateRating(int restNo);
+	public double operateRating(int restNo);
 }

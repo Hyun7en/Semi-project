@@ -9,6 +9,7 @@
 		<result column="REST_ADDRESS" property="restAddress"/>
 		<result column="REST_PHONE" property="restPhone"/>
 		<result column="REST_INTRO" property="restIntro"/>
+		<result column="REST_GRADE" property="restGrade"/>
 		<result column="LIKE_NO" property="restLikeNo"/>
 		<result column="REST_ENROLL_DATE" property="restEnrollDate"/>
 		<result column="REST_MODIFY_DATE" property="restModifyDate"/>
@@ -43,7 +44,7 @@
 		<result column="IMG_LIST_NO" property="fileNo"/>
 		<result column="IMG" property="changeName"/>
 		<result column="IMG_URL" property="filePath"/>
-		<result column="REVIEW_NO" property="reviewEnrollDate"/>
+		<result column="REVIEW_NO" property="reviewNo"/>
 		<result column="REST_NO" property="restNo"/>
 	</resultMap>
 	
@@ -53,10 +54,12 @@
 	</resultMap> -->
 	
 	<select id="selectRest" resultMap="restResultSet">
-		SELECT REST_NAME,
+		SELECT REST_NO,
+			   REST_NAME,
 			   REST_ADDRESS,
 			   REST_PHONE,
 			   REST_INTRO,
+			   REST_GRADE,
 			   LIKE_NO,
 			   REST_ENROLL_DATE,
 			   REST_MODIFY_DATE,

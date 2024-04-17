@@ -12,7 +12,7 @@
     height: auto;
     padding: 20px 40px;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
 }
 
 #rest-menu *{

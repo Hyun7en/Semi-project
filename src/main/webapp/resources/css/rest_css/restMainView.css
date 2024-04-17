@@ -1,5 +1,5 @@
 *{
-    border: 1px solid #B1A8A8;
+    /* border: 1px solid #B1A8A8; */
 }
 #wrap{
     border: 1px solid #B1A8A8;
@@ -76,6 +76,9 @@ main{
     font-size: 15px;
     margin-bottom: 40px;
     margin-left: 0px;
+    /* text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden; */
 }
 
 #rest-detail{
@@ -119,21 +122,21 @@ main{
     bottom: 0px;
 }
 
-#rest-content{
+#rest-detail-page{
     height: auto;
 }
 
-#rest-content *{
+#rest-detail-page *{
     margin: 0px;
 }
 
-#rest-content>div{
+#rest-detail-page>div{
     /* border: 1px solid #B1A8A8; */
     display: flex;
     justify-content: center;
 }
 
-.rest-content-name{
+.rest-detail-page-name{
     background-color: white;
     border: 1px solid #B1A8A8;
     border-bottom: none;
@@ -146,8 +149,25 @@ main{
     align-items: center;
 }
 
-.rest-content-name:hover{
+.rest-detail-page-name:hover{
     background-color: #D9D9D9;
+}
+
+#rest-detail-page-content{
+    border: 1px solid #B1A8A8;
+    background-color: #FAF7F7;
+    width: 100%;
+    height: auto;
+    padding: 20px 40px;
+    display: flex; 
+    flex-direction: column;
+}
+
+#rest-detail-page-content *{
+    margin: 0px;
+}
+#rest-detail-page-content>*{
+    margin: 20px auto;
 }
 
 .more-content{
