@@ -18,7 +18,7 @@
                 <main>
                     <section class="search-nav" style="padding: 0px;">
                         <div>
-                        	<a>
+                        	<a href="searchKinds.sc?rpage=한식">
                         		<img src="${pageContext.request.contextPath}/resources/file/search_img/kindsKorean.png"
                                 alt="">
                             	<p>한식</p>
