@@ -34,5 +34,7 @@
 
 	<mappers>
 	   <mapper resource="/mappers/cs-mapper.xml"/>	
+	   <mapper resource="/mappers/user-mapper.xml"/>	
+
 	</mappers>
 </configuration>
