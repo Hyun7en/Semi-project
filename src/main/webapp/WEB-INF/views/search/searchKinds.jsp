@@ -121,16 +121,17 @@
                             success: function(han){
 
                                 let str =  "<div>" +
-                                "<div class='search-best-crownSmall'>" +
-                                "<img src='https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp' alt=''>" +
-                                "<img id='smallCrown' src='" + sr.contextPath + "/resources/file/search_img/searchCrownSmall.png' alt=''>" +
-                            "</div>" +
-                            "<div>" +
-                                "<p class='res-name'><span><b>" + sr.restName + "</b></span><span>&nbsp;&nbsp;</span></p>" +
-                                "<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;" + sr.restAddress + "</span></p>" +
-                                "<p class='res-explain'><b>" + sr.restIntro + "</b></p>" +
-                            "</div>" +
-                            "</div>";
+			                                "<div class='search-best-crownSmall'>" +
+			                                "<img src='https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp' alt=''>" +
+			                                "<img id='smallCrown' src='" + sr.contextPath + "/resources/file/search_img/searchCrownSmall.png' alt=''>" +
+				                            "</div>" +
+				                            "<div>" +
+			                                "<p class='res-name'><span><b>" + sr.restName + "</b></span><span>&nbsp;&nbsp;</span></p>" +
+			                                "<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;" + sr.restAddress + "</span></p>" +
+			                                "<p class='res-explain'><b>" + sr.restIntro + "</b></p>" +
+				                            "</div>" +
+				                            "</div>";
+				                            
                                 for(let sr of han){
                                 	
                                 	str += "<div>" +
