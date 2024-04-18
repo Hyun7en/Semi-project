@@ -58,7 +58,7 @@
                 </c:if> -->
                             <img src="${pageContext.request.contextPath}/resources/file/common_img/찜_선택전.png"
                                 alt="">
-                            <div>${rest.restLikeNo}</div>
+                            <div>${rest.likeNo}</div>
                         </div>
                     </div>
                 </div>
@@ -116,18 +116,7 @@
                     <button class="rest-detail-page-name" onclick="detailPage(3)">사진</button>
                 </div>
 
-                <div id="rest-detail-page-content" >
-                    <!-- ajax로 데이터 넘겨 받아 그릴 것 -->
-                    <!-- jsp:include page="restMainViewReview.jsp"/jsp:include -->
-                </div>
-
-
-                <!-- 
-        if test detailPage eq 'review'
-        jsp include page = restMainViewReview.jsp
-        EL 구문은 서버를 다녀오므로 이미 한 번 서버를 다녀온 이상 데이터가 바뀔 수 없음
-        EL로 include 하고 싶다면 비동기를 포기해야 함, 서버를 다시 다녀와야 하므로 페이지가 바뀌기 때문에
-    -->
+                <div id="rest-detail-page-content" value=""></div>
             </div>
 
             <script>
@@ -157,7 +146,7 @@
                                 url: "detailMenu.re",
                                 data: { restNo: restNo },
                                 success: function (menuList) {
-                                    if (reviewList[0] != null){
+                                    if (menuList[0] != null){
                                         restMenuContentDraw(menuList);
                                     } else {
                                         noRestContentDraw("등록된 메뉴가 없습니다.");
@@ -173,7 +162,11 @@
                                 url: "detailImg.re",
                                 data: { restNo: restNo },
                                 success: function (imgList) {
-                                    restImageContentDraw(imgList);
+                                    if (imgList[0] != null){
+                                        restImageContentDraw(imgList);
+                                    } else {
+                                        noRestContentDraw("등록된 사진이 없습니다.");
+                                    }
                                 },
                                 error: function () {
                                     errorRestContentDraw("정보를 불러오는데 실패 했습니다.");
@@ -230,23 +223,23 @@
                                                     </div>
                                                 </div>`
 
-                    for (let review of reviewList) {
+                    for (let num in reviewList) {
                         str += `<div class="rest-review-content">
                                 <!-- 리뷰 작성자, 등급, 날짜 -->
                                 <div id="review-content-title">
                                     <div>
-                                        <h2>`+review.userNo+`</h2>
+                                        <h2>`+reviewList[num].userNo+`</h2>
                                     </div>
-                                    <p>`+review.reviewEnrollDate+`</p>
+                                    <p>`+reviewList[num].reviewEnrollDate+`</p>
                                 </div>
             
                                 <hr>
             
                                 <!-- 리뷰 평점 -->
                                 <div id="review-content-crown">
-                                    <p>평점 `+review.reviewRating+`</p>
+                                    <p>평점 `+reviewList[num].reviewRating+`</p>
                                 <div>`
-                        for(let i = 0; i < review.reviewRating; i++){
+                        for(let i = 0; i < reviewList[num].reviewRating; i++){
                             str += `<img src="${pageContext.request.contextPath}/resources/file/common_img/왕관 컬러.png" alt="">`
                         }
                         str += `</div>
@@ -254,25 +247,54 @@
                                 <!-- 리뷰 사진 -->
                                 <div id="review-content-image">`
 
-                        for (let reviewAt of review.reviewAtList) {
+                        for (let reviewAt of reviewList[num].reviewAtList) {
                             str += `<img src="${pageContext.request.contextPath}/`+reviewAt.filePath+`/`+reviewAt.changeName+`.jpg" alt="">`
                         }
                         str += `</div>
-                                <p>`+review.reviewContent+`</p>
+                                <p>`+reviewList[num].reviewContent+`</p>
                             </div>
                         </div>`
+                        
+                        if(num == 1){
+                            str += `<div class="more-content" onclick="goToReviewView()">더보기</div>`
+                            break;
+                        }
                     }
 
                     document.querySelector("#rest-detail-page-content").innerHTML = str;
                 }
 
                 function restMenuContentDraw(menuList) {
-                    const str = ``
+                    let str = "";
+                    str += `<div id="rest-menu-content">
+                            <table>`
+                                let num = 0;
+                                for (let i = 0; i < (menuList.length + 1) / 2; i++){
+                                    str += `<tr>
+                                        <td class="menu-name">`+menuList[num].menuName+`</td>
+                                        <td class="menu-price">`+menuList[num].menuPrice+`</td>`
+                                    if ((num != menuList.length - 1) && (num < menuList.length)){
+                                        str += `<td class="menu-margin"></td>
+                                                <td class="menu-name">`+menuList[num+1].menuName+`</td>
+                                                <td class="menu-price">`+menuList[num+1].menuPrice+`</td>`
+                                    }
+                                    num += 2;
+                                    str += `</tr>`
+                                }
+                            str += `</table>
+                        </div>`
                     document.querySelector("#rest-detail-page-content").innerHTML = str;
                 }
 
                 function restImageContentDraw(imgList) {
-                    const str = ``
+                    let str = "";
+                    str += `<div id="rest-image-content">
+                                <div>`
+                                    for(let img of imgList){
+                                        str += `<img src="${pageContext.request.contextPath}/`+img.filePath+`/`+img.changeName+`.jpg" alt="">`
+                                    }
+                                str += `</div>
+                            </div>`
                     document.querySelector("#rest-detail-page-content").innerHTML = str;
                 }
 
@@ -288,6 +310,10 @@
 
                 // 페이지 첫 로딩 시 리뷰 디테일 페이지 출력
                 window.onload(detailPage(1));
+
+                function goToReviewView(){
+                    location.href = "${pageContext.request.contextPath}/review.re";
+                }
             </script>
         </main>
     </div>

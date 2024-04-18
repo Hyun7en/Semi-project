@@ -1,4 +1,4 @@
-package com.kh.board.controller;
+package com.always5.review.rest.controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -9,20 +9,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.kh.board.model.vo.Board;
-import com.kh.board.service.BoardService;
+import com.always5.common.vo.Attachment;
+import com.always5.review.rest.service.RestServiceImpl;
+import com.google.gson.Gson;
 
 /**
- * Servlet implementation class ThumbnailListController
+ * Servlet implementation class RestDetailImageController
  */
-@WebServlet("/list.th")
-public class ThumbnailListController extends HttpServlet {
+@WebServlet("/detailImg.re")
+public class RestDetailImageController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ThumbnailListController() {
+    public RestDetailImageController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,12 +32,12 @@ public class ThumbnailListController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//thumbnailList 전부 가져와 넘겨줘야한다
-	
-		ArrayList<Board> list = new BoardService().selectThumbnailList();
+		int restNo = Integer.parseInt(request.getParameter("restNo"));
 		
-		request.setAttribute("list", list);
-		request.getRequestDispatcher("views/board/thumbnailListView.jsp").forward(request, response);
+		ArrayList<Attachment> list = new RestServiceImpl().selectAttachmentList(restNo);
+		
+		response.setContentType("application/json; charset=utf-8");
+		new Gson().toJson(list, response.getWriter());
 	}
 
 	/**

@@ -1,8 +1,8 @@
 package com.always5.review.rest.service;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
+import com.always5.common.vo.Attachment;
 import com.always5.review.model.vo.Review;
 import com.always5.review.rest.model.vo.Menu;
 import com.always5.review.rest.model.vo.Restaurant;
@@ -17,4 +17,5 @@ public interface RestService {
 	public ArrayList<Integer> selectRatingCount(int restNo);
 	public double operateRating(int restNo);
 	public ArrayList<Menu> selectMenuList(int restNo);
+	public ArrayList<Attachment> selectAttachmentList(int restNo);
 }

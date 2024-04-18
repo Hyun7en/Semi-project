@@ -114,6 +114,17 @@ public class RestServiceImpl implements RestService{
 		return menuList;
 	}
 
+	@Override
+	public ArrayList<Attachment> selectAttachmentList(int restNo) {
+		SqlSession sqlSession = Template.getSqlSession();
+		ArrayList<Attachment> list = new ArrayList<>();
+		list.addAll(new RestDao().selectRestAttachmentList(sqlSession, restNo));
+		list.addAll(new RestDao().selectReviewAttachmentList(sqlSession, restNo));
+		
+		sqlSession.close();
+		return list;
+	}
+
 //	@Override
 //	public ArrayList<Attachment> selectRestAttachmentList(int restNo) {
 //		SqlSession sqlSession = Template.getSqlSession();
