@@ -1,6 +1,9 @@
 package com.always5.review.rest.model.vo;
 
 import java.sql.Date;
+import java.util.ArrayList;
+
+import com.always5.common.vo.Attachment;
 
 public class Restaurant {
 	
@@ -10,14 +13,14 @@ public class Restaurant {
 	private String restPhone;
 	private String restIntro;
 	private String restGrade;
+	private String restLikeNo;
 	private String likeNo;
 	private Date restEnrollDate;
 	private Date restModifyDate;
 	private String restOperDate;
 	private String restStatus;
 	private String foodCategoryNo;
-	
-	
+	private ArrayList<Attachment> restAtList;
 	
 	public Restaurant() {
 		super();
@@ -26,8 +29,10 @@ public class Restaurant {
 
 
 	public Restaurant(int restNo, String restName, String restAddress, String restPhone, String restIntro,
+			String restGrade, String restLikeNo, Date restEnrollDate, Date restModifyDate, String restOperDate,
 			String restGrade, String likeNo, Date restEnrollDate, Date restModifyDate, String restOperDate,
-			String restStatus, String foodCategoryNo) {
+			String restStatus, String foodCategoryNo, ArrayList<Attachment> restAtList) {
+
 		super();
 		this.restNo = restNo;
 		this.restName = restName;
@@ -35,12 +40,14 @@ public class Restaurant {
 		this.restPhone = restPhone;
 		this.restIntro = restIntro;
 		this.restGrade = restGrade;
+		this.restLikeNo = restLikeNo;
 		this.likeNo = likeNo;
 		this.restEnrollDate = restEnrollDate;
 		this.restModifyDate = restModifyDate;
 		this.restOperDate = restOperDate;
 		this.restStatus = restStatus;
 		this.foodCategoryNo = foodCategoryNo;
+		this.restAtList = restAtList;
 	}
 
 
@@ -116,12 +123,16 @@ public class Restaurant {
 	}
 
 
+	public String getRestLikeNo() {
+		return restLikeNo;
 
 	public String getLikeNo() {
 		return likeNo;
 	}
 
 
+	public void setRestLikeNo(String restLikeNo) {
+		this.restLikeNo = restLikeNo;
 
 	public void setLikeNo(String likeNo) {
 		this.likeNo = likeNo;
@@ -188,18 +199,25 @@ public class Restaurant {
 	}
 
 
+	public ArrayList<Attachment> getRestAtList(){
+		return restAtList;
+	}
+	
+	public void setRestAtList(ArrayList<Attachment> restAtList) {
+		this.restAtList = restAtList;
+	}
+
+
 
 	@Override
 	public String toString() {
 		return "Restaurant [restNo=" + restNo + ", restName=" + restName + ", restAddress=" + restAddress
+				+ ", restPhone=" + restPhone + ", restIntro=" + restIntro + ", restGrade=" + restGrade + ", restLikeNo="
+				+ restLikeNo + ", restEnrollDate=" + restEnrollDate + ", restModifyDate=" + restModifyDate
 				+ ", restPhone=" + restPhone + ", restIntro=" + restIntro + ", restGrade=" + restGrade + ", likeNo="
 				+ likeNo + ", restEnrollDate=" + restEnrollDate + ", restModifyDate=" + restModifyDate
 				+ ", restOperDate=" + restOperDate + ", restStatus=" + restStatus + ", foodCategoryNo=" + foodCategoryNo
 				+ "]";
 	}
-	
-	
-	
-	
 }
 	
