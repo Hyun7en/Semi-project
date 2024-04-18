@@ -105,6 +105,15 @@ public class RestServiceImpl implements RestService{
 		return Math.round(totalRating / count);
 	}
 
+	@Override
+	public ArrayList<Menu> selectMenuList(int restNo) {
+		SqlSession sqlSession = Template.getSqlSession();
+		ArrayList<Menu> menuList = new RestDao().selectMenuList(sqlSession, restNo);
+		
+		sqlSession.close();
+		return menuList;
+	}
+
 //	@Override
 //	public ArrayList<Attachment> selectRestAttachmentList(int restNo) {
 //		SqlSession sqlSession = Template.getSqlSession();
@@ -123,13 +132,7 @@ public class RestServiceImpl implements RestService{
 //		return reviewAtList;
 //	}
 	
-//	public ArrayList<Menu> selectMenuList(int restNo) {
-//		SqlSession sqlSession = Template.getSqlSession();
-//		ArrayList<Menu> list = new RestDao().selectMenu(sqlSession, restNo);
-//		
-//		sqlSession.close();
-//		return menu;
-//	}
+	
 	
 	
 

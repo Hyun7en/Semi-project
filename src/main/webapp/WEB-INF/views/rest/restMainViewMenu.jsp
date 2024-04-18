@@ -10,6 +10,20 @@
 <body>
     <div id="rest-menu-content">
         <table>
+            <c:forEach var="r" items="${menuList}">
+                <!-- tr은 (menuList length + 1) / 2 만큼 반복해서 그리기 -->
+                <!-- tr 안의 메뉴는 -->
+                <tr>
+
+                </tr>
+            </c:forEach>
+            
+            for(int i = 0; i < (menuList.length() + 1) / 2; i++){
+                <tr>
+                    
+                </tr>
+            }
+
             <tr>
                 <td class="menu-name">정말정말 맛있는 왕밥빵</td>
                 <td class="menu-price">10000원</td>

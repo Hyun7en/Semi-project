@@ -113,7 +113,7 @@
 			   IMG,
 			   IMG_URL
 		FROM IMG_LIST
-		WHERE REST_NO = #{restNo}
+		WHERE REVIEW_NO = #{reviewNo}
 	</select>
 	
 	<select id="selectRatingCount" resultType="_int">
@@ -122,21 +122,28 @@
 		WHERE REST_NO = #{restNo}
 		AND REVIEW_STATUS = 'Y'
 		<choose>
-			<when test="ratingCount == '1'">
+		<!-- number 형태라서 ratingCount가 맞는 게 없어서 AND 조건이 실행이 하나도 안 돼서 다 7개 뜬 것 -->
+			<when test="ratingCount == 1">
 				AND REVIEW_RATING = 1
 			</when>
-			<when test="ratingCount == '2'">
+			<when test="ratingCount == 2">
 				AND REVIEW_RATING = 2
 			</when>
-			<when test="ratingCount == '3'">
+			<when test="ratingCount == 3">
 				AND REVIEW_RATING = 3
 			</when>
-			<when test="ratingCount == '4'">
+			<when test="ratingCount == 4">
 				AND REVIEW_RATING = 4
 			</when>
-			<when test="ratingCount == '5'">
+			<when test="ratingCount == 5">
 				AND REVIEW_RATING = 5
 			</when>
 		</choose>
+	</select>
+	<select id="selectMenuList" resultMap="menuResultSet">
+		SELECT MENU_NAME,
+			   MENU_PRICE
+		FROM MENU
+		WHERE REST_NO = #{restNo}
 	</select>
 </mapper>

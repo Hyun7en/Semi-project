@@ -32,16 +32,16 @@ public class RestDao {
 		return (ArrayList)sqlSession.selectList("restMapper.selectReviewList", restNo);
 	}
 	
-	public ArrayList<Attachment> selectReviewAttachmentList(SqlSession sqlSession, int restNo){
-		return (ArrayList)sqlSession.selectList("restMapper.selectReviewAttachmentList", restNo);
+	public ArrayList<Attachment> selectReviewAttachmentList(SqlSession sqlSession, int reviewNo){
+		return (ArrayList)sqlSession.selectList("restMapper.selectReviewAttachmentList", reviewNo);
 	}
 	
 	public int selectRatingCount(SqlSession sqlSession, HashMap<String, Integer> map) {
 		return sqlSession.selectOne("restMapper.selectRatingCount", map);
 	}
 	
-//	public ArrayList<Menu> selectMenuList(SqlSession sqlSession, int restNo) {
-//		return (ArrayList)sqlSession.selectList("restMapper.selectMenuList", restNo);
-//	}
+	public ArrayList<Menu> selectMenuList(SqlSession sqlSession, int restNo) {
+		return (ArrayList)sqlSession.selectList("restMapper.selectMenuList", restNo);
+	}
 
 }

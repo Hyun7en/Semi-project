@@ -16,4 +16,5 @@ public interface RestService {
 	public ArrayList<Review> selectReviewList(int restNo);
 	public ArrayList<Integer> selectRatingCount(int restNo);
 	public double operateRating(int restNo);
+	public ArrayList<Menu> selectMenuList(int restNo);
 }
