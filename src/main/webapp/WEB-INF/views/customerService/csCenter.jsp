@@ -54,8 +54,8 @@
         </section>
         <section id="section-2">
             <div>
-                <a  href="#" onclick="return false" class="fcode" id="f0">공지사항</a>
-                <a  href="#" onclick="return false" class="fcode" id="f1">자주하는 질문</a>
+                <a href="#" onclick="return false" class="fcode" id="f0">공지사항</a>
+                <a href="#" onclick="return false" class="fcode" id="f1">자주하는 질문</a>
             </div>
 
             <script type="text/javascript">
@@ -73,7 +73,7 @@
                       data: {"fcode": fcode},
                       dataType: "TEXT",
                       success: function() {
-                        // 추후에 코드 추가
+                       
                       }, 
                       error: function(request, status, error) {
                         console.log("code: "+request.status+"\n"+"message : "+request.responseText+"\n"+"error: "+error);
