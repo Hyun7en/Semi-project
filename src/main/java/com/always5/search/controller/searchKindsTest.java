@@ -31,9 +31,12 @@ public class searchKindsTest extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int restNo = Integer.parseInt(request.getParameter("rpage"));
+//		int restNo = Integer.parseInt(request.getParameter("rpage"));
+//		
+//		ArrayList<Restaurant> list = new SearchService().test(restNo);
 		
-		ArrayList<Restaurant> list = new SearchService().test(restNo);
+		ArrayList<Restaurant> list = new SearchService().test();
+		request.setAttribute("list", list);
 		
 		response.setContentType("application/json; charset=UTF-8");
 		new Gson().toJson(list, response.getWriter());

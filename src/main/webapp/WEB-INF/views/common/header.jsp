@@ -37,7 +37,7 @@
         <!-- nav -->
         <nav id="nav-1">
                 <ul id="navi-1">
-                    <li><a onclick="searchKinds.sc">음식별</a></li>
+                    <li><a onclick="location.href='searchKinds.sc?rpage=1'">음식별</a></li>
                     <li><a onclick="location.href='searchMenu.sc?rpage=1'">메뉴별</a></li>
                     <li><a onclick="location.href='searchRegion.sc?rpage=1'">지역별</a></li>
                     <li><a href="#">고객센터</a></li>

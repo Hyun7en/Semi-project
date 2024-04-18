@@ -27,7 +27,8 @@
 		<result column="FOOD_CATEGORY_NAME" property="foodCategoryNo"/>
 	</resultMap>
 	<select id="selectSearchRest" resultMap="restResultSet">
-		SELECT REST_NAME,
+		SELECT REST_NO,
+			   REST_NAME,
 			   REST_ADDRESS,
 			   REST_INTRO
 		FROM REST_INFO

@@ -29,9 +29,9 @@ public class SearchService {
 		return restCount;
 	}
 	
-	public ArrayList<Restaurant> test(int restNo){
+	public ArrayList<Restaurant> test(){
 		SqlSession sqlSession = Template.getSqlSession();
-		ArrayList<Restaurant> list = new SearchDao().test(sqlSession, restNo);
+		ArrayList<Restaurant> list = new SearchDao().test(sqlSession);
 		sqlSession.close();
 		return list;
 		
