@@ -1,6 +1,7 @@
 package com.always5.admin.restboard.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.always5.admin.restboard.service.AdminRestService;
-import com.always5.common.vo.Attachment;
+import com.always5.admin.restboard.service.AdminRestServiceImpl;
 import com.always5.review.rest.model.vo.Restaurant;
 
 /**
@@ -33,19 +34,16 @@ public class AdminRestDetailController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int restNo = Integer.parseInt(request.getParameter("rno"));
 		
-		AdminRestService rService = new AdminRestService();
-		
-		Restaurant r = new AdminRestService().increaseCount(restNo);
-		
-		if (r != null) {
-			Attachment at = rService.selectAttachment(restNo);
+		AdminRestService bService = new AdminRestServiceImpl();
+		//조회수 증가 + 상세조회
+		Restaurant r = new AdminRestServiceImpl().increaseCount(restNo);
+	
+		if(r != null) {
 			
-			request.setAttribute("attachment", at);
-			request.setAttribute("board", r);
-			request.getRequestDispatcher("views/board/boardDetailView.jsp").forward(request, response);
+			request.getRequestDispatcher("WEB-INF/views/board/boardDetailView.jsp").forward(request, response);
 		} else {
-			request.setAttribute("errorMsg", "게시글 조회 실패");
-			request.getRequestDispatcher("views/common/errorPage.jsp").forward(request, response);
+			request.setAttribute("errorMsg", "상세조회 실패");
+			request.getRequestDispatcher("WEB-INF/views/common/errorPage.jsp").forward(request, response);
 		}
 	
 	}
