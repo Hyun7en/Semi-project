@@ -16,10 +16,11 @@
 	font-family: 'Noto Sans KR', sans-serif;
 }
 
+/*a태그 */
 a {
-    text-decoration: none;
+	text-decoration-line: none;
+	color: #b1a8a8;
 }
-
 body {
 	margin: 0px;
 	background-color: #FBFAF6;

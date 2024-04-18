@@ -4,21 +4,23 @@ import com.always5.user.model.vo.User;
 
 public interface UserService {
 	// 로그인
-	User loginUser(User u);
+	public abstract User loginUser(User u);
 
 	// 회원가입
-	int insertUser(User u);
+	public abstract int insertUser(User u);
 
 	// 회원탈퇴
-	int deleteUser(User u);
+	public abstract int deleteUser(User u);
 
-	// 회원정보수정
-	int updateUser(User u);
+	// 아이디 수정
+	public abstract User updateUserID(User u);
 
-	// 비밀번호 변경
-	User updatePwdUser(User u);
+	// 비밀번호 수정
+	public abstract User updateUserPwd(User u);
 
-	// 아이디 찾기
-	User updateIdUser(User u);
+	// 닉네임 수정
+	public abstract User updateUserNickName(User u);
 	
+	// 회원 정보 수정
+	public abstract User updateUser(User u);
 }
