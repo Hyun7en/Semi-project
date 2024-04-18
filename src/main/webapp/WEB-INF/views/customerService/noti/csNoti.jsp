@@ -60,10 +60,10 @@
 
             <nav id="nav-2">
                 <ul id="navi-2">
-                    <li><a href="#">전체</a></li>
-                    <li><a href="#">중요공지</a></li>
-                    <li><a href="#">일반공지</a></li>
-                    <li><a href="#">이벤트 공지</a></li>
+                    <li><a href="#" onclick="return false" class="fcode" id="f1">전체</a></li>
+                    <li><a href="#" onclick="return false" class="fcode" id="f2">중요공지</a></li>
+                    <li><a href="#" onclick="return false" class="fcode" id="f3">일반공지</a></li>
+                    <li><a href="#" onclick="return false" class="fcode" id="f4">이벤트 공지</a></li>
                 </ul>                    
             </nav>
 

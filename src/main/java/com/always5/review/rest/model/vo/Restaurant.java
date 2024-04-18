@@ -14,6 +14,7 @@ public class Restaurant {
 	private String restIntro;
 	private String restGrade;
 	private String restLikeNo;
+	private String likeNo;
 	private Date restEnrollDate;
 	private Date restModifyDate;
 	private String restOperDate;
@@ -21,15 +22,17 @@ public class Restaurant {
 	private String foodCategoryNo;
 	private ArrayList<Attachment> restAtList;
 	
-	
 	public Restaurant() {
 		super();
 	}
 
 
+
 	public Restaurant(int restNo, String restName, String restAddress, String restPhone, String restIntro,
 			String restGrade, String restLikeNo, Date restEnrollDate, Date restModifyDate, String restOperDate,
+			String restGrade, String likeNo, Date restEnrollDate, Date restModifyDate, String restOperDate,
 			String restStatus, String foodCategoryNo, ArrayList<Attachment> restAtList) {
+
 		super();
 		this.restNo = restNo;
 		this.restName = restName;
@@ -38,6 +41,7 @@ public class Restaurant {
 		this.restIntro = restIntro;
 		this.restGrade = restGrade;
 		this.restLikeNo = restLikeNo;
+		this.likeNo = likeNo;
 		this.restEnrollDate = restEnrollDate;
 		this.restModifyDate = restModifyDate;
 		this.restOperDate = restOperDate;
@@ -47,9 +51,11 @@ public class Restaurant {
 	}
 
 
+
 	public int getRestNo() {
 		return restNo;
 	}
+
 
 
 	public void setRestNo(int restNo) {
@@ -57,9 +63,11 @@ public class Restaurant {
 	}
 
 
+
 	public String getRestName() {
 		return restName;
 	}
+
 
 
 	public void setRestName(String restName) {
@@ -67,9 +75,11 @@ public class Restaurant {
 	}
 
 
+
 	public String getRestAddress() {
 		return restAddress;
 	}
+
 
 
 	public void setRestAddress(String restAddress) {
@@ -77,9 +87,11 @@ public class Restaurant {
 	}
 
 
+
 	public String getRestPhone() {
 		return restPhone;
 	}
+
 
 
 	public void setRestPhone(String restPhone) {
@@ -87,9 +99,11 @@ public class Restaurant {
 	}
 
 
+
 	public String getRestIntro() {
 		return restIntro;
 	}
+
 
 
 	public void setRestIntro(String restIntro) {
@@ -97,9 +111,11 @@ public class Restaurant {
 	}
 
 
+
 	public String getRestGrade() {
 		return restGrade;
 	}
+
 
 
 	public void setRestGrade(String restGrade) {
@@ -109,12 +125,19 @@ public class Restaurant {
 
 	public String getRestLikeNo() {
 		return restLikeNo;
+
+	public String getLikeNo() {
+		return likeNo;
 	}
 
 
 	public void setRestLikeNo(String restLikeNo) {
 		this.restLikeNo = restLikeNo;
+
+	public void setLikeNo(String likeNo) {
+		this.likeNo = likeNo;
 	}
+
 
 
 	public Date getRestEnrollDate() {
@@ -122,9 +145,11 @@ public class Restaurant {
 	}
 
 
+
 	public void setRestEnrollDate(Date restEnrollDate) {
 		this.restEnrollDate = restEnrollDate;
 	}
+
 
 
 	public Date getRestModifyDate() {
@@ -132,9 +157,11 @@ public class Restaurant {
 	}
 
 
+
 	public void setRestModifyDate(Date restModifyDate) {
 		this.restModifyDate = restModifyDate;
 	}
+
 
 
 	public String getRestOperDate() {
@@ -142,9 +169,11 @@ public class Restaurant {
 	}
 
 
+
 	public void setRestOperDate(String restOperDate) {
 		this.restOperDate = restOperDate;
 	}
+
 
 
 	public String getRestStatus() {
@@ -152,14 +181,17 @@ public class Restaurant {
 	}
 
 
+
 	public void setRestStatus(String restStatus) {
 		this.restStatus = restStatus;
 	}
 
 
+
 	public String getFoodCategoryNo() {
 		return foodCategoryNo;
 	}
+
 
 
 	public void setFoodCategoryNo(String foodCategoryNo) {
@@ -176,15 +208,16 @@ public class Restaurant {
 	}
 
 
+
 	@Override
 	public String toString() {
 		return "Restaurant [restNo=" + restNo + ", restName=" + restName + ", restAddress=" + restAddress
 				+ ", restPhone=" + restPhone + ", restIntro=" + restIntro + ", restGrade=" + restGrade + ", restLikeNo="
 				+ restLikeNo + ", restEnrollDate=" + restEnrollDate + ", restModifyDate=" + restModifyDate
+				+ ", restPhone=" + restPhone + ", restIntro=" + restIntro + ", restGrade=" + restGrade + ", likeNo="
+				+ likeNo + ", restEnrollDate=" + restEnrollDate + ", restModifyDate=" + restModifyDate
 				+ ", restOperDate=" + restOperDate + ", restStatus=" + restStatus + ", foodCategoryNo=" + foodCategoryNo
-				+ ", restAtList=" + restAtList + "]";
+				+ "]";
 	}
-
-	
 }
 	
