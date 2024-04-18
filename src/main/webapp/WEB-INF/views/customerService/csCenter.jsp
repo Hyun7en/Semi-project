@@ -85,10 +85,10 @@
 
             <nav id="nav-2">
                 <ul id="navi-2">
-                    <li><a href="#" onclick="return false" class="fcode" id="f1">전체</a></li>
-                    <li><a href="#" onclick="return false" class="fcode" id="f2">중요공지</a></li>
-                    <li><a href="#" onclick="return false" class="fcode" id="f3">일반공지</a></li>
-                    <li><a href="#" onclick="return false" class="fcode" id="f4">이벤트 공지</a></li>
+                    <li><a href="#" onclick="return false" class="csCode" id="c1">전체</a></li>
+                    <li><a href="#" onclick="return false" class="csCode" id="c2">중요공지</a></li>
+                    <li><a href="#" onclick="return false" class="csCode" id="c3">일반공지</a></li>
+                    <li><a href="#" onclick="return false" class="csCode" id="c4">이벤트 공지</a></li>
                 </ul>                    
             </nav>
 
