@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class RestEnrollFormController
  */
-@WebServlet("/rest.En")
+@WebServlet("/rest.en")
 public class AdminRestRegistFormController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
