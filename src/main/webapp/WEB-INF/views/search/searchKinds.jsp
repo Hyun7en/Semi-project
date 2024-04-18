@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <!DOCTYPE html>
     <html>
 
@@ -17,9 +18,11 @@
                 <main>
                     <section class="search-nav" style="padding: 0px;">
                         <div>
-                            <img src="${pageContext.request.contextPath}/resources/file/search_img/kindsKorean.png"
+                        	<a onclick="searchKindsList()">
+                        		<img src="${pageContext.request.contextPath}/resources/file/search_img/kindsKorean.png"
                                 alt="">
-                            <p>한식</p>
+                            	<p>한식</p>
+                        	</a>
                         </div>
                         <div>
                             <img src="${pageContext.request.contextPath}/resources/file/search_img/kindsAsian.png"
@@ -58,318 +61,103 @@
                         <div>
                             <h3>BEST 3 리뷰로 검증된 맛집입니다.</h3>
                             <div class="search-best-img">
-                                <div>
-                                    <div class="search-best-crown">
-                                        <img src="https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp"
-                                            alt="">
-                                        <img id="crown"
-                                            src="${pageContext.request.contextPath}/resources/file/search_img/searchCrownBig.png"
-                                            alt="">
-                                    </div>
-                                    <div>
-                                        <p class="res-name"><span><b>할머니백반</span><span>&nbsp;&nbsp;4.0</span></b></p>
-                                        <p class="res-location"><span>한식집</span><span>&nbsp;&nbsp;청담동</span></p>
-                                        <p class="res-explain"><b>백반이 유명한 할머니집</b></p>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="search-best-crown">
-                                        <img src="https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp"
-                                            alt="">
-                                        <img id="crown"
-                                            src="${pageContext.request.contextPath}/resources/file/search_img/searchCrownBig.png"
-                                            alt="">
-                                    </div>
-                                    <div>
-                                        <p class="res-name"><span><b>할머니백반</span><span>&nbsp;&nbsp;4.0</span></b></p>
-                                        <p class="res-location"><span>한식집</span><span>&nbsp;&nbsp;청담동</span></p>
-                                        <p class="res-explain"><b>백반이 유명한 할머니집</b></p>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="search-best-crown">
-                                        <img src="https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp"
-                                            alt="">
-                                        <img id="crown"
-                                            src="${pageContext.request.contextPath}/resources/file/search_img/searchCrownBig.png"
-                                            alt="">
-                                    </div>
-                                    <div>
-                                        <p class="res-name"><span><b>할머니백반</span><span>&nbsp;&nbsp;4.0</span></b></p>
-                                        <p class="res-location"><span>한식집</span><span>&nbsp;&nbsp;청담동</span></p>
-                                        <p class="res-explain"><b>백반이 유명한 할머니집</b></p>
-                                    </div>
-                                </div>
+                            	<c:forEach var="sr" begin="1" end="3" items="${list}">
+	                                <div>
+	                                    <div class="search-best-crown">
+	                                        <img src="https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp"
+	                                            alt="">
+	                                        <img id="crown"
+	                                            src="${pageContext.request.contextPath}/resources/file/search_img/searchCrownBig.png"
+	                                            alt="">
+	                                    </div>
+	                                    <div>
+			                                <p class="res-name"><span><b>${sr.restName}</span><span>&nbsp;&nbsp;</span></b></p>
+			                                <p class="res-location"><span>한식집</span><span>&nbsp;&nbsp;${sr.restAddress}</span></p>
+			                                <p class="res-explain"><b>${sr.restIntro}</b></p>
+	                                    </div>
+	                                </div>
+                                </c:forEach>
+               
                             </div>
                             <br><br>
                             <hr size="3px" color="black" width="95%">
                             <br><br>
                         </div>
-
                     </section>
 
 
                     <section class="search-result">
-                        <div>
-                            <div class="search-best-crownSmall">
-                                <img src="https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp"
-                                    alt="">
-                                <img id="smallCrown"
-                                    src="${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png"
-                                    alt="">
-                            </div>
-                            <div>
-                                <p class="res-name"><span><b>할머니백반</span><span>&nbsp;&nbsp;4.0</span></b></p>
-                                <p class="res-location"><span>한식집</span><span>&nbsp;&nbsp;청담동</span></p>
-                                <p class="res-explain"><b>백반이 유명한 할머니집</b></p>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="search-best-crownSmall">
-                                <img src="https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp"
-                                    alt="">
-                                <img id="smallCrown"
-                                    src="${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png"
-                                    alt="">
-                            </div>
-                            <div>
-                                <p class="res-name"><span><b>할머니백반</span><span>&nbsp;&nbsp;4.0</span></b></p>
-                                <p class="res-location"><span>한식집</span><span>&nbsp;&nbsp;청담동</span></p>
-                                <p class="res-explain"><b>백반이 유명한 할머니집</b></p>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="search-best-crownSmall">
-                                <img src="https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp"
-                                    alt="">
-                                <img id="smallCrown"
-                                    src="${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png"
-                                    alt="">
-                            </div>
-                            <div>
-                                <p class="res-name"><span><b>할머니백반</span><span>&nbsp;&nbsp;4.0</span></b></p>
-                                <p class="res-location"><span>한식집</span><span>&nbsp;&nbsp;청담동</span></p>
-                                <p class="res-explain"><b>백반이 유명한 할머니집</b></p>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="search-best-crownSmall">
-                                <img src="https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp"
-                                    alt="">
-                                <img id="smallCrown"
-                                    src="${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png"
-                                    alt="">
-                            </div>
-                            <div>
-                                <p class="res-name"><span><b>할머니백반</span><span>&nbsp;&nbsp;4.0</span></b></p>
-                                <p class="res-location"><span>한식집</span><span>&nbsp;&nbsp;청담동</span></p>
-                                <p class="res-explain"><b>백반이 유명한 할머니집</b></p>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="search-best-crownSmall">
-                                <img src="https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp"
-                                    alt="">
-                                <img id="smallCrown"
-                                    src="${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png"
-                                    alt="">
-                            </div>
-                            <div>
-                                <p class="res-name"><span><b>할머니백반</span><span>&nbsp;&nbsp;4.0</span></b></p>
-                                <p class="res-location"><span>한식집</span><span>&nbsp;&nbsp;청담동</span></p>
-                                <p class="res-explain"><b>백반이 유명한 할머니집</b></p>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="search-best-crownSmall">
-                                <img src="https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp"
-                                    alt="">
-                                <img id="smallCrown"
-                                    src="${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png"
-                                    alt="">
-                            </div>
-                            <div>
-                                <p class="res-name"><span><b>할머니백반</span><span>&nbsp;&nbsp;4.0</span></b></p>
-                                <p class="res-location"><span>한식집</span><span>&nbsp;&nbsp;청담동</span></p>
-                                <p class="res-explain"><b>백반이 유명한 할머니집</b></p>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="search-best-crownSmall">
-                                <img src="https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp"
-                                    alt="">
-                                <img id="smallCrown"
-                                    src="${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png"
-                                    alt="">
-                            </div>
-                            <div>
-                                <p class="res-name"><span><b>할머니백반</span><span>&nbsp;&nbsp;4.0</span></b></p>
-                                <p class="res-location"><span>한식집</span><span>&nbsp;&nbsp;청담동</span></p>
-                                <p class="res-explain"><b>백반이 유명한 할머니집</b></p>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="search-best-crownSmall">
-                                <img src="https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp"
-                                    alt="">
-                                <img id="smallCrown"
-                                    src="${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png"
-                                    alt="">
-                            </div>
-                            <div>
-                                <p class="res-name"><span><b>할머니백반</span><span>&nbsp;&nbsp;4.0</span></b></p>
-                                <p class="res-location"><span>한식집</span><span>&nbsp;&nbsp;청담동</span></p>
-                                <p class="res-explain"><b>백반이 유명한 할머니집</b></p>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="search-best-crownSmall">
-                                <img src="https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp"
-                                    alt="">
-                                <img id="smallCrown"
-                                    src="${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png"
-                                    alt="">
-                            </div>
-                            <div>
-                                <p class="res-name"><span><b>할머니백반</span><span>&nbsp;&nbsp;4.0</span></b></p>
-                                <p class="res-location"><span>한식집</span><span>&nbsp;&nbsp;청담동</span></p>
-                                <p class="res-explain"><b>백반이 유명한 할머니집</b></p>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="search-best-crownSmall">
-                                <img src="https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp"
-                                    alt="">
-                                <img id="smallCrown"
-                                    src="${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png"
-                                    alt="">
-                            </div>
-                            <div>
-                                <p class="res-name"><span><b>할머니백반</span><span>&nbsp;&nbsp;4.0</span></b></p>
-                                <p class="res-location"><span>한식집</span><span>&nbsp;&nbsp;청담동</span></p>
-                                <p class="res-explain"><b>백반이 유명한 할머니집</b></p>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="search-best-crownSmall">
-                                <img src="https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp"
-                                    alt="">
-                                <img id="smallCrown"
-                                    src="${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png"
-                                    alt="">
-                            </div>
-                            <div>
-                                <p class="res-name"><span><b>할머니백반</span><span>&nbsp;&nbsp;4.0</span></b></p>
-                                <p class="res-location"><span>한식집</span><span>&nbsp;&nbsp;청담동</span></p>
-                                <p class="res-explain"><b>백반이 유명한 할머니집</b></p>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="search-best-crownSmall">
-                                <img src="https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp"
-                                    alt="">
-                                <img id="smallCrown"
-                                    src="${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png"
-                                    alt="">
-                            </div>
-                            <div>
-                                <p class="res-name"><span><b>할머니백반</span><span>&nbsp;&nbsp;4.0</span></b></p>
-                                <p class="res-location"><span>한식집</span><span>&nbsp;&nbsp;청담동</span></p>
-                                <p class="res-explain"><b>백반이 유명한 할머니집</b></p>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="search-best-crownSmall">
-                                <img src="https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp"
-                                    alt="">
-                                <img id="smallCrown"
-                                    src="${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png"
-                                    alt="">
-                            </div>
-                            <div>
-                                <p class="res-name"><span><b>할머니백반</span><span>&nbsp;&nbsp;4.0</span></b></p>
-                                <p class="res-location"><span>한식집</span><span>&nbsp;&nbsp;청담동</span></p>
-                                <p class="res-explain"><b>백반이 유명한 할머니집</b></p>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="search-best-crownSmall">
-                                <img src="https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp"
-                                    alt="">
-                                <img id="smallCrown"
-                                    src="${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png"
-                                    alt="">
-                            </div>
-                            <div>
-                                <p class="res-name"><span><b>할머니백반</span><span>&nbsp;&nbsp;4.0</span></b></p>
-                                <p class="res-location"><span>한식집</span><span>&nbsp;&nbsp;청담동</span></p>
-                                <p class="res-explain"><b>백반이 유명한 할머니집</b></p>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="search-best-crownSmall">
-                                <img src="https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp"
-                                    alt="">
-                                <img id="smallCrown"
-                                    src="${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png"
-                                    alt="">
-                            </div>
-                            <div>
-                                <p class="res-name"><span><b>할머니백반</span><span>&nbsp;&nbsp;4.0</span></b></p>
-                                <p class="res-location"><span>한식집</span><span>&nbsp;&nbsp;청담동</span></p>
-                                <p class="res-explain"><b>백반이 유명한 할머니집</b></p>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="search-best-crownSmall">
-                                <img src="https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp"
-                                    alt="">
-                                <img id="smallCrown"
-                                    src="${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png"
-                                    alt="">
-                            </div>
-                            <div>
-                                <p class="res-name"><span><b>할머니백반</span><span>&nbsp;&nbsp;4.0</span></b></p>
-                                <p class="res-location"><span>한식집</span><span>&nbsp;&nbsp;청담동</span></p>
-                                <p class="res-explain"><b>백반이 유명한 할머니집</b></p>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="search-best-crownSmall">
-                                <img src="https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp"
-                                    alt="">
-                                <img id="smallCrown"
-                                    src="${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png"
-                                    alt="">
-                            </div>
-                            <div>
-                                <p class="res-name"><span><b>할머니백반</span><span>&nbsp;&nbsp;4.0</span></b></p>
-                                <p class="res-location"><span>한식집</span><span>&nbsp;&nbsp;청담동</span></p>
-                                <p class="res-explain"><b>백반이 유명한 할머니집</b></p>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="search-best-crownSmall">
-                                <img src="https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp"
-                                    alt="">
-                                <img id="smallCrown"
-                                    src="${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png"
-                                    alt="">
-                            </div>
-                            <div>
-                                <p class="res-name"><span><b>할머니백반</span><span>&nbsp;&nbsp;4.0</span></b></p>
-                                <p class="res-location"><span>한식집</span><span>&nbsp;&nbsp;청담동</span></p>
-                                <p class="res-explain"><b>백반이 유명한 할머니집</b></p>
-                            </div>
-                        </div>
-
-
-
-
+                        <!-- <c:forEach var="sr" items="${list}">
+	                        <div>
+	                            <div class="search-best-crownSmall">
+	                                <img src="https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp"
+	                                    alt="">
+	                                <img id="smallCrown"
+	                                    src="${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png"
+	                                    alt="">
+	                            </div>
+	                            <div>
+	                                <p class="res-name"><span><b>${sr.restName}</span><span>&nbsp;&nbsp;</span></b></p>
+	                                <p class="res-location"><span>한식집</span><span>&nbsp;&nbsp;${sr.restAddress}</span></p>
+	                                <p class="res-explain"><b>${sr.restIntro}</b></p>
+	                            </div>
+	                        </div>
+	                    </c:forEach> -->
                     </section>
+                    
+                    <script>
+                    window.onload = function(){
+                        searchKindsList();
+                        setInterval(searchKindsList, 2000);
 
+                    }
 
-                </main>
+                    function searchKindsList(){
+                        $.ajax({
+                            url: "searchKindsTest.sc",
+                            data : {
+                            	rpage: 1
+                            },
+                            success: function(han){
+
+                                let str =  "<div>" +
+                                "<div class='search-best-crownSmall'>" +
+                                "<img src='https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp' alt=''>" +
+                                "<img id='smallCrown' src='" + sr.contextPath + "/resources/file/search_img/searchCrownSmall.png' alt=''>" +
+                            "</div>" +
+                            "<div>" +
+                                "<p class='res-name'><span><b>" + sr.restName + "</b></span><span>&nbsp;&nbsp;</span></p>" +
+                                "<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;" + sr.restAddress + "</span></p>" +
+                                "<p class='res-explain'><b>" + sr.restIntro + "</b></p>" +
+                            "</div>" +
+                            "</div>";
+                                for(let sr of han){
+                                	
+                                	str += "<div>" +
+		                                    "<div class='search-best-crownSmall'>" +
+		                                        "<img src='https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp' alt=''>" +
+		                                        "<img id='smallCrown' src='" + sr.contextPath + "/resources/file/search_img/searchCrownSmall.png' alt=''>" +
+		                                    "</div>" +
+		                                    "<div>" +
+		                                        "<p class='res-name'><span><b>" + sr.restName + "</b></span><span>&nbsp;&nbsp;</span></p>" +
+		                                        "<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;" + sr.restAddress + "</span></p>" +
+		                                        "<p class='res-explain'><b>" + sr.restIntro + "</b></p>" +
+		                                    "</div>" +
+		                                    "</div>";
+                                }
+
+                                document.querySelector(".search-result").innerHTML = str;
+
+                            }, 
+                            error: function(){
+                                console.log("ajax통신 실패")
+                            }
+                        })
+                    }
+
+                   
+				 </script>
+                 </main>
 
                 <%@ include file="../common/footer.jsp" %>
         </div>

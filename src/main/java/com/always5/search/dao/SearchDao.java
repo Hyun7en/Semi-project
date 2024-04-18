@@ -1,12 +1,45 @@
 package com.always5.search.dao;
 
+import java.sql.Connection;
+import java.util.ArrayList;
+
+import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
+
+import com.always5.common.vo.PageInfo;
+import com.always5.review.rest.model.vo.Restaurant;
 
 public class SearchDao {
 
-	public int searchRestListCount(SqlSession sqlSession) {
-		return sqlSession.selectOne("restMapper.searchRestListCount");
+	public ArrayList<Restaurant> selectSearchRest(SqlSession sqlSession, PageInfo re){
+		// 마이바티스에서는 페이징 처리를 위해서 rowBounds라는 클래스를 제공한다.
+		/* offset: 몇 개의 게시글을 건너뛰고 조회할 것인지에 대한 값
+		 * 
+		 * currnetPage : 1		1~5		0
+		 * currnetPage : 2		6~10	5
+		 * currnetPage : 3		11~15	10
+		 * 
+		 */
+		
+		int offset = (re.getCurrentPage() - 1) * re.getBoardLimit();
+		int limit = re.getBoardLimit();
+//		System.out.println(pi);
+		RowBounds rowBounds = new RowBounds(offset, limit);
+		return (ArrayList)sqlSession.selectList("searchMapper.selectSearchRest", null, rowBounds);
 	}
+	
+	public int searchListCount(SqlSession sqlSession) {
+		return sqlSession.selectOne("searchMapper.searchListCount");
+		
+	}
+	
+	public ArrayList<Restaurant> test(SqlSession sqlSession, int restNo){
+
+		RowBounds rowBounds = new RowBounds(restNo, restNo);
+		return (ArrayList)sqlSession.selectList("searchMapper.selectSearchRest", null, rowBounds);
+	}
+	
+	
 	
 	
 	/*
