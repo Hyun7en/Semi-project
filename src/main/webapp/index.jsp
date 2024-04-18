@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-    <%@ include file="WEB-INF/views/user/Login.jsp" %>
+    <%@ include file="WEB-INF/views/customerService/csCenter.jsp" %>
 </body>
 </html>
