@@ -18,7 +18,7 @@
         </div>
         <main id="adminMain">
             <div>
-                <div><a href="">가게 관리</a>
+                <div><a onclick="location.href='adrest.li?cpage=1'">가게 관리</a>
                 </div>
                 <div><a href="">음식 카테고리 관리</a></div>
                 <div><a href="">공지사항 / Q&A 관리</a></div>
