@@ -12,7 +12,7 @@
 </head>
 
 <body>
-		<form action="/UpdateId.ui" class="updateId-Container">
+		<form action="updateid.ui" class="updateId-Container" method="POST">
 		<div class="updateId">
 			<!-- X버튼 -->
 			<img class="logo"
@@ -75,11 +75,11 @@
 			</div>
 
 			<div class="updateId-checkbox">
-				<div class="updateId-checkbox-title">변경</div>
+				<button type="submit" class="updateId-checkbox-title">변경</button>
 			</div>
+			<script src="http://localhost:8001/always5/resources/js/user_js/UpdateId.js"></script>
 		</div>
 	</form>
-	<script src="http://localhost:8001/always5/resources/js/user_js/UpdateId.js"></script>
 </body>
 
 </html>

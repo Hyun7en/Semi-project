@@ -6,31 +6,27 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- <link rel="stylesheet"
+	href="http://localhost:8001/always5/resources/css/user_css/logIn.css" /> -->
 <link rel="stylesheet"
-	href="http://localhost:8001/always5/resources/css/user_css/logIn.css" />
+	href="../../../../webapp/resources/css/user_css/logIn.css" /> 
 </head>
 <body>
-	<form action="/Login.ui" class="login-Container">
+	<form action="login.ui" class="login-Container" method="POST">
 		<div class="login">
 
 			<!-- 로고 -->
 			<div class="login-logo-main">
-				<img class="logo-image"
-					src="http://localhost:8001/always5/resources/file/user_img/Login-img/logo.png" />
+				<!-- <img class="logo-image"
+					src="http://localhost:8001/always5/resources/file/user_img/Login-img/logo.png" /> -->
+					<img class="logo-image"
+					src="../../../../webapp/resources/file/user_img/Login-img/logo.png" />	
 			</div>
 
 			<div class="login-title">로그인</div>
 
 			<!--로그인 박스 -->
 			<div class="login-main-box">
-
-				<!-- 로그인 권한 -->
-				<div class="authority-box">
-					<div class="authority-common">일반회원</div>
-					<img class="authority-line"
-						src="http://localhost:8001/always5/resources/file/user_img/Login-img/line-40.svg" />
-					<div class="authority-admin">관리자</div>
-				</div>
 
 				<!-- 아이디, 비밀번호 입력 -->
 				<div class="login-box">
@@ -39,33 +35,38 @@
 
 						<div class="login-id-wrapper">
 							<input type="text" name="login-input-id" class="login-input-id"
-								value="아이디 (현재 이메일 주소)">
+								placeholder="아이디 (현재 이메일 주소)">
 						</div>
 						<div class="login-Pwd-wrapper">
-							<input type="text" name="login-input-Pwd" class="login-input-Pwd"
-								value="비밀번호를 입력하세요.">
+							<input type="password" name="login-input-Pwd" class="login-input-Pwd"
+								placeholder="비밀번호를 입력하세요.">
 						</div>
 
 						<div class="login-checkbox">
-							<div class="login-checkbox-title">로그인</div>
+							<button type="submit" class="login-checkbox-title">로그인</button>
 						</div>
 
 						<div class="login-option">
 							<div class="login-option-searchId"><a href="">아이디 찾기</a></div>
-							<img class="login-option-line1"
-								src="http://localhost:8001/always5/resources/file/user_img/Login-img/line-41.svg" />
+							<!-- <img class="login-option-line1"
+								src="http://localhost:8001/always5/resources/file/user_img/Login-img/line-41.svg" /> -->
+								<img class="login-option-line1"
+								src="../../../../webapp/resources/file/user_img/Login-img/line-41.svg" />
 							<div class="login-option-searchPwd"><a href="">비밀번호 찾기</a></div>
+							<!-- <img class="login-option-line2"
+								src="http://localhost:8001/always5/resources/file/user_img/Login-img/line-42.svg" /> -->
 							<img class="login-option-line2"
-								src="http://localhost:8001/always5/resources/file/user_img/Login-img/line-42.svg" />
-							<div class="login-option-signin"><a href="insert.me">회원가입</a></div>
+								src="../../../../webapp/resources/file/user_img/Login-img/line-42.svg" />
+							<div class="login-option-signin"><a href="">회원가입</a></div>
 						</div>
 
 					</div>
 				</div>
 
 			</div>
+			<!-- <script src="http://localhost:8001/always5/resources/js/user_js/Login.js"></script> -->
+			<script src="../../../../webapp/Wresources/js/user_js/Login.js"></script>
 		</div>
 	</form>
-	<script src="http://localhost:8001/always5/resources/js/user_js/Login.js"></script>
 </body>
 </html>

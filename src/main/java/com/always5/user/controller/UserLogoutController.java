@@ -6,18 +6,19 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class myPageController
+ * Servlet implementation class UserLogoutController
  */
-@WebServlet("/mypage.ui")
-public class MyPageController extends HttpServlet {
+@WebServlet("/UserLogoutController")
+public class UserLogoutController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public MyPageController() {
+    public UserLogoutController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -26,8 +27,12 @@ public class MyPageController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("WEB-INF/views/user/MyPage.jsp").forward(request, response);
+		// 세션을 무효화 시킨다.
+		HttpSession Session = request.getSession();
+		Session.invalidate();
 		
+		// 메인 페이지로 이동한다.
+		response.sendRedirect(request.getContextPath());
 	}
 
 	/**

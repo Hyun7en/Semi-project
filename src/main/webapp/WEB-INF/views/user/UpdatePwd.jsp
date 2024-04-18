@@ -7,15 +7,19 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet"
+<!-- <link rel="stylesheet"
+	href="http://localhost:8001/always5/resources/css/user_css/UpdatePwd.css" /> -->
+	<link rel="stylesheet"
 	href="http://localhost:8001/always5/resources/css/user_css/UpdatePwd.css" />
 </head>
 
 <body>
-		<form action="/UpdatePwd.ui" class="updatePwd-Container">
+		<form action="updatepwd.ui" class="updatePwd-Container" method="POST">
 		<div class="updatePwd">
 			<!-- X버튼 -->
-			<img class="logo"
+			<!-- <img class="logo"
+				src="http://localhost:8001/always5/resources/file/user_img/UpdatePwd-img/ph-x-thin.svg" /> -->
+				<img class="logo"
 				src="http://localhost:8001/always5/resources/file/user_img/UpdatePwd-img/ph-x-thin.svg" />
 
 			<!-- 상단 텍스트 -->
@@ -25,12 +29,16 @@
 				<div class="id-UserName-text02">비밀번호를 수정하기 위해 인증절차가 필요합니다.</div>
 			</div>
 
-			<img class="line-pass"
+			<!-- <img class="line-pass"
+				src="http://localhost:8001/always5/resources/file/user_img/UpdatePwd-img/line-47.svg" /> -->
+				<img class="line-pass"
 				src="http://localhost:8001/always5/resources/file/user_img/UpdatePwd-img/line-47.svg" />
 
 			<!-- 사용자 이메일 입력 -->
 			<div class="email-preview">
-				<img class="mdi-email-icon"
+				<!-- <img class="mdi-email-icon"
+					src="http://localhost:8001/always5/resources/file/user_img/UpdatePwd-img/mdi-light-email.svg" /> -->
+					<img class="mdi-email-icon"
 					src="http://localhost:8001/always5/resources/file/user_img/UpdatePwd-img/mdi-light-email.svg" />
 				<div class="user-email">${user.userId}</div>
 			</div>
@@ -75,11 +83,12 @@
 			</div>
 
 			<div class="updatePwd-checkbox">
-				<div class="updatePwd-checkbox-title">변경</div>
+				<button type="submit" class="updatePwd-checkbox-title">변경</button>
 			</div>
+			<!-- <script src="http://localhost:8001/always5/resources/js/user_js/UpdatePwd.js"></script> -->
+			<script src="http://localhost:8001/always5/resources/js/user_js/UpdatePwd.js"></script>
 		</div>
 	</form>
-	<script src="http://localhost:8001/always5/resources/js/user_js/UpdatePwd.js"></script>
 </body>
 
 </html>
