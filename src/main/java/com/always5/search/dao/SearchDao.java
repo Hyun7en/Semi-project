@@ -1,5 +1,6 @@
 package com.always5.search.dao;
 
+import java.sql.Connection;
 import java.util.ArrayList;
 
 import org.apache.ibatis.session.RowBounds;
@@ -30,6 +31,12 @@ public class SearchDao {
 	public int searchListCount(SqlSession sqlSession) {
 		return sqlSession.selectOne("searchMapper.searchListCount");
 		
+	}
+	
+	public ArrayList<Restaurant> test(SqlSession sqlSession, int restNo){
+
+		RowBounds rowBounds = new RowBounds(restNo, restNo);
+		return (ArrayList)sqlSession.selectList("searchMapper.selectSearchRest", null, rowBounds);
 	}
 	
 	

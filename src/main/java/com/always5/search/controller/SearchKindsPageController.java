@@ -34,17 +34,17 @@ public class SearchKindsPageController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int restCount = new SearchService().searchListCount(); // 현재 총 가게 수 가져오기
-		int currentPage = Integer.parseInt(request.getParameter("rpage"));
-		
-		PageInfo re = Pagination.getPageInfo(restCount, currentPage, 1, 9);
-		
-		
-		ArrayList<Restaurant> list = new SearchService().selectSearchRest(re); 
-//		System.out.println(list);
-		request.setAttribute("list", list);
-		request.setAttribute("re", re);
-		
+//		int restCount = new SearchService().searchListCount(); // 현재 총 가게 수 가져오기
+//		int currentPage = Integer.parseInt(request.getParameter("rpage"));
+//		
+//		PageInfo re = Pagination.getPageInfo(restCount, currentPage, 1, 9);
+//		
+//		
+//		ArrayList<Restaurant> list = new SearchService().selectSearchRest(re); 
+////		System.out.println(list);
+//		request.setAttribute("list", list);
+//		request.setAttribute("re", re);
+//		
 		RequestDispatcher view = request.getRequestDispatcher("WEB-INF/views/search/searchKinds.jsp");
 		view.forward(request, response);
 		

@@ -18,7 +18,7 @@
                 <main>
                     <section class="search-nav" style="padding: 0px;">
                         <div>
-                        	<a href="searchKinds.sc?rpage=한식">
+                        	<a onclick="searchKindsList()">
                         		<img src="${pageContext.request.contextPath}/resources/file/search_img/kindsKorean.png"
                                 alt="">
                             	<p>한식</p>
@@ -87,7 +87,7 @@
 
 
                     <section class="search-result">
-                        <c:forEach var="sr" items="${list}">
+                        <!-- <c:forEach var="sr" items="${list}">
 	                        <div>
 	                            <div class="search-best-crownSmall">
 	                                <img src="https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp"
@@ -102,8 +102,61 @@
 	                                <p class="res-explain"><b>${sr.restIntro}</b></p>
 	                            </div>
 	                        </div>
-	                    </c:forEach>
+	                    </c:forEach> -->
                     </section>
+                    
+                    <script>
+                    window.onload = function(){
+                        searchKindsList();
+                        setInterval(searchKindsList, 2000);
+
+                    }
+
+                    function searchKindsList(){
+                        $.ajax({
+                            url: "searchKindsTest.sc",
+                            data : {
+                            	rpage: 1
+                            },
+                            success: function(han){
+
+                                let str =  "<div>" +
+                                "<div class='search-best-crownSmall'>" +
+                                "<img src='https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp' alt=''>" +
+                                "<img id='smallCrown' src='" + sr.contextPath + "/resources/file/search_img/searchCrownSmall.png' alt=''>" +
+                            "</div>" +
+                            "<div>" +
+                                "<p class='res-name'><span><b>" + sr.restName + "</b></span><span>&nbsp;&nbsp;</span></p>" +
+                                "<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;" + sr.restAddress + "</span></p>" +
+                                "<p class='res-explain'><b>" + sr.restIntro + "</b></p>" +
+                            "</div>" +
+                            "</div>";
+                                for(let sr of han){
+                                	
+                                	str += "<div>" +
+		                                    "<div class='search-best-crownSmall'>" +
+		                                        "<img src='https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp' alt=''>" +
+		                                        "<img id='smallCrown' src='" + sr.contextPath + "/resources/file/search_img/searchCrownSmall.png' alt=''>" +
+		                                    "</div>" +
+		                                    "<div>" +
+		                                        "<p class='res-name'><span><b>" + sr.restName + "</b></span><span>&nbsp;&nbsp;</span></p>" +
+		                                        "<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;" + sr.restAddress + "</span></p>" +
+		                                        "<p class='res-explain'><b>" + sr.restIntro + "</b></p>" +
+		                                    "</div>" +
+		                                    "</div>";
+                                }
+
+                                document.querySelector(".search-result").innerHTML = str;
+
+                            }, 
+                            error: function(){
+                                console.log("ajax통신 실패")
+                            }
+                        })
+                    }
+
+                   
+				 </script>
                  </main>
 
                 <%@ include file="../common/footer.jsp" %>
