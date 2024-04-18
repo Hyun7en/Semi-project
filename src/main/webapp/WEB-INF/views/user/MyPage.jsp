@@ -6,35 +6,27 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet"
+	href="http://localhost:8001/always5/resources/css/user_css/MyPage.css" />
 <!-- <link rel="stylesheet"
-	href="http://localhost:8001/always5/resources/css/common_css/style.css" />
-<link rel="stylesheet"
-	href="http://localhost:8001/always5/resources/css/user_css/MyPage.css" /> -->
-	<link rel="stylesheet"
-	href="../../../../webapp/resources/css/common_css/style.css" />
-<link rel="stylesheet"
-	href="../../../../webapp/resources/css/user_css/MyPage.css" />
+	href="http://localhost:8001/always5/resources/css/common_css/style.css" /> -->
 </head>
 
 <body>
-	<%@ include file="../common/header.jsp"%>
+	 <%-- <%@ include file="../common/header.jsp"%> --%>
 	<form action="mypage.ui" class="Mypage-Container" method="POST">
 		<div class="Mypage">
 
 			<!-- 회원정보 상단 -->
 			<div class="Mypage-main-logo">
-				<div class="Mypage-username">${user.username}</div>
+				<div class="Mypage-username">${User.username}</div>
 				<div class="Mypage-usergrade">밥백성(회원)</div>
 
 				<div class="Mypage-main-icon">
-					<!-- <img class="Mypage-icon-crown"
-						src="http://localhost:8001/always5/resources/file/user_img/mypage-img/image.png" />
+					<img class="Mypage-icon-crown"
+						src="http://localhost:8001/always5/resources/file/user_img/Mypage-img/image.png" />
 					<img class="Mypage-line"
-						src="http://localhost:8001/always5/resources/file/user_img/mypage-img/line-44.svg" /> -->
-						<img class="Mypage-icon-crown"
-						src="../../../../webapp/resources/file/user_img/mypage-img/image.png" />
-					<img class="Mypage-line"
-						src="../../../../webapp/resources/file/user_img/mypage-img/line-44.svg" />
+						src="http://localhost:8001/always5/resources/file/user_img/Mypage-img/line-44.svg" />
 					<div class="Mypage-icon-number">140</div>
 				</div>
 			</div>
@@ -47,21 +39,21 @@
 				</div>
 
 				<div class="Mypage-username-box">
-					<div class="profile-username">${user.username}</div>
+					<div class="profile-username">${User.username}</div>
 					<div class="profile-username-checkbox">
 						<div class="profile-username-checkbox-title">수정</div>
 					</div>
 				</div>
 
 				<div class="Mypage-userid-box">
-					<div class="profile-userid">${user.email}</div>
+					<div class="profile-userid">${User.email}</div>
 					<div class="profile-userid-checkbox">
 						<div class="profile-userid-checkbox-title">수정</div>
 					</div>
 				</div>
 
 				<div class="Mypage-userpwd-box">
-					<div class="profile-userpwd">${user.userPwd}</div>
+					<div class="profile-userpwd">${User.userPwd}</div>
 					<div class="profile-userpwd-checkbox">
 						<div class="profile-userpwd-checkbox-title">수정</div>
 					</div>
@@ -106,15 +98,12 @@
 
 			<!-- 로그아웃, 고객센터 -->
 			<div class="Mypage-option">
-				<div class="Mypage-option-logout">로그아웃</div>
-				<!-- <img class="Mypage-option-img"
-					src="http://localhost:8001/always5/resources/file/user_img/mypage-img/line-44.svg" /> -->
+				<div class="Mypage-option-logout"><a href="">로그아웃</a></div>
 				<img class="Mypage-option-img"
-					src="../../../../webapp/resources/file/user_img/mypage-img/line-44.svg" />
-				<div class="Mypage-option-service">고객센터</div>
+					src="http://localhost:8001/always5/resources/file/user_img/Mypage-img/line-44.svg" />
+				<div class="Mypage-option-service"><a href="">고객센터</a></div>
 			</div>
-			<!-- <script src="http://localhost:8001/always5/resources/js/user_js/MyPage.js"></script> -->
-			<script src="../../../../webapp/resources/js/user_js/MyPage.js"></script>
+			<script src="http://localhost:8001/always5/resources/js/user_js/MyPage.js"></script>
 		</div>
 	</form>
 </body>

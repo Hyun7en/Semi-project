@@ -8,7 +8,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet"
+	<link rel="stylesheet"
 	href="http://localhost:8001/always5/resources/css/user_css/UpdateName.css" />
 </head>
 
@@ -20,6 +20,7 @@
 			<div class="updateName-logo-main">
 				<img class="logo-image"
 					src="http://localhost:8001/always5/resources/file/user_img/UpdateName-img/1.png" />
+				
 			</div>
 
 			<div class="updateName-title">닉네임 변경</div>

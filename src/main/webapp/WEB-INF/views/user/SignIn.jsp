@@ -6,9 +6,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- <link rel="stylesheet"
-	href="http://localhost:8001/always5/resources/css/user_css/SignIn.css" /> -->
-<link rel="stylesheet"
+ <link rel="stylesheet"
 	href="http://localhost:8001/always5/resources/css/user_css/SignIn.css" />
 </head>
 <body>
@@ -17,9 +15,7 @@
 
 			<!-- 회원가입 로고 -->
 			<div class="Signin-logo-main">
-				<!-- <img class="Signin-image"
-					src="http://localhost:8001/always5/resources/file/user_img/SignIn-img/logo.png" /> -->
-					<img class="Signin-image"
+			 	<img class="Signin-image"	
 					src="http://localhost:8001/always5/resources/file/user_img/SignIn-img/logo.png" />
 			</div>
 
@@ -80,7 +76,6 @@
 				</div>
 
 			</div>
-			<!-- <script src="http://localhost:8001/always5/resources/js/user_js/SignIn.js"></script> -->
 			<script src="http://localhost:8001/always5/resources/js/user_js/SignIn.js"></script>
 		</div>
 	</form>
