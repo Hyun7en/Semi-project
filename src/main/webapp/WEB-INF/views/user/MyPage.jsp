@@ -1,18 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- <link rel="stylesheet"
+	href="http://localhost:8001/always5/resources/css/common_css/style.css" />
 <link rel="stylesheet"
-	href="http://localhost:8001/always5/resources/css/user_css/MyPage.css" />
+	href="http://localhost:8001/always5/resources/css/user_css/MyPage.css" /> -->
+	<link rel="stylesheet"
+	href="../../../../webapp/resources/css/common_css/style.css" />
+<link rel="stylesheet"
+	href="../../../../webapp/resources/css/user_css/MyPage.css" />
 </head>
 
 <body>
-	<%@ include file="../common/header.jsp" %>
-	<form action="/MyPage.ui" class="Mypage-Container">
+	<%@ include file="../common/header.jsp"%>
+	<form action="mypage.ui" class="Mypage-Container" method="POST">
 		<div class="Mypage">
 
 			<!-- 회원정보 상단 -->
@@ -21,10 +27,14 @@
 				<div class="Mypage-usergrade">밥백성(회원)</div>
 
 				<div class="Mypage-main-icon">
-					<img class="Mypage-icon-crown"
+					<!-- <img class="Mypage-icon-crown"
 						src="http://localhost:8001/always5/resources/file/user_img/mypage-img/image.png" />
 					<img class="Mypage-line"
-						src="http://localhost:8001/always5/resources/file/user_img/mypage-img/line-44.svg" />
+						src="http://localhost:8001/always5/resources/file/user_img/mypage-img/line-44.svg" /> -->
+						<img class="Mypage-icon-crown"
+						src="../../../../webapp/resources/file/user_img/mypage-img/image.png" />
+					<img class="Mypage-line"
+						src="../../../../webapp/resources/file/user_img/mypage-img/line-44.svg" />
 					<div class="Mypage-icon-number">140</div>
 				</div>
 			</div>
@@ -97,13 +107,15 @@
 			<!-- 로그아웃, 고객센터 -->
 			<div class="Mypage-option">
 				<div class="Mypage-option-logout">로그아웃</div>
+				<!-- <img class="Mypage-option-img"
+					src="http://localhost:8001/always5/resources/file/user_img/mypage-img/line-44.svg" /> -->
 				<img class="Mypage-option-img"
-					src="http://localhost:8001/always5/resources/file/user_img/mypage-img/line-44.svg" />
+					src="../../../../webapp/resources/file/user_img/mypage-img/line-44.svg" />
 				<div class="Mypage-option-service">고객센터</div>
 			</div>
-
+			<!-- <script src="http://localhost:8001/always5/resources/js/user_js/MyPage.js"></script> -->
+			<script src="../../../../webapp/resources/js/user_js/MyPage.js"></script>
 		</div>
 	</form>
-	<script src="http://localhost:8001/always5/resources/js/user_js/MyPage.js"></script>
 </body>
 </html>

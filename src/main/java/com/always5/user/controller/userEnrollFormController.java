@@ -10,14 +10,14 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class userEnrollFormController
  */
-@WebServlet("/userEnrollForm.user")
-public class userEnrollFormController extends HttpServlet {
+@WebServlet("/searchPwd02.ui")
+public class UserEnrollFormController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     /**
      * Default constructor. 
      */
-    public userEnrollFormController() {
+    public UserEnrollFormController() {
         // TODO Auto-generated constructor stub
     }
 
@@ -25,7 +25,7 @@ public class userEnrollFormController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("WEB-INF/views/user/userEnrollForm.jsp").forward(request, response);
+		request.getRequestDispatcher("WEB-INF/views/user/UserEnrollForm.jsp").forward(request, response);
 	}
 
 	/**

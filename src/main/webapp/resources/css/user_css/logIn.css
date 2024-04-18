@@ -16,8 +16,10 @@
 	font-family: 'Noto Sans KR', sans-serif;
 }
 
+/*a태그 */
 a {
-    text-decoration: none;
+	text-decoration-line: none;
+	color: #b1a8a8;
 }
 
 body {
@@ -87,72 +89,8 @@ input:focus {
 	margin-bottom: 20px;
 }
 
-/*로그인 상자*/
-.login .login-main-box {
-	width: 754px;
-	height: auto;
-}
-
-/*로그인 권한*/
-.login .authority-box {
-	background-color: #fffefe;
-	border-radius: 8px 8px 0px 0px;
-	border: 1px solid #b1a8a8;
-	border-bottom: none;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 754px;
-	height: auto;
-}
-
-.login .authority-common {
-	margin-right: 140px;
-	margin-left: 140px;
-	font-weight: 300;
-	color: #b1a8a8;
-	font-size: 20px;
-	text-align: center;
-	letter-spacing: 0;
-	line-height: normal;
-}
-
-.login .authority-common:hover{
-	color: green;
-}
-
-.login .authority-line {
-	object-fit: cover;
-	height: 40px;
-	width: 1px;
-}
-
-.login .authority-admin {
-	margin-right: 140px;
-	margin-left: 140px;
-	font-weight: 300;
-	color: #b1a8a8;
-	font-size: 20px;
-	text-align: center;
-	letter-spacing: 0;
-	line-height: normal;
-}
-
-.login .authority-admin:hover{
-	color: green;
-}
-
 /*아이디, 비밀번호 입력*/
-.login .login-box {
-	background-color: #fffefe;
-	border-radius: 0px 0px 8px 8px;
-	border: 1px solid #b1a8a8;
-	width: 754px;
-	height: auto;
-}
-
 .login .login-input-box {
-	background-color: #fffefe;
 	border-radius: 0px 0px 8px 8px;
 	width: 543px;
 	height: auto;
@@ -215,7 +153,6 @@ input:focus {
 
 /* 회원가입 */
 .login .login-checkbox {
-	border: 1px solid black;
 	background-color: #164066;
 	border-radius: 8px;
 	display: flex;
@@ -301,6 +238,11 @@ input:focus {
 
 .login .login-option-signin:hover{
 	color: green;
+}
+
+.login .login-checkbox-title {
+	border: 0;
+	background-color: transparent;
 }
 
 @media screen and (min-width:576px) { /* 스마트폰 가로 */

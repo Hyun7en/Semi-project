@@ -12,7 +12,7 @@
 </head>
 
 <body>
-	<form action="/Signout.ui" class="Signout-Container">
+	<form action="signout.ui" class="Signout-Container" method="POST">
 		<div class="Signout">
 
 			<!-- 회원탈퇴 로고 -->
@@ -57,7 +57,7 @@
 
 					<div class="signout-checkbox-wrapper">
 						<div class="signout-checkbox">
-							<div class="signout-checkbox-title">다음</div>
+							<button type="submit" class="signout-checkbox-title">다음</button>
 						</div>
 					</div>
 

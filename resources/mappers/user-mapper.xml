@@ -23,8 +23,33 @@
 		<result column="POINT" property="point" />
 	</resultMap>
 
+	<select id="loginUser" parameterType="User" resultMap="userResultSet">
+		SELECT USER_NO,
+				AUTHORITY,
+				USER_ID,
+				USER_PWD,
+				USER_NAME,
+				NICKNAME,
+				USER_BIRTH,
+				USER_GENDER,
+				USER_PHONE,
+				USER_EMAIL,
+				USER_ADDRESS,
+				USER_ENROLL_DATE,
+				USER_MODIFY_DATE,
+				USER_STATUS,
+				USER_POINT
+		FROM USER_INFO
+		WHERE USER_ID = #{userId}
+		AND USER_PWD = #{userPwd}
+		AND USER_STATUS = 'Y'
+	</select>
+	
 	<insert id="insertUser" parameterType="User">
-		INSERT INTO USER
+	<!-- authority를 n로 넘겨줌 -->
+		
+		INSERT 
+		INTO USER_INFO
 		(
 		USER_NO,
 		AUTHORITY,
@@ -35,79 +60,56 @@
 		USER_BIRTH,
 		USER_GENDER,
 		USER_PHONE,
-		USER_EMAIL,
-		USER_ADDRESS,
-		USER_ENROLL_DATE,
-		USER_MODIFY_DATE,
-		USER_STATUS,
-		POINT
-
+		USER_ADDRESS
 		)
 		VALUES
 		(
 		SEQ_UNO.NEXTVAL,
-		#{userId},
-		#{authority},
+		'N',
 		#{userId},
 		#{userPwd},
 		#{userName},
-		#{nickname},
+		#{nickName},
 		#{userBirth},
 		#{userGender},
 		#{userPhone},
-		#{userEmail},
-		#{userAddress},
-		#{userEnrollDate},
-		#{userModifyDate},
-		#{userStatus},
-		#{point})
+		#{userAddress}
+		)
 	</insert>
 
-	<insert id="loginUser" parameterType="User">
-		SELECT USER_ID
-		FROM USER U
-		WHERE USER_ID = #{userId}
-		AND USER_PWD = #{userPwd}
-		AND STATUS = 'Y'
-	</insert>
-
-	<update id="deleteUser" parameterType="User">
-		UPDATE USER
-		SET STATUS = 'N'
-		, MODIFY_DATE = SYASDATE
-		WHERE USER_ID = #{userId}
-		AND USER_PWD = #{userPwd}
-	</update>
-
-	<insert id="updateUser" parameterType="User">
-		UPDATE USER
-		SET USER_NAME = #{userName}
-		, NICKNAME = #{nickName}
-		, USER_BIRTH = #{userBirth}
-		, USER_GENGER = #{userGender}
-		, USER_PHONE = #{userPhone}
-		, USER_EMAIL = #{userEmail}
-		, USER_ADDRESS = #{userAddress}
-		, MODIFY_DATE = SYSDATE
+	<insert id="deleteUser" parameterType="User">
+		UPDATE USER_INFO
+		SET USER_STATUS = 'N'
+		, USER_MODIFY_DATE = SYSDATE
 		WHERE USER_ID = #{userId}
 		AND USER_PWD = #{userPwd}
 	</insert>
 
-
-	<insert id="updatePwdUser" parameterType="User">
-		UPDATE USER
+	<insert id="updateUserPwd" parameterType="User">
+		UPDATE USER_INFO
 		SET USER_PWD = #{userPwd}
-		, MODIFY_DATE = SYSDATE
+		, USER_MODIFY_DATE = SYSDATE
 		WHERE USER_ID = #{userId}
 		AND USER_PWD = #{userPwd}
 	</insert>
 
-	<insert id="updateIdUser" parameterType="User">
-		UPDATE USER
+	<insert id="updateUserID" parameterType="User">
+		UPDATE USER_INFO
 		SET USER_ID = #{userId}
-		, MODIFY_DATE = SYSDATE
+		, USER_MODIFY_DATE = SYSDATE
 		WHERE USER_ID = #{userId}
 		AND USER_PWD = #{userPwd}
 	</insert>
+	
+	<insert id="updateUserNickName" parameterType="User">
+		UPDATE USER_INFO
+		SET NICKNAME = #{nickName}
+		, USER_MODIFY_DATE = SYSDATE
+		WHERE NICKNAME = #{nickName}
+		AND USER_PWD = #{userPwd}
+		AND USER_ID = #{userId}
+	</insert>
+	
 
+	
 </mapper>

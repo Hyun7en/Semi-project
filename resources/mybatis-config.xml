@@ -36,7 +36,5 @@
 
 	<mappers>
 	   <mapper resource="/mappers/user-mapper.xml"/>	
-	   <mapper resource="/mappers/cs-mapper.xml"/>	
-	   <mapper resource="/mappers/rest-mapper.xml"/>
 	</mappers>
 </configuration>

@@ -8,16 +8,18 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="http://localhost:8001/always5/resources/css/user_css/UpdateName.css" />
+<link rel="stylesheet"
+	href="http://localhost:8001/always5/resources/css/user_css/UpdateName.css" />
 </head>
 
 <body>
-	<form action="/UpdateName.ui" class="updateName-Container">
+	<form action="updatename.ui" class="updateName-Container" method="POST">
 		<div class="updateName">
 
 			<!-- 닉네임 변경 로고 -->
 			<div class="updateName-logo-main">
-				<img class="logo-image" src="http://localhost:8001/always5/resources/file/user_img/UpdateName-img/1.png" />
+				<img class="logo-image"
+					src="http://localhost:8001/always5/resources/file/user_img/UpdateName-img/1.png" />
 			</div>
 
 			<div class="updateName-title">닉네임 변경</div>
@@ -37,14 +39,12 @@
 			<!-- 확인 -->
 			<div class="updateName-checkbox-wrapper">
 				<div class="updateName-checkbox">
-					<div class="updateName-checkbox-title">다음</div>
+					<button type="submit" class="updateName-checkbox-title">다음</button>
 				</div>
 			</div>
-
+			<script src="http://localhost:8001/always5/resources/js/user_js/updateName.js"></script>
 		</div>
 	</form>
-	<script
-		src="http://localhost:8001/always5/resources/js/user_js/updateName.js"></script>
 </body>
 
 </html>
