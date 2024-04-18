@@ -13,8 +13,8 @@
 		<typeAlias type="com.always5.review.rest.model.vo.MenuCategory" alias="MenuCategory" />
 		<typeAlias type="com.always5.review.rest.model.vo.Review" alias="Review" />
 		<typeAlias type="com.always5.review.rest.model.vo.Menu" alias="Menu" />
-		<typeAlias type="com.kh.always5.customerService.model.vo.CsNoti" alias="Notice" />
-		<typeAlias type="com.kh.always5.customerService.model.vo.CsQnA" alias="QNA" />
+		<typeAlias type="com.kh.always5.customerService.model.vo.CsKeyword" alias="CsKeyword" />
+		<typeAlias type="com.kh.always5.customerService.model.vo.CsDetail" alias="CsDetail" />
 	</typeAliases>
 		
 	<environments default="development">
@@ -33,8 +33,6 @@
 	</environments>
 
 	<mappers>
-	   <mapper resource="/mappers/user-mapper.xml"/>	
 	   <mapper resource="/mappers/cs-mapper.xml"/>	
-	   <mapper resource="/mappers/rest-mapper.xml"/>
 	</mappers>
 </configuration>

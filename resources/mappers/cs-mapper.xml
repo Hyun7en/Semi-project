@@ -13,7 +13,16 @@
 		<result column="CS_STATUS" property="csStatus"/>
 		<result column="USER_ID" property="csWriter"/>
 	</resultMap>
-	<select id="selectList" resultMap="csResultSet">
+	<select id="selectCskeyword" resultMap="csResultSet">
+		SELECT CS_NO,
+				CS_TITLE,
+				USER_ID,
+		FROM  CUSTOMER_SERVICE
+		JOIN  ON (CS_WRITER = USER_NO)
+		WHERE CS_STATUS = 'Y'
+		ORDER BY CS_NO DESC
+	</select>
+	<select id="selectCsDetail" resultMap="csResultSet">
 		SELECT CS_NO,
 				CS_TITLE,
 				USER_ID,

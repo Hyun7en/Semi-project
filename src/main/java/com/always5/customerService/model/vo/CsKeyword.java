@@ -1,16 +1,16 @@
 package com.always5.customerService.model.vo;
 
-public class CustomerServiceKeyword {
+public class CsKeyword {
 	private int cskNo;
 	private int cstNo;
 	private String cskValue;
 	private String cstValue;
 	
-	public CustomerServiceKeyword() {
+	public CsKeyword() {
 		super();
 	}
 
-	public CustomerServiceKeyword(int cskNo, int cstNo, String cskValue, String cstValue) {
+	public CsKeyword(int cskNo, int cstNo, String cskValue, String cstValue) {
 		super();
 		this.cskNo = cskNo;
 		this.cstNo = cstNo;
@@ -52,8 +52,8 @@ public class CustomerServiceKeyword {
 
 	@Override
 	public String toString() {
-		return "CustomerServiceKeyword [cskNo=" + cskNo + ", cstNo=" + cstNo + ", cskValue=" + cskValue + ", cstValue="
-				+ cstValue + "]";
+		return "CsKeyword [cskNo=" + cskNo + ", cstNo=" + cstNo + ", cskValue=" + cskValue + ", cstValue=" + cstValue
+				+ "]";
 	}
 	
 	
