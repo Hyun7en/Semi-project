@@ -6,10 +6,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- <link rel="stylesheet"
-	href="http://localhost:8001/always5/resources/css/user_css/logIn.css" /> -->
-<link rel="stylesheet"
-	href="../../../../webapp/resources/css/user_css/logIn.css" /> 
+	<link rel="stylesheet"
+	href="http://localhost:8001/always5/resources/css/user_css/logIn.css" />
 </head>
 <body>
 	<form action="login.ui" class="login-Container" method="POST">
@@ -17,10 +15,8 @@
 
 			<!-- 로고 -->
 			<div class="login-logo-main">
-				<!-- <img class="logo-image"
-					src="http://localhost:8001/always5/resources/file/user_img/Login-img/logo.png" /> -->
-					<img class="logo-image"
-					src="../../../../webapp/resources/file/user_img/Login-img/logo.png" />	
+				<img class="logo-image"
+					src="http://localhost:8001/always5/resources/file/user_img/Login-img/logo.png" />
 			</div>
 
 			<div class="login-title">로그인</div>
@@ -48,15 +44,11 @@
 
 						<div class="login-option">
 							<div class="login-option-searchId"><a href="">아이디 찾기</a></div>
-							<!-- <img class="login-option-line1"
-								src="http://localhost:8001/always5/resources/file/user_img/Login-img/line-41.svg" /> -->
-								<img class="login-option-line1"
-								src="../../../../webapp/resources/file/user_img/Login-img/line-41.svg" />
+							<img class="login-option-line1"
+								src="http://localhost:8001/always5/resources/file/user_img/Login-img/line-41.svg" />
 							<div class="login-option-searchPwd"><a href="">비밀번호 찾기</a></div>
-							<!-- <img class="login-option-line2"
-								src="http://localhost:8001/always5/resources/file/user_img/Login-img/line-42.svg" /> -->
 							<img class="login-option-line2"
-								src="../../../../webapp/resources/file/user_img/Login-img/line-42.svg" />
+								src="http://localhost:8001/always5/resources/file/user_img/Login-img/line-42.svg" />
 							<div class="login-option-signin"><a href="">회원가입</a></div>
 						</div>
 
@@ -64,8 +56,7 @@
 				</div>
 
 			</div>
-			<!-- <script src="http://localhost:8001/always5/resources/js/user_js/Login.js"></script> -->
-			<script src="../../../../webapp/Wresources/js/user_js/Login.js"></script>
+			<script src="http://localhost:8001/always5/resources/js/user_js/Login.js"></script>
 		</div>
 	</form>
 </body>
