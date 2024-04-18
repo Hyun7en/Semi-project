@@ -327,6 +327,11 @@ input:focus {outline: none;}
   color: #ffffff;
 }
 
+.Signin .Signin-checkbox-title {
+	border: 0;
+	background-color: transparent;
+}
+
   @media screen and (min-width:576px) {
     /* 스마트폰 가로 */
     }
