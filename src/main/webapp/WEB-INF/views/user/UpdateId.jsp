@@ -7,7 +7,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet"
+	<link rel="stylesheet"
 	href="http://localhost:8001/always5/resources/css/user_css/UpdateId.css" />
 </head>
 
@@ -20,19 +20,19 @@
 
 			<!-- 상단 텍스트 -->
 			<div class="id-preview">
-				<div class="id-UserName">${user.userName}</div>
+				<div class="id-UserName">${User.userName}</div>
 				<div class="id-UserName-text01">님의 회원정보 중</div>
 				<div class="id-UserName-text02">아이디를 수정하기 위해 인증절차가 필요합니다.</div>
 			</div>
 
-			<img class="line-pass"
+			 <img class="line-pass"
 				src="http://localhost:8001/always5/resources/file/user_img/UpdateId-img/line-47.svg" />
 
 			<!-- 사용자 이메일 입력 -->
 			<div class="email-preview">
 				<img class="mdi-email-icon"
 					src="http://localhost:8001/always5/resources/file/user_img/UpdateId-img/mdi-light-email.svg" />
-				<div class="user-email">${user.userId}</div>
+				<div class="user-email">${User.userId}</div>
 			</div>
 
 			<div class="input-email-box">

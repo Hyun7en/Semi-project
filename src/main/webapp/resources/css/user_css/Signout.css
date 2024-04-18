@@ -38,7 +38,6 @@ input:focus {
   display: flex;
 	align-items: center;
 	justify-content: center;
-	background-color: #fbfaf6;
 	width: calc(100% - 48px);
 	height: auto;
 	margin: 24px;
@@ -209,6 +208,8 @@ input:focus {
 }
 
 .Signout .signout-checkbox-title {
+  border: 0;
+	background-color: transparent;
   display: flex;
   align-items: center; 
   justify-content: center;
