@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+3<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="com.always5.review.rest.model.vo.Restaurant" %>
 
@@ -21,35 +21,45 @@
                 <main>
                     <section class="search-nav" style="padding: 0px;">
                         <div>
-                        	<a class="searchKorea" >
+                        	<a class="menu" >
                         		<img src="${pageContext.request.contextPath}/resources/file/search_img/kindsKorean.png" alt="">
-                            	<p>한식</p>
+                            	<p id="menu">한식</p>
                         	</a>
                         </div>
                         <div>
-                            <img src="${pageContext.request.contextPath}/resources/file/search_img/kindsAsian.png"
-                                alt="">
-                            <p>아시안</p>
+                        	<a class="menu">
+	                            <img src="${pageContext.request.contextPath}/resources/file/search_img/kindsAsian.png"
+	                                alt="">
+	                            <p id="menu">아시안</p>
+                            </a>
                         </div>
                         <div>
-                            <img src="${pageContext.request.contextPath}/resources/file/search_img/kindsChinese.png"
-                                alt="">
-                            <p>중식</p>
+                        	<a class="menu">
+	                            <img src="${pageContext.request.contextPath}/resources/file/search_img/kindsChinese.png"
+	                                alt="">
+	                            <p id="menu">중식</p>
+                            </a>
                         </div>
                         <div>
-                            <img src="${pageContext.request.contextPath}/resources/file/search_img/kindsJapanese.png"
-                                alt="">
-                            <p>일식</p>
+                        	<a class="menu">
+	                            <img src="${pageContext.request.contextPath}/resources/file/search_img/kindsJapanese.png"
+	                                alt="">
+	                            <p id="menu">일식</p>
+                            </a>
                         </div>
                         <div>
-                            <img src="${pageContext.request.contextPath}/resources/file/search_img/kindsSnack.png"
-                                alt="">
-                            <p>분식</p>
+                        	<a class="menu">
+	                            <img src="${pageContext.request.contextPath}/resources/file/search_img/kindsSnack.png"
+	                                alt="">
+	                            <p id="menu">분식</p>
+                            </a>
                         </div>
                         <div>
-                            <img src="${pageContext.request.contextPath}/resources/file/search_img/kindsFastfood.png"
-                                alt="">
-                            <p>패스트푸드</p>
+	                        <a class="menu">
+	                            <img src="${pageContext.request.contextPath}/resources/file/search_img/kindsFastfood.png"
+	                                alt="">
+	                            <p id="menu">패스트푸드</p>
+	                         </a>
                         </div>
                     </section>
 
@@ -79,79 +89,196 @@
 	                                    </div>
 	                                </div>
                                 </c:forEach>
-               
                             </div>
                             <br><br>
                             <hr size="3px" color="black" width="95%">
                             <br><br>
                         </div>
+
                     </section>
 
 
                     <section class="search-result">
-                       <!-- <c:forEach var="sr" items="${list}">
-	                        <div>
-	                            <div class="search-best-crownSmall">
-	                                <img src="https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp"
-	                                    alt="">
-	                                <img id="smallCrown"
-	                                    src="${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png"
-	                                    alt="">
-	                            </div>
-	                        </div> -->
-	                       <!-- <div>
-	                                <p class="res-name"><span><b>${sr.restName}</span><span>&nbsp;&nbsp;</span></b></p>
-	                                <p class="res-location"><span>한식집</span><span>&nbsp;&nbsp;${sr.restAddress}</span></p>
-	                                <p class="res-explain"><b>${sr.restIntro}</b></p>
-	                            </div>
-	                        </div>
-	                    </c:forEach> -->
+
+		                        <c:forEach var="sr" items="${list}">
+			                        <div>
+			                            <div class="search-best-crownSmall">
+			                                <img src="https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp"
+			                                    alt="">
+			                                <img id="smallCrown"
+			                                    src="${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png"
+			                                    alt="">
+			                            </div>
+			                            <div>
+			                                <p class="res-name"><span><b>${sr.restName}1111</span><span>&nbsp;&nbsp;</span></b></p>
+			                                <p class="res-location"><span>한식집</span><span>&nbsp;&nbsp;${sr.restAddress}</span></p>
+			                                <p class="res-explain"><b>${sr.restIntro}</b></p>
+			                            </div>
+			                        </div>
+			                    </c:forEach>
+
                     </section>
                     
-                    
-                    
-                    
-                    <script>                    
-                    $(".searchKorea").click(function(){
-                            $.ajax({
-                                url: "searchKindsTest.sc",
-                                data : {
-                                	rpage: 2
-                                },
-                                success: function(list){
+                   <script>                    
+                    $(".menu").click(function(){
+                        $.ajax({
+                        	type : "POST",
+                            url: "korean.sc",
 
-                                    let str =  "";
-    				                            
-                                    for(let r of list){
-                                    	
-                                    	str += "<div>" +
-			                                        "<div class='search-best-crownSmall'>" +
-			                                        "<img src='https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp' alt=''>" +
-			                                        "<img id='smallCrown' src='" + r.contextPath + "/resources/file/search_img/searchCrownSmall.png' alt=''>" +
-			                                        "</div>" +
-		                                        "</div>" +		                                    		
-		                                    	"<div>" +
-			                                        "<p class='res-name'><span><b>" + r.restName + "</b></span><span>&nbsp;&nbsp;</span></p>" +
-			                                        "<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;" + r.restAddress + "</span></p>" +
-			                                        "<p class='res-explain'><b>" + r.restIntro + "</b></p>" +
-		                                        "</div>";
-                                    }
+                            success: function(list){
+								let str = "";
+								let $menu = $("#menu").text();
+								
+								
+							
+			
+		                         
+                                	switch($menu){
+                                		case "한식":
+                                        	for(let r of list){
+                                                str +=  `<div>`+
+                	                            			`<div>` +
+                		                                        `<div class='search-best-crownSmall'>` +
+                		                                        `<img src='https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp' alt=''>` +
+                		                                        `<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
+                		                                        `</div>` +
+                	                                        `</div>` +	                                    		
+                	                                    	`<div>` +
+                		                                        `<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
+                		                                        `<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
+                		                                        `<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
+                	                                        `</div>` +
+                                                      `</div>`;                              
+                                                }
+                                			break;
+                                		case "아시안":
+                                        	for(let r of list){
+                                                str +=  `<div>`+
+                	                            			`<div>` +
+                		                                        `<div class='search-best-crownSmall'>` +
+                		                                        `<img src='https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp' alt=''>` +
+                		                                        `<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
+                		                                        `</div>` +
+                	                                        `</div>` +	                                    		
+                	                                    	`<div>` +
+                		                                        `<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
+                		                                        `<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
+                		                                        `<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
+                	                                        `</div>` +
+                                                      `</div>`;
+                                                                                   
+                                                }
+                                			break;
+                                		case "중식":
+                                			for(let r of list){
+                                                // foodCategoryNo가 3일 때만 해당하는 HTML 문자열을 생성합니다.
+                                               
+                                                if(r.foodCategoryNo === 1){
+                                                    str +=  `<div>`+
+                                                                `<div>` +
+                                                                    `<div class='search-best-crownSmall'>` +
+                                                                        `<img src='https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp' alt=''>` +
+                                                                        `<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
+                                                                    `</div>` +
+                                                                `</div>` +	                                    		
+                                                                `<div>` +
+                                                                    `<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
+                                                                    `<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
+                                                                    `<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
+                                                                `</div>` +
+                                                            `</div>`;
+                                                }
+                                            }
+                                            break;
+                                		case "일식":
+                                        	for(let r of list){
+                                                str +=  `<div>`+
+                	                            			`<div>` +
+                		                                        `<div class='search-best-crownSmall'>` +
+                		                                        `<img src='https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp' alt=''>` +
+                		                                        `<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
+                		                                        `</div>` +
+                	                                        `</div>` +	                                    		
+                	                                    	`<div>` +
+                		                                        `<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
+                		                                        `<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
+                		                                        `<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
+                	                                        `</div>` +
+                                                      `</div>`;
+                                                                                   
+                                                }
+                                			break;
+                                		case "분식":
+                                        	for(let r of list){
+                                                str +=  `<div>`+
+                	                            			`<div>` +
+                		                                        `<div class='search-best-crownSmall'>` +
+                		                                        `<img src='https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp' alt=''>` +
+                		                                        `<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
+                		                                        `</div>` +
+                	                                        `</div>` +	                                    		
+                	                                    	`<div>` +
+                		                                        `<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
+                		                                        `<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
+                		                                        `<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
+                	                                        `</div>` +
+                                                      `</div>`;
+                                                                                   
+                                                }
+                                			break;
+                                		case "패스트푸드":
+                                        	for(let r of list){
+                                                str +=  `<div>`+
+                	                            			`<div>` +
+                		                                        `<div class='search-best-crownSmall'>` +
+                		                                        `<img src='https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp' alt=''>` +
+                		                                        `<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
+                		                                        `</div>` +
+                	                                        `</div>` +	                                    		
+                	                                    	`<div>` +
+                		                                        `<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
+                		                                        `<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
+                		                                        `<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
+                	                                        `</div>` +
+                                                      `</div>`;
+                                                                                   
+                                                }
+                                			break;
 
-                                    document.querySelector(".search-result").innerHTML = str;
+                                	}
+                                	
 
-                                }, 
-                                error: function(){
-                                    console.log("ajax통신 실패")
-                                }
-                            })
+                     
+                            	// for(let r of list){
+                                // str +=  `<div>`+
+	                            // 			`<div>` +
+		                        //                 `<div class='search-best-crownSmall'>` +
+		                        //                 `<img src='https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp' alt=''>` +
+		                        //                 `<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
+		                        //                 `</div>` +
+	                            //             `</div>` +	                                    		
+	                            //         	`<div>` +
+		                        //                 `<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
+		                        //                 `<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
+		                        //                 `<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
+	                            //             `</div>` +
+                                //       `</div>`;
+                                                                   
+                                // }
+								
+                                document.querySelector(".search-result").innerHTML = str;
+
+                            }, 
+                            error: function(){
+                                console.log("ajax통신 실패")
+                            }
                         })
+                    })
                     	
-        
-
-
-                   
 				 </script>
-                 </main>
+
+
+                </main>
 
                 <%@ include file="../common/footer.jsp" %>
         </div>

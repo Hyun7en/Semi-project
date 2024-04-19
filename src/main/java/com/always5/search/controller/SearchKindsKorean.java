@@ -15,14 +15,14 @@ import com.google.gson.Gson;
 /**
  * Servlet implementation class searchKindsTest
  */
-@WebServlet("/searchKindsTest.sc")
-public class searchKindsTest extends HttpServlet {
+@WebServlet("/korean.sc")
+public class SearchKindsKorean extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public searchKindsTest() {
+    public SearchKindsKorean() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,13 +31,11 @@ public class searchKindsTest extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 //		int restNo = Integer.parseInt(request.getParameter("rpage"));
-//		
-//		ArrayList<Restaurant> list = new SearchService().test(restNo);
 		
-		ArrayList<Restaurant> list = new SearchService().test();
+		ArrayList<Restaurant> list = new SearchService().searchList();
 		request.setAttribute("list", list);
-		
 		response.setContentType("application/json; charset=UTF-8");
 		new Gson().toJson(list, response.getWriter());
 	}

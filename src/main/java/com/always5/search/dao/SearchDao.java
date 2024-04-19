@@ -33,7 +33,7 @@ public class SearchDao {
 		
 	}
 	
-	public ArrayList<Restaurant> test(SqlSession sqlSession){
+	public ArrayList<Restaurant> searchList(SqlSession sqlSession){
 		return (ArrayList)sqlSession.selectList("searchMapper.selectSearchRest");
 	}
 	

@@ -18,21 +18,31 @@
 		<result column="REST_ADDRESS" property="restAddress"/>
 		<result column="REST_PHONE" property="restPhone"/>
 		<result column="REST_INTRO" property="restIntro"/>
-		<result column="REST_GRADE" property="restGrade"/>
+		<!-- <result column="REST_GRADE" property="restGrade"/> -->
 		<result column="LIKE_NO" property="likeNo"/>
 		<result column="REST_ENROLL_DATE" property="restEnrollDate"/>
 		<result column="REST_MODIFY_DATE" property="restModifyDate"/>
-		<result column="REST_OPER_TIME" property="restOperTime"/>
+		<result column="REST_OPER_TIME" property="restOperDate"/>
 		<result column="REST_STATUS" property="restStatus"/>
-		<result column="FOOD_CATEGORY_NAME" property="foodCategoryNo"/>
+		<result column="FOOD_CATEGORY_NO" property="foodCategoryNo"/>
 	</resultMap>
 	<select id="selectSearchRest" resultMap="restResultSet">
 		SELECT REST_NO,
 			   REST_NAME,
 			   REST_ADDRESS,
-			   REST_INTRO
+			   REST_PHONE,
+			   REST_INTRO,
+
+			   LIKE_NO,
+			   REST_ENROLL_DATE,
+			   REST_MODIFY_DATE,
+			   REST_OPER_TIME,
+			   REST_STATUS,
+			   FOOD_CATEGORY_NO
 		FROM REST_INFO
 	</select>
+	
+
 
 	<select id="searchListCount" resultType="_int">
  		SELECT COUNT(*)

@@ -47,9 +47,9 @@ public class SearchKindsPageController extends HttpServlet {
 		
 		RequestDispatcher view = request.getRequestDispatcher("WEB-INF/views/search/searchKinds.jsp");
 		view.forward(request, response);
+	}
 		
-		
-//		// 헤더의 음식별을 클릭하면
+//		// 헤더의 음식별을 클릭하면 
 //		// 이 서블릿이 받아서
 //		// searchKinds한 내용을 처리하고
 //		// searchKinds 페이지로 보내준다
@@ -103,7 +103,7 @@ public class SearchKindsPageController extends HttpServlet {
 //		
 //		// 배열로 받아오기
 		
-	}
+
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
