@@ -4,31 +4,44 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="csMapper">
-	<resultMap id="csResultSet" type="customerService">
-		<result column="CS_NO" property="csNo"/>
-		<result column="CS_TITLE" property="csTitle"/>
-		<result column="CS_CONTENT" property="csContent"/>
-		<result column="CS_ENROLL_DATE" property="csEnrollDate"/>
-		<result column="CS_MODIFY_DATE" property="csModifyDate"/>
-		<result column="CS_STATUS" property="csStatus"/>
-		<result column="USER_ID" property="csWriter"/>
+
+	<resultMap id="csTypeResultSet" type="csType">
+		<result column="CS_TYPE_NO" property="csTypeNo"/>
+		<result column="CS_TYPE_VALUE" property="csTypeValue"/>
 	</resultMap>
-	<select id="selectCskeyword" resultMap="csResultSet">
-		SELECT CS_NO,
-				CS_TITLE,
-				USER_ID,
-		FROM  CUSTOMER_SERVICE
-		JOIN  ON (CS_WRITER = USER_NO)
-		WHERE CS_STATUS = 'Y'
-		ORDER BY CS_NO DESC
+
+	<resultMap id="csKeywordResultSet" type="CsKeyword">
+		<result column="CS_KEYWORD_NO" property="cskeywordNo"/>
+		<result column="CS_TYPE_NO" property="csTypeNo"/>
+		<result column="CS_KEYWORD_VALUE" property="cskeywordValue"/>
+	</resultMap>
+
+	<resultMap id="csDetailResultSet" type="CsDetail">
+		<result column="CS_DETAIL_NO" property="csDetailNo"/>
+		<result column="CS_KEYWORD_NO" property="csKeywordNo"/>
+		<result column="CS_TYPE_NO" property="csTypeNo"/>
+		<result column="CS_DETAIL_TITLE" property="csDetailTitle"/>
+		<result column="CS_DETAIL_CONTENT" property="csDetailContent"/>
+		<result column="CS_DETAIL_ENROLL_DATE" property="csDetailEnrollDate"/>
+		<result column="CS_DETAIL_MODIFY_DATE" property="csDetailModifyDate"/>
+		<result column="CS_DETAIL_STATUS" property="csDetailStatus"/>
+		<result column="CS_DETAIL_WRITER" property="csDetailWriter"/>
+	</resultMap>
+
+	<select id="selectCsTypeList" resultMap="csTypeResultSet">
+		SELECT CS_TYPE_VALUE
+		  FROM CUSTOMER_SERVICE_TYPE
 	</select>
-	<select id="selectCsDetail" resultMap="csResultSet">
-		SELECT CS_NO,
-				CS_TITLE,
-				USER_ID,
-		FROM  CUSTOMER_SERVICE
-		JOIN  ON (CS_WRITER = USER_NO)
-		WHERE CS_STATUS = 'Y'
-		ORDER BY CS_NO DESC
+	
+	<select id="selectCskeywordList" resultMap="csKeywordResultSet">
+		SELECT CS_KEYWORD_VALUE
+		  FROM CUSTOMER_SERVICE_KEYWORD
+	</select>
+	
+	<select id="selectCsDetailList" resultMap="csDetailResultSet">
+		SELECT CS_DETAIL_TITLE,
+			   CS_DETAIL_CONTENT
+		  FROM CUSTOMER_SERVICE_DETAIL
+		 ORDER BY CS_DETAIL_ENROLL_DATE DESC
 	</select>
 </mapper>

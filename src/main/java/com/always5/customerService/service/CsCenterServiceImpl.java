@@ -14,42 +14,30 @@ import com.always5.customerService.model.vo.CsType;
 public class CsCenterServiceImpl implements CsCenterService {
 
 	private CsCenterDao csCenterDao = new CsCenterDao();
-	
-	/** fcode에 따른 대분류를 ArrayList 객체 타입으로 가져오는 메서드 */
+
 	@Override
-	public ArrayList<CsType> selectCsType(int csCode) {
+	public ArrayList<CsType> selectCsTypeList(int csTypeNo) {
 		SqlSession sqlSession = Template.getSqlSession();
 		
-		ArrayList<CsType> csTypeList = csCenterDao.selectCsTypeList(csCode);
+		ArrayList<CsType> csTypeList = csCenterDao.selectCsTypeList(sqlSession,csTypeNo);
 		
 		sqlSession.close();
 		
 		return csTypeList;
 	}
-	
-	/** fcode에 따른 중분류를 ArrayList 객체 타입으로 가져오는 메서드 */
+
 	@Override
-	public ArrayList<CsKeyword> selectCskeyword(int csCode) {
-		SqlSession sqlSession = Template.getSqlSession();
-		
-		ArrayList<CsKeyword> cskeywordList = csCenterDao.selectCskeywordList(csCode);
-		
-		sqlSession.close();
-		
-		return cskeywordList;
+	public ArrayList<CsKeyword> selectCskeywordList() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
-	/** fcode에 따른 csDetail 데이터를 ArrayList 객체 타입으로 반환하는 메서드 */
 	@Override
-	public ArrayList<CsDetail> selectCsDetail(int fcode) {
-		SqlSession sqlSession = Template.getSqlSession();
-		
-		ArrayList<CsDetail> csDetailList = csCenterDao.selectCsDetailList(fcode);
-		
-		sqlSession.close();
-		
-		return csDetailList;
+	public ArrayList<CsDetail> selectCsDetailList() {
+		// TODO Auto-generated method stub
+		return null;
 	}
+	
 	
 	
 }

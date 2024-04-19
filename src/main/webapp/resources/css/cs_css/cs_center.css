@@ -88,7 +88,7 @@
         scale: 1.08;
     }
 
-    #section-2 > div > #cs1{
+    #section-2 > div > .a2{
         margin-left: 20px;
     }
     
@@ -110,7 +110,7 @@
         align-items: center;
     }
 
-    #navi-2>li>a{
+    #navi-2>li>span{
         font-size: 15px;
         font-weight: 900;
         display: block;
@@ -118,7 +118,7 @@
         line-height: 35px;
     }
 
-    #navi-2 > li > a:hover{
+    #navi-2 > li > span:hover{
         color: rgb(124, 124, 124);
         scale: 1.08;
     } 

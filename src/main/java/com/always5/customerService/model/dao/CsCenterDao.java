@@ -10,19 +10,19 @@ import com.always5.customerService.model.vo.CsType;
 
 public class CsCenterDao {
 	
-	public ArrayList<CsType> selectCsType(SqlSession sqlSession, int csCode){
+	public ArrayList<CsType> selectCsTypeList(SqlSession sqlSession, int csTypeNo){
 		
-		return (ArrayList)sqlSession.selectCsType("csMapper.selectCsType", csCode);
+		return (ArrayList)sqlSession.selectList("csMapper.selectCsTypeList");
 	}
 	
-	public ArrayList<CsKeyword> selectCskeyword(SqlSession sqlSession, int csCode){
+	public ArrayList<CsKeyword> selectCskeywordList(SqlSession sqlSession){
 		
-		return (ArrayList)sqlSession.selectCskeyword("csMapper.selectCskeyword", csCode);
+		return (ArrayList)sqlSession.selectList("csMapper.selectCskeywordList");
 	}
 	
-	public ArrayList<CsDetail> selectCsDetail(SqlSession sqlSession, int csCode){
+	public ArrayList<CsDetail> selectCsDetailList(SqlSession sqlSession){
 		
-		return (ArrayList)sqlSession.selectCsDetail("csMapper.selectCsDetail", csCode);
+		return (ArrayList)sqlSession.selectList("csMapper.selectCsDetailList");
 	}
 	
 }
