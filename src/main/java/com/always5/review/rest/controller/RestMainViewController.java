@@ -16,6 +16,7 @@ import com.always5.review.rest.model.vo.Restaurant;
 import com.always5.review.rest.service.RestServiceImpl;
 import com.always5.user.model.vo.Dibs;
 import com.always5.user.model.vo.User;
+import com.always5.user.service.UserServiceImpl;
 
 /**
  * Servlet implementation class restMainViewController
@@ -59,31 +60,33 @@ public class RestMainViewController extends HttpServlet {
 		ArrayList<Menu> mcList = rService.selectMenuCategoryList(restNo);
 		
 		// 현재 로그인한 사용자가 찜 했는지
-		User u = (User)request.getSession().getAttribute("loginUser");
-		Dibs userDibs = null;
-		if (u != null) {
-			Dibs dibsInfo = new Dibs(String.valueOf(u.getUserNo()), String.valueOf(restNo));
-			userDibs = rService.selectDibsForUserNo(dibsInfo);
-		} 
+//		User u = (User)request.getSession().getAttribute("loginUser");
+//		Dibs userDibs = null;
+//		if (u != null) {
+//			Dibs dibsInfo = new Dibs(String.valueOf(u.getUserNo()), String.valueOf(restNo));
+//			userDibs = rService.selectDibsForUserNo(dibsInfo);
+//		}
 		
+		User loginUser = new User();
+		loginUser.setUserNo(1);
+		loginUser.setUserId("ADMIN01");
+		loginUser.setUserPwd("WANG1BAB1BBANG1");
+
+//		User loginUser = new User();
+//		loginUser.setUserNo(2);
+//		loginUser.setUserId("ADMIN02");
+//		loginUser.setUserPwd("WANG2BAB2BBANG2");
 		
-		// 리뷰 별점, 내용, 작성자 이름, 등록일, 리뷰 사진
-//		ArrayList<Review> reviewList = rService.selectReviewList(restNo);
-		
-		// 리뷰 별점 개수 (별점 1부터 5까지의 횟수 차례대로 전달)
-//		ArrayList<Integer> ratingCount = rService.selectRatingCount(restNo);
-		
-		// 리뷰 평점
-//		rest.setRestGrade(String.valueOf(rService.operateRating(restNo)));
+//		Dibs userDibs = null;
+//		if (loginUser != null) {
+//			Dibs dibsInfo = new Dibs(String.valueOf(loginUser.getUserNo()), String.valueOf(restNo));
+//			userDibs = rService.selectDibsForUserNo(dibsInfo);
+//		} 
 		
 		request.setAttribute("contextPath", request.getContextPath());
 		request.setAttribute("rest", rest);
 		request.setAttribute("mcList", mcList);
-		request.setAttribute("userDibs", userDibs);
-//		request.setAttribute("reviewList", reviewList);
-//		request.setAttribute("ratingCount", ratingCount);
-		
-//		request.setAttribute("loginUser", )
+		request.setAttribute("loginUser", loginUser);
 		
 		request.getRequestDispatcher("WEB-INF/views/rest/restMainView.jsp").forward(request, response);
 	}

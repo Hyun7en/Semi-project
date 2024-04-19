@@ -88,13 +88,31 @@
 		AND MENU_STATUS = 'Y'
 	</select>
 	
-	<select id="selectDibsForUserNo" resultMap="dibsResultSet">
+	<select id="checkDibs" resultMap="dibsResultSet">
 		SELECT USER_NO,
 			   REST_NO
 		FROM DIBS
 		WHERE USER_NO = #{userNo}
 		AND REST_NO = #{restNo}
 	</select>
+	
+	<select id="selectDibsCount" resultMap="restResultSet">
+		SELECT LIKE_NO
+		FROM REST_INFO
+		WHERE REST_NO = #{restNo}
+	</select>
+	
+	<insert id="insertDibs">
+		INSERT INTO DIBS
+		SET USER_NO = #{userNo}
+		AND REST_NO = #{restNo}
+	</insert>
+	
+	<delete id="deleteDibs">
+		DELETE FROM DIBS
+		 WHERE USER_NO = #{userNo}
+		   AND REST_NO = #{restNo}
+	</delete>
 	
 	<select id="selectReviewList" resultMap="reviewResultSet">
 		SELECT REVIEW_NO,
