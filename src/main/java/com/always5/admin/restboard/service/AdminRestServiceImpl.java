@@ -10,6 +10,7 @@ import com.always5.common.template.Template;
 import com.always5.common.vo.PageInfo;
 import com.always5.review.rest.model.vo.Restaurant;
 
+
 public class AdminRestServiceImpl implements AdminRestService{
 	
 	private RestBoardDao rDao = new RestBoardDao();
@@ -69,6 +70,11 @@ public class AdminRestServiceImpl implements AdminRestService{
 		
 		sqlSession.close();
 		return r;
+	}
+
+	public int selectRestListCount() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 	
