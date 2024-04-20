@@ -35,6 +35,7 @@ public class UserLogoutController extends HttpServlet {
 		response.sendRedirect(request.getContextPath());
 	}
 
+
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
