@@ -41,18 +41,23 @@ public class DibsSelectController extends HttpServlet {
 		Dibs dibs = new RestServiceImpl().checkDibs(dibsInfo);
 		Dibs userDibs = null;
 		
-		if (dibs != null) {
+		System.out.println(dibs);
+		if (dibs == null) {
 			userDibs = new RestServiceImpl().insertDibs(dibsInfo);
+			System.out.println(userDibs);
 		} else {
 			userDibs = new RestServiceImpl().deleteDibs(dibsInfo);
 		}
 		
+		System.out.println("delete 되었을까?");
+		
 		Restaurant dibsCount = new RestServiceImpl().selectDibsCount(restNo);
+		
+		System.out.println(dibsCount);
 		
 		HashMap map = new HashMap<>();
 		map.put("userDibs", userDibs);
 		map.put("dibsCount", dibsCount);
-
 		response.setContentType("application/json; charset=utf-8");
 		new Gson().toJson(map, response.getWriter());
 		

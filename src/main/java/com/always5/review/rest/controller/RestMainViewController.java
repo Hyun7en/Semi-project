@@ -59,6 +59,16 @@ public class RestMainViewController extends HttpServlet {
 		// 메뉴 카테고리명
 		ArrayList<Menu> mcList = rService.selectMenuCategoryList(restNo);
 		
+//		for(int i = 0; i < list.size(); i++) {
+//			int num = i;
+//			for(int j = 0; j < num; j++) {
+//				if(list.get(j).getMenuNo() == list.get(i).getMenuNo()) {
+//					list.remove(i);
+//				}
+//			}
+//		}
+//	}
+		
 		// 현재 로그인한 사용자가 찜 했는지
 //		User u = (User)request.getSession().getAttribute("loginUser");
 //		Dibs userDibs = null;

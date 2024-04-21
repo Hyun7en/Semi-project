@@ -49,14 +49,18 @@
                             <div>${rest.restGrade }</div>
                         </div>
 
-                        <div class="rest-record" id="rest-dibs" onclick="selectDibs()">
+                        <div class="rest-record" id="rest-dibs" onclick="selectDibs">
                             
                         </div>
                     </div>
                 </div>
                 <div id="rest-category">
-                    ${rest.foodCategoryNo} |
+                    ${rest.foodCategoryNo} | 
                     <c:forEach var="mc" items="${mcList}">
+                        
+                    <c:if test="">
+                            
+                        </c:if>
                         ${mc.menuCategoryNo}
                     </c:forEach>
                 </div>
@@ -118,6 +122,7 @@
                         data: data,
                         success: function (result) {
                             callback(result)
+                            // console.log("성공");
                         },
                         error: function () {
                             noRestContentDraw("정보를 불러오는데 실패 했습니다.");
@@ -302,6 +307,7 @@
                 function dibsStatusDraw(map){
                     const userDibs = map.userDibs;
                     const dibsCount = map.dibsCount;
+                    console.log(userDibs);
                     // 로그인 되어 있는 경우
                     if(${not empty loginUser}){
                         // const dibs = document.createElement('#rest-dibs');
@@ -325,6 +331,7 @@
                 }
 
                 function selectDibs(){
+                    // console.log("클릭");
                     ajaxGetItemList("${pageContext.request.contextPath}/selectDibs.re", 
                                     {restNo : "${rest.restNo}",
                                     userNo : "${loginUser.userNo}"}, 

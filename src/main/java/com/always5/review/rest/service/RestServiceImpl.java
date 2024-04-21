@@ -61,16 +61,20 @@ public class RestServiceImpl implements RestService{
 		return dibsCount;
 	}
 	
-	// 가게 찜 선택 시 update
+	// 가게 찜 선택 시 insert
 	@Override
 	public Dibs insertDibs(Dibs dibsInfo) {
 		SqlSession sqlSession = Template.getSqlSession();
 		int result = restDao.insertDibs(sqlSession, dibsInfo);
 		Dibs userDibs = null;
 		
+		System.out.println("insert 성공" + result);
 		if (result > 0) {
 			userDibs = restDao.checkDibs(sqlSession, dibsInfo);
+			System.out.println("방금 가져온 거 있니" + userDibs);
 		}
+		
+		System.out.println("insert Service");
 		sqlSession.close();
 		return userDibs;
 	}
@@ -86,6 +90,7 @@ public class RestServiceImpl implements RestService{
 			userDibs = restDao.checkDibs(sqlSession, dibsInfo);
 		}
 		
+		System.out.println("delete Service");
 		sqlSession.close();
 		return userDibs;
 	}

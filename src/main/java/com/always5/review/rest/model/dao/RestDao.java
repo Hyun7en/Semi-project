@@ -33,6 +33,7 @@ public class RestDao {
 	}
 	
 	public int insertDibs(SqlSession sqlSession, Dibs dibsInfo) {
+		System.out.println("dao " + dibsInfo);
 		return sqlSession.insert("restMapper.insertDibs", dibsInfo);
 	}
 	

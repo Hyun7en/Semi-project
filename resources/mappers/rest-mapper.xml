@@ -104,8 +104,7 @@
 	
 	<insert id="insertDibs">
 		INSERT INTO DIBS
-		SET USER_NO = #{userNo}
-		AND REST_NO = #{restNo}
+		VALUES(#{userNo}, #{restNo})
 	</insert>
 	
 	<delete id="deleteDibs">
