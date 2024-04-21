@@ -50,6 +50,7 @@
 		                    <td>2024-03-20</td>
 		                </tr>
 		                 -->
+		              </c:forEach>
                 </tbody>
             </table>
             
