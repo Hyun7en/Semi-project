@@ -26,6 +26,15 @@
 		<result column="REST_STATUS" property="restStatus"/>
 		<result column="FOOD_CATEGORY_NO" property="foodCategoryNo"/>
 	</resultMap>
+	<resultMap id="menuResultSet" type="Menu">
+		<result column="MENU_NO" property="menuNo"/>
+		<result column="MENU_NAME" property="menuName"/>
+		<result column="MENU_PRICE" property="menuPrice"/>
+		<result column="REST_NO" property="restNo"/>
+		<result column="MENU_CATEGORY_NAME" property="menuCategoryNo"/>
+	</resultMap>>
+	
+	
 	<select id="selectSearchRest" resultMap="restResultSet">
 		SELECT REST_NO,
 			   REST_NAME,
@@ -42,12 +51,12 @@
 		FROM REST_INFO
 	</select>
 	
-
-
 	<select id="searchListCount" resultType="_int">
  		SELECT COUNT(*)
  		  FROM REST_INFO
  		 WHERE REST_STATUS = 'Y'
-	</select>	
+	</select>
+	
+
 	
 </mapper>

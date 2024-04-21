@@ -15,14 +15,14 @@ import com.google.gson.Gson;
 /**
  * Servlet implementation class searchKindsTest
  */
-@WebServlet("/korean.sc")
-public class SearchKindsKorean extends HttpServlet {
+@WebServlet("/searchKindsList.sc")
+public class AjaxSearchKindsListController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SearchKindsKorean() {
+    public AjaxSearchKindsListController() {
         super();
         // TODO Auto-generated constructor stub
     }

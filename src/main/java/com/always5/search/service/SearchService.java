@@ -33,7 +33,10 @@ public class SearchService {
 		ArrayList<Restaurant> list = new SearchDao().searchList(sqlSession);
 		sqlSession.close();
 		return list;
-		
 	}
 	
+	public ArrayList<Menu> searchMenuList(){
+		
+		
+	}
 }
