@@ -30,11 +30,11 @@
                     <div class="reviewbox-grade">평점 5.0</div>
 
                     <div class="crown-rank">
-                        <img class="crown" src="http://localhost:8001/always5/resources/file/user_img/MypagReview-img/ccrown.png" />
-                        <img class="crown" src="http://localhost:8001/always5/resources/file/user_img/MypagReview-img/crown.png" />
-                        <img class="crown" src="http://localhost:8001/always5/resources/file/user_img/MypagReview-img/crown.png" />
-                        <img class="crown" src="http://localhost:8001/always5/resources/file/user_img/MypagReview-img/crown.png" />
-                        <img class="crown" src="http://localhost:8001/always5/resources/file/user_img/MypagReview-img/crown.png" />
+                        <img class="crown" src="http://localhost:8001/always5/resources/file/user_img/MypageReview-img/crown.png" />
+                        <img class="crown" src="http://localhost:8001/always5/resources/file/user_img/MypageReview-img/crown.png" />
+                        <img class="crown" src="http://localhost:8001/always5/resources/file/user_img/MypageReview-img/crown.png" />
+                        <img class="crown" src="http://localhost:8001/always5/resources/file/user_img/MypageReview-img/crown.png" />
+                        <img class="crown" src="http://localhost:8001/always5/resources/file/user_img/MypageReview-img/crown.png" />
                     </div>
 
                     <button class="review-box-deletebox">
@@ -47,9 +47,9 @@
                     <img class="reviewbox-line" src="img/line-50.svg" />
                     <div class="reviewbox-text">푸짐하고 맛있어염</div>
 
-                    <img class="reviewbox-preview01" src="img/한식01.jpg" />
-                    <img class="reviewbox-preview02" src="img/한식02.jpg" />
-                    <img class="reviewbox-preview03" src="img/한식03.jpg" />
+                    <img class="reviewbox-preview01" src="http://localhost:8001/always5/resources/file/user_img/MypageReview-img/한식01.jpg" />
+                    <img class="reviewbox-preview02" src="http://localhost:8001/always5/resources/file/user_img/MypageReview-img/한식02.jpg" />
+                    <img class="reviewbox-preview03" src="http://localhost:8001/always5/resources/file/user_img/MypageReview-img/한식03.jpg" />
 
                     <div class="reviewbox-usermenu">
                         <div class="reviewbox-usermenu-title">비빔밥 + 찌개세트</div>
@@ -66,10 +66,10 @@
                     <div class="reviewbox-grade">평점 4.0</div>
 
                     <div class="crown-rank">
-                        <img class="crown" src="http://localhost:8001/always5/resources/file/user_img/MypagReview-img/crown.png" />
-                        <img class="crown" src="http://localhost:8001/always5/resources/file/user_img/MypagReview-img/crown.png" />
-                        <img class="crown" src="http://localhost:8001/always5/resources/file/user_img/MypagReview-img/crown.png" />
-                        <img class="crown" src="http://localhost:8001/always5/resources/file/user_img/MypagReview-img/crown.png" />
+                        <img class="crown" src="http://localhost:8001/always5/resources/file/user_img/MypageReview-img/crown.png" />
+                        <img class="crown" src="http://localhost:8001/always5/resources/file/user_img/MypageReview-img/crown.png" />
+                        <img class="crown" src="http://localhost:8001/always5/resources/file/user_img/MypageReview-img/crown.png" />
+                        <img class="crown" src="http://localhost:8001/always5/resources/file/user_img/MypageReview-img/crown.png" />
                     </div>
 
                     <button class="review-box-mainpage02">
@@ -82,9 +82,8 @@
                     <img class="reviewbox-line" src="img/line-50.svg" />
                     <div class="reviewbox-text">남김없이 다 먹었어요 배터질것같아요 배빵빵</div>
 
-                    <img class="reviewbox-preview01" src="http://localhost:8001/always5/resources/file/user_img/MypagReview-img/한식01.jpg" />
-                    <img class="reviewbox-preview02" src="http://localhost:8001/always5/resources/file/user_img/MypagReview-img/한식02.jpg" />
-                    <img class="reviewbox-preview03" src="http://localhost:8001/always5/resources/file/user_img/MypagReview-img/한식03.jpg" />
+                    <img class="reviewbox-preview01" src="http://localhost:8001/always5/resources/file/user_img/MypageReview-img/쌀국수01.jpg" />
+                    <img class="reviewbox-preview02" src="http://localhost:8001/always5/resources/file/user_img/MypageReview-img/쌀국수02.jpg" />
 
                     <div class="reviewbox-usermenu2">
                         <div class="reviewbox-usermenu-title2">양지쌀국수 + 치킨텐더</div>
@@ -99,11 +98,11 @@
                 <div class="reviewbox-grade">평점 5.0</div>
 
                 <div class="crown-rank">
-                    <img class="crown" src="http://localhost:8001/always5/resources/file/user_img/MypagReview-img/crown.png" />
-                    <img class="crown" src="http://localhost:8001/always5/resources/file/user_img/MypagReview-img/crown.png" />
-                    <img class="crown" src="http://localhost:8001/always5/resources/file/user_img/MypagReview-img/crown.png" />
-                    <img class="crown" src="http://localhost:8001/always5/resources/file/user_img/MypagReview-img/crown.png" />
-                    <img class="crown" src="http://localhost:8001/always5/resources/file/user_img/MypagReview-img/crown.png" />
+                    <img class="crown" src="http://localhost:8001/always5/resources/file/user_img/MypageReview-img/crown.png" />
+                    <img class="crown" src="http://localhost:8001/always5/resources/file/user_img/MypageReview-img/crown.png" />
+                    <img class="crown" src="http://localhost:8001/always5/resources/file/user_img/MypageReview-img/crown.png" />
+                    <img class="crown" src="http://localhost:8001/always5/resources/file/user_img/MypageReview-img/crown.png" />
+                    <img class="crown" src="http://localhost:8001/always5/resources/file/user_img/MypageReview-img/crown.png" />
                 </div>
 
                 <button class="review-box-mainpage03">
@@ -116,9 +115,9 @@
                 <img class="reviewbox-line" src="img/line-50.svg" />
                 <div class="reviewbox-text">GOOD!!</div>
 
-                <img class="reviewbox-preview01" src="http://localhost:8001/always5/resources/file/user_img/MypagReview-img/한식01.jpg" />
-                <img class="reviewbox-preview02" src="http://localhost:8001/always5/resources/file/user_img/MypagReview-img/한식02.jpg" />
-                <img class="reviewbox-preview03" src="http://localhost:8001/always5/resources/file/user_img/MypagReview-img/한식03.jpg" />
+                <img class="reviewbox-preview01" src="http://localhost:8001/always5/resources/file/user_img/MypageReview-img/육회01.jpg" />
+                <img class="reviewbox-preview02" src="http://localhost:8001/always5/resources/file/user_img/MypageReview-img/육회02.jpg" />
+                <img class="reviewbox-preview03" src="http://localhost:8001/always5/resources/file/user_img/MypageReview-img/육회03.jpg" />
 
                 <div class="reviewbox-usermenu3">
                     <div class="reviewbox-usermenu-title3">육회덮밥 + 새우튀김</div>
@@ -134,9 +133,9 @@
                     <div class="reviewbox-grade">평점 3.0</div>
 
                     <div class="crown-rank">
-                        <img class="crown" src="http://localhost:8001/always5/resources/file/user_img/MypagReview-img/crown.png" />
-                        <img class="crown" src="http://localhost:8001/always5/resources/file/user_img/MypagReview-img/crown.png" />
-                        <img class="crown" src="http://localhost:8001/always5/resources/file/user_img/MypagReview-img/crown.png" />
+                        <img class="crown" src="http://localhost:8001/always5/resources/file/user_img/MypageReview-img/crown.png" />
+                        <img class="crown" src="http://localhost:8001/always5/resources/file/user_img/MypageReview-img/crown.png" />
+                        <img class="crown" src="http://localhost:8001/always5/resources/file/user_img/MypageReview-img/crown.png" />
                     </div>
 
                     <button class="review-box-mainpage04">
@@ -149,9 +148,9 @@
                     <img class="reviewbox-line" src="img/line-50.svg" />
                     <div class="reviewbox-text">냠냠 잘먹었습니다</div>
 
-                    <img class="reviewbox-preview01" src="http://localhost:8001/always5/resources/file/user_img/MypagReview-img/한식01.jpg" />
-                    <img class="reviewbox-preview02" src="http://localhost:8001/always5/resources/file/user_img/MypagReview-img/한식02.jpg" />
-                    <img class="reviewbox-preview03" src="http://localhost:8001/always5/resources/file/user_img/MypagReview-img/한식03.jpg" />
+                    <img class="reviewbox-preview01" src="http://localhost:8001/always5/resources/file/user_img/MypageReview-img/곱창01.jpg" />
+                    <img class="reviewbox-preview02" src="http://localhost:8001/always5/resources/file/user_img/MypageReview-img/곱창02.jpg" />
+                    <img class="reviewbox-preview03" src="http://localhost:8001/always5/resources/file/user_img/MypageReview-img/곱창03.jpg" />
 
                     <div class="reviewbox-usermenu4">
                         <div class="reviewbox-usermenu-title4">막창 소금구이 260g</div>
@@ -168,8 +167,8 @@
                         <div class="reviewbox-grade">평점 2.0</div>
 
                         <div class="crown-rank">
-                            <img class="crown" src="http://localhost:8001/always5/resources/file/user_img/MypagReview-img/crown.png" />
-                            <img class="crown" src="http://localhost:8001/always5/resources/file/user_img/MypagReview-img/crown.png" />
+                            <img class="crown" src="http://localhost:8001/always5/resources/file/user_img/MypageReview-img/crown.png" />
+                            <img class="crown" src="http://localhost:8001/always5/resources/file/user_img/MypageReview-img/crown.png" />
                         </div>
 
                         <button class="review-box-mainpage05">
@@ -182,9 +181,7 @@
                         <img class="reviewbox-line" src="img/line-50.svg" />
                         <div class="reviewbox-text">식을까봐 허겁지겁 멋었네요</div>
 
-                        <img class="reviewbox-preview01" src="http://localhost:8001/always5/resources/file/user_img/MypagReview-img/한식01.jpg" />
-                        <img class="reviewbox-preview02" src="http://localhost:8001/always5/resources/file/user_img/MypagReview-img/한식02.jpg" />
-                        <img class="reviewbox-preview03" src="http://localhost:8001/always5/resources/file/user_img/MypagReview-img/한식03.jpg" />
+                        <img class="reviewbox-preview01" src="http://localhost:8001/always5/resources/file/user_img/MypageReview-img/갈비02.jpg" />
 
                         <div class="reviewbox-usermenu5">
                             <div class="reviewbox-usermenu-title5">막창 소금구이(260g)</div>
