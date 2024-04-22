@@ -148,6 +148,7 @@ body {
 
 /*사용자 이름수정*/
 .Mypage .Mypage-username-box {
+	
 	background-color: #fffefe;
 	border: 1px solid #b1a8a8;
 	display: flex;
@@ -174,7 +175,7 @@ body {
 	border: 1px solid #b1a8a8;
 	width: 65px;
 	height: 28px;
-	margin-left: 565px;
+	margin-left: 610px;
 }
 
 .Mypage .profile-username-checkbox-title {
@@ -215,7 +216,7 @@ body {
 	border: 1px solid #b1a8a8;
 	width: 65px;
 	height: 28px;
-	margin-left: 488px;
+	margin-left: 610px;
 }
 
 .Mypage .profile-userid-checkbox-title {
@@ -255,7 +256,7 @@ body {
 	border: 1px solid #b1a8a8;
 	width: 65px;
 	height: 28px;
-	margin-left: 542px;
+	margin-left: 610px;
 }
 
 .Mypage .profile-userpwd-checkbox-title {

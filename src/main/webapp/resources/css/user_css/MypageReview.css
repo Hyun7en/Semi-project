@@ -1,0 +1,859 @@
+@charset "UTF-8";
+
+@font-face {
+	font-family: 'WAGURITTF';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/2403@1.0/WAGURITTF.woff2')
+		format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@import
+	url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+* {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+/*a태그 */
+a {
+	text-decoration-line: none;
+	color: #b1a8a8;
+}
+
+body {
+	margin: 0px;
+	background-color: #FBFAF6;
+	width: 100vw;	
+  height: 100vh;
+}
+
+input:focus {
+	outline: none;
+}
+
+[type="radio"] {
+	appearance: none;
+	width: 15px;
+	height: 15px;
+	box-shadow: 0 0 0 1px black;
+	border: 4px solid white;
+	border-radius: 50%;
+	background-color: white;
+}
+
+[type="radio"]:checked {
+	border: 4px solid white;
+	background-color: black;
+}
+
+/*배경*/
+.MypageReview-Container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fbfaf6;
+  width: calc(100% - 48px);
+  height: calc(100% - 48px);
+  box-sizing: border-box;
+
+  height: auto;
+}
+  
+/* 작성한 리뷰 */
+.MypageReview .MypageReview-title-box {
+  display: flex;
+
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.MypageReview .MypageReview-Name {
+  font-weight: 700;
+  color: #000000;
+  font-size: 30px;
+  white-space: nowrap;
+  letter-spacing: 0;
+  line-height: normal;
+
+  width: 100px;
+}
+
+.MypageReview .MypageReview-Name2 {
+
+  font-weight: 700;
+  color: #000000;
+  font-size: 25px;
+  white-space: nowrap;
+  letter-spacing: 0;
+  line-height: normal;
+
+  padding-top: 5px;
+  width: 200px;
+}
+
+/*1번 박스*/
+.MypageReview .reviewbox01{
+  border: 1px solid rgb(210, 206, 206);
+  width: 754px;
+  height: 452px;
+  background-color: #fffefd;
+  box-shadow: 5px 10px 10px 5px #0000000d;
+  border-radius: 30px;
+
+  margin-bottom: 60px;
+}
+
+
+.MypageReview .reviewbox-wrapper {
+  margin: 40px;
+}
+
+.MypageReview .reviewbox-title {
+  font-weight: 700;
+  color: #000000;
+  font-size: 20px;
+  white-space: nowrap;
+  letter-spacing: 0;
+  line-height: normal;
+
+  margin-bottom: 10px;
+}
+
+.MypageReview .reviewbox-grade {
+  float: left;
+  font-weight: 500;
+  color: #787b7d;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: normal;
+
+  padding-right: 15px;
+}
+
+.MypageReview .crown-rank {
+  width: 250px;
+}
+
+.MypageReview .crown {
+  float: left;
+  width: 27px;
+}
+
+.MypageReview .review-box-deletebox {
+  border: 1px solid #b1a8a8;
+  width: 50px;
+  height: auto;
+  background-color: #f7f7f7;
+  border-radius: 30px;
+
+  margin-left: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.MypageReview .review-delete {
+  font-weight: 700;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.MypageReview .review-box-mainpagebox {
+  float: left;
+  border: 1px solid #b1a8a8;
+  width: 60px;
+  height: auto;
+  background-color: #f7f7f7;
+  border-radius: 30px;
+
+  margin-left: 330px;
+}
+
+.MypageReview .review-box-mainpage {
+  font-weight: 700;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: normal;
+  padding-top: 2px;
+  padding-bottom: 3px;
+}
+
+.MypageReview .reviewbox-line {
+  width: 658px;
+  height: 1px;
+  object-fit: cover;
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.MypageReview .reviewbox-text {
+  font-weight: 700;
+  color: #000000;
+  font-size: 20px;
+  white-space: nowrap;
+  letter-spacing: 0;
+  line-height: normal;
+
+  margin-bottom: 20px;
+}
+
+.MypageReview .reviewbox-preview01 {
+  border: 1px solid #b1a8a8;
+  width: 202px;
+  height: 147px;
+  object-fit: cover;
+  border-radius:20px;
+  
+}
+
+.MypageReview .reviewbox-preview02 {
+  border: 1px solid #b1a8a8;
+  width: 202px;
+  height: 147px;
+  object-fit: cover;
+  border-radius:20px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.MypageReview .reviewbox-preview03 {
+  border: 1px solid #b1a8a8;
+  width: 202px;
+  height: 147px;
+  object-fit: cover;
+  border-radius:20px;
+}
+
+.MypageReview .reviewbox-usermenu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #b1a8a8;
+  width: 202px;
+  height: 35px;
+  background-color: #f2f2f2;
+  border-radius: 20px;
+
+  margin-top: 15px;
+}
+
+.MypageReview .reviewbox-usermenu-title {
+  width: 100px;
+}
+  
+/*2번 박스*/
+.MypageReview .reviewbox02{
+  border: 1px solid rgb(210, 206, 206);
+  width: 754px;
+  height: 452px;
+  background-color: #fffefd;
+  box-shadow: 5px 10px 10px 5px #0000000d;
+  border-radius: 30px;
+
+  margin-bottom: 60px;
+}
+
+
+.MypageReview .reviewbox-wrapper {
+  margin: 40px;
+}
+
+.MypageReview .reviewbox-title {
+  font-weight: 700;
+  color: #000000;
+  font-size: 20px;
+  white-space: nowrap;
+  letter-spacing: 0;
+  line-height: normal;
+
+  margin-bottom: 10px;
+}
+
+.MypageReview .reviewbox-grade {
+  float: left;
+  font-weight: 500;
+  color: #787b7d;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: normal;
+
+  padding-right: 15px;
+}
+
+.MypageReview .crown-rank {
+  width: 250px;
+}
+
+.MypageReview .crown {
+  float: left;
+  width: 27px;
+}
+
+.MypageReview .review-box-deletebox02 {
+  border: 1px solid #b1a8a8;
+  width: 50px;
+  height: auto;
+  background-color: #f7f7f7;
+  border-radius: 30px;
+
+  margin-left: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.MypageReview .review-delete02 {
+  font-weight: 700;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.MypageReview .review-box-mainpagebox02 {
+  font-weight: 700;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: normal;
+
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.MypageReview .review-box-mainpage02 {
+  border: 1px solid #b1a8a8;
+  width: 50px;
+  height: auto;
+  background-color: #f7f7f7;
+  border-radius: 30px;
+
+  width: 60px;
+  margin-left: 360px;
+}
+
+.MypageReview .reviewbox-line {
+  width: 658px;
+  height: 1px;
+  object-fit: cover;
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.MypageReview .reviewbox-text {
+  font-weight: 700;
+  color: #000000;
+  font-size: 20px;
+  white-space: nowrap;
+  letter-spacing: 0;
+  line-height: normal;
+
+  margin-bottom: 20px;
+}
+
+.MypageReview .reviewbox-preview01 {
+  border: 1px solid #b1a8a8;
+  width: 202px;
+  height: 147px;
+  object-fit: cover;
+  border-radius:20px;
+  
+}
+
+.MypageReview .reviewbox-preview02 {
+  border: 1px solid #b1a8a8;
+  width: 202px;
+  height: 147px;
+  object-fit: cover;
+  border-radius:20px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.MypageReview .reviewbox-preview03 {
+  border: 1px solid #b1a8a8;
+  width: 202px;
+  height: 147px;
+  object-fit: cover;
+  border-radius:20px;
+}
+
+.MypageReview .reviewbox-usermenu2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #b1a8a8;
+  width: 202px;
+  height: 35px;
+  background-color: #f2f2f2;
+  border-radius: 20px;
+
+  margin-top: 15px;
+}
+
+.MypageReview .reviewbox-usermenu-title {
+  width: 100px;
+}
+
+/*3번 박스*/
+.MypageReview .reviewbox03{
+  border: 1px solid rgb(210, 206, 206);
+  width: 754px;
+  height: 452px;
+  background-color: #fffefd;
+  box-shadow: 5px 10px 10px 5px #0000000d;
+  border-radius: 30px;
+}
+
+
+.MypageReview .reviewbox-wrapper {
+  margin: 40px;
+}
+
+.MypageReview .reviewbox-title {
+  font-weight: 700;
+  color: #000000;
+  font-size: 20px;
+  white-space: nowrap;
+  letter-spacing: 0;
+  line-height: normal;
+
+  margin-bottom: 10px;
+}
+
+.MypageReview .reviewbox-grade {
+  float: left;
+  font-weight: 500;
+  color: #787b7d;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: normal;
+
+  padding-right: 15px;
+}
+
+.MypageReview .crown-rank {
+  width: 250px;
+}
+
+.MypageReview .crown {
+  float: left;
+  width: 27px;
+}
+
+.MypageReview .review-box-deletebox03 {
+  border: 1px solid #b1a8a8;
+  width: 50px;
+  height: auto;
+  background-color: #f7f7f7;
+  border-radius: 30px;
+
+  margin-left: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.MypageReview .review-delete03 {
+  font-weight: 700;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.MypageReview .review-box-mainpagebox03 {
+  font-weight: 700;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: normal;
+
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.MypageReview .review-box-mainpage03 {
+  border: 1px solid #b1a8a8;
+  width: 50px;
+  height: auto;
+  background-color: #f7f7f7;
+  border-radius: 30px;
+
+  width: 60px;
+  margin-left: 330px;
+}
+
+.MypageReview .reviewbox-line {
+  width: 658px;
+  height: 1px;
+  object-fit: cover;
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.MypageReview .reviewbox-text {
+  font-weight: 700;
+  color: #000000;
+  font-size: 20px;
+  white-space: nowrap;
+  letter-spacing: 0;
+  line-height: normal;
+
+  margin-bottom: 20px;
+}
+
+.MypageReview .reviewbox-preview01 {
+  border: 1px solid #b1a8a8;
+  width: 202px;
+  height: 147px;
+  object-fit: cover;
+  border-radius:20px;
+  
+}
+
+.MypageReview .reviewbox-preview02 {
+  border: 1px solid #b1a8a8;
+  width: 202px;
+  height: 147px;
+  object-fit: cover;
+  border-radius:20px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.MypageReview .reviewbox-preview03 {
+  border: 1px solid #b1a8a8;
+  width: 202px;
+  height: 147px;
+  object-fit: cover;
+  border-radius:20px;
+}
+
+.MypageReview .reviewbox-usermenu3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #b1a8a8;
+  width: 202px;
+  height: 35px;
+  background-color: #f2f2f2;
+  border-radius: 20px;
+
+  margin-top: 15px;
+}
+
+.MypageReview .reviewbox-usermenu-title3 {
+  width: 110px;
+}
+
+/*4번 박스*/
+.MypageReview .reviewbox04{
+  border: 1px solid rgb(210, 206, 206);
+  width: 754px;
+  height: 452px;
+  background-color: #fffefd;
+  box-shadow: 5px 10px 10px 5px #0000000d;
+  border-radius: 30px;
+}
+
+
+.MypageReview .reviewbox-wrapper {
+  margin: 40px;
+}
+
+.MypageReview .reviewbox-title {
+  font-weight: 700;
+  color: #000000;
+  font-size: 20px;
+  white-space: nowrap;
+  letter-spacing: 0;
+  line-height: normal;
+
+  margin-bottom: 10px;
+}
+
+.MypageReview .reviewbox-grade {
+  float: left;
+  font-weight: 500;
+  color: #787b7d;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: normal;
+
+  padding-right: 15px;
+}
+
+.MypageReview .crown-rank {
+  width: 250px;
+}
+
+.MypageReview .crown {
+  float: left;
+  width: 27px;
+}
+
+.MypageReview .review-box-deletebox04 {
+  border: 1px solid #b1a8a8;
+  width: 50px;
+  height: auto;
+  background-color: #f7f7f7;
+  border-radius: 30px;
+
+  margin-left: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.MypageReview .review-delete04 {
+  font-weight: 700;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.MypageReview .review-box-mainpagebox04 {
+  font-weight: 700;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: normal;
+
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.MypageReview .review-box-mainpage04 {
+  border: 1px solid #b1a8a8;
+  width: 50px;
+  height: auto;
+  background-color: #f7f7f7;
+  border-radius: 30px;
+
+  width: 60px;
+  margin-left: 390px;
+}
+
+.MypageReview .reviewbox-line {
+  width: 658px;
+  height: 1px;
+  object-fit: cover;
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.MypageReview .reviewbox-text {
+  font-weight: 700;
+  color: #000000;
+  font-size: 20px;
+  white-space: nowrap;
+  letter-spacing: 0;
+  line-height: normal;
+
+  margin-bottom: 20px;
+}
+
+.MypageReview .reviewbox-preview01 {
+  border: 1px solid #b1a8a8;
+  width: 202px;
+  height: 147px;
+  object-fit: cover;
+  border-radius:20px;
+  
+}
+
+.MypageReview .reviewbox-preview02 {
+  border: 1px solid #b1a8a8;
+  width: 202px;
+  height: 147px;
+  object-fit: cover;
+  border-radius:20px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.MypageReview .reviewbox-preview03 {
+  border: 1px solid #b1a8a8;
+  width: 202px;
+  height: 147px;
+  object-fit: cover;
+  border-radius:20px;
+}
+
+.MypageReview .reviewbox-usermenu4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #b1a8a8;
+  width: 202px;
+  height: 35px;
+  background-color: #f2f2f2;
+  border-radius: 20px;
+
+  margin-top: 15px;
+}
+
+.MypageReview .reviewbox-usermenu-title4 {
+  width: 110px;
+}
+
+/*5번 박스*/
+.MypageReview .reviewbox05{
+  border: 1px solid rgb(210, 206, 206);
+  width: 754px;
+  height: 452px;
+  background-color: #fffefd;
+  box-shadow: 5px 10px 10px 5px #0000000d;
+  border-radius: 30px;
+
+  margin-bottom: 60px;
+}
+
+
+.MypageReview .reviewbox-wrapper {
+  margin: 40px;
+}
+
+.MypageReview .reviewbox-title {
+  font-weight: 700;
+  color: #000000;
+  font-size: 20px;
+  white-space: nowrap;
+  letter-spacing: 0;
+  line-height: normal;
+
+  margin-bottom: 10px;
+}
+
+.MypageReview .reviewbox-grade {
+  float: left;
+  font-weight: 500;
+  color: #787b7d;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: normal;
+
+  padding-right: 15px;
+}
+
+.MypageReview .crown-rank {
+  width: 250px;
+}
+
+.MypageReview .crown {
+  float: left;
+  width: 27px;
+}
+
+.MypageReview .review-box-deletebox05 {
+  border: 1px solid #b1a8a8;
+  width: 50px;
+  height: auto;
+  background-color: #f7f7f7;
+  border-radius: 30px;
+
+  margin-left: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.MypageReview .review-delete05 {
+  font-weight: 700;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.MypageReview .review-box-mainpagebox05 {
+  font-weight: 700;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: normal;
+
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.MypageReview .review-box-mainpage05 {
+  border: 1px solid #b1a8a8;
+  width: 50px;
+  height: auto;
+  background-color: #f7f7f7;
+  border-radius: 30px;
+
+  width: 60px;
+  margin-left: 410px;
+}
+
+.MypageReview .reviewbox-line {
+  width: 658px;
+  height: 1px;
+  object-fit: cover;
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.MypageReview .reviewbox-text {
+  font-weight: 700;
+  color: #000000;
+  font-size: 20px;
+  white-space: nowrap;
+  letter-spacing: 0;
+  line-height: normal;
+
+  margin-bottom: 20px;
+}
+
+.MypageReview .reviewbox-preview01 {
+  border: 1px solid #b1a8a8;
+  width: 202px;
+  height: 147px;
+  object-fit: cover;
+  border-radius:20px;
+  
+}
+
+.MypageReview .reviewbox-preview02 {
+  border: 1px solid #b1a8a8;
+  width: 202px;
+  height: 147px;
+  object-fit: cover;
+  border-radius:20px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.MypageReview .reviewbox-preview03 {
+  border: 1px solid #b1a8a8;
+  width: 202px;
+  height: 147px;
+  object-fit: cover;
+  border-radius:20px;
+}
+
+.MypageReview .reviewbox-usermenu5 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #b1a8a8;
+  width: 202px;
+  height: 35px;
+  background-color: #f2f2f2;
+  border-radius: 20px;
+
+  margin-top: 15px;
+}
+
+.MypageReview .reviewbox-usermenu-title5 {
+  width: 120px;
+}

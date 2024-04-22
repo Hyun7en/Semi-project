@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class userEnrollFormController
  */
-@WebServlet("/searchPwd02.ui")
+@WebServlet("/enrollform.ui")
 public class UserEnrollFormController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
