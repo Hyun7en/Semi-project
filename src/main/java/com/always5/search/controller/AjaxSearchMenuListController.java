@@ -35,12 +35,28 @@ public class AjaxSearchMenuListController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		ArrayList<Restaurant> list = new SearchService().searchList(); // searchKindsList
-		ArrayList<Menu> menu = new SearchService().searchMenuList(); // 카테고리 네임 조인해 올 것
 		request.setAttribute("list", list);
-		request.setAttribute("list", list); // 한줄만 가져와? 다가져와?
 		
 		response.setContentType("application/json; charset=UTF-8");
 		new Gson().toJson(list, response.getWriter());
+		
+		
+		
+		String region = "";
+		StringBuilder regionBuilder = new StringBuilder(); // 문자열을 효율적으로 연결하기 위해 StringBuilder 사용
+
+		for (int i = 0; i < list.size(); i++) {
+		    region = list.get(i).getRestAddress().substring(0, 2);
+		    regionBuilder.append(region); // StringBuilder에 각 주소의 첫 두 글자를 추가
+		}
+
+		// 반복문이 끝난 후에 한 번만 region 값을 설정
+		request.setAttribute("region", regionBuilder.toString());
+		
+		
+		
+		
+
 	}
 
 	/**

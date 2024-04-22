@@ -12,6 +12,7 @@
 		<mapper resource="/mappers/rest-mapper.xml"/>
 	</mappers> -->
 <mapper namespace="searchMapper">
+
 	<resultMap id="restResultSet" type="Restaurant">
 		<result column="REST_NO" property="restNo"/>
 		<result column="REST_NAME" property="restName"/>
@@ -26,13 +27,14 @@
 		<result column="REST_STATUS" property="restStatus"/>
 		<result column="FOOD_CATEGORY_NO" property="foodCategoryNo"/>
 	</resultMap>
+	
 	<resultMap id="menuResultSet" type="Menu">
 		<result column="MENU_NO" property="menuNo"/>
 		<result column="MENU_NAME" property="menuName"/>
 		<result column="MENU_PRICE" property="menuPrice"/>
 		<result column="REST_NO" property="restNo"/>
 		<result column="MENU_CATEGORY_NAME" property="menuCategoryNo"/>
-	</resultMap>>
+	</resultMap>
 	
 	
 	<select id="selectSearchRest" resultMap="restResultSet">
