@@ -58,6 +58,8 @@ public class RestMainViewController extends HttpServlet {
 		
 		// 메뉴 카테고리명
 		ArrayList<Menu> mcList = rService.selectMenuCategoryList(restNo);
+
+		
 		
 //		for(int i = 0; i < list.size(); i++) {
 //			int num = i;

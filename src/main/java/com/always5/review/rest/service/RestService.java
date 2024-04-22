@@ -22,6 +22,9 @@ public interface RestService {
 	// 가게 찜 - 가게 총 찜 개수 조회
 	public Restaurant selectDibsCount(String restNo);
 	
+	// 가게 찜 - 가게 총 찜 개수 수정
+//	public int updateDibsCount(String restNo);
+	
 	// 가게 찜 - 가게 찜 선택 시 update
 	public Dibs insertDibs(Dibs dibsInfo);
 	

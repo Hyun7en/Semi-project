@@ -38,7 +38,7 @@ public class RestDao {
 	}
 	
 	public int deleteDibs(SqlSession sqlSession, Dibs dibsInfo) {
-		return sqlSession.insert("restMapper.deleteDibs", dibsInfo);
+		return sqlSession.delete("restMapper.deleteDibs", dibsInfo);
 	}
 	
 	public ArrayList<Review> selectReviewList(SqlSession sqlSession, int restNo){

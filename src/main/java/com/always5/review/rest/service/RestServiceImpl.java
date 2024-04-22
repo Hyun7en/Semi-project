@@ -37,6 +37,19 @@ public class RestServiceImpl implements RestService{
 		SqlSession sqlSession = Template.getSqlSession();
 		ArrayList<Menu> mcList = restDao.selectMenuCategoryList(sqlSession, restNo);
 		
+//		ArrayList<Menu> mcList = new ArrayList<>();
+		
+		// 중복되는 메뉴 카테고리 제외
+//		for(int i = 0; i < list.size(); i++) {
+//			if (mcList.isEmpty()) {
+//				mcList.add(m);
+//			} else if (!mcList.isEmpty()){
+//				for(int j = 0; j < mcList.size(); j++) {
+//					
+//				}
+//			}
+//		}
+		
 		sqlSession.close();
 		return mcList;
 	}
@@ -86,6 +99,7 @@ public class RestServiceImpl implements RestService{
 		int result = restDao.deleteDibs(sqlSession, dibsInfo);
 		Dibs userDibs = null;
 		
+		System.out.println("dao" + result);
 		if (result > 0) {
 			userDibs = restDao.checkDibs(sqlSession, dibsInfo);
 		}
