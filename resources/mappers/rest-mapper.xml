@@ -168,5 +168,4 @@
 		WHERE REST_NO = #{restNo}
 	</select>
 	
-
 </mapper>

@@ -4,8 +4,9 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <!-- 미구현 -->
-<mapper namespace="userMapper">
-<!-- 	<resultMap id="userResultSet" type="User">
+
+<mapper namespace="mypageMapper">
+	<resultMap id="mypageResultSet" type="Mypage">
 		<result column="USER_NO" property="userNo" />
 		<result column="AUTHORITY" property="authority" />
 		<result column="USER_ID" property="userId" />
@@ -23,7 +24,7 @@
 		<result column="POINT" property="point" />
 	</resultMap>
 
-	<select id="MyPage" parameterType="User" resultMap="userResultSet">
+	<select id="MyPage" parameterType="Mypage" resultMap="MypageResultSet">
 		SELECT USER_NO,
 				AUTHORITY,
 				USER_ID,
@@ -37,7 +38,7 @@
 			FROM USER_INFO
 	</select>
 
-	<select id="MyPageReview" parameterType="User" resultMap="userResultSet">
+	<select id="MyPageReview" parameterType="Mypage" resultMap="MypageResultSet">
 	SELECT USER_NO,
 				AUTHORITY,
 				USER_ID,
@@ -51,7 +52,7 @@
 			FROM USER_INFO
 	</select>
 	
-	<select id="MyPageGoods" parameterType="User" resultMap="userResultSet">
+	<select id="MyPageGoods" parameterType="Mypage" resultMap="MypageResultSet">
 	SELECT USER_NO,
 				AUTHORITY,
 				USER_ID,
@@ -65,7 +66,7 @@
 			FROM USER_INFO
 	</select>
 	
-	<select id="MyPageReview" parameterType="User" resultMap="userResultSet">
+	<select id="MyPageReview" parameterType="Mypage" resultMap="MypageResultSet">
 		SELECT USER_NO,
 				AUTHORITY,
 				USER_ID,
@@ -79,7 +80,7 @@
 			FROM USER_INFO
 	</select>
 	
-	<select id="MyPageReviewGoods" parameterType="User" resultMap="userResultSet">
+	<select id="MyPageReviewGoods" parameterType="Mypage" resultMap="MypageResultSet">
 		SELECT USER_NO,
 				AUTHORITY,
 				USER_ID,
@@ -91,5 +92,5 @@
 				USER_PHONE,
 				USER_ADDRESS
 			FROM USER_INFO
-	</select>-->
+	</select>
 </mapper>
