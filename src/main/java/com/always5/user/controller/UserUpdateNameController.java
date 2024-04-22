@@ -15,7 +15,7 @@ import com.always5.user.service.UserServiceImpl;
 /**
  * Servlet implementation class UserChangeNameController
  */
-@WebServlet("/updatename.ui")
+@WebServlet("/updatename.u")
 public class UserUpdateNameController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
