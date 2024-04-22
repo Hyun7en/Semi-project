@@ -15,6 +15,8 @@ public interface AdminRestService {
 	//admin 레스토랑 조회
 	Restaurant selectRestBoard(int rno);
 	int selectSearchCount(HashMap<String, String> map);
+	ArrayList<Restaurant> selectRestListCount(PageInfo pi);
+	ArrayList<Restaurant> selectSearchList(HashMap<String, String> map, PageInfo pi);
 	
 	
 	//admin 레스토랑 리스트 검색

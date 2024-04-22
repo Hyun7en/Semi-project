@@ -11,7 +11,7 @@ import com.always5.review.rest.model.vo.Restaurant;
 
 public class RestBoardDao {
 	
-	public int selectRestListCount(SqlSession sqlSession) {
+	public ArrayList<Restaurant> selectRestListCount(SqlSession sqlSession) {
 		return sqlSession.selectOne("restMapper.selectRestListCount");
 	}
 	
@@ -22,6 +22,14 @@ public class RestBoardDao {
 		
 		RowBounds rowBounds = new RowBounds(offset, limit);
 		return (ArrayList)sqlSession.selectList("restMapper.selectRestList", null, rowBounds);
+	}
+
+	public ArrayList<Restaurant> selectSearchList(SqlSession sqlSession, HashMap<String, String> map, PageInfo pi){
+		int offset = (pi.getCurrentPage() - 1) * pi.getBoardLimit();
+		int limit = pi.getBoardLimit();
+		
+		RowBounds rowBounds = new RowBounds(offset, limit);
+		return (ArrayList)sqlSession.selectList("restMapper.selectSearchList", map, rowBounds);
 	}
 	
 	
