@@ -14,7 +14,7 @@
 </head>
 
 <body>
-	<form action="MypageGoods.ui" class="MypageGoods-Container"
+	<form action="mygoods.ui" class="MypageGoods-Container"
 		method="POST">
 		<div class="MypageGoods">
 

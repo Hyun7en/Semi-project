@@ -1,27 +1,29 @@
 package com.always5.user.controller;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-import com.always5.user.model.vo.Mypage;
 import com.always5.user.model.vo.User;
-import com.always5.user.service.MyPageServiceImpl;
+import com.always5.user.service.UserServiceImpl;
 
 /**
- * Servlet implementation class myPageController
+ * Servlet implementation class UserSignoutController
  */
-@WebServlet("/myreview.ui")
-public class MyPageReviewController extends HttpServlet {
+@WebServlet("/signout.ui")
+public class UserSignoutServletController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public MyPageReviewController() {
+    public UserSignoutServletController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,22 +32,9 @@ public class MyPageReviewController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setContentType("text/html; charset=UTF-8");
-		
-		String authority = request.getParameter("authority");
-		String userId = request.getParameter("userId");
-		String userPwd = request.getParameter("userPwd");
-		String nickName = request.getParameter("nickName");
-		String userName = request.getParameter("userName");
-		String userPhone = request.getParameter("userPhone");
-		String userAddress = request.getParameter("userAddress");
-		String userGender = request.getParameter("userGender");
-		String userBirth = request.getParameter("userBirth");
-		
-		Mypage m = new Mypage(authority, userId, userPwd, userName, nickName, userBirth, userGender, userPhone, userAddress);
-		
-		int result = new MyPageServiceImpl().MyPageGoods(m);
+		request.getRequestDispatcher("WEB-INF/views/user/Signout.jsp").forward(request, response);
 	}
+
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
