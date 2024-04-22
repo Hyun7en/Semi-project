@@ -1,13 +1,14 @@
 package com.always5.user.controller;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.always5.user.model.vo.User;
+import com.always5.user.model.vo.Mypage;
 import com.always5.user.service.MyPageServiceImpl;
 
 /**
@@ -29,9 +30,8 @@ public class MyPageGoodsController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("WEB-INF/views/user/MyPageGoods.jsp").forward(request, response);
+		response.setContentType("text/html; charset=UTF-8");
 		
-		User u = new User();
 		String authority = request.getParameter("authority");
 		String userId = request.getParameter("userId");
 		String userPwd = request.getParameter("userPwd");
@@ -42,8 +42,9 @@ public class MyPageGoodsController extends HttpServlet {
 		String userGender = request.getParameter("userGender");
 		String userBirth = request.getParameter("userBirth");
 		
-		User Mypage = new MyPageServiceImpl().MyPageGoods(u);
-		User user = new User(authority, userId, userPwd, userName, nickName, userBirth, userGender, userPhone, userAddress);
+		Mypage m = new Mypage(authority, userId, userPwd, userName, nickName, userBirth, userGender, userPhone, userAddress);
+		
+		int result = new MyPageServiceImpl().MyPageGoods(m);
 		
 		
 	}
