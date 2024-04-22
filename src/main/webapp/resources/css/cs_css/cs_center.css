@@ -81,15 +81,12 @@
     }
     #section-2 > div > a{
         font-weight: 900;
+        margin-right: 50px;
     }
 
     #section-2 > div > a:hover{
         color: rgb(124, 124, 124);
         scale: 1.08;
-    }
-
-    #section-2 > div > .a2{
-        margin-left: 20px;
     }
     
     #nav-2{
@@ -110,7 +107,7 @@
         align-items: center;
     }
 
-    #navi-2>li>span{
+    #navi-2>li>a{
         font-size: 15px;
         font-weight: 900;
         display: block;
@@ -118,7 +115,7 @@
         line-height: 35px;
     }
 
-    #navi-2 > li > span:hover{
+    #navi-2 > li > a:hover{
         color: rgb(124, 124, 124);
         scale: 1.08;
     } 
@@ -136,27 +133,6 @@
     }
 
     .noti_box > p{
-        display: none; 
-        border: 1px solid whitesmoke;
-        height: 100px;
-        border-radius: 10px;
-        padding: 10px;
-        /* box-sizing: border-box; */
-    }
-
-    .qa_box > div{
-        background: beige;
-        border: 1px solid lavenderblush;
-        height: 60px;
-        line-height: 30px;
-        border-radius: 10px;
-        margin-top: 20px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-    }
-
-    .qa_box > p{
         display: none; 
         border: 1px solid whitesmoke;
         height: 100px;

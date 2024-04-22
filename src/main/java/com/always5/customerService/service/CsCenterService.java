@@ -8,7 +8,7 @@ import com.always5.customerService.model.vo.CsType;
 
 public interface CsCenterService {
 	
-	ArrayList<CsType> selectCsTypeList(int csTypeNo);
+	ArrayList<CsType> selectCsTypeList();
 	
 	ArrayList<CsKeyword> selectCskeywordList();
 	

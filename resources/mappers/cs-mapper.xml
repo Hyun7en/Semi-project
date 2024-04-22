@@ -19,7 +19,6 @@
 	<resultMap id="csDetailResultSet" type="CsDetail">
 		<result column="CS_DETAIL_NO" property="csDetailNo"/>
 		<result column="CS_KEYWORD_NO" property="csKeywordNo"/>
-		<result column="CS_TYPE_NO" property="csTypeNo"/>
 		<result column="CS_DETAIL_TITLE" property="csDetailTitle"/>
 		<result column="CS_DETAIL_CONTENT" property="csDetailContent"/>
 		<result column="CS_DETAIL_ENROLL_DATE" property="csDetailEnrollDate"/>

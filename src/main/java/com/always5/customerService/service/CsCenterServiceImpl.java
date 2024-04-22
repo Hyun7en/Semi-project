@@ -16,10 +16,11 @@ public class CsCenterServiceImpl implements CsCenterService {
 	private CsCenterDao csCenterDao = new CsCenterDao();
 
 	@Override
-	public ArrayList<CsType> selectCsTypeList(int csTypeNo) {
+	public ArrayList<CsType> selectCsTypeList() {
+		
 		SqlSession sqlSession = Template.getSqlSession();
 		
-		ArrayList<CsType> csTypeList = csCenterDao.selectCsTypeList(sqlSession,csTypeNo);
+		ArrayList<CsType> csTypeList = csCenterDao.selectCsTypeList(sqlSession);
 		
 		sqlSession.close();
 		
@@ -28,14 +29,23 @@ public class CsCenterServiceImpl implements CsCenterService {
 
 	@Override
 	public ArrayList<CsKeyword> selectCskeywordList() {
-		// TODO Auto-generated method stub
-		return null;
+		SqlSession sqlSession = Template.getSqlSession();
+		
+		ArrayList<CsKeyword> csKeywordList = csCenterDao.selectCskeywordList(sqlSession);
+		
+		sqlSession.close();
+		return csKeywordList;
 	}
 
 	@Override
 	public ArrayList<CsDetail> selectCsDetailList() {
-		// TODO Auto-generated method stub
-		return null;
+		SqlSession sqlSession = Template.getSqlSession();
+		
+		ArrayList<CsDetail> csDetailList = csCenterDao.selectCsDetailList(sqlSession);
+		
+		sqlSession.close();
+		
+		return csDetailList;
 	}
 	
 	

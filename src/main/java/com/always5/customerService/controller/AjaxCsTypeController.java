@@ -11,18 +11,19 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.always5.customerService.model.vo.CsType;
 import com.always5.customerService.service.CsCenterServiceImpl;
+import com.google.gson.Gson;
 
 /**
- * Servlet implementation class CsTypeListController
+ * Servlet implementation class AjaxCsTypeController
  */
-@WebServlet("/list.csType")
-public class CsTypeListController extends HttpServlet {
+@WebServlet("/csType.ax")
+public class AjaxCsTypeController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CsTypeListController() {
+    public AjaxCsTypeController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,17 +32,12 @@ public class CsTypeListController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		ArrayList<CsType> csTypeList = new CsCenterServiceImpl().selectCsTypeList();
 		
-		int csType = new CsType().getCsTypeNo();
+		response.setContentType("application/json; charset=utf-8");
 		
+		new Gson().toJson(csTypeList,  response.getWriter());
 		
-		ArrayList<CsType> csTypeList = new CsCenterServiceImpl().selectCsTypeList(csType);
-		
-		
-		request.setAttribute("csType", csType);
-		request.setAttribute("csTypeList", csTypeList);
-		
-		request.getRequestDispatcher("WEB-INF/views/customerService/csCenter.jsp").forward(request, response);
 	}
 
 	/**

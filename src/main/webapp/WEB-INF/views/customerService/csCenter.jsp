@@ -56,32 +56,115 @@
 
         <section id="section-2">
             <div class="csType">
-                <c:forEach var="csType" items="${csTypeList}">
-                    <span>${csType.csTypeValue}</span>
-                </c:forEach>
+                
             </div>
-
+        
+            <script>
+                $(document).ready(function() {
+                    selectCsTypeList(); // 페이지 로드시 바로 실행
+                });
+            
+                function selectCsTypeList() {
+                    $.ajax({
+                        url: "csType.ax", 
+                        dataType: 'json',
+                        success: function(res) {
+                            let str = "";
+                            for (let c of res) { // 서버로부터 받은 응답 데이터를 반복하여 처리
+                                str += (
+                                    `<a>` + c.csTypeValue + `</a>`
+                                )
+                            }
+                            $(".csType").html(str); // 결과를 .csType 요소에 적용
+                        },
+                        error: function() {
+                            console.log("ajax통신 실패")
+                        }
+                    });
+                }
+            </script>
           
 
             <nav id="nav-2">
                 <ul id="navi-2" class="csKeyword">
-                    <li><a href="#" >전체</a></li>
-                    <li><a href="#" >중요공지</a></li>
-                    <li><a href="#" >일반공지</a></li>
-                    <li><a href="#" >이벤트 공지</a></li>
+
                 </ul>                    
             </nav>
 
-            <div class="noti_box">
+            <script>
+                $(document).ready(function() {
+                    selectCsKeywordList(); // 페이지 로드시 바로 실행
+                });
+            
+                function selectCsKeywordList() {
+                    $.ajax({
+                        url: "csKeyword.ax", 
+                        dataType: 'json',
+                        success: function(res) {
+                            let str = "";
+                            for (let c of res) { // 서버로부터 받은 응답 데이터를 반복하여 처리
+                                str += (
+                                    `<li><a>` + c.cskeywordValue + `</a></li>`
+                                )
+                            }
+                            $(".csKeyword").html(str); // 결과를 .csType 요소에 적용
+                        },
+                        error: function() {
+                            console.log("ajax통신 실패")
+                        }
+                    });
+                }
+            </script>
 
-                    <div>이벤트 공지 쿠폰 발행</div>
-                    <p>A. 택배사의 사정에따라 2~3일 소요됩니다.</p>
+            <div class="csDetail">
+
+                   
   
             </div>
 
         </section>
 
-        </section>
+        <script>
+            $(document).ready(function() {
+                    selectCsDetailList(); // 페이지 로드시 바로 실행
+                });
+            
+                function selectCsDetailList() {
+                    $.ajax({
+                        url: "csDetail.ax", 
+                        dataType: 'json',
+                        success: function(res) {
+                            let str = "";
+                            for (let c of res) { // 서버로부터 받은 응답 데이터를 반복하여 처리
+                                str += (
+                                    `<div>` + c.csDetailTitle + `</div>`
+                                    `<p>` + c.csDetailContent + `</p>`
+                                )
+                            }
+                            $(".csDetail").html(str); // 결과를 .csDetail 요소에 적용
+                        },
+                        error: function() {
+                            console.log("ajax통신 실패")
+                        }
+                    });
+                }
+
+            $(".csDetail > div").click(function(){
+                //this => 클릭이벤트가 발생한 요소(div)
+                //$(this).next() => 선택된 요소의 뒤에있는 요소(p)
+                let tmp;
+                
+                const $p = $(this).next();
+                
+                if($p.css("display") === "none") {
+                    $(".csDetail > p").slideUp();
+    
+                    $p.slideDown();
+                } else { //보여지고있는 상태
+                    $p.slideUp();
+                }
+            })
+        </script>
     </main>        
 
     <!-- footer -->
