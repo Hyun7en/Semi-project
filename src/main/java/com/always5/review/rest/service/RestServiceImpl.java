@@ -37,23 +37,6 @@ public class RestServiceImpl implements RestService{
 		SqlSession sqlSession = Template.getSqlSession();
 		ArrayList<Menu> mcList = restDao.selectMenuCategoryList(sqlSession, restNo);
 		
-//		ArrayList<Menu> mcList = new ArrayList<>();
-		
-		// 중복되는 메뉴 카테고리 제외
-//		for(int i = 0; i < list.size(); i++) {
-//			if (mcList.isEmpty()) {
-//				mcList.add(list.get(i));
-//			} else if (!mcList.isEmpty()){
-//				for(int j = 0; j < mcList.size(); j++) {
-//					if(list.get(i).getMenuCategoryNo() == mcList.get(j).getMenuCategoryNo()) {
-//						break;
-//					} else {
-//						
-//					}
-//				}
-//			}
-//		}
-		
 		sqlSession.close();
 		return mcList;
 	}
@@ -76,6 +59,17 @@ public class RestServiceImpl implements RestService{
 		
 		sqlSession.close();
 		return dibsCount;
+	}
+	
+	// 가게 찜 - 가게 총 찜 개수 수정
+	@Override
+	public String updateDibsCount(String restNo) {
+		SqlSession sqlSession = Template.getSqlSession();
+		int result = restDao.updateDibsCount(sqlSession, restNo);
+		
+		String likeNo = (restDao.selectRest(sqlSession, Integer.parseInt(restNo))).getLikeNo();
+		sqlSession.close();
+		return likeNo;
 	}
 	
 	// 가게 찜 선택 시 insert
@@ -164,9 +158,15 @@ public class RestServiceImpl implements RestService{
 	public ArrayList<Attachment> selectAttachmentList(int restNo) {
 		SqlSession sqlSession = Template.getSqlSession();
 		ArrayList<Attachment> list = new ArrayList<>();
-		list.addAll(restDao.selectRestAttachmentList(sqlSession, restNo));
-		list.addAll(restDao.selectReviewAttachmentList(sqlSession, restNo));
+		ArrayList<Review> reviewList = restDao.selectReviewList(sqlSession, restNo);
 		
+		list.addAll(restDao.selectRestAttachmentList(sqlSession, restNo));
+		
+		for(int i = 0; i < reviewList.size(); i++) {
+			ArrayList<Attachment> atList = restDao.selectReviewAttachmentList(sqlSession, reviewList.get(i).getReviewNo());
+			list.addAll(atList);
+		}
+
 		sqlSession.close();
 		return list;
 	}

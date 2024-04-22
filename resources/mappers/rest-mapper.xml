@@ -101,6 +101,11 @@
 		WHERE REST_NO = #{restNo}
 	</select>
 	
+	<update id="updateDibsCount">
+		UPDATE REST_INFO
+		SET LIKE_NO
+	</update>
+	
 	<insert id="insertDibs">
 		INSERT INTO DIBS
 		VALUES(#{userNo}, #{restNo})
