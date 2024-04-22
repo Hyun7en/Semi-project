@@ -39,16 +39,18 @@ public class DibsSelectController extends HttpServlet {
 		// 사용자의 찜 여부 확인해서 update 할지 delete 할지 결정
 		Dibs dibsInfo = new Dibs(userNo, restNo);
 		Dibs userDibs = new RestServiceImpl().checkDibs(dibsInfo);
+		String check = "D";
 		
 		// update 나 delete 후 해당 rest likeNo 업데이트
 		if (userDibs == null) {
 			userDibs = new RestServiceImpl().insertDibs(dibsInfo);
+			check = "I";
 		} else {
 			userDibs = new RestServiceImpl().deleteDibs(dibsInfo);
 		}
 		
 		// 수정된 사용자 찜 여부와 수정된 likeNo 보내기
-		String likeNo = new RestServiceImpl().updateDibsCount(restNo);
+		String likeNo = new RestServiceImpl().updateDibsCount(restNo, check);
 		
 //		String userNo = request.getParameter("userNo");
 //		String restNo = request.getParameter("restNo");

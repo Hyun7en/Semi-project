@@ -36,6 +36,14 @@ public class RestDao {
 		return sqlSession.update("restMapper.updateDibsCount", restNo);
 	}
 	
+//	public int updateDibsCount(SqlSession sqlSession, String restNo) {
+//		return sqlSession.update("restMapper.updateDibsCount", restNo);
+//	}
+//	
+//	public int updateDibsCount(SqlSession sqlSession, String restNo) {
+//		return sqlSession.update("restMapper.updateDibsCount", restNo);
+//	}
+	
 	public int insertDibs(SqlSession sqlSession, Dibs dibsInfo) {
 		System.out.println("dao " + dibsInfo);
 		return sqlSession.insert("restMapper.insertDibs", dibsInfo);

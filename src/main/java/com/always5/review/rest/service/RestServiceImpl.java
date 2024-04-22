@@ -63,8 +63,15 @@ public class RestServiceImpl implements RestService{
 	
 	// 가게 찜 - 가게 총 찜 개수 수정
 	@Override
-	public String updateDibsCount(String restNo) {
+	public String updateDibsCount(String restNo, String check) {
 		SqlSession sqlSession = Template.getSqlSession();
+		
+//		if(check == "I") {
+//			restDao.plusDibsCount(sqlSession, restNo);
+//		} else {
+//			restDao.minusDibsCount(sqlSession, restNo);
+//		}
+		
 		int result = restDao.updateDibsCount(sqlSession, restNo);
 		
 		String likeNo = (restDao.selectRest(sqlSession, Integer.parseInt(restNo))).getLikeNo();
