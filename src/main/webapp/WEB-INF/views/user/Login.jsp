@@ -18,8 +18,13 @@
 			<div class="login-logo-main">
 				<img class="logo-image"
 					src="${pageContext.request.contextPath}/resources/file/user_img/login-img/logo.png" />
+<<<<<<< HEAD
 			</div>
 
+=======
+		    </div>
+		    
+>>>>>>> c28b031d8f7bde7c85f028cbdb2b41de190c23d0
 			<div class="login-title">로그인</div>
 
 			<!--로그인 박스 -->
@@ -46,10 +51,10 @@
 						<div class="login-option">
 							<div class="login-option-searchId"><a href="">아이디 변경</a></div>
 							<img class="login-option-line1"
-								src="http://localhost:8001/always5/resources/file/user_img/Login-img/line-41.svg" />
+								src="http://localhost:8001/always5/resources/file/user_img/login-img/line-41.svg" />
 							<div class="login-option-searchPwd"><a href="/csCenter.ax">비밀번호 변경</a></div>
 							<img class="login-option-line2"
-								src="http://localhost:8001/always5/resources/file/user_img/Login-img/line-42.svg" />
+								src="http://localhost:8001/always5/resources/file/user_img/login-img/line-42.svg" />
 							<div class="login-option-signin"><a href="/signin.ui">회원가입</a></div>
 						</div>
 
