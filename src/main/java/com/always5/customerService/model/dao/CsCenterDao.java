@@ -16,12 +16,12 @@ public class CsCenterDao {
 		return (ArrayList)sqlSession.selectList("csMapper.selectCsTypeList");
 	}
 	
-	public ArrayList<CsKeyword> selectCskeywordList(SqlSession sqlSession){
-		return (ArrayList)sqlSession.selectList("csMapper.selectCskeywordList");
+	public ArrayList<CsKeyword> selectCskeywordList(SqlSession sqlSession, int csTypeNo){
+		return (ArrayList)sqlSession.selectList("csMapper.selectCskeywordList", csTypeNo);
 	}
 	
-	public ArrayList<CsDetail> selectCsDetailList(SqlSession sqlSession){
-		return (ArrayList)sqlSession.selectList("csMapper.selectCsDetailList");
+	public ArrayList<CsDetail> selectCsDetailList(SqlSession sqlSession, int csKeywordNo){
+		return (ArrayList)sqlSession.selectList("csMapper.selectCsDetailList", csKeywordNo);
 	}
 	
 }

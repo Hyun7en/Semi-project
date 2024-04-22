@@ -21,9 +21,9 @@
 
    <%@  include file="../common/header.jsp" %>
 
-    <!-- main -->
+       <!-- main -->
 
-    <main>     
+       <main>     
         
         <section id="section-1">
             <div id="help" >
@@ -91,30 +91,7 @@
                 </ul>                    
             </nav>
 
-            <script>
-                $(document).ready(function() {
-                    selectCsKeywordList(); // 페이지 로드시 바로 실행
-                });
-            
-                function selectCsKeywordList() {
-                    $.ajax({
-                        url: "csKeyword.ax", 
-                        dataType: 'json',
-                        success: function(res) {
-                            let str = "";
-                            for (let c of res) { // 서버로부터 받은 응답 데이터를 반복하여 처리
-                                str += (
-                                    `<li><a>` + c.cskeywordValue + `</a></li>`
-                                )
-                            }
-                            $(".csKeyword").html(str); // 결과를 .csType 요소에 적용
-                        },
-                        error: function() {
-                            console.log("ajax통신 실패")
-                        }
-                    });
-                }
-            </script>
+           
 
             <div class="csDetail">
 
@@ -125,29 +102,57 @@
         </section>
 
         <script>
-            $(document).ready(function() {
-                    selectCsDetailList(); // 페이지 로드시 바로 실행
-                });
-            
-                function selectCsDetailList() {
-                    $.ajax({
-                        url: "csDetail.ax", 
-                        dataType: 'json',
-                        success: function(res) {
-                            let str = "";
-                            for (let c of res) { // 서버로부터 받은 응답 데이터를 반복하여 처리
-                                str += (
-                                    `<div>` + c.csDetailTitle + `</div>` +
-                                    `<p>` + c.csDetailContent + `</p>`
-                                )
+             $(document).ready(function() {
+                    // csType를 클릭했을 때 해당하는 csKeyword를 불러오는 함수
+                    function selectCsKeywordList(csTypeNo) {
+                        $.ajax({
+                            url: "csKeyword.ax", 
+                            data: { csTypeNo: csTypeNo }, // 선택한 csTypeNo를 서버에 전달
+                            dataType: 'json',
+                            success: function(res) {
+                                let str = "";
+                                for (let c of res) {
+                                    str += "<li><a href='#' data-csKeywordNo='" + c.csKeywordNo + "'>" + c.cskeywordValue + "</a></li>";
+                                }
+                                $(".csKeyword").html(str); // 결과를 .csKeyword 요소에 적용
+                            },
+                            error: function() {
+                                console.log("ajax통신 실패")
                             }
-                            $(".csDetail").html(str); // 결과를 .csDetail 요소에 적용
-                        },
-                        error: function() {
-                            console.log("ajax통신 실패")
-                        }
+                        });
+                    }
+
+                    // csKeyword를 클릭했을 때 해당하는 csDetail을 불러오는 함수
+                    function selectCsDetailList(csKeywordNo) {
+                        $.ajax({
+                            url: "csDetail.ax", 
+                            data: { csKeywordNo: csKeywordNo }, // 선택한 csKeywordNo를 서버에 전달
+                            dataType: 'json',
+                            success: function(res) {
+                                let str = "";
+                                for (let c of res) {
+                                    str += "<div>" + c.csDetailTitle + "</div><p>" + c.csDetailContent + "</p>";
+                                }
+                                $(".csDetail").html(str); // 결과를 .csDetail 요소에 적용
+                            },
+                            error: function() {
+                                console.log("ajax통신 실패")
+                            }
+                        });
+                    }
+
+                    // csType를 클릭했을 때
+                    $(".csType").on("click", "a", function() {
+                        var csTypeNo = $(this).data("csTypeNo"); // 클릭한 csType의 csTypeNo 가져오기
+                        selectCsKeywordList(csTypeNo); // 해당하는 csKeyword를 불러오는 함수 호출
                     });
-                }
+
+                    // csKeyword를 클릭했을 때
+                    $(".csKeyword").on("click", "a", function() {
+                        var csKeywordNo = $(this).data("csKeywordNo"); // 클릭한 csKeyword의 csKeywordNo 가져오기
+                        selectCsDetailList(csKeywordNo); // 해당하는 csDetail을 불러오는 함수 호출
+                    });
+                });
 
                 $(document).on("click", ".csDetail > div", function() {
                     //this => 클릭이벤트가 발생한 요소(div)
@@ -158,14 +163,15 @@
                     
                     if($p.css("display") === "none") {
                         $(".csDetail > p").slideUp();
-
                         $p.slideDown();
                     } else { //보여지고있는 상태
                         $p.slideUp();
                     }
                 });
         </script>
-    </main>        
+        
+    </main>       
+  
 
     <!-- footer -->
 

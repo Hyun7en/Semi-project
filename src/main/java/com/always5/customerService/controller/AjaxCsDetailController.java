@@ -32,7 +32,10 @@ public class AjaxCsDetailController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ArrayList<CsDetail> csDetailList = new CsCenterServiceImpl().selectCsDetailList();
+		
+		int csKeywordNo = Integer.parseInt(request.getParameter("csKeywordNo"));
+		
+		ArrayList<CsDetail> csDetailList = new CsCenterServiceImpl().selectCsDetailList(csKeywordNo);
 		
 		response.setContentType("application/json; charset=utf-8");
 		

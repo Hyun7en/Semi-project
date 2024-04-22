@@ -28,19 +28,22 @@
 	</resultMap>
 
 	<select id="selectCsTypeList" resultMap="csTypeResultSet">
-		SELECT CS_TYPE_VALUE
+		SELECT CS_TYPE_NO,
+			   CS_TYPE_VALUE
 		  FROM CUSTOMER_SERVICE_TYPE
 	</select>
 	
 	<select id="selectCskeywordList" resultMap="csKeywordResultSet">
 		SELECT CS_KEYWORD_VALUE
 		  FROM CUSTOMER_SERVICE_KEYWORD
+		 WHERE CS_TYPE_NO = #{csTypeNo} 
 	</select>
 	
 	<select id="selectCsDetailList" resultMap="csDetailResultSet">
 		SELECT CS_DETAIL_TITLE,
 			   CS_DETAIL_CONTENT
 		  FROM CUSTOMER_SERVICE_DETAIL
+		 WHERE CS_KEYWORD_NO = #{csKeywordNo}
 		 ORDER BY CS_DETAIL_ENROLL_DATE DESC
 	</select>
 </mapper>
