@@ -14,7 +14,7 @@ import com.always5.user.service.MyPageServiceImpl;
 /**
  * Servlet implementation class myPageController
  */
-@WebServlet("/mygoods.ui")
+@WebServlet("/mygoods.u")
 public class MyPageGoodsController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
