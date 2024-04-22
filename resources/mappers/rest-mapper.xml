@@ -10,7 +10,7 @@
 		<result column="REST_PHONE" property="restPhone"/>
 		<result column="REST_INTRO" property="restIntro"/>
 		<result column="REST_GRADE" property="restGrade"/>
-		<result column="LIKE_NO" property="restLikeNo"/>
+		<result column="LIKE_NO" property="likeNo"/>
 		<result column="REST_ENROLL_DATE" property="restEnrollDate"/>
 		<result column="REST_MODIFY_DATE" property="restModifyDate"/>
 		<result column="REST_OPER_TIME" property="restOperDate"/>
@@ -88,13 +88,30 @@
 		AND MENU_STATUS = 'Y'
 	</select>
 	
-	<select id="selectDibsForUserNo" resultMap="dibsResultSet">
+	<select id="checkDibs" resultMap="dibsResultSet">
 		SELECT USER_NO,
 			   REST_NO
 		FROM DIBS
 		WHERE USER_NO = #{userNo}
 		AND REST_NO = #{restNo}
 	</select>
+	
+	<select id="selectDibsCount" resultMap="restResultSet">
+		SELECT LIKE_NO
+		FROM REST_INFO
+		WHERE REST_NO = #{restNo}
+	</select>
+	
+	<insert id="insertDibs">
+		INSERT INTO DIBS
+		VALUES(#{userNo}, #{restNo})
+	</insert>
+	
+	<delete id="deleteDibs">
+		DELETE FROM DIBS
+		 WHERE USER_NO = #{userNo}
+		   AND REST_NO = #{restNo}
+	</delete>
 	
 	<select id="selectReviewList" resultMap="reviewResultSet">
 		SELECT REVIEW_NO,

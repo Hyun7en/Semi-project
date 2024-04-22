@@ -24,8 +24,21 @@ public class RestDao {
 		return (ArrayList)sqlSession.selectList("restMapper.selectMenuCategoryList", restNo);
 	}
 	
-	public Dibs selectDibsForUserNo(SqlSession sqlSession, Dibs dibsInfo) {
-		return sqlSession.selectOne("restMapper.selectDibsForUserNo", dibsInfo);
+	public Dibs checkDibs(SqlSession sqlSession, Dibs dibsInfo) {
+		return sqlSession.selectOne("restMapper.checkDibs", dibsInfo);
+	}
+	
+	public Restaurant selectDibsCount(SqlSession sqlSession, String restNo) {
+		return sqlSession.selectOne("restMapper.selectDibsCount", restNo);
+	}
+	
+	public int insertDibs(SqlSession sqlSession, Dibs dibsInfo) {
+		System.out.println("dao " + dibsInfo);
+		return sqlSession.insert("restMapper.insertDibs", dibsInfo);
+	}
+	
+	public int deleteDibs(SqlSession sqlSession, Dibs dibsInfo) {
+		return sqlSession.delete("restMapper.deleteDibs", dibsInfo);
 	}
 	
 	public ArrayList<Review> selectReviewList(SqlSession sqlSession, int restNo){

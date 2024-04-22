@@ -120,15 +120,21 @@ public class Restaurant {
 	}
 
 
+<<<<<<< HEAD
+=======
 	
 
+>>>>>>> b9a790476de0be69a4c33bb446eb23b69b041648
 	public String getLikeNo() {
 		return likeNo;
 	}
 
 
+<<<<<<< HEAD
+=======
 	
 
+>>>>>>> b9a790476de0be69a4c33bb446eb23b69b041648
 	public void setLikeNo(String likeNo) {
 		this.likeNo = likeNo;
 	}
