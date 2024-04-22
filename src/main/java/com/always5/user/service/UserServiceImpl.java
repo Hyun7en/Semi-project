@@ -70,13 +70,6 @@ public class UserServiceImpl implements UserService{
 		return loginUser;
     }
 	
-	//비밀번호 수정
-	//1. 현재 비밀번호와 새로운 비밀번호를 받아옴
-	//2. 현재 비밀번호와 일치하는지 확인
-	//3. 일치하면 새로운 비밀번호로 변경
-	//4. 일치하지 않으면 실패
-	//5. 성공하면 마이페이지로 이동
-	
 	@Override
 	public User updateUserPwd(User u) {
 		SqlSession sqlSession = Template.getSqlSession();
@@ -110,10 +103,10 @@ public class UserServiceImpl implements UserService{
 		sqlSession.close();
 		return loginUser;
 	}
-
+	
 	@Override
 	public User updateUser(User u) {
-		// TODO Auto-generated method stub
+
 		return null;
 	}
 }

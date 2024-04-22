@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 미구현 -->
+<mapper namespace="userMapper">
+	<resultMap id="userResultSet" type="Dibs">
+		<result column="USER_NO" property="userNo" />
+		<result column="AUTHORITY" property="authority" />
+		<result column="USER_ID" property="userId" />
+		<result column="USER_PWD" property="userPwd" />
+		<result column="USER_NAME" property="userName" />
+		<result column="NICKNAME" property="nickname" />
+		<result column="USER_BIRTH" property="userBirth" />
+		<result column="USER_GENDER" property="userGender" />
+		<result column="USER_PHONE" property="userPhone" />
+		<result column="USER_EMAIL" property="userEmail" />
+		<result column="USER_ADDRESS" property="userAddress" />
+		<result column="USER_ENROLL_DATE" property="userEnrollDate" />
+		<result column="USER_MODIFY_DATE" property="userModifyDate" />
+		<result column="USER_STATUS" property="userStatus" />
+		<result column="POINT" property="point" />
+	</resultMap>
+
+	<select id="MyPage" parameterType="User" resultMap="userResultSet">
+		SELECT USER_NO,
+				AUTHORITY,
+				USER_ID,
+				USER_PWD,
+				USER_NAME,
+				NICKNAME,
+				USER_BIRTH,
+				USER_GENDER,
+				USER_PHONE,
+				USER_ADDRESS
+			FROM USER_INFO
+	</select>
+
+	<select id="MyPageReview" parameterType="User" resultMap="userResultSet">
+	SELECT USER_NO,
+				AUTHORITY,
+				USER_ID,
+				USER_PWD,
+				USER_NAME,
+				NICKNAME,
+				USER_BIRTH,
+				USER_GENDER,
+				USER_PHONE,
+				USER_ADDRESS
+			FROM USER_INFO
+	</select>
+	
+	<select id="MyPageGoods" parameterType="User" resultMap="userResultSet">
+	SELECT USER_NO,
+				AUTHORITY,
+				USER_ID,
+				USER_PWD,
+				USER_NAME,
+				NICKNAME,
+				USER_BIRTH,
+				USER_GENDER,
+				USER_PHONE,
+				USER_ADDRESS
+			FROM USER_INFO
+	</select>
+	
+	<select id="MyPageReview" parameterType="User" resultMap="userResultSet">
+		SELECT USER_NO,
+				AUTHORITY,
+				USER_ID,
+				USER_PWD,
+				USER_NAME,
+				NICKNAME,
+				USER_BIRTH,
+				USER_GENDER,
+				USER_PHONE,
+				USER_ADDRESS
+			FROM USER_INFO
+	</select>
+	
+	<select id="MyPageReviewGoods" parameterType="User" resultMap="userResultSet">
+		SELECT USER_NO,
+				AUTHORITY,
+				USER_ID,
+				USER_PWD,
+				USER_NAME,
+				NICKNAME,
+				USER_BIRTH,
+				USER_GENDER,
+				USER_PHONE,
+				USER_ADDRESS
+			FROM USER_INFO
+	</select>
+</mapper>

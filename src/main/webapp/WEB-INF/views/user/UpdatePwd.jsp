@@ -1,18 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 
 <html>
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet"
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet"
 	href="http://localhost:8001/always5/resources/css/user_css/UpdatePwd.css" />
 </head>
 
 <body>
-		<form action="updatepwd.ui" class="updatePwd-Container" method="POST">
+	<form action="updatepwd.ui" class="updatePwd-Container" method="POST">
 		<div class="updatePwd">
 			<!-- X버튼 -->
 			<img class="logo"
@@ -47,8 +49,8 @@
 
 			<!-- 주의사항 안내 -->
 			<p class="service-preview">
-				왕밥빵 서비스의 변경/종료, 본인 작성 게시물 조치 등 대부분의 왕밥빵 안내에 사용합니다.<br />
-				등록된 이메일 주소가 기억나지 않는다면 휴대전화 인증 후 이메일을 수정할 수 있습니다.
+				왕밥빵 서비스의 변경/종료, 본인 작성 게시물 조치 등 대부분의 왕밥빵 안내에 사용합니다.<br /> 등록된 이메일
+				주소가 기억나지 않는다면 휴대전화 인증 후 이메일을 수정할 수 있습니다.
 			</p>
 
 			<!--전화번호 인증 -->
@@ -77,7 +79,8 @@
 			<div class="updatePwd-checkbox">
 				<button type="submit" class="updatePwd-checkbox-title">변경</button>
 			</div>
-			<script src="http://localhost:8001/always5/resources/js/user_js/UpdatePwd.js"></script>
+			<script
+				src="http://localhost:8001/always5/resources/js/user_js/UpdatePwd.js"></script>
 		</div>
 	</form>
 </body>
