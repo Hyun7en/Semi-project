@@ -149,21 +149,21 @@
                     });
                 }
 
-            $(".csDetail > div").click(function(){
-                //this => 클릭이벤트가 발생한 요소(div)
-                //$(this).next() => 선택된 요소의 뒤에있는 요소(p)
-                let tmp;
-                
-                const $p = $(this).next();
-                
-                if($p.css("display") === "none") {
-                    $(".csDetail > p").slideUp();
-    
-                    $p.slideDown();
-                } else { //보여지고있는 상태
-                    $p.slideUp();
-                }
-            })
+                $(document).on("click", ".csDetail > div", function() {
+                    //this => 클릭이벤트가 발생한 요소(div)
+                    //$(this).next() => 선택된 요소의 뒤에있는 요소(p)
+                    let tmp;
+                    
+                    const $p = $(this).next();
+                    
+                    if($p.css("display") === "none") {
+                        $(".csDetail > p").slideUp();
+
+                        $p.slideDown();
+                    } else { //보여지고있는 상태
+                        $p.slideUp();
+                    }
+                });
         </script>
     </main>        
 

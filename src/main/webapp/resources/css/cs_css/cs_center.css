@@ -119,7 +119,7 @@
         scale: 1.08;
     } 
 
-    .noti_box > div{
+    .csDetail > div{
         background: beige;
         border: 1px solid lavenderblush;
         height: 60px;
@@ -131,7 +131,7 @@
         align-items: center;
     }
 
-    .noti_box > p{
+    .csDetail > p{
         display: none; 
         border: 1px solid whitesmoke;
         height: 100px;
