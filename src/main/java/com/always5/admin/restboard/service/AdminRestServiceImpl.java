@@ -16,6 +16,16 @@ public class AdminRestServiceImpl implements AdminRestService{
 	private RestBoardDao rDao = new RestBoardDao();
 	
 	@Override
+	public int selectRestListCount() {
+		SqlSession sqlSession = Template.getSqlSession();
+		int listCount = rDao.selectRestListCount(sqlSession);
+		
+		sqlSession.close();
+		
+		return listCount;
+	}
+	
+	@Override
 	public ArrayList<Restaurant> selectRestListCount(PageInfo pi) {
 		SqlSession sqlSession = Template.getSqlSession();
 		ArrayList<Restaurant> listCount = rDao.selectRestListCount(sqlSession);
@@ -72,7 +82,14 @@ public class AdminRestServiceImpl implements AdminRestService{
 		return r;
 	}
 
-	public int selectRestListCount() {
+	@Override
+	public Restaurant selectRestBoard(int rno) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int selectSearchCount(HashMap<String, String> map) {
 		// TODO Auto-generated method stub
 		return 0;
 	}

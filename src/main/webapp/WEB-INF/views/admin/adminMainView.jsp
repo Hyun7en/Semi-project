@@ -6,9 +6,9 @@
     <meta charset="UTF-8">
     <title>Insert title here</title>
 
-    <link rel="stylesheet" href="../../resources/css/common_css/style.css">
-    <link rel="stylesheet" href="../../resources/css/admin_css/adminView.css">
-    <link rel="stylesheet" href="../../resources/css/admin_css/adminMainView.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/common_css/style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/admin_css/adminView.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/admin_css/adminMainView.css">
 <body>
     <div id="wrap">
         <%@ include file="adminHeader.jsp" %>
