@@ -1,6 +1,7 @@
-package com.kh.board.controller;
+package com.always5.customerService.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,21 +9,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.kh.board.model.vo.Reply;
-import com.kh.board.service.BoardService;
-import com.kh.member.model.vo.Member;
+import com.always5.customerService.model.vo.CsDetail;
+import com.always5.customerService.service.CsCenterServiceImpl;
+import com.google.gson.Gson;
 
 /**
- * Servlet implementation class AjaxReplyInsertController
+ * Servlet implementation class AjaxCsDetailController
  */
-@WebServlet("/rinsert.bo")
-public class AjaxReplyInsertController extends HttpServlet {
+@WebServlet("/csDetail.ax")
+public class AjaxCsDetailController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AjaxReplyInsertController() {
+    public AjaxCsDetailController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,20 +32,11 @@ public class AjaxReplyInsertController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
+		ArrayList<CsDetail> csDetailList = new CsCenterServiceImpl().selectCsDetailList();
 		
-		String replyContent = request.getParameter("content");
-		int boardNo = Integer.parseInt(request.getParameter("bno"));
-		int userNo = ((Member)request.getSession().getAttribute("loginUser")).getUserNo();
+		response.setContentType("application/json; charset=utf-8");
 		
-		Reply r = new Reply();
-		r.setReplyContent(replyContent);
-		r.setRefBoardNo(boardNo);
-		r.setReplyWriter(String.valueOf(userNo));
-		 
-		int result = new BoardService().insertReply(r);
-		
-		response.getWriter().print(result);
+		new Gson().toJson(csDetailList,  response.getWriter());
 	}
 
 	/**

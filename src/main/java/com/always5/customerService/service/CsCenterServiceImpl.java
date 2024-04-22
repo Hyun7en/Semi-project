@@ -3,33 +3,51 @@ package com.always5.customerService.service;
 import java.sql.Connection;
 import java.util.ArrayList;
 
-import com.always5.customerService.model.dao.CsDetailDao;
-import com.always5.customerService.model.dao.CsKeywordDao;
+import org.apache.ibatis.session.SqlSession;
+
+import com.always5.common.template.Template;
+import com.always5.customerService.model.dao.CsCenterDao;
 import com.always5.customerService.model.vo.CsDetail;
 import com.always5.customerService.model.vo.CsKeyword;
+import com.always5.customerService.model.vo.CsType;
 
 public class CsCenterServiceImpl implements CsCenterService {
 
-	
-	/** fcode에 따른 중분류를 ArrayList 객체 타입으로 가져오는 메서드 */
-	
-	@Override
-	public ArrayList<CsKeyword> selectCskeyword(int fcode) {
-		ArrayList<CsKeyword> cskeywordList = CsKeywordDao.selectCskeywordList(fcode);
-		
+	private CsCenterDao csCenterDao = new CsCenterDao();
 
-		return cskeywordList;
+	@Override
+	public ArrayList<CsType> selectCsTypeList() {
+		
+		SqlSession sqlSession = Template.getSqlSession();
+		
+		ArrayList<CsType> csTypeList = csCenterDao.selectCsTypeList(sqlSession);
+		
+		sqlSession.close();
+		
+		return csTypeList;
 	}
 
-	/** fcode에 따른 FAQ 데이터를 ArrayList 객체 타입으로 반환하는 메서드 */
-	
 	@Override
-	public ArrayList<CsDetail> selectCsDetail(int fcode) {
+	public ArrayList<CsKeyword> selectCskeywordList() {
+		SqlSession sqlSession = Template.getSqlSession();
 		
-		ArrayList<CsDetail> csDetailList = CsDetailDao.selectCsDetailList(fcode);
+		ArrayList<CsKeyword> csKeywordList = csCenterDao.selectCskeywordList(sqlSession);
+		
+		sqlSession.close();
+		return csKeywordList;
+	}
 
+	@Override
+	public ArrayList<CsDetail> selectCsDetailList() {
+		SqlSession sqlSession = Template.getSqlSession();
+		
+		ArrayList<CsDetail> csDetailList = csCenterDao.selectCsDetailList(sqlSession);
+		
+		sqlSession.close();
+		
 		return csDetailList;
 	}
+	
 	
 	
 }

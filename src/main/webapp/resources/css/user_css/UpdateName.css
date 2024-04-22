@@ -171,6 +171,8 @@ input:focus {
 }
 
 .updateName .updateName-checkbox-title {
+  border: 0;
+	background-color: transparent;
   display: flex;
   align-items: center; 
   justify-content: center;

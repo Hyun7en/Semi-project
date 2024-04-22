@@ -3,6 +3,8 @@ package com.always5.admin.restboard.service;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import org.apache.ibatis.session.SqlSession;
+
 import com.always5.admin.restboard.model.dao.RestBoardDao;
 import com.always5.common.template.Template;
 import com.always5.common.vo.PageInfo;

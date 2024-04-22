@@ -33,7 +33,7 @@
     main{
         width: 1320px;
         margin-top: 220px;
-        border: 1px solid black;
+        /* border: 1px solid black; */
     }
 
     ol, ul {

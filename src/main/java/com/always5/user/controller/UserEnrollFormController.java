@@ -6,32 +6,26 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class LogoutController
+ * Servlet implementation class userEnrollFormController
  */
-@WebServlet("/userLogout.me")
-public class LogoutController extends HttpServlet {
+@WebServlet("/searchPwd02.ui")
+public class UserEnrollFormController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
     /**
-     * @see HttpServlet#HttpServlet()
+     * Default constructor. 
      */
-    public LogoutController() {
-        super();
+    public UserEnrollFormController() {
         // TODO Auto-generated constructor stub
     }
 
-	/**
+	/**W
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// 세션 무효화 후 메인페이지로 이동
-		HttpSession session = request.getSession();
-		session.invalidate();
-		response.sendRedirect(request.getContextPath() + "/mainPage.ma");
-		
+		request.getRequestDispatcher("WEB-INF/views/user/UserEnrollForm.jsp").forward(request, response);
 	}
 
 	/**
@@ -40,6 +34,7 @@ public class LogoutController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+		
 	}
 
 }

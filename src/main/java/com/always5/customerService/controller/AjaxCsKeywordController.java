@@ -1,23 +1,29 @@
-package com.always5.user.controller;
+package com.always5.customerService.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.always5.customerService.model.vo.CsKeyword;
+import com.always5.customerService.service.CsCenterServiceImpl;
+import com.google.gson.Gson;
+
 /**
- * Servlet implementation class myPageController
+ * Servlet implementation class AjaxCsKeywordValue
  */
-@WebServlet("/mypage.ui")
-public class MyPageController extends HttpServlet {
+@WebServlet("/csKeyword.ax")
+public class AjaxCsKeywordController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public MyPageController() {
+    public AjaxCsKeywordController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -26,8 +32,11 @@ public class MyPageController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("WEB-INF/views/user/MyPage.jsp").forward(request, response);
+		ArrayList<CsKeyword> csKeywordList = new CsCenterServiceImpl().selectCskeywordList();
 		
+		response.setContentType("application/json; charset=utf-8");
+		
+		new Gson().toJson(csKeywordList,  response.getWriter());
 	}
 
 	/**

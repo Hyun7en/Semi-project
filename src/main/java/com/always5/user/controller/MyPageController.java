@@ -1,28 +1,23 @@
-package com.kh.board.controller;
+package com.always5.user.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.kh.board.model.vo.Board;
-import com.kh.board.service.BoardService;
-
 /**
- * Servlet implementation class ThumbnailListController
+ * Servlet implementation class myPageController
  */
-@WebServlet("/list.th")
-public class ThumbnailListController extends HttpServlet {
+@WebServlet("/mypage.ui")
+public class MyPageController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ThumbnailListController() {
+    public MyPageController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,12 +26,9 @@ public class ThumbnailListController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//thumbnailList 전부 가져와 넘겨줘야한다
-	
-		ArrayList<Board> list = new BoardService().selectThumbnailList();
+		request.getRequestDispatcher("WEB-INF/views/user/MyPage.jsp").forward(request, response);
 		
-		request.setAttribute("list", list);
-		request.getRequestDispatcher("views/board/thumbnailListView.jsp").forward(request, response);
+		
 	}
 
 	/**
