@@ -180,7 +180,7 @@
 		 WHERE R.REST_STATUS = 'Y'
 		 ORDER BY REST_NO DESC
 	</select>
-	<select id="selectSearchList" resultMap="adminRestBoardResultSet">
+	<select id="selectSearchList" resultMap="adminRestBoardSearchResultSet">
 		SELECT REST_NO,
 			   REST_NAME,
 			   REST_MODIFY_DATE
