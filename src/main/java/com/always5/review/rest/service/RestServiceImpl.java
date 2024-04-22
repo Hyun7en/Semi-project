@@ -42,10 +42,14 @@ public class RestServiceImpl implements RestService{
 		// 중복되는 메뉴 카테고리 제외
 //		for(int i = 0; i < list.size(); i++) {
 //			if (mcList.isEmpty()) {
-//				mcList.add(m);
+//				mcList.add(list.get(i));
 //			} else if (!mcList.isEmpty()){
 //				for(int j = 0; j < mcList.size(); j++) {
-//					
+//					if(list.get(i).getMenuCategoryNo() == mcList.get(j).getMenuCategoryNo()) {
+//						break;
+//					} else {
+//						
+//					}
 //				}
 //			}
 //		}
@@ -114,7 +118,7 @@ public class RestServiceImpl implements RestService{
 		SqlSession sqlSession = Template.getSqlSession();
 		ArrayList<Review> reviewList = restDao.selectReviewList(sqlSession, restNo);
 		ArrayList<Review> newReviewList = new ArrayList<>();
-		
+		System.out.println(reviewList.get(0));
 		if (!reviewList.isEmpty()) {
 			for(Review r : reviewList) {
 				ArrayList<Attachment> reviewAtList = restDao.selectReviewAttachmentList(sqlSession, r.getReviewNo());

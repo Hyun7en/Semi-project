@@ -32,16 +32,12 @@ public class RestDetailImageController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-<<<<<<< HEAD:src/main/java/com/always5/review/rest/controller/RestDetailImageController.java
 		int restNo = Integer.parseInt(request.getParameter("restNo"));
 		
 		ArrayList<Attachment> list = new RestServiceImpl().selectAttachmentList(restNo);
 		
 		response.setContentType("application/json; charset=utf-8");
 		new Gson().toJson(list, response.getWriter());
-=======
-	
->>>>>>> b9a790476de0be69a4c33bb446eb23b69b041648:src/main/java/com/always5/admin/controller/AdminRestRegistFormController.java
 	}
 
 	/**

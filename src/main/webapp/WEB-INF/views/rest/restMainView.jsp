@@ -7,13 +7,13 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"> -->
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 
-<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
 
-<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 
-<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script> -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/common_css/style.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/rest_css/restMainView.css">
@@ -40,7 +40,7 @@
                     <!-- 리뷰 평점 및 찜 수 -->
                     <div id="rest-record">
                         <div class="rest-record">
-                            <button type="button" id="select-map">지도 보기</button>
+                            <!-- <button type="button" id="select-map">지도 보기</button> -->
                         </div>
                         <div class="rest-record">
                             <img src="${pageContext.request.contextPath}/resources/file/common_img/왕관 컬러.png"
@@ -57,10 +57,6 @@
                 <div id="rest-category">
                     ${rest.foodCategoryNo} | 
                     <c:forEach var="mc" items="${mcList}">
-                        
-                    <c:if test="">
-                            
-                        </c:if>
                         ${mc.menuCategoryNo}
                     </c:forEach>
                 </div>
@@ -103,6 +99,37 @@
                     </div>
 
                     <button type="button" id="regist-review" data-toggle="modal" data-target="#myModal">리뷰 작성</button>
+
+                    <!-- Button to Open the Modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    Open modal
+  </button>
+  
+  <!-- The Modal -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Modal Heading</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+          Modal body..
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+                
                 </div>
             </div>
             <div id="rest-detail-page">
