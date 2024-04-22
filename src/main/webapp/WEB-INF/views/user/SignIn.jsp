@@ -6,7 +6,9 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <link rel="stylesheet"
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet"
 	href="http://localhost:8001/always5/resources/css/user_css/SignIn.css" />
 </head>
 <body>
@@ -15,7 +17,7 @@
 
 			<!-- 회원가입 로고 -->
 			<div class="Signin-logo-main">
-			 	<img class="Signin-image"	
+				<img class="Signin-image"
 					src="http://localhost:8001/always5/resources/file/user_img/SignIn-img/logo.png" />
 			</div>
 
@@ -57,15 +59,13 @@
 				</div>
 				<div class="gender-box">
 					<input type="checkbox" name="userGender" class="gender-male-submit"
-						value="남자">남자
-					<input type="checkbox" name="userGender"
+						value="남자">남자 <input type="checkbox" name="userGender"
 						class="gender-female-submit" value="여자">여자
 				</div>
 
 				<div class="signin-notice">
 					<div class="notice">
-						인증된 아이디로 가입, 위치기반 서비스 이용약관 <br /> 이벤트 &amp; 혜택 정보 수신 동의를
-						포함합니다.
+						인증된 아이디로 가입, 위치기반 서비스 이용약관 <br /> 이벤트 &amp; 혜택 정보 수신 동의를 포함합니다.
 					</div>
 				</div>
 
@@ -76,7 +76,8 @@
 				</div>
 
 			</div>
-			<script src="http://localhost:8001/always5/resources/js/user_js/SignIn.js"></script>
+			<script
+				src="http://localhost:8001/always5/resources/js/user_js/SignIn.js"></script>
 		</div>
 	</form>
 </body>
