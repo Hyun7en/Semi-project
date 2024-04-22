@@ -17,7 +17,7 @@ import com.always5.user.service.UserServiceImpl;
 /**
  * Servlet implementation class UserInsertController
  */
-@WebServlet("/signin.ui")
+@WebServlet("/signin.u")
 public class UserSigninController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
