@@ -17,7 +17,7 @@ import com.always5.review.rest.model.vo.Restaurant;
 /**
  * Servlet implementation class AdminRestListViewController
  */
-@WebServlet("/restlist.ad")
+@WebServlet("/adrest.li")
 public class AdminRestController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
