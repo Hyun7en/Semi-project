@@ -137,7 +137,7 @@
                             let str = "";
                             for (let c of res) { // 서버로부터 받은 응답 데이터를 반복하여 처리
                                 str += (
-                                    `<div>` + c.csDetailTitle + `</div>`
+                                    `<div>` + c.csDetailTitle + `</div>` +
                                     `<p>` + c.csDetailContent + `</p>`
                                 )
                             }
