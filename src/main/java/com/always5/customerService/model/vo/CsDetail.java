@@ -3,113 +3,113 @@ package com.always5.customerService.model.vo;
 import java.sql.Date;
 
 public class CsDetail {
-	private int csdNO;
-	private String cskNo;
-	private String cstNO;
-	private String csdTitle;
-	private String csdContent;
-	private Date csdEnrollDate;
-	private Date csdModifyDate;
-	private String csdStatus;
-	private String csdWriter;
+	private int csDetailNo;
+	private String csKeywordNo;
+	private String csTypeNo;
+	private String csDetailTitle;
+	private String csDetailContent;
+	private Date csDetailEnrollDate;
+	private Date csDetailModifyDate;
+	private String csDetailStatus;
+	private String csDetailWriter;
 	
 	public CsDetail() {
 		super();
 	}
 
-	public CsDetail(int csdNO, String cskNo, String cstNO, String csdTitle, String csdContent, Date csdEnrollDate,
-			Date csdModifyDate, String csdStatus, String csdWriter) {
+	public CsDetail(int csDetailNo, String csKeywordNo, String csTypeNo, String csDetailTitle, String csDetailContent,
+			Date csDetailEnrollDate, Date csDetailModifyDate, String csDetailStatus, String csDetailWriter) {
 		super();
-		this.csdNO = csdNO;
-		this.cskNo = cskNo;
-		this.cstNO = cstNO;
-		this.csdTitle = csdTitle;
-		this.csdContent = csdContent;
-		this.csdEnrollDate = csdEnrollDate;
-		this.csdModifyDate = csdModifyDate;
-		this.csdStatus = csdStatus;
-		this.csdWriter = csdWriter;
+		this.csDetailNo = csDetailNo;
+		this.csKeywordNo = csKeywordNo;
+		this.csTypeNo = csTypeNo;
+		this.csDetailTitle = csDetailTitle;
+		this.csDetailContent = csDetailContent;
+		this.csDetailEnrollDate = csDetailEnrollDate;
+		this.csDetailModifyDate = csDetailModifyDate;
+		this.csDetailStatus = csDetailStatus;
+		this.csDetailWriter = csDetailWriter;
 	}
 
-	public int getCsdNO() {
-		return csdNO;
+	public int getCsDetailNo() {
+		return csDetailNo;
 	}
 
-	public void setCsdNO(int csdNO) {
-		this.csdNO = csdNO;
+	public void setCsDetailNo(int csDetailNo) {
+		this.csDetailNo = csDetailNo;
 	}
 
-	public String getCskNo() {
-		return cskNo;
+	public String getCsKeywordNo() {
+		return csKeywordNo;
 	}
 
-	public void setCskNo(String cskNo) {
-		this.cskNo = cskNo;
+	public void setCsKeywordNo(String csKeywordNo) {
+		this.csKeywordNo = csKeywordNo;
 	}
 
-	public String getCstNO() {
-		return cstNO;
+	public String getCsTypeNo() {
+		return csTypeNo;
 	}
 
-	public void setCstNO(String cstNO) {
-		this.cstNO = cstNO;
+	public void setCsTypeNo(String csTypeNo) {
+		this.csTypeNo = csTypeNo;
 	}
 
-	public String getCsdTitle() {
-		return csdTitle;
+	public String getCsDetailTitle() {
+		return csDetailTitle;
 	}
 
-	public void setCsdTitle(String csdTitle) {
-		this.csdTitle = csdTitle;
+	public void setCsDetailTitle(String csDetailTitle) {
+		this.csDetailTitle = csDetailTitle;
 	}
 
-	public String getCsdContent() {
-		return csdContent;
+	public String getCsDetailContent() {
+		return csDetailContent;
 	}
 
-	public void setCsdContent(String csdContent) {
-		this.csdContent = csdContent;
+	public void setCsDetailContent(String csDetailContent) {
+		this.csDetailContent = csDetailContent;
 	}
 
-	public Date getCsdEnrollDate() {
-		return csdEnrollDate;
+	public Date getCsDetailEnrollDate() {
+		return csDetailEnrollDate;
 	}
 
-	public void setCsdEnrollDate(Date csdEnrollDate) {
-		this.csdEnrollDate = csdEnrollDate;
+	public void setCsDetailEnrollDate(Date csDetailEnrollDate) {
+		this.csDetailEnrollDate = csDetailEnrollDate;
 	}
 
-	public Date getCsdModifyDate() {
-		return csdModifyDate;
+	public Date getCsDetailModifyDate() {
+		return csDetailModifyDate;
 	}
 
-	public void setCsdModifyDate(Date csdModifyDate) {
-		this.csdModifyDate = csdModifyDate;
+	public void setCsDetailModifyDate(Date csDetailModifyDate) {
+		this.csDetailModifyDate = csDetailModifyDate;
 	}
 
-	public String getCsdStatus() {
-		return csdStatus;
+	public String getCsDetailStatus() {
+		return csDetailStatus;
 	}
 
-	public void setCsdStatus(String csdStatus) {
-		this.csdStatus = csdStatus;
+	public void setCsDetailStatus(String csDetailStatus) {
+		this.csDetailStatus = csDetailStatus;
 	}
 
-	public String getCsdWriter() {
-		return csdWriter;
+	public String getCsDetailWriter() {
+		return csDetailWriter;
 	}
 
-	public void setCsdWriter(String csdWriter) {
-		this.csdWriter = csdWriter;
+	public void setCsDetailWriter(String csDetailWriter) {
+		this.csDetailWriter = csDetailWriter;
 	}
 
 	@Override
 	public String toString() {
-		return "CsDetail [csdNO=" + csdNO + ", cskNo=" + cskNo + ", cstNO=" + cstNO + ", csdTitle=" + csdTitle
-				+ ", csdContent=" + csdContent + ", csdEnrollDate=" + csdEnrollDate + ", csdModifyDate=" + csdModifyDate
-				+ ", csdStatus=" + csdStatus + ", csdWriter=" + csdWriter + "]";
+		return "CsDetail [csDetailNo=" + csDetailNo + ", csKeywordNo=" + csKeywordNo + ", csTypeNo=" + csTypeNo
+				+ ", csDetailTitle=" + csDetailTitle + ", csDetailContent=" + csDetailContent + ", csDetailEnrollDate="
+				+ csDetailEnrollDate + ", csDetailModifyDate=" + csDetailModifyDate + ", csDetailStatus="
+				+ csDetailStatus + ", csDetailWriter=" + csDetailWriter + "]";
 	}
-	
 	
 	
 	

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -52,68 +53,118 @@
                     </p>
                 </div>
         </section>
-        <section id="section-2">
-            <div>
-                <a  href="#" onclick="return false" class="fcode" id="f0">공지사항</a>
-                <a  href="#" onclick="return false" class="fcode" id="f1">자주하는 질문</a>
-            </div>
 
-            <script type="text/javascript">
-                $(document).ready(function(){
-              
-                  $(".fcode").click(function() {
-              
-                    var fcode = $(this).attr('id');
-                    fcode = fcode.substring(1);	
-              
-                    // ajax로 보내서 출력
-                    $.ajax({
-                      url: '/cscenter.ax',
-                      type: "POST",
-                      data: {"fcode": fcode},
-                      dataType: "TEXT",
-                      success: function() {
-                        // 추후에 코드 추가
-                      }, 
-                      error: function(request, status, error) {
-                        console.log("code: "+request.status+"\n"+"message : "+request.responseText+"\n"+"error: "+error);
-                      } 
-                    });
-                  });
+        <section id="section-2">
+            <div class="csType">
+                
+            </div>
+        
+            <script>
+                $(document).ready(function() {
+                    selectCsTypeList(); // 페이지 로드시 바로 실행
                 });
-              </script>
+            
+                function selectCsTypeList() {
+                    $.ajax({
+                        url: "csType.ax", 
+                        dataType: 'json',
+                        success: function(res) {
+                            let str = "";
+                            for (let c of res) { // 서버로부터 받은 응답 데이터를 반복하여 처리
+                                str += (
+                                    `<a>` + c.csTypeValue + `</a>`
+                                )
+                            }
+                            $(".csType").html(str); // 결과를 .csType 요소에 적용
+                        },
+                        error: function() {
+                            console.log("ajax통신 실패")
+                        }
+                    });
+                }
+            </script>
+          
 
             <nav id="nav-2">
-                <ul id="navi-2">
-                    <li><a href="#" onclick="return false" class="fcode" id="f1">전체</a></li>
-                    <li><a href="#" onclick="return false" class="fcode" id="f2">중요공지</a></li>
-                    <li><a href="#" onclick="return false" class="fcode" id="f3">일반공지</a></li>
-                    <li><a href="#" onclick="return false" class="fcode" id="f4">이벤트 공지</a></li>
+                <ul id="navi-2" class="csKeyword">
+
                 </ul>                    
             </nav>
 
-            <div class="noti_box">
-                <!-- <c:forEach var="b" items="${list}"> -->
-                    <div>이벤트 공지 쿠폰 발행</div>
-
-                    <p>A. 택배사의 사정에따라 2~3일 소요됩니다.</p>
+            <script>
+                $(document).ready(function() {
+                    selectCsKeywordList(); // 페이지 로드시 바로 실행
+                });
             
-                    <div>이벤트 공지 쿠폰 발행</div>
-                    <p>A. 택배사의 사정에따라 2~3일 소요됩니다.</p>
+                function selectCsKeywordList() {
+                    $.ajax({
+                        url: "csKeyword.ax", 
+                        dataType: 'json',
+                        success: function(res) {
+                            let str = "";
+                            for (let c of res) { // 서버로부터 받은 응답 데이터를 반복하여 처리
+                                str += (
+                                    `<li><a>` + c.cskeywordValue + `</a></li>`
+                                )
+                            }
+                            $(".csKeyword").html(str); // 결과를 .csType 요소에 적용
+                        },
+                        error: function() {
+                            console.log("ajax통신 실패")
+                        }
+                    });
+                }
+            </script>
 
-                    <div>이벤트 공지 쿠폰 발행</div>
-                    <p>A. 택배사의 사정에따라 2~3일 소요됩니다.</p>
+            <div class="csDetail">
 
-                    <div>이벤트 공지 쿠폰 발행</div>
-                    <p>A. 택배사의 사정에따라 2~3일 소요됩니다.</p>
-
-                    <div>이벤트 공지 쿠폰 발행</div>
-                    <p>A. 택배사의 사정에따라 2~3일 소요됩니다.</p>
-                    
-                <!-- </c:forEach> -->
+                   
+  
             </div>
 
         </section>
+
+        <script>
+            $(document).ready(function() {
+                    selectCsDetailList(); // 페이지 로드시 바로 실행
+                });
+            
+                function selectCsDetailList() {
+                    $.ajax({
+                        url: "csDetail.ax", 
+                        dataType: 'json',
+                        success: function(res) {
+                            let str = "";
+                            for (let c of res) { // 서버로부터 받은 응답 데이터를 반복하여 처리
+                                str += (
+                                    `<div>` + c.csDetailTitle + `</div>`
+                                    `<p>` + c.csDetailContent + `</p>`
+                                )
+                            }
+                            $(".csDetail").html(str); // 결과를 .csDetail 요소에 적용
+                        },
+                        error: function() {
+                            console.log("ajax통신 실패")
+                        }
+                    });
+                }
+
+            $(".csDetail > div").click(function(){
+                //this => 클릭이벤트가 발생한 요소(div)
+                //$(this).next() => 선택된 요소의 뒤에있는 요소(p)
+                let tmp;
+                
+                const $p = $(this).next();
+                
+                if($p.css("display") === "none") {
+                    $(".csDetail > p").slideUp();
+    
+                    $p.slideDown();
+                } else { //보여지고있는 상태
+                    $p.slideUp();
+                }
+            })
+        </script>
     </main>        
 
     <!-- footer -->
@@ -121,23 +172,9 @@
     <%@  include file="../common/footer.jsp" %>
     
     </div>
-    
-    <script>
-        $(" #section-2 > .noti_box > div").click(function(){
-            
-            let tmp;
-            
-            const $p = $(this).next();
-            
-            if($p.css("display") === "none") {
-                $(".noti_box > p").slideUp();
 
-                $p.slideDown();
-            } else { //보여지고있는 상태
-                $p.slideUp();
-            }
-        })
-    </script>
+   
+    
     
 </body>
 
