@@ -14,7 +14,7 @@ import com.always5.user.service.UserServiceImpl;
 /**
  * Servlet implementation class userPwdController
  */
-@WebServlet("/updatepwd.ui")
+@WebServlet("/updatepwd.u")
 public class UserUpdatePwdController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

@@ -16,7 +16,7 @@ import com.always5.user.service.UserServiceImpl;
 /**
  * Servlet implementation class UserSignoutController
  */
-@WebServlet("/signout.ui")
+@WebServlet("/signout.u")
 public class UserSignoutController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

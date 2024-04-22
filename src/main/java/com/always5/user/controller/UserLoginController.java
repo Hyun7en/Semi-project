@@ -14,7 +14,7 @@ import com.always5.user.service.UserServiceImpl;
 /**
  * Servlet implementation class userLoginController
  */
-@WebServlet("/login.ui")
+@WebServlet("/login.u")
 public class UserLoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
