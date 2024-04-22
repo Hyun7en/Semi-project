@@ -34,6 +34,7 @@ public class CsCenterServiceImpl implements CsCenterService {
 		ArrayList<CsKeyword> csKeywordList = csCenterDao.selectCskeywordList(sqlSession);
 		
 		sqlSession.close();
+		
 		return csKeywordList;
 	}
 
