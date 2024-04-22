@@ -16,10 +16,10 @@
 <body>
 	<form action="updatepwd.ui" class="updatePwd-Container" method="POST">
 		<div class="updatePwd">
-			<!-- X버튼 -->
+		    <!-- X버튼 -->
 			<img class="logo"
-				src="http://localhost:8001/always5/resources/file/user_img/UpdatePwd-img/ph-x-thin.svg" />
-
+				src="http://localhost:8001/always5/resources/file/user_img/UpdateId-img/ph-x-thin.svg" />
+				
 			<!-- 상단 텍스트 -->
 			<div class="id-preview">
 				<div class="id-UserName">${User.userPwd}</div>
@@ -30,7 +30,7 @@
 			<img class="line-pass"
 				src="http://localhost:8001/always5/resources/file/user_img/UpdatePwd-img/line-47.svg" />
 
-			<!-- 사용자 이메일 입력 -->
+			<!-- 사용자 아이디 입력 -->
 			<div class="email-preview">
 				<img class="mdi-email-icon"
 					src="http://localhost:8001/always5/resources/file/user_img/UpdatePwd-img/mdi-light-email.svg" />
@@ -40,10 +40,7 @@
 			<div class="input-email-box">
 				<div class="input-email-text">
 					<input type="text" name="input-email" class="input-email"
-						value="현재 연락처 이메일 입력.">
-				</div>
-				<div class="input-email-checkbox">
-					<div class="input-email-checkbox-text">확인</div>
+						value="현재 아이디 입력">
 				</div>
 			</div>
 
@@ -52,29 +49,6 @@
 				왕밥빵 서비스의 변경/종료, 본인 작성 게시물 조치 등 대부분의 왕밥빵 안내에 사용합니다.<br /> 등록된 이메일
 				주소가 기억나지 않는다면 휴대전화 인증 후 이메일을 수정할 수 있습니다.
 			</p>
-
-			<!--전화번호 인증 -->
-			<div class="phone-title">전화번호 인증</div>
-
-			<div class="input-phone-box">
-				<div class="input-phone-text">
-					<input type="text" name="input-phone" class="input-phone"
-						value="현재 전화번호 입력.">
-				</div>
-				<div class="input-phone-checkbox">
-					<div class="input-phone-checkbox-text">확인</div>
-				</div>
-			</div>
-
-			<div class="input-phone-box2">
-				<div class="input-phone-text2">
-					<input type="text" name="input-phone2" class="input-phone2"
-						value="인증번호 입력.">
-				</div>
-				<div class="input-phone-checkbox2">
-					<div class="input-phone-checkbox-text2">확인</div>
-				</div>
-			</div>
 
 			<div class="updatePwd-checkbox">
 				<button type="submit" class="updatePwd-checkbox-title">변경</button>
