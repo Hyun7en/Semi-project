@@ -43,11 +43,6 @@
 							src="http://localhost:8001/always5/resources/file/user_img/MypageGoods-img/crown.png" />
 					</div>
 
-					<button class="review-box-deletebox">
-						<div class="review-delete">
-							<a href="">삭제</a>
-						</div>
-					</button>
 					<button class="review-box-mainpagebox">
 						<div class="review-box-mainpage">
 							<a href="">가게보기</a>
@@ -88,9 +83,6 @@
 							<a href="">가게보기</a>
 						</div>
 					</button>
-					<button class="review-box-deletebox02">
-						<div class="review-delete02">삭제</div>
-					</button>
 
 					<img class="reviewbox-line" src="img/line-50.svg" />
 					<div class="reviewbox-text">소고기 쌀국수, 사이공 볶음면, 새우볼 6pcs, 돈까스
@@ -125,10 +117,9 @@
 					</div>
 
 					<button class="review-box-mainpagebox03">
-						<div class="review-box-mainpage03">가게보기</div>
-					</button>
-					<button class="review-box-deletebox03">
-						<div class="review-delete03">삭제</div>
+						<div class="review-box-mainpage03">
+							<a href="">가게보기</a>
+						</div>
 					</button>
 
 					<img class="reviewbox-line" src="img/line-50.svg" />
@@ -160,10 +151,9 @@
 					</div>
 
 					<button class="review-box-mainpagebox04">
-						<div class="review-box-mainpage04">가게보기</div>
-					</button>
-					<button class="review-box-deletebox04">
-						<div class="review-delete04">삭제</div>
+						<div class="review-box-mainpage04">
+							<a href="">가게보기</a>
+						</div>
 					</button>
 
 					<img class="reviewbox-line" src="img/line-50.svg" />
@@ -199,10 +189,9 @@
 					</div>
 
 					<button class="review-box-mainpagebox05">
-						<div class="review-box-mainpage05">가게보기</div>
-					</button>
-					<button class="review-box-deletebox05">
-						<div class="review-delete05">삭제</div>
+						<div class="review-box-mainpage05">
+							<a href="">가게보기</a>
+						</div>
 					</button>
 
 					<img class="reviewbox-line" src="img/line-50.svg" />

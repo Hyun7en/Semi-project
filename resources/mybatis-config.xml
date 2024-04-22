@@ -11,19 +11,12 @@
 
 		<typeAlias type="com.always5.review.rest.model.vo.Restaurant" alias="Restaurant" />
 		<typeAlias type="com.always5.review.rest.model.vo.Menu" alias="Menu" />
-
 		<typeAlias type="com.always5.common.vo.Attachment" alias="Attachment" />
 		<typeAlias type="com.always5.user.model.vo.User" alias="User" />
-<<<<<<< HEAD
 		<typeAlias type="com.always5.user.model.vo.Dibs" alias="Dibs" />
-=======
 		<typeAlias type="com.always5.user.model.vo.Mypage" alias="Mypage" />
-		<typeAlias type="com.always5.review.rest.model.vo.Restaurant" alias="Restaurant" />
->>>>>>> 4df3f00cd602b20c37ea7e465b99e12589f51458
 		<typeAlias type="com.always5.review.rest.model.vo.MenuCategory" alias="MenuCategory" />
 		<typeAlias type="com.always5.review.model.vo.Review" alias="Review" />
-		<typeAlias type="com.always5.customerService.model.vo.CsNoti" alias="Notice" />
-		<typeAlias type="com.always5.customerService.model.vo.CsQnA" alias="QNA" />
 	</typeAliases>
 		
 	<environments default="development">
