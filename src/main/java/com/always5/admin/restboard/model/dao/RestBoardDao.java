@@ -11,7 +11,7 @@ import com.always5.review.rest.model.vo.Restaurant;
 
 public class RestBoardDao {
 	
-	public int selectRestListCount(SqlSession sqlSession) {
+	public ArrayList<Restaurant> selectRestListCount(SqlSession sqlSession) {
 		return sqlSession.selectOne("restMapper.selectRestListCount");
 	}
 	

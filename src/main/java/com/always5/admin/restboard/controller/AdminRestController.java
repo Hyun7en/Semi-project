@@ -44,7 +44,7 @@ public class AdminRestController extends HttpServlet {
 		request.setAttribute("list", list);
 		request.setAttribute("pi", pi);
 		
-		request.getRequestDispatcher("WEB-INF/views/admin/adminRestListView.jsp").forward(request, response);
+		request.getRequestDispatcher("WEB-INF/views/board/adminRestListView.jsp").forward(request, response);
 				
 	}
 
