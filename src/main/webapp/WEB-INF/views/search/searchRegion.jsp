@@ -7,8 +7,8 @@
         <meta charset="UTF-8">
         <title>Insert title here</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-        <link rel="stylesheet" href="http://localhost:8001/always5/resources/css/common_css/style.css">
-        <link rel="stylesheet" href="http://localhost:8001/always5/resources/css/search_css/searchKinds.css">
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/common_css/style.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/search_css/searchKinds.css">
 
     </head>
 
@@ -17,64 +17,64 @@
         <div id="wrap">
             <%@ include file="../common/header.jsp" %>
 
-                <main>
+                <main style="margin-top: 230px;">
                     <section class="search-nav" style="padding: 0px;">
                         <div>
-                            <a class="region-nav">
+                            <a class="seoul region-nav">
                                 <p>서울</p>
                             </a>
                             
                         </div>
                         <div>
-                            <a class="region-nav">
+                            <a class="gyeonggi region-nav">
                                 <p>경기</p>
                             </a>
                             
                         </div>
                         <div>
-                            <a class="region-nav">
+                            <a class="busan region-nav">
                                 <p>부산</p>
                             </a>
                             
                         </div>
                         <div>
-                            <a class="region-nav">
+                            <a class="daejeon region-nav">
                                 <p>대전</p>
                             </a>
                         </div>
                         <div>
-                            <a class="region-nav">
+                            <a class="daegu region-nav">
                                 <p>대구</p>
                             </a>
                             
                         </div>
                         <div>
-                            <a class="region-nav">
+                            <a class="gwangju region-nav">
                                 <p>광주</p>
                             </a>
                         </div>
                         <div>
-                            <a class="region-nav">
+                            <a class="ulsan region-nav">
                                 <p>울산</p>
                             </a>
                         </div>
                         <div>
-                            <a class="region-nav">
+                            <a class="gangwon region-nav">
                                 <p>강원</p>
                             </a>
                         </div>
                         <div>
-                            <a class="region-nav">
+                            <a class="chungcheong region-nav">
                                 <p>충청</p>
                             </a>
                         </div>
                         <div>
-                            <a class="region-nav">
+                            <a class="jeolla region-nav">
                                 <p>전라</p>
                             </a>
                         </div>
                         <div>
-                            <a class="region-nav">
+                            <a class="gyeongsang region-nav">
                                 <p>경상</p>
                             </a>
                         </div>
@@ -142,32 +142,299 @@
 								url: "searchRegionList.sc",
 								success: function(list) {
 									// AJAX 요청이 성공한 후에 클릭 이벤트 핸들러를 설정
-									$(".korean").click(function() {
+									$(".seoul").click(function() {
 										let str = "";
 										// 클릭 이벤트가 발생했을 때의 처리
-										
 										for (let r of list) {
-											if(??????????????????????????????? == 1){
+											if(r.restAddress.substring(0, 2) === "서울"){
 												str +=  `<div>`+
-														`<div>` +
-															`<div class='search-best-crownSmall'>` +
-															`<img src='https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp' alt=''>` +
-															`<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
-															`</div>` +
-														`</div>` +	                                    		
-														`<div>` +
-															`<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
-															`<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
-															`<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
-														`</div>` +
-												`</div>`;
+                                                            `<div>` +
+                                                                `<div class='search-best-crownSmall'>` +
+                                                                `<img src='https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp' alt=''>` +
+                                                                `<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
+                                                                `</div>` +
+                                                            `</div>` +	                                    		
+                                                            `<div>` +
+                                                                `<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
+                                                                `<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
+                                                                `<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
+                                                            `</div>` +
+												        `</div>`;
 											}
 										}
 
-										// 결과를 .search-result 요소에 설정
-										$(".search-result").html(str);
-									});
+											// 결과를 .search-result 요소에 설정
+											$(".search-result").html(str);
+										});
 
+                                        $(".gyeonggi").click(function() {
+										let str = "";
+										// 클릭 이벤트가 발생했을 때의 처리
+										for (let r of list) {
+											if(r.restAddress.substring(0, 2) === "경기"){
+												str +=  `<div>`+
+                                                            `<div>` +
+                                                                `<div class='search-best-crownSmall'>` +
+                                                                `<img src='https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp' alt=''>` +
+                                                                `<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
+                                                                `</div>` +
+                                                            `</div>` +	                                    		
+                                                            `<div>` +
+                                                                `<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
+                                                                `<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
+                                                                `<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
+                                                            `</div>` +
+												        `</div>`;
+											}
+										}
+
+											// 결과를 .search-result 요소에 설정
+											$(".search-result").html(str);
+										});
+
+
+                                        $(".busan").click(function() {
+										let str = "";
+										// 클릭 이벤트가 발생했을 때의 처리
+										for (let r of list) {
+											if(r.restAddress.substring(0, 2) === "부산"){
+												str +=  `<div>`+
+                                                            `<div>` +
+                                                                `<div class='search-best-crownSmall'>` +
+                                                                `<img src='https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp' alt=''>` +
+                                                                `<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
+                                                                `</div>` +
+                                                            `</div>` +	                                    		
+                                                            `<div>` +
+                                                                `<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
+                                                                `<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
+                                                                `<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
+                                                            `</div>` +
+												        `</div>`;
+											}
+										}
+
+											// 결과를 .search-result 요소에 설정
+											$(".search-result").html(str);
+										});
+
+
+                                        $(".daejeon").click(function() {
+										let str = "";
+										// 클릭 이벤트가 발생했을 때의 처리
+										for (let r of list) {
+											if(r.restAddress.substring(0, 2) === "대전"){
+												str +=  `<div>`+
+                                                            `<div>` +
+                                                                `<div class='search-best-crownSmall'>` +
+                                                                `<img src='https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp' alt=''>` +
+                                                                `<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
+                                                                `</div>` +
+                                                            `</div>` +	                                    		
+                                                            `<div>` +
+                                                                `<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
+                                                                `<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
+                                                                `<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
+                                                            `</div>` +
+												        `</div>`;
+											}
+										}
+
+											// 결과를 .search-result 요소에 설정
+											$(".search-result").html(str);
+										});
+
+
+                                        $(".daegu").click(function() {
+										let str = "";
+										// 클릭 이벤트가 발생했을 때의 처리
+										for (let r of list) {
+											if(r.restAddress.substring(0, 2) === "대구"){
+												str +=  `<div>`+
+                                                            `<div>` +
+                                                                `<div class='search-best-crownSmall'>` +
+                                                                `<img src='https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp' alt=''>` +
+                                                                `<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
+                                                                `</div>` +
+                                                            `</div>` +	                                    		
+                                                            `<div>` +
+                                                                `<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
+                                                                `<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
+                                                                `<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
+                                                            `</div>` +
+												        `</div>`;
+											}
+										}
+
+											// 결과를 .search-result 요소에 설정
+											$(".search-result").html(str);
+										});
+
+
+                                        $(".gwangju").click(function() {
+										let str = "";
+										// 클릭 이벤트가 발생했을 때의 처리
+										for (let r of list) {
+											if(r.restAddress.substring(0, 2) === "광주"){
+												str +=  `<div>`+
+                                                            `<div>` +
+                                                                `<div class='search-best-crownSmall'>` +
+                                                                `<img src='https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp' alt=''>` +
+                                                                `<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
+                                                                `</div>` +
+                                                            `</div>` +	                                    		
+                                                            `<div>` +
+                                                                `<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
+                                                                `<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
+                                                                `<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
+                                                            `</div>` +
+												        `</div>`;
+											}
+										}
+
+											// 결과를 .search-result 요소에 설정
+											$(".search-result").html(str);
+										});
+
+
+                                        $(".ulsan").click(function() {
+										let str = "";
+										// 클릭 이벤트가 발생했을 때의 처리
+										for (let r of list) {
+											if(r.restAddress.substring(0, 2) === "울산"){
+												str +=  `<div>`+
+                                                            `<div>` +
+                                                                `<div class='search-best-crownSmall'>` +
+                                                                `<img src='https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp' alt=''>` +
+                                                                `<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
+                                                                `</div>` +
+                                                            `</div>` +	                                    		
+                                                            `<div>` +
+                                                                `<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
+                                                                `<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
+                                                                `<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
+                                                            `</div>` +
+												        `</div>`;
+											}
+										}
+
+											// 결과를 .search-result 요소에 설정
+											$(".search-result").html(str);
+										});
+
+
+                                        $(".gangwon").click(function() {
+										let str = "";
+										// 클릭 이벤트가 발생했을 때의 처리
+										for (let r of list) {
+											if(r.restAddress.substring(0, 2) === "강원"){
+												str +=  `<div>`+
+                                                            `<div>` +
+                                                                `<div class='search-best-crownSmall'>` +
+                                                                `<img src='https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp' alt=''>` +
+                                                                `<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
+                                                                `</div>` +
+                                                            `</div>` +	                                    		
+                                                            `<div>` +
+                                                                `<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
+                                                                `<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
+                                                                `<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
+                                                            `</div>` +
+												        `</div>`;
+											}
+										}
+
+											// 결과를 .search-result 요소에 설정
+											$(".search-result").html(str);
+										});
+
+
+                                        $(".chungcheong").click(function() {
+										let str = "";
+										// 클릭 이벤트가 발생했을 때의 처리
+										for (let r of list) {
+											if(r.restAddress.substring(0, 2) === "충청"){
+												str +=  `<div>`+
+                                                            `<div>` +
+                                                                `<div class='search-best-crownSmall'>` +
+                                                                `<img src='https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp' alt=''>` +
+                                                                `<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
+                                                                `</div>` +
+                                                            `</div>` +	                                    		
+                                                            `<div>` +
+                                                                `<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
+                                                                `<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
+                                                                `<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
+                                                            `</div>` +
+												        `</div>`;
+											}
+										}
+
+											// 결과를 .search-result 요소에 설정
+											$(".search-result").html(str);
+										});
+
+
+                                        
+                                        $(".jeolla").click(function() {
+										let str = "";
+										// 클릭 이벤트가 발생했을 때의 처리
+										for (let r of list) {
+											if(r.restAddress.substring(0, 2) === "전라"){
+												str +=  `<div>`+
+                                                            `<div>` +
+                                                                `<div class='search-best-crownSmall'>` +
+                                                                `<img src='https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp' alt=''>` +
+                                                                `<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
+                                                                `</div>` +
+                                                            `</div>` +	                                    		
+                                                            `<div>` +
+                                                                `<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
+                                                                `<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
+                                                                `<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
+                                                            `</div>` +
+												        `</div>`;
+											}
+										}
+
+
+											// 결과를 .search-result 요소에 설정
+											$(".search-result").html(str);
+										});
+
+
+                                        $(".gyeongsang").click(function() {
+										let str = "";
+										// 클릭 이벤트가 발생했을 때의 처리
+										for (let r of list) {
+											if(r.restAddress.substring(0, 2) === "경상"){
+												str +=  `<div>`+
+                                                            `<div>` +
+                                                                `<div class='search-best-crownSmall'>` +
+                                                                `<img src='https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp' alt=''>` +
+                                                                `<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
+                                                                `</div>` +
+                                                            `</div>` +	                                    		
+                                                            `<div>` +
+                                                                `<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
+                                                                `<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
+                                                                `<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
+                                                            `</div>` +
+												        `</div>`;
+											}
+										}
+
+											// 결과를 .search-result 요소에 설정
+											$(".search-result").html(str);
+										});
+
+
+									},
+									error: function () {
+										console.log("ajax통신 실패")
+									}
+								});
+							});
 
 
                     </script>

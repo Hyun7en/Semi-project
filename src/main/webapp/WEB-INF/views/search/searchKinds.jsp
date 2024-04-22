@@ -9,8 +9,8 @@
         <meta charset="UTF-8">
         <title>Insert title here</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-        <link rel="stylesheet" href="http://localhost:8001/always5/resources/css/common_css/style.css">
-        <link rel="stylesheet" href="http://localhost:8001/always5/resources/css/search_css/searchKinds.css">
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/common_css/style.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/search_css/searchKinds.css">
 
     </head>
     
@@ -120,10 +120,6 @@
                     </section>
                     
                    <script>
-
-
-
-				                        
 						$(document).ready(function() {
 							// AJAX 요청
 							$.ajax({

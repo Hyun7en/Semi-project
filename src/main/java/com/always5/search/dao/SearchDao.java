@@ -1,7 +1,7 @@
 package com.always5.search.dao;
 
-import java.sql.Connection;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
@@ -10,6 +10,8 @@ import com.always5.common.vo.PageInfo;
 import com.always5.review.rest.model.vo.Restaurant;
 
 public class SearchDao {
+
+	
 
 	public ArrayList<Restaurant> selectSearchRest(SqlSession sqlSession, PageInfo re){
 		// 마이바티스에서는 페이징 처리를 위해서 rowBounds라는 클래스를 제공한다.
@@ -37,6 +39,10 @@ public class SearchDao {
 		return (ArrayList)sqlSession.selectList("searchMapper.selectSearchRest");
 	}
 	
+	// 순수 검색
+	public int searchrListCount(SqlSession sqlSession, HashMap<String, String> map){
+		return sqlSession.selectOne("searchMapper.searchrListCount");
+	}
 	
 	
 	
