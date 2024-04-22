@@ -1,60 +1,51 @@
 package com.always5.customerService.model.vo;
 
 public class CsKeyword {
-	private int cskNo;
-	private int cstNo;
-	private String cskValue;
-	private String cstValue;
+	private int cskeywordNo;
+	private int csTypeNo;
+	private String cskeywordValue;
 	
 	public CsKeyword() {
 		super();
 	}
-
-	public CsKeyword(int cskNo, int cstNo, String cskValue, String cstValue) {
+	
+	public CsKeyword(int cskeywordNo, int csTypeNo, String cskeywordValue) {
 		super();
-		this.cskNo = cskNo;
-		this.cstNo = cstNo;
-		this.cskValue = cskValue;
-		this.cstValue = cstValue;
+		this.cskeywordNo = cskeywordNo;
+		this.csTypeNo = csTypeNo;
+		this.cskeywordValue = cskeywordValue;
 	}
 
-	public int getCskNo() {
-		return cskNo;
+	public int getCskeywordNo() {
+		return cskeywordNo;
 	}
 
-	public void setCskNo(int cskNo) {
-		this.cskNo = cskNo;
+	public void setCskeywordNo(int cskeywordNo) {
+		this.cskeywordNo = cskeywordNo;
 	}
 
-	public int getCstNo() {
-		return cstNo;
+	public int getCsTypeNo() {
+		return csTypeNo;
 	}
 
-	public void setCstNo(int cstNo) {
-		this.cstNo = cstNo;
+	public void setCsTypeNo(int csTypeNo) {
+		this.csTypeNo = csTypeNo;
 	}
 
-	public String getCskValue() {
-		return cskValue;
+	public String getCskeywordValue() {
+		return cskeywordValue;
 	}
 
-	public void setCskValue(String cskValue) {
-		this.cskValue = cskValue;
-	}
-
-	public String getCstValue() {
-		return cstValue;
-	}
-
-	public void setCstValue(String cstValue) {
-		this.cstValue = cstValue;
+	public void setCskeywordValue(String cskeywordValue) {
+		this.cskeywordValue = cskeywordValue;
 	}
 
 	@Override
 	public String toString() {
-		return "CsKeyword [cskNo=" + cskNo + ", cstNo=" + cstNo + ", cskValue=" + cskValue + ", cstValue=" + cstValue
+		return "CsKeyword [cskeywordNo=" + cskeywordNo + ", csTypeNo=" + csTypeNo + ", cskeywordValue=" + cskeywordValue
 				+ "]";
 	}
+	
 	
 	
 }

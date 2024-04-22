@@ -29,8 +29,8 @@
                 </form>
             </div>
             <div id="memberButton">
-                <a href="">로그인</a>
-                <a href="">회원가입</a>
+                <a href="login.ui">로그인</a>
+                <a href="enrollform.ui">회원가입</a>
             </div>
         </div>
 
@@ -40,7 +40,7 @@
                     <li><a onclick="searchKinds.sc">음식별</a></li>
                     <li><a onclick="location.href='searchMenu.sc?rpage=1'">메뉴별</a></li>
                     <li><a onclick="location.href='searchRegion.sc?rpage=1'">지역별</a></li>
-                    <li><a href="#">고객센터</a></li>
+                    <li><a href="CsCenter">고객센터</a></li>
                 </ul>
         </nav>
 
