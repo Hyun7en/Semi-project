@@ -17,7 +17,7 @@
 			<!-- 로고 -->
 			<div class="login-logo-main">
 				<img class="logo-image"
-					src="http://localhost:8001/always5/resources/file/user_img/Login-img/logo.png" />
+					src="${pageContext.request.contextPath}/resources/file/user_img/login-img/logo.png" />
 			</div>
 
 			<div class="login-title">로그인</div>

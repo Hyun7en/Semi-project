@@ -12,6 +12,7 @@ public class CsCenterDao {
 	
 	public ArrayList<CsType> selectCsTypeList(SqlSession sqlSession){
 		
+		System.out.println((ArrayList)sqlSession.selectList("csMapper.selectCsTypeList"));
 		return (ArrayList)sqlSession.selectList("csMapper.selectCsTypeList");
 	}
 	
