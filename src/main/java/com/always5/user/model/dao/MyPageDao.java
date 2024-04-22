@@ -2,25 +2,30 @@ package com.always5.user.model.dao;
 
 import org.apache.ibatis.session.SqlSession;
 
-import com.always5.user.model.vo.User;
+import com.always5.user.model.vo.Mypage;
+
+
 
 public class MyPageDao {
 	
-	public User MyPage(SqlSession sqlSession, User u) {
-		System.out.println("u");
-		return sqlSession.selectOne("mypageMapper.mypage", u);
+	public int MyPage(SqlSession sqlSession, Mypage m) {
+		int result =  sqlSession.insert("mypageMapper.Mypage", m);
+		return result;
 	}
 	
-	public User MyPageGoods(SqlSession sqlSession, User u) {
-		return sqlSession.selectOne("mypageMapper.mypageGoods", u);
+	public int MyPageGoods(SqlSession sqlSession, Mypage m) {
+		int result =  sqlSession.insert("mypageMapper.MyPageGoods", m);
+		return result;
 	}
 	
-	public User MyPageReview(SqlSession sqlSession, User u) {
-		return sqlSession.selectOne("mypageMapper.mypageReview", u);
+	public int MyPageReview(SqlSession sqlSession, Mypage m) {
+		int result =  sqlSession.insert("mypageMapper.MyPageReview", m);
+		return result;
 	}
 	
-	public User MyPageReviewGoods(SqlSession sqlSession, User u) {
-		return sqlSession.selectOne("mypageMapper.mypageReviewGoods", u);
+	public int MyPageReviewGoods(SqlSession sqlSession, Mypage m) {
+		int result =  sqlSession.insert("mypageMapper.MyPageReviewGoods", m);
+		return result;
 	}
 }
 

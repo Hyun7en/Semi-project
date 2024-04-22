@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <form action="MypageReview.ui" class="MypageReview-Container" method="POST">
+    <form action="myreview.ui" class="MypageReview-Container" method="POST">
         <div class="MypageReview">
 
             <!-- 작성 리뷰 -->
