@@ -48,23 +48,19 @@
                             <!-- 평점 데이터 출력 -->
                             <div>${rest.restGrade }</div>
                         </div>
-                        <div class="rest-record">
-                            <!-- $ 표시 필요 -->
-                            <!-- <c:if test="{(loginUser eq null) or (userDibs eq null)}">
-                    <img src="${pageContext.request.contextPath}/resources/file/common_img/찜_선택전.png" alt="">
-                </c:if>
-                <c:if test="{(loginUser ne null) and (userDibs ne null)}">
-                    <img src="${pageContext.request.contextPath}/resources/file/common_img/찜_선택후.png" alt="">
-                </c:if> -->
-                            <img src="${pageContext.request.contextPath}/resources/file/common_img/찜_선택전.png"
-                                alt="">
-                            <div>${rest.restLikeNo}</div>
+
+                        <div class="rest-record" id="rest-dibs" onclick="selectDibs">
+                            
                         </div>
                     </div>
                 </div>
                 <div id="rest-category">
-                    ${rest.foodCategoryNo} |
+                    ${rest.foodCategoryNo} | 
                     <c:forEach var="mc" items="${mcList}">
+                        
+                    <c:if test="">
+                            
+                        </c:if>
                         ${mc.menuCategoryNo}
                     </c:forEach>
                 </div>
@@ -116,75 +112,51 @@
                     <button class="rest-detail-page-name" onclick="detailPage(3)">사진</button>
                 </div>
 
-                <div id="rest-detail-page-content" >
-                    <!-- ajax로 데이터 넘겨 받아 그릴 것 -->
-                    <!-- jsp:include page="restMainViewReview.jsp"/jsp:include -->
-                </div>
-
-
-                <!-- 
-        if test detailPage eq 'review'
-        jsp include page = restMainViewReview.jsp
-        EL 구문은 서버를 다녀오므로 이미 한 번 서버를 다녀온 이상 데이터가 바뀔 수 없음
-        EL로 include 하고 싶다면 비동기를 포기해야 함, 서버를 다시 다녀와야 하므로 페이지가 바뀌기 때문에
-    -->
+                <div id="rest-detail-page-content" value=""></div>
             </div>
 
             <script>
-                let restNo = "<c:out value='${rest.restNo}'/>";
-                function detailPage(num) {
-                    switch (num) {
-                        case 1:
-                            $.ajax({
-                                url: "${pageContext.request.contextPath}/detailReview.re",
-                                data: { restNo: restNo },
-                                success: function (map) {
-                                    let reviewList = map.reviewList;
-                                    let ratingCount = map.ratingCount;
-                                    if (reviewList[0] != null){
-                                        restReviewContentDraw(reviewList, ratingCount);
-                                    } else {
-                                        noRestContentDraw("등록된 리뷰가 없습니다.");
-                                    }
-                                },
-                                error: function () {
-                                    errorRestContentDraw("정보를 불러오는데 실패 했습니다.");
-                                }
-                            })
-                            break;
-                        case 2:
-                            $.ajax({
-                                url: "detailMenu.re",
-                                data: { restNo: restNo },
-                                success: function (menuList) {
-                                    if (reviewList[0] != null){
-                                        restMenuContentDraw(menuList);
-                                    } else {
-                                        noRestContentDraw("등록된 메뉴가 없습니다.");
-                                    }
-                                },
-                                error: function () {
-                                    errorRestContentDraw("정보를 불러오는데 실패 했습니다.");
-                                }
-                            })
-                            break;
-                        case 3:
-                            $.ajax({
-                                url: "detailImg.re",
-                                data: { restNo: restNo },
-                                success: function (imgList) {
-                                    restImageContentDraw(imgList);
-                                },
-                                error: function () {
-                                    errorRestContentDraw("정보를 불러오는데 실패 했습니다.");
-                                }
-                            })
-                            break;
-                    }
+                function ajaxGetItemList(url, data, callback){
+                    $.ajax({
+                        url: url,
+                        data: data,
+                        success: function (result) {
+                            callback(result)
+                            // console.log("성공");
+                        },
+                        error: function () {
+                            noRestContentDraw("정보를 불러오는데 실패 했습니다.");
+                        }
+                    })
                 }
 
-                function restReviewContentDraw(reviewList, ratingCount) {
-                    let str = `<div class="rest-review-title">
+                function detailPage(num){
+                    switch(num){
+                        case 1:
+                            ajaxGetItemList("${pageContext.request.contextPath}/detailReview.re", 
+                                            {restNo : ${rest.restNo}}, 
+                                            function(result){restReviewContentDraw(result)});
+                                            break;
+                        case 2:
+                            ajaxGetItemList("${pageContext.request.contextPath}/detailMenu.re", 
+                                            {restNo : ${rest.restNo}}, 
+                                            function(result){restMenuContentDraw(result)});
+                                            break;
+                        case 3:
+                            ajaxGetItemList("${pageContext.request.contextPath}/detailImg.re", 
+                                            {restNo : ${rest.restNo}}, 
+                                            function(result){restImageContentDraw(result)});
+                                            break;
+                    }
+                };
+                
+                // 데이터 가져오기 성공 시 리뷰 디테일 페이지 출력
+                function restReviewContentDraw(map) {
+                    const reviewList = map.reviewList;
+                    const ratingCount = map.ratingCount;
+
+                    if (reviewList[0] != null){
+                        let str = `<div class="rest-review-title">
                                         <!-- 왼쪽 총평점 -->
                                         <div id="review-title-left">
                                             <p>${rest.restName}</p>
@@ -193,6 +165,7 @@
                                                 <h2>${rest.restGrade}</h2>
                                             </div>
                                         </div>
+
                                         <!-- 오른쪽 평점별 횟수 -->
                                         <div id="review-title-right">
                                             <!-- 왕관 -->
@@ -224,70 +197,167 @@
                                             <!-- 횟수 -->
                                             <div id="review-crown-count">`
                                             for(let c of ratingCount){
-                                                str += `<p>`+c+`</p>`
-                                            }                                         
+                                                    str += `<p>`+c+`</p>`
+                                                }                                         
+                                            str += `</div>
+                                                </div>
+                                            </div>`
+
+                                            for (let num in reviewList) {
+                                                str += `<div class="rest-review-content">
+                                                        <!-- 리뷰 작성자, 등급, 날짜 -->
+                                                        <div id="review-content-title">
+                                                            <div>
+                                                                <h2>`+reviewList[num].userNo+`</h2>
+                                                            </div>
+                                                            <p>`+reviewList[num].reviewEnrollDate+`</p>
+                                                        </div>
+                                    
+                                                        <hr>
+                                    
+                                                        <!-- 리뷰 평점 -->
+                                                        <div id="review-content-crown">
+                                                            <p>평점 `+reviewList[num].reviewRating+`</p>
+                                                        <div>`
+                                                for(let i = 0; i < reviewList[num].reviewRating; i++){
+                                                    str += `<img src="${pageContext.request.contextPath}/resources/file/common_img/왕관 컬러.png" alt="">`
+                                                }
                                                 str += `</div>
+                                                        </div>
+                                                        <!-- 리뷰 사진 -->
+                                                        <div id="review-content-image">`
+
+                                                for (let reviewAt of reviewList[num].reviewAtList) {
+                                                    str += `<img src="${pageContext.request.contextPath}/`+reviewAt.filePath+`/`+reviewAt.changeName+`.jpg" alt="">`
+                                                }
+                                                str += `</div>
+                                                        <p>`+reviewList[num].reviewContent+`</p>
                                                     </div>
                                                 </div>`
-
-                    for (let review of reviewList) {
-                        str += `<div class="rest-review-content">
-                                <!-- 리뷰 작성자, 등급, 날짜 -->
-                                <div id="review-content-title">
-                                    <div>
-                                        <h2>`+review.userNo+`</h2>
-                                    </div>
-                                    <p>`+review.reviewEnrollDate+`</p>
-                                </div>
-            
-                                <hr>
-            
-                                <!-- 리뷰 평점 -->
-                                <div id="review-content-crown">
-                                    <p>평점 `+review.reviewRating+`</p>
-                                <div>`
-                        for(let i = 0; i < review.reviewRating; i++){
-                            str += `<img src="${pageContext.request.contextPath}/resources/file/common_img/왕관 컬러.png" alt="">`
-                        }
-                        str += `</div>
-                                </div>
-                                <!-- 리뷰 사진 -->
-                                <div id="review-content-image">`
-
-                        for (let reviewAt of review.reviewAtList) {
-                            str += `<img src="${pageContext.request.contextPath}/`+reviewAt.filePath+`/`+reviewAt.changeName+`.jpg" alt="">`
-                        }
-                        str += `</div>
-                                <p>`+review.reviewContent+`</p>
-                            </div>
-                        </div>`
+                                                
+                                                if((num == 1) && (reviewList.length > 2)){
+                                                    str += `<div class="more-content" onclick="location.href = '${pageContext.request.contextPath}/review.re'">더보기</div>`
+                                                    break;
+                                                }
+                                            }
+                        document.querySelector("#rest-detail-page-content").innerHTML = str;
+                    } else {
+                        noRestContentDraw("등록된 리뷰가 없습니다.");
                     }
-
-                    document.querySelector("#rest-detail-page-content").innerHTML = str;
                 }
 
+                // 데이터 가져오기 성공 시 메뉴 디테일 페이지 출력
                 function restMenuContentDraw(menuList) {
-                    const str = ``
-                    document.querySelector("#rest-detail-page-content").innerHTML = str;
+                    if (menuList[0] != null){
+                        let str = "";
+                        str += `<div id="rest-menu-content">
+                                <table>`
+                                    let num = 0;
+                                    for (let i = 0; i < (menuList.length + 1) / 2; i++){
+                                        str += `<tr>
+                                            <td class="menu-name">`+menuList[num].menuName+`</td>
+                                            <td class="menu-price">`+menuList[num].menuPrice+`</td>`
+                                        if ((num != menuList.length - 1) && (num < menuList.length)){
+                                            str += `<td class="menu-margin"></td>
+                                                    <td class="menu-name">`+menuList[num+1].menuName+`</td>
+                                                    <td class="menu-price">`+menuList[num+1].menuPrice+`</td>`
+                                        }
+                                        num += 2;
+                                        str += `</tr>`
+                                    }
+                                str += `</table>
+                            </div>`
+                        document.querySelector("#rest-detail-page-content").innerHTML = str;
+                    } else {
+                        noRestContentDraw("등록된 메뉴가 없습니다.");
+                    }
                 }
 
+                // 데이터 가져오기 성공 시 사진 디테일 페이지 출력
                 function restImageContentDraw(imgList) {
-                    const str = ``
-                    document.querySelector("#rest-detail-page-content").innerHTML = str;
+                    if (imgList[0] != null){
+                        let str = "";
+                        str += `<div id="rest-image-content">
+                                    <div>`
+                                        for(let img of imgList){
+                                            str += `<img src="${pageContext.request.contextPath}/`+img.filePath+`/`+img.changeName+`.jpg" alt="">`
+                                        }
+                                    str += `</div>
+                                </div>`
+                        document.querySelector("#rest-detail-page-content").innerHTML = str;
+                    } else {
+                        noRestContentDraw("등록된 사진이 없습니다.");
+                    }
                 }
 
-                function errorRestContentDraw(errorMsg) {
-                    const str = `<div class="rest-review-content">`+errorMsg+`</div>`
-                    document.querySelector("#rest-detail-page-content").innerHTML = str;
-                }
-
+                // 가져온 데이터가 없을 경우 / 실패 했을 경우 페이지 출력
                 function noRestContentDraw(errorMsg) {
                     const str = `<div class="rest-review-content">`+errorMsg+`</div>`
                     document.querySelector("#rest-detail-page-content").innerHTML = str;
                 }
 
+                function dibsStatus(){
+                    ajaxGetItemList("${pageContext.request.contextPath}/dibsCount.re", 
+                                    {restNo : "${rest.restNo}",
+                                    userNo : "${loginUser.userNo}"}, 
+                                    function(map){dibsStatusDraw(map)});
+                                    // "" 안 쓰니까 아예 null도 아니고 없는 걸로 인식해서 넣어줌
+                };
+
+                function dibsStatusDraw(map){
+                    const userDibs = map.userDibs;
+                    const dibsCount = map.dibsCount;
+                    console.log(userDibs);
+                    // 로그인 되어 있는 경우
+                    if(${not empty loginUser}){
+                        // const dibs = document.createElement('#rest-dibs');
+                        if(userDibs == null){
+                            // > 찜 하지 않은 경우
+                            let str = `<img src="${pageContext.request.contextPath}/resources/file/common_img/찜_선택전.png" alt="" onclick="selectDibs()">
+                                        <div>`+dibsCount.likeNo+`</div>`;
+                            document.getElementById("rest-dibs").innerHTML = str;
+                        } else {
+                            // > 찜 한 경우
+                            let str = `<img src="${pageContext.request.contextPath}/resources/file/common_img/찜_선택후.png" alt="" onclick="selectDibs()">
+                                        <div>`+dibsCount.likeNo+`</div>`;
+                            document.getElementById("rest-dibs").innerHTML = str;
+                        }
+                    } else {
+                        // 로그인 되어 있지 않은 경우
+                        let str = `<img src="${pageContext.request.contextPath}/resources/file/common_img/찜_선택전.png" alt="">
+                                        <div>`+dibsCount.likeNo+`</div>`;
+                        document.getElementById("rest-dibs").innerHTML = str;
+                    }
+                }
+
+                function selectDibs(){
+                    // console.log("클릭");
+                    ajaxGetItemList("${pageContext.request.contextPath}/selectDibs.re", 
+                                    {restNo : "${rest.restNo}",
+                                    userNo : "${loginUser.userNo}"}, 
+                                    function(map){dibsStatusDraw(map)});
+                }
+                
+                // 로그인 되어 있는 경우
+                // > 찜 한 경우
+                // > 찜 하지 않은 경우
+
+                // 로그인 되어 있지 않은 경우
+                // 사진만 출력
+
+            
                 // 페이지 첫 로딩 시 리뷰 디테일 페이지 출력
-                window.onload(detailPage(1));
+                $(document).ready(function() {
+                    detailPage(1);
+                })
+                $(document).ready(function() {
+                    dibsStatus();
+                })
+            
+            
+            
+            
+            
             </script>
         </main>
     </div>

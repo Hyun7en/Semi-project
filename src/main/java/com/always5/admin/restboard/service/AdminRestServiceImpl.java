@@ -10,14 +10,15 @@ import com.always5.common.template.Template;
 import com.always5.common.vo.PageInfo;
 import com.always5.review.rest.model.vo.Restaurant;
 
+
 public class AdminRestServiceImpl implements AdminRestService{
 	
 	private RestBoardDao rDao = new RestBoardDao();
 	
 	@Override
-	public int selectRestListCount(PageInfo pi) {
+	public ArrayList<Restaurant> selectRestListCount(PageInfo pi) {
 		SqlSession sqlSession = Template.getSqlSession();
-		int listCount = rDao.selectRestListCount(sqlSession);
+		ArrayList<Restaurant> listCount = rDao.selectRestListCount(sqlSession);
 		
 		sqlSession.close();
 		
@@ -35,15 +36,15 @@ public class AdminRestServiceImpl implements AdminRestService{
 
 	}
 
-	@Override
-	public int selectSearchCount(HashMap<String, String> map) {
-		SqlSession sqlSession = Template.getSqlSession();
-		int searchCount = rDao.selectSearchCount(sqlSession, map);
-		
-		sqlSession.close();
-		
-		return searchCount;
-	}
+//	@Override
+//	public int selectSearchCount(HashMap<String, String> map) {
+//		SqlSession sqlSession = Template.getSqlSession();
+//		int searchCount = rDao.selectSearchCount(sqlSession, map);
+//		
+//		sqlSession.close();
+//		
+//		return searchCount;
+//	}
 
 	@Override
 	public ArrayList<Restaurant> selectSearchList(HashMap<String, String> map, PageInfo pi) {
@@ -69,6 +70,11 @@ public class AdminRestServiceImpl implements AdminRestService{
 		
 		sqlSession.close();
 		return r;
+	}
+
+	public int selectRestListCount() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 	

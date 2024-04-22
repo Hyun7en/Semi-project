@@ -2,7 +2,6 @@ package com.always5.review.rest.model.vo;
 
 import java.sql.Date;
 import java.util.ArrayList;
-
 import com.always5.common.vo.Attachment;
 
 public class Restaurant {
@@ -118,7 +117,6 @@ public class Restaurant {
 	public void setRestGrade(String restGrade) {
 		this.restGrade = restGrade;
 	}
-
 
 
 	public String getLikeNo() {

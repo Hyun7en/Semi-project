@@ -1,7 +1,7 @@
-package com.always5.admin.restboard.controller;
+package com.always5.review.rest.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.HashMap;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,22 +9,22 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.always5.admin.restboard.service.AdminRestServiceImpl;
-import com.always5.common.template.Pagination;
-import com.always5.common.vo.PageInfo;
 import com.always5.review.rest.model.vo.Restaurant;
+import com.always5.review.rest.service.RestServiceImpl;
+import com.always5.user.model.vo.Dibs;
+import com.google.gson.Gson;
 
 /**
- * Servlet implementation class AdminRestListViewController
+ * Servlet implementation class SelectUserDibsController
  */
-@WebServlet("/adrest.li")
-public class AdminRestController extends HttpServlet {
+@WebServlet("/dibsCount.re")
+public class DibsInfoController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AdminRestController() {
+    public DibsInfoController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,19 +33,20 @@ public class AdminRestController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//----------- 페이징처리---------------------------
-		int listCount = new AdminRestServiceImpl().selectRestListCount(); //현재 총 게시글 수 
-		int currentPage = Integer.parseInt(request.getParameter("cpage"));
+		String userNo = request.getParameter("userNo");
+		String restNo = request.getParameter("restNo");
 		
-		PageInfo pi = Pagination.getPageInfo(listCount, currentPage, 10, 5);
+		Dibs dibsInfo = new Dibs(userNo, restNo);
 		
-		ArrayList<Restaurant> list = new AdminRestServiceImpl().selectRestListCount(pi);
+		Dibs userDibs = new RestServiceImpl().checkDibs(dibsInfo);
+		Restaurant dibsCount = new RestServiceImpl().selectDibsCount(restNo);
 		
-		request.setAttribute("list", list);
-		request.setAttribute("pi", pi);
-		
-		request.getRequestDispatcher("WEB-INF/views/board/adminRestListView.jsp").forward(request, response);
-				
+		HashMap map = new HashMap<>();
+		map.put("userDibs", userDibs);
+		map.put("dibsCount", dibsCount);
+
+		response.setContentType("application/json; charset=utf-8");
+		new Gson().toJson(map, response.getWriter());
 	}
 
 	/**

@@ -24,73 +24,34 @@
                 </form>
             </div>
             <table width="100%">
-                <!-- tr 클릭 시 가게 수정 페이지 요청(등록 페이지에 내용 담아 반환) -->
-                <tr>
-                    <th width="15%">번호</th>
-                    <th width="50%">가게 이름</th>
-                    <th width="20%">등록자</th>
-                    <th width="15%">등록일</th>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>떡볶이 스타</td>
-                    <td>admin</td>
-                    <td>2024-03-20</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>떡볶이 스타</td>
-                    <td>admin</td>
-                    <td>2024-03-20</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>떡볶이 스타</td>
-                    <td>admin</td>
-                    <td>2024-03-20</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>떡볶이 스타</td>
-                    <td>admin</td>
-                    <td>2024-03-20</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>떡볶이 스타</td>
-                    <td>admin</td>
-                    <td>2024-03-20</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>떡볶이 스타</td>
-                    <td>admin</td>
-                    <td>2024-03-20</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>떡볶이 스타</td>
-                    <td>admin</td>
-                    <td>2024-03-20</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>떡볶이 스타</td>
-                    <td>admin</td>
-                    <td>2024-03-20</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>떡볶이 스타</td>
-                    <td>admin</td>
-                    <td>2024-03-20</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>떡볶이 스타</td>
-                    <td>admin</td>
-                    <td>2024-03-20</td>
-                </tr>
+            	<thead>
+	                <tr>
+	                    <th width="15%">번호</th>
+	                    <th width="50%">가게 이름</th>
+	                    <!-- <th width="20%">등록자</th> -->
+	                    <th width="15%">등록일</th>
+	                </tr>
+                </thead>
+                <tbody>
+	                <c:forEach var="r" items="${list}">
+	            	<!-- list객체를 r에 담아서 tr을 반복해서 만들어줌 -->
+	                <!-- tr 클릭 시 가게 수정 페이지 요청(등록 페이지에 내용 담아 반환) -->
+		                <tr>
+		                    <td>${r.restNo }</td>
+		                    <td><a href="restdetaillist.ad?rno=${r.restNo}">${r.restName }</a></td>
+		                    <!-- <td>admin</td> -->
+		                    <td>${r.restEnrollDate }</td>
+		                </tr>
+		                <!-- 
+		                <tr>
+		                    <td>1</td>
+		                    <td>떡볶이 스타</td>
+		                    <td>admin</td>
+		                    <td>2024-03-20</td>
+		                </tr>
+		                 -->
+		             </c:forEach>
+                </tbody>
             </table>
             
             <div class="paging-area" align="center">
