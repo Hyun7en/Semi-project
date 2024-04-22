@@ -18,13 +18,8 @@
 			<div class="login-logo-main">
 				<img class="logo-image"
 					src="${pageContext.request.contextPath}/resources/file/user_img/login-img/logo.png" />
-<<<<<<< HEAD
-			</div>
-
-=======
 		    </div>
 		    
->>>>>>> c28b031d8f7bde7c85f028cbdb2b41de190c23d0
 			<div class="login-title">로그인</div>
 
 			<!--로그인 박스 -->
