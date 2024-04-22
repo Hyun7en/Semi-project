@@ -1,13 +1,13 @@
 package com.always5.user.service;
 
-import com.always5.user.model.vo.User;
+import com.always5.user.model.vo.Mypage;
 
 public interface MyPageService {
-	public abstract User MyPage(User u);
+	public abstract int MyPage(Mypage m);
 	
-	public abstract User MyPageGoods(User u);
+	public abstract int MyPageGoods(Mypage m);
 	
-	public abstract User MyPageReview(User u);
+	public abstract int MyPageReview(Mypage m);
 	
-	public abstract User MyPageReviewGoods(User u);
+	public abstract int MyPageReviewGoods(Mypage m);
 }
