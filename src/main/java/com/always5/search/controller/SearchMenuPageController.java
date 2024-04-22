@@ -19,13 +19,13 @@ import com.always5.search.service.SearchService;
  * Servlet implementation class Search
  */
 @WebServlet("/searchMenu.sc")
-public class SearchMenuController extends HttpServlet {
+public class SearchMenuPageController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SearchMenuController() {
+    public SearchMenuPageController() {
         super();
         // TODO Auto-generated constructor stub
     }

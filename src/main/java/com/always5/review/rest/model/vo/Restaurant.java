@@ -2,7 +2,6 @@ package com.always5.review.rest.model.vo;
 
 import java.sql.Date;
 import java.util.ArrayList;
-
 import com.always5.common.vo.Attachment;
 
 public class Restaurant {
@@ -120,21 +119,12 @@ public class Restaurant {
 	}
 
 
-<<<<<<< HEAD
-=======
-	
-
->>>>>>> b9a790476de0be69a4c33bb446eb23b69b041648
 	public String getLikeNo() {
 		return likeNo;
 	}
 
 
-<<<<<<< HEAD
-=======
-	
 
->>>>>>> b9a790476de0be69a4c33bb446eb23b69b041648
 	public void setLikeNo(String likeNo) {
 		this.likeNo = likeNo;
 	}

@@ -8,6 +8,10 @@
 	</settings>
 
 	<typeAliases>
+
+		<typeAlias type="com.always5.review.rest.model.vo.Restaurant" alias="Restaurant" />
+		<typeAlias type="com.always5.review.rest.model.vo.Menu" alias="Menu" />
+
 		<typeAlias type="com.always5.common.vo.Attachment" alias="Attachment" />
 		<typeAlias type="com.always5.user.model.vo.User" alias="User" />
 		<typeAlias type="com.always5.user.model.vo.Dibs" alias="Dibs" />

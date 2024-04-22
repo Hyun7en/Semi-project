@@ -33,10 +33,8 @@ public class SearchDao {
 		
 	}
 	
-	public ArrayList<Restaurant> test(SqlSession sqlSession, int restNo){
-
-		RowBounds rowBounds = new RowBounds(restNo, restNo);
-		return (ArrayList)sqlSession.selectList("searchMapper.selectSearchRest", null, rowBounds);
+	public ArrayList<Restaurant> searchList(SqlSession sqlSession){
+		return (ArrayList)sqlSession.selectList("searchMapper.selectSearchRest");
 	}
 	
 	

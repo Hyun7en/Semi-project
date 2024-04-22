@@ -1,6 +1,5 @@
 package com.always5.search.service;
 
-import java.sql.Connection;
 import java.util.ArrayList;
 
 import org.apache.ibatis.session.SqlSession;
@@ -29,12 +28,15 @@ public class SearchService {
 		return restCount;
 	}
 	
-	public ArrayList<Restaurant> test(int restNo){
+	public ArrayList<Restaurant> searchList(){
 		SqlSession sqlSession = Template.getSqlSession();
-		ArrayList<Restaurant> list = new SearchDao().test(sqlSession, restNo);
+		ArrayList<Restaurant> list = new SearchDao().searchList(sqlSession);
 		sqlSession.close();
 		return list;
-		
 	}
 	
+	public ArrayList<Menu> searchMenuList(){
+		
+		
+	}
 }
