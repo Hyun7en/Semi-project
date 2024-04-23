@@ -1,4 +1,4 @@
-<!-- <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %> -->
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
 
@@ -9,7 +9,7 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <link rel="stylesheet"
-	href="http://localhost:8001/always5/resources/css/user_css/UserHeader.css">
+	href="${pageContext.request.contextPath}/resources/css/user_css/UserHeader.css">
 </head>
 
 <body>
@@ -23,7 +23,7 @@
 				<!-- 로고 -->
 				<div class="header-logo">
 					<img class="header-logo-image"
-						src="http://localhost:8001/always5/resources/file/common_img/왕밥빵로고 컬러.png">
+						src="${pageContext.request.contextPath}/resources/file/common_img/왕밥빵로고 컬러.png">
 					<div class="header-logo-name">왕밥빵</div>
 				</div>
 
@@ -38,10 +38,10 @@
 				<!-- 회원가입, 로그인 -->
 				<div class="member-Button">
 					<div class="loginButton">
-						<a href="">로그인</a>
+						<a href="login.ui">로그인</a>
 					</div>
 					<div class="SigninButton">
-						<a href="">회원가입</a>
+						<a href="signin.ui">회원가입</a>
 					</div>
 				</div>
 			</div>
