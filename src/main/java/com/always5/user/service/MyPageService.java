@@ -3,7 +3,7 @@ package com.always5.user.service;
 import com.always5.user.model.vo.Mypage;
 
 public interface MyPageService {
-	public abstract int MyPage(Mypage m);
+	public abstract ArrayList<Mypage> MyPage(Mypage m);
 	
 	public abstract int MyPageGoods(Mypage m);
 	

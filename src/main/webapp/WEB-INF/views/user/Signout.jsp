@@ -2,7 +2,9 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-
+<c:set var="User" value="${sessionScope.User}" />
+<c:if test="${empty User}">
+</c:if>
 <html>
 
 <head>
@@ -11,18 +13,18 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <link rel="stylesheet"
-	href="http://localhost:8001/always5/resources/css/user_css/Signout.css" />
+	href="${pageContext.request.contextPath}/resources/css/user_css/Signout.css" />
 
 </head>
 
 <body>
-	<form action="signout.ui" class="Signout-Container" method="POST">
+	<form action="signout.u" class="Signout-Container" method="POST">
 		<div class="Signout">
 
 			<!-- 회원탈퇴 로고 -->
 			<div class="signout-logo-main">
 				<img class="signout-image"
-					src="http://localhost:8001/always5/resources/file/user_img/Signout-img/logo.png" />
+					src="${pageContext.request.contextPath}/resources/file/user_img/Signout-img/logo.png" />
 
 			</div>
 
@@ -71,7 +73,7 @@
 
 			</div>
 			<script
-				src="http://localhost:8001/always5/resources/js/user_js/Signout.js"></script>
+				src="${pageContext.request.contextPath}/resources/js/user_js/Signout.js"></script>
 		</div>
 	</form>
 </body>
