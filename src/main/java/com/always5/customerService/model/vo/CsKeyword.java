@@ -42,8 +42,7 @@ public class CsKeyword {
 
 	@Override
 	public String toString() {
-		return "CsKeyword [cskeywordNo=" + cskeywordNo + ", csTypeNo=" + csTypeNo + ", cskeywordValue=" + cskeywordValue
-				+ "]";
+		return "CsKeyword//// cskeywordNo=" + cskeywordNo + ", csTypeNo=" + csTypeNo + ", cskeywordValue=" + cskeywordValue +"/";
 	}
 	
 	

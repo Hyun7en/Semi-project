@@ -58,40 +58,12 @@
             <div class="csType">
                 
             </div>
-        
-            <script>
-                $(document).ready(function() {
-                    selectCsTypeList(); // 페이지 로드시 바로 실행
-                });
-            
-                function selectCsTypeList() {
-                    $.ajax({
-                        url: "csType.ax", 
-                        dataType: 'json',
-                        success: function(res) {
-                            let str = "";
-                            for (let c of res) { // 서버로부터 받은 응답 데이터를 반복하여 처리
-                                str += (
-                                    `<a>` + c.csTypeValue + `</a>`
-                                )
-                            }
-                            $(".csType").html(str); // 결과를 .csType 요소에 적용
-                        },
-                        error: function() {
-                            console.log("ajax통신 실패")
-                        }
-                    });
-                }
-            </script>
-          
 
             <nav id="nav-2">
                 <ul id="navi-2" class="csKeyword">
 
                 </ul>                    
             </nav>
-
-           
 
             <div class="csDetail">
 
@@ -102,59 +74,123 @@
         </section>
 
         <script>
-             $(document).ready(function() {
-                    // csType를 클릭했을 때 해당하는 csKeyword를 불러오는 함수
-                    function selectCsKeywordList(csTypeNo) {
-                        $.ajax({
-                            url: "csKeyword.ax", 
-                            data: { csTypeNo: csTypeNo }, // 선택한 csTypeNo를 서버에 전달
-                            dataType: 'json',
-                            success: function(res) {
-                                let str = "";
-                                for (let c of res) {
-                                    str += "<li><a href='#' data-csKeywordNo='" + c.csKeywordNo + "'>" + c.cskeywordValue + "</a></li>";
-                                }
-                                $(".csKeyword").html(str); // 결과를 .csKeyword 요소에 적용
-                            },
-                            error: function() {
-                                console.log("ajax통신 실패")
-                            }
-                        });
+            $(document).ready(function() {
+                // 페이지 로드시 바로 실행
+                selectCsTypeList(null, function(res){
+
+                    let csTypeList = [];
+                    for(let csType of res){
+                        // csTypeList.push({
+                        //     csTypeNo: res.csTypeNo,
+                        //     csTypeValue: res.csTypeValue,
+                        // })
+                        csTypeList.push({
+                          ...csType,
+                          clickEvent: function(item){
+                            //클릭됐을 시
+
+                            selectCsKeywordList({ "csTypeNo": item.csTypeNo }, function(list){
+                                drawCsKeywordList(list, function(){
+                                    document.querySelector('.csKeyword').children[1].click();
+                                });
+                            });
+                          }
+                        })
                     }
 
-                    // csKeyword를 클릭했을 때 해당하는 csDetail을 불러오는 함수
-                    function selectCsDetailList(csKeywordNo) {
-                        $.ajax({
-                            url: "csDetail.ax", 
-                            data: { csKeywordNo: csKeywordNo }, // 선택한 csKeywordNo를 서버에 전달
-                            dataType: 'json',
-                            success: function(res) {
-                                let str = "";
-                                for (let c of res) {
-                                    str += "<div>" + c.csDetailTitle + "</div><p>" + c.csDetailContent + "</p>";
-                                }
-                                $(".csDetail").html(str); // 결과를 .csDetail 요소에 적용
-                            },
-                            error: function() {
-                                console.log("ajax통신 실패")
-                            }
-                        });
+                    //CsTypeList를 그려줘
+                    drawCsTypeList(csTypeList, document.querySelector("#section-2 .csType"), function(){
+                        document.querySelector("#section-2 .csType").children[0].click();
+                    });
+                }); 
+            });
+            
+            function drawCsTypeList(list, parent, callback){
+                $(parent).empty();
+                // csType 목록 생성
+                $.each(list, function(index, item) {
+                    let csTypeBtn = document.createElement('a');
+                    csTypeBtn.innerText = item.csTypeValue;
+                    csTypeBtn.onclick = function(){
+                        item.clickEvent(item);
                     }
 
-                    // csType를 클릭했을 때
-                    $(".csType").on("click", "a", function() {
-                        var csTypeNo = $(this).data("csTypeNo"); // 클릭한 csType의 csTypeNo 가져오기
-                        selectCsKeywordList(csTypeNo); // 해당하는 csKeyword를 불러오는 함수 호출
-                    });
-
-                    // csKeyword를 클릭했을 때
-                    $(".csKeyword").on("click", "a", function() {
-                        var csKeywordNo = $(this).data("csKeywordNo"); // 클릭한 csKeyword의 csKeywordNo 가져오기
-                        selectCsDetailList(csKeywordNo); // 해당하는 csDetail을 불러오는 함수 호출
-                    });
+                    parent.appendChild(csTypeBtn);
                 });
 
-                $(document).on("click", ".csDetail > div", function() {
+                callback();
+            }
+            
+            function selectCsTypeList(data, callback) {
+                $.ajax({
+                    url: "csType.ax", 
+                    data: data,
+                    success: function(res) {
+                        callback(res)
+                    },
+                    error: function() {
+                        console.log("csType.ax 통신 실패");
+                    }
+                });
+            }
+
+       
+
+            function drawCsKeywordList(keywordlist, callback){
+                $(document.querySelector('.csKeyword')).empty();
+                // csKeyword 목록 생성
+                $.each(keywordlist, function(index, item) {
+                    let csKeywordBtn = document.createElement('li');
+                    csKeywordBtn.innerText = item.cskeywordValue;
+                    csKeywordBtn.onclick = function(){
+                        selectCsDetailList(item.cskeywordNo)
+                    }
+
+                    document.querySelector('.csKeyword').appendChild(csKeywordBtn);
+                });
+
+                callback();        
+                            
+            }
+        
+            function selectCsKeywordList(data, callback) {
+                $.ajax({
+                    url: "csKeyword.ax", 
+                    method: "GET", 
+                    data: data, // 선택한 csTypeNo를 서버에 전달
+                    success: function(res) {
+                        callback(res);
+                    },
+                    error: function() {
+                        console.log("csKeyword.ax 통신 실패");
+                    }
+                });
+            }
+    
+        
+            function selectCsDetailList(csKeywordNo) {
+                $.ajax({
+                    url: "csDetail.ax", 
+                    method: "GET", 
+                    data: { "csKeywordNo": csKeywordNo }, // 선택한 csKeywordNo를 서버에 전달
+                    success: function(res) {
+                        // csDetail 내용 생성
+                        var csDetailContent = '';
+                        $.each(res, function(index, item) {
+                            csDetailContent += `<div>` + item.csDetailTitle + `</div>` +  
+                                               `<p>` + item.csDetailContent + `</p>`;
+                        });
+                        $(".csDetail").html(csDetailContent); // 결과를 .csDetail 요소에 적용
+                    },
+                    error: function() {
+                        console.log("csDetail.ax 통신 실패");
+                    }
+                });
+            }
+
+            //선택시 원래 이벤트 닫고 새 이벤트 시작
+
+            $(document).on("click", ".csDetail > div", function() {
                     //this => 클릭이벤트가 발생한 요소(div)
                     //$(this).next() => 선택된 요소의 뒤에있는 요소(p)
                     let tmp;
@@ -169,6 +205,9 @@
                     }
                 });
         </script>
+        
+        
+        
         
     </main>       
   

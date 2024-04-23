@@ -35,6 +35,8 @@ public class AjaxCsDetailController extends HttpServlet {
 		
 		int csKeywordNo = Integer.parseInt(request.getParameter("csKeywordNo"));
 		
+		System.out.println(csKeywordNo);
+		
 		ArrayList<CsDetail> csDetailList = new CsCenterServiceImpl().selectCsDetailList(csKeywordNo);
 		
 		response.setContentType("application/json; charset=utf-8");
