@@ -49,7 +49,7 @@
                             <div>${rest.restGrade }</div>
                         </div>
 
-                        <div class="rest-record" id="rest-dibs" onclick="selectDibs">
+                        <div class="rest-record" id="rest-dibs" onclick="selectDibs()">
                             
                         </div>
                     </div>
@@ -304,24 +304,25 @@
                     const userDibs = map.userDibs;
                     const dibsCount = map.dibsCount;
                     console.log(userDibs);
+                    console.log(dibsCount);
                     // 로그인 되어 있는 경우
                     if(${not empty loginUser}){
                         // const dibs = document.createElement('#rest-dibs');
                         if(userDibs == null){
                             // > 찜 하지 않은 경우
-                            let str = `<img src="${pageContext.request.contextPath}/resources/file/common_img/찜_선택전.png" alt="" onclick="selectDibs()">
-                                        <div>`+dibsCount.likeNo+`</div>`;
+                            let str = `<img src="${pageContext.request.contextPath}/resources/file/common_img/찜_선택전.png" alt="">
+                                        <div>`+dibsCount.innerText+`</div>`;
                             document.getElementById("rest-dibs").innerHTML = str;
                         } else {
                             // > 찜 한 경우
-                            let str = `<img src="${pageContext.request.contextPath}/resources/file/common_img/찜_선택후.png" alt="" onclick="selectDibs()">
-                                        <div>`+dibsCount.likeNo+`</div>`;
+                            let str = `<img src="${pageContext.request.contextPath}/resources/file/common_img/찜_선택후.png" alt="">
+                                        <div>`+dibsCount.innerText+`</div>`;
                             document.getElementById("rest-dibs").innerHTML = str;
                         }
                     } else {
                         // 로그인 되어 있지 않은 경우
                         let str = `<img src="${pageContext.request.contextPath}/resources/file/common_img/찜_선택전.png" alt="">
-                                        <div>`+dibsCount.likeNo+`</div>`;
+                                        <div>`+dibsCount+`</div>`;
                         document.getElementById("rest-dibs").innerHTML = str;
                     }
                 }

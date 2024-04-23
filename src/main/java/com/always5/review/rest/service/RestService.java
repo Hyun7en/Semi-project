@@ -22,14 +22,17 @@ public interface RestService {
 	// 가게 찜 - 가게 총 찜 개수 조회
 	public Restaurant selectDibsCount(String restNo);
 	
+	// 가게 찜 - 사용자 찜 여부 수정 및 총 찜 개수 수정
+	public String updateDibs(Dibs userDibs);
+	
 	// 가게 찜 - 가게 총 찜 개수 수정
-	public String updateDibsCount(String restNo, String check);
-	
-	// 가게 찜 - 가게 찜 선택 시 update
-	public int insertDibs(Dibs dibsInfo);
-	
-	// 가게 찜 - 가게 찜 선택 시 delete
-	public int deleteDibs(Dibs dibsInfo);
+//	public String updateDibsCount(String restNo, String check);
+//	
+//	// 가게 찜 - 가게 찜 선택 시 update
+//	public int insertDibs(Dibs dibsInfo);
+//	
+//	// 가게 찜 - 가게 찜 선택 시 delete
+//	public int deleteDibs(Dibs dibsInfo);
 	
 	// 가게 리뷰 - 리뷰 리스트 조회
 	public ArrayList<Review> selectReviewList(int restNo);

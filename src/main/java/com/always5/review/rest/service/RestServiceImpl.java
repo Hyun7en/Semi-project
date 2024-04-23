@@ -61,42 +61,93 @@ public class RestServiceImpl implements RestService{
 		return dibsCount;
 	}
 	
-	// 가게 찜 - 가게 총 찜 개수 수정
+	// 가게 찜 - 사용자 찜 여부 수정 및 총 찜 개수 수정
 	@Override
-	public String updateDibsCount(String restNo, String check) {
+	public String updateDibs(Dibs dibsInfo) {
 		SqlSession sqlSession = Template.getSqlSession();
-		int result = 0;
 		
-		if(check.equals("U")) {
-			result = restDao.plusDibsCount(sqlSession, restNo);
-		} else {
-			result = restDao.minusDibsCount(sqlSession, restNo);
+		// 사용자 찜 여부 조회
+		Dibs userDibs = new RestServiceImpl().checkDibs(dibsInfo);
+		
+		String dibsCount = null;
+		
+		// 찜 여부에 따른 insert 혹은 delete
+		
+		if (userDibs == null) { // 기존 사용자 찜이 없을 경우
+			int result1 = restDao.insertDibs(sqlSession, dibsInfo);
+			
+			if (result1 > 0) { // 사용자 찜 수정 성공
+				int result2 = restDao.plusDibsCount(sqlSession, dibsInfo.getRestNo());
+				
+				if(result2 > 0) { // 찜 개수 수정 성공
+					sqlSession.commit();
+					dibsCount = (restDao.selectRest(sqlSession, Integer.parseInt(dibsInfo.getRestNo()))).getLikeNo();
+				} else { // 찜 개수 수정 실패
+					sqlSession.rollback();
+					sqlSession.close();
+				}
+			} else { // 사용자 찜 수정 실패
+				sqlSession.rollback();
+				sqlSession.close();
+			}
+		} else { // 기존 사용자 찜이 있을 경우
+			int result1 = restDao.deleteDibs(sqlSession, dibsInfo);
+			
+			if (result1 > 0) { // 사용자 찜 수정 성공
+				int result2 = restDao.minusDibsCount(sqlSession, dibsInfo.getRestNo());
+				
+				if(result2 > 0) { // 찜 개수 수정 성공
+					sqlSession.commit();
+					dibsCount = (restDao.selectRest(sqlSession, Integer.parseInt(dibsInfo.getRestNo()))).getLikeNo();
+				} else { // 찜 개수 수정 실패
+					sqlSession.rollback();
+					sqlSession.close();
+				}
+			} else { // 사용자 찜 수정 실패
+				sqlSession.rollback();
+				sqlSession.close();
+			}
 		}
-		System.out.println(result);
-		String likeNo = (restDao.selectRest(sqlSession, Integer.parseInt(restNo))).getLikeNo();
-		sqlSession.close();
-		return likeNo;
+		
+		return dibsCount;
 	}
 	
-	// 가게 찜 선택 시 insert
-	@Override
-	public int insertDibs(Dibs dibsInfo) {
-		SqlSession sqlSession = Template.getSqlSession();
-		int result = restDao.insertDibs(sqlSession, dibsInfo);
-		
-		sqlSession.close();
-		return result;
-	}
-
-	// 가게 찜 선택 시 delete
-	@Override
-	public int deleteDibs(Dibs dibsInfo) {
-		SqlSession sqlSession = Template.getSqlSession();
-		int result = restDao.deleteDibs(sqlSession, dibsInfo);
-		
-		sqlSession.close();
-		return result;
-	}
+	// 가게 찜 - 가게 총 찜 개수 수정
+//	@Override
+//	public String updateDibsCount(String restNo, String check) {
+//		SqlSession sqlSession = Template.getSqlSession();
+//		int result = 0;
+//		
+//		if(check.equals("U")) {
+//			result = restDao.plusDibsCount(sqlSession, restNo);
+//		} else {
+//			result = restDao.minusDibsCount(sqlSession, restNo);
+//		}
+//		System.out.println(result);
+//		String likeNo = (restDao.selectRest(sqlSession, Integer.parseInt(restNo))).getLikeNo();
+//		sqlSession.close();
+//		return likeNo;
+//	}
+//	
+//	// 가게 찜 선택 시 insert
+//	@Override
+//	public int insertDibs(Dibs dibsInfo) {
+//		SqlSession sqlSession = Template.getSqlSession();
+//		int result = restDao.insertDibs(sqlSession, dibsInfo);
+//		
+//		sqlSession.close();
+//		return result;
+//	}
+//
+//	// 가게 찜 선택 시 delete
+//	@Override
+//	public int deleteDibs(Dibs dibsInfo) {
+//		SqlSession sqlSession = Template.getSqlSession();
+//		int result = restDao.deleteDibs(sqlSession, dibsInfo);
+//		
+//		sqlSession.close();
+//		return result;
+//	}
 	
 	// 가게 리뷰 - 리뷰 리스트 조회
 	public ArrayList<Review> selectReviewList(int restNo){
@@ -161,6 +212,7 @@ public class RestServiceImpl implements RestService{
 		sqlSession.close();
 		return list;
 	}
+
 
 	
 

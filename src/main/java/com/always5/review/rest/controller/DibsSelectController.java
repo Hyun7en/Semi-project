@@ -37,30 +37,12 @@ public class DibsSelectController extends HttpServlet {
 		String restNo = request.getParameter("restNo");
 		
 		// 사용자의 찜 여부 확인해서 update 할지 delete 할지 결정
-		Dibs dibsInfo = new Dibs(userNo, restNo);
-		Dibs userDibs = new RestServiceImpl().checkDibs(dibsInfo);
-		System.out.println("null 아니어야 해" + userDibs);
+		Dibs userDibs = new Dibs(userNo, restNo);
 		
-		int result = 0;
-		String check = null;
-		// update 나 delete 후 해당 rest likeNo 업데이트
-		if (userDibs != null) {
-			result = new RestServiceImpl().deleteDibs(dibsInfo);
-			if (result > 0) {
-				check = "D";
-			} 
-		} else {
-			result = new RestServiceImpl().insertDibs(dibsInfo);
-			if (result > 0) {
-				check = "U";
-			}
-		}
-		System.out.println(result);
-		System.out.println(check);
-		
-		// 수정된 사용자 찜 여부와 수정된 likeNo 보내기
-		String dibsCount = new RestServiceImpl().updateDibsCount(restNo, check);
+		// 가져와서 카운트 업데이트 하는 것까지 한 번에 서비스로 묶어서 트랜잭션 되도록 + 커밋 롤백 해줘야 함
+		String dibsCount = new RestServiceImpl().updateDibs(userDibs);
 		System.out.println(dibsCount);
+//		System.out.println(dibsCount);
 		HashMap map = new HashMap<>();
 		map.put("userDibs", userDibs);
 		map.put("dibsCount", dibsCount);
