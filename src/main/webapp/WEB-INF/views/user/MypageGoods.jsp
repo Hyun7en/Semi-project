@@ -2,25 +2,26 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-
-<html>
+<c:set var="Mypage" value="${sessionScope.Mypage}" />
+<c:if test="${empty Mypage}">
+</c:if>
+	<html>
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <link rel="stylesheet"
-	href="http://localhost:8001/always5/resources/css/user_css/MypageGoods.css" />
+	href="${pageContext.request.contextPath}/resources/css/user_css/MypageGoods.css" />
 </head>
 
 <body>
-	<form action="mygoods.ui" class="MypageGoods-Container"
-		method="POST">
+	<form action="mygoods.u" class="MypageGoods-Container" method="POST">
 		<div class="MypageGoods">
 
 			<!-- 찜 목록 -->
 			<div class="MypageGoods-title-box">
-				<div class="MypageGoods-Name">${User.userName}</div>
+				<div class="MypageGoods-Name">${Mypage.userName}</div>
 				<div class="MypageGoods-Name2">님의 찜 목록</div>
 			</div>
 
@@ -32,15 +33,15 @@
 
 					<div class="crown-rank">
 						<img class="crown"
-							src="http://localhost:8001/always5/resources/file/user_img/MypageGoods-img/crown.png" />
+							src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/crown.png" />
 						<img class="crown"
-							src="http://localhost:8001/always5/resources/file/user_img/MypageGoods-img/crown.png" />
+							src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/crown.png" />
 						<img class="crown"
-							src="http://localhost:8001/always5/resources/file/user_img/MypageGoods-img/crown.png" />
+							src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/crown.png" />
 						<img class="crown"
-							src="http://localhost:8001/always5/resources/file/user_img/MypageGoods-img/crown.png" />
+							src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/crown.png" />
 						<img class="crown"
-							src="http://localhost:8001/always5/resources/file/user_img/MypageGoods-img/crown.png" />
+							src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/crown.png" />
 					</div>
 
 					<button class="review-box-deletebox">
@@ -50,7 +51,7 @@
 					</button>
 					<button class="review-box-mainpagebox">
 						<div class="review-box-mainpage">
-							<a href="">가게보기</a>
+							<a href="#">가게보기</a>
 						</div>
 					</button>
 
@@ -58,11 +59,11 @@
 					<div class="reviewbox-text">(전지로만) 부산식 돼지국밥, 모듬국밥, 살코기 순대국</div>
 
 					<img class="reviewbox-preview01"
-						src="http://localhost:8001/always5/resources/file/user_img/MypageGoods-img/한식01.jpg" />
+						src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/한식01.jpg" />
 					<img class="reviewbox-preview02"
-						src="http://localhost:8001/always5/resources/file/user_img/MypageGoods-img/한식02.jpg" />
+						src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/한식02.jpg" />
 					<img class="reviewbox-preview03"
-						src="http://localhost:8001/always5/resources/file/user_img/MypageGoods-img/한식03.jpg" />
+						src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/한식03.jpg" />
 				</div>
 			</div>
 
@@ -74,18 +75,18 @@
 
 					<div class="crown-rank">
 						<img class="crown"
-							src="http://localhost:8001/always5/resources/file/user_img/MypageGoods-img/crown.png" />
+							src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/crown.png" />
 						<img class="crown"
-							src="http://localhost:8001/always5/resources/file/user_img/MypageGoods-img/crown.png" />
+							src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/crown.png" />
 						<img class="crown"
-							src="http://localhost:8001/always5/resources/file/user_img/MypageGoods-img/crown.png" />
+							src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/crown.png" />
 						<img class="crown"
-							src="http://localhost:8001/always5/resources/file/user_img/MypageGoods-img/crown.png" />
+							src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/crown.png" />
 					</div>
 
 					<button class="review-box-mainpagebox02">
 						<div class="review-box-mainpage02">
-							<a href="">가게보기</a>
+							<a href="#">가게보기</a>
 						</div>
 					</button>
 					<button class="review-box-deletebox02">
@@ -97,11 +98,11 @@
 						덮밥</div>
 
 					<img class="reviewbox-preview01"
-						src="http://localhost:8001/always5/resources/file/user_img/MypageGoods-img/한식01.jpg" />
+						src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/한식01.jpg" />
 					<img class="reviewbox-preview02"
-						src="http://localhost:8001/always5/resources/file/user_img/MypageGoods-img/한식02.jpg" />
+						src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/한식02.jpg" />
 					<img class="reviewbox-preview03"
-						src="http://localhost:8001/always5/resources/file/user_img/MypageGoods-img/한식03.jpg" />
+						src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/한식03.jpg" />
 				</div>
 			</div>
 
@@ -113,15 +114,15 @@
 
 					<div class="crown-rank">
 						<img class="crown"
-							src="http://localhost:8001/always5/resources/file/user_img/MypageGoods-img/crown.png" />
+							src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/crown.png" />
 						<img class="crown"
-							src="http://localhost:8001/always5/resources/file/user_img/MypageGoods-img/crown.png" />
+							src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/crown.png" />
 						<img class="crown"
-							src="http://localhost:8001/always5/resources/file/user_img/MypageGoods-img/crown.png" />
+							src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/crown.png" />
 						<img class="crown"
-							src="http://localhost:8001/always5/resources/file/user_img/MypageGoods-img/crown.png" />
+							src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/crown.png" />
 						<img class="crown"
-							src="http://localhost:8001/always5/resources/file/user_img/MypageGoods-img/crown.png" />
+							src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/crown.png" />
 					</div>
 
 					<button class="review-box-mainpagebox03">
@@ -129,6 +130,9 @@
 					</button>
 					<button class="review-box-deletebox03">
 						<div class="review-delete03">삭제</div>
+						<div class="review-box-mainpage03">
+							<a href="#">가게보기</a>
+						</div>
 					</button>
 
 					<img class="reviewbox-line" src="img/line-50.svg" />
@@ -136,11 +140,11 @@
 						육바연변신세트1(육덮+변신초밥)</div>
 
 					<img class="reviewbox-preview01"
-						src="http://localhost:8001/always5/resources/file/user_img/MypageGoods-img/한식01.jpg" />
+						src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/한식01.jpg" />
 					<img class="reviewbox-preview02"
-						src="http://localhost:8001/always5/resources/file/user_img/MypageGoods-img/한식02.jpg" />
+						src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/한식02.jpg" />
 					<img class="reviewbox-preview03"
-						src="http://localhost:8001/always5/resources/file/user_img/MypageGoods-img/한식03.jpg" />
+						src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/한식03.jpg" />
 				</div>
 			</div>
 
@@ -152,11 +156,11 @@
 
 					<div class="crown-rank">
 						<img class="crown"
-							src="http://localhost:8001/always5/resources/file/user_img/MypageGoods-img/crown.png" />
+							src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/crown.png" />
 						<img class="crown"
-							src="http://localhost:8001/always5/resources/file/user_img/MypageGoods-img/crown.png" />
+							src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/crown.png" />
 						<img class="crown"
-							src="http://localhost:8001/always5/resources/file/user_img/MypageGoods-img/crown.png" />
+							src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/crown.png" />
 					</div>
 
 					<button class="review-box-mainpagebox04">
@@ -164,6 +168,9 @@
 					</button>
 					<button class="review-box-deletebox04">
 						<div class="review-delete04">삭제</div>
+						<div class="review-box-mainpage04">
+							<a href="#">가게보기</a>
+						</div>
 					</button>
 
 					<img class="reviewbox-line" src="img/line-50.svg" />
@@ -171,11 +178,11 @@
 						야채곱창, 직화 소급곱창</div>
 
 					<img class="reviewbox-preview01"
-						src="http://localhost:8001/always5/resources/file/user_img/MypageGoods-img/한식01.jpg" />
+						src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/한식01.jpg" />
 					<img class="reviewbox-preview02"
-						src="http://localhost:8001/always5/resources/file/user_img/MypageGoods-img/한식02.jpg" />
+						src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/한식02.jpg" />
 					<img class="reviewbox-preview03"
-						src="http://localhost:8001/always5/resources/file/user_img/MypageGoods-img/한식03.jpg" />
+						src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/한식03.jpg" />
 				</div>
 			</div>
 
@@ -187,15 +194,15 @@
 
 					<div class="crown-rank">
 						<img class="crown"
-							src="http://localhost:8001/always5/resources/file/user_img/MypageGoods-img/crown.png" />
+							src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/crown.png" />
 						<img class="crown"
-							src="http://localhost:8001/always5/resources/file/user_img/MypageGoods-img/crown.png" />
+							src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/crown.png" />
 						<img class="crown"
-							src="http://localhost:8001/always5/resources/file/user_img/MypageGoods-img/crown.png" />
+							src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/crown.png" />
 						<img class="crown"
-							src="http://localhost:8001/always5/resources/file/user_img/MypageGoods-img/crown.png" />
+							src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/crown.png" />
 						<img class="crown"
-							src="http://localhost:8001/always5/resources/file/user_img/MypageGoods-img/crown.png" />
+							src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/crown.png" />
 					</div>
 
 					<button class="review-box-mainpagebox05">
@@ -203,6 +210,9 @@
 					</button>
 					<button class="review-box-deletebox05">
 						<div class="review-delete05">삭제</div>
+						<div class="review-box-mainpage05">
+							<a href="#">가게보기</a>
+						</div>
 					</button>
 
 					<img class="reviewbox-line" src="img/line-50.svg" />
@@ -210,16 +220,16 @@
 						허브소금직화쪽갈비, 반반쪽갈비</div>
 
 					<img class="reviewbox-preview01"
-						src="http://localhost:8001/always5/resources/file/user_img/MypageGoods-img/한식01.jpg" />
+						src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/한식01.jpg" />
 					<img class="reviewbox-preview02"
-						src="http://localhost:8001/always5/resources/file/user_img/MypageGoods-img/한식02.jpg" />
+						src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/한식02.jpg" />
 					<img class="reviewbox-preview03"
-						src="http://localhost:8001/always5/resources/file/user_img/MypageGoods-img/한식03.jpg" />
+						src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/한식03.jpg" />
 				</div>
 			</div>
 			<script
-				src="http://localhost:8001/always5/resources/js/user_js/MyPageGoods.js"></script>
+				src="${pageContext.request.contextPath}/resources/js/user_js/MyPageGoods.js"></script>
 		</div>
 	</form>
 </body>
-</html>
+	</html>

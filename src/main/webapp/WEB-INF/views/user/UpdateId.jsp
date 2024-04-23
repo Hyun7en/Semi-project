@@ -2,7 +2,9 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-
+<c:set var="User" value="${sessionScope.User}" />
+<c:if test="${empty User}">
+</c:if>
 <html>
 <head>
 <meta charset="utf-8" />
@@ -10,15 +12,15 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <link rel="stylesheet"
-	href="http://localhost:8001/always5/resources/css/user_css/UpdateId.css" />
+	href="${pageContext.request.contextPath}/resources/css/user_css/UpdateId.css" />
 </head>
 
 <body>
-	<form action="updateid.ui" class="updateId-Container" method="POST">
+	<form action="updateid.u" class="updateId-Container" method="POST">
 		<div class="updateId">
 			<!-- X버튼 -->
 			<img class="logo"
-				src="http://localhost:8001/always5/resources/file/user_img/UpdateId-img/ph-x-thin.svg" />
+				src="${pageContext.request.contextPath}/resources/file/user_img/UpdateId-img/ph-x-thin.svg" />
 
 			<!-- 상단 텍스트 -->
 			<div class="id-preview">
@@ -28,12 +30,12 @@
 			</div>
 
 			<img class="line-pass"
-				src="http://localhost:8001/always5/resources/file/user_img/UpdateId-img/line-47.svg" />
+				src="${pageContext.request.contextPath}/resources/file/user_img/UpdateId-img/line-47.svg" />
 
 			<!-- 사용자 이메일 입력 -->
 			<div class="email-preview">
 				<img class="mdi-email-icon"
-					src="http://localhost:8001/always5/resources/file/user_img/UpdateId-img/mdi-light-email.svg" />
+					src="${pageContext.request.contextPath}/resources/file/user_img/UpdateId-img/mdi-light-email.svg" />
 				<div class="user-email">${User.userId}</div>
 			</div>
 
@@ -80,7 +82,7 @@
 				<button type="submit" class="updateId-checkbox-title">변경</button>
 			</div>
 			<script
-				src="http://localhost:8001/always5/resources/js/user_js/UpdateId.js"></script>
+				src="${pageContext.request.contextPath}/resources/js/user_js/UpdateId.js"></script>
 		</div>
 	</form>
 </body>

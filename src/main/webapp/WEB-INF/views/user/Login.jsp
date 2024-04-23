@@ -2,13 +2,16 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
+<c:set var="User" value="${sessionScope.User}" />
+<c:if test="${empty User}">
+</c:if>
 <html>
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 	<link rel="stylesheet"
-	href="http://localhost:8001/always5/resources/css/user_css/logIn.css" />
+	href="${pageContext.request.contextPath}/resources/css/user_css/logIn.css" />
 </head>
 <body>
 	<form action="login.ui" class="login-Container" method="POST">
@@ -51,6 +54,13 @@
 							<img class="login-option-line2"
 								src="http://localhost:8001/always5/resources/file/user_img/login-img/line-42.svg" />
 							<div class="login-option-signin"><a href="/signin.ui">회원가입</a></div>
+							<div class="login-option-searchId"><a href="${pageContext.request.contextPath}">메인페이지</a></div>
+							<img class="login-option-line1"
+								src="${pageContext.request.contextPath}/resources/file/user_img/login-img/line-41.svg" />
+							<div class="login-option-searchPwd"><a href="#">고객센터</a></div>
+							<img class="login-option-line2"
+								src="${pageContext.request.contextPath}/resources/file/user_img/login-img/line-42.svg" />
+							<div class="login-option-signin"><a href="signin.ui">회원가입</a></div>
 						</div>
 
 					</div>
@@ -58,6 +68,7 @@
 
 			</div>
 			<script src="http://localhost:8001/always5/resources/js/user_js/Login.js"></script>
+			<script src="${pageContext.request.contextPath}/resources/js/user_js/login.js"></script>
 		</div>
 	</form>
 </body>

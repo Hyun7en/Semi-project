@@ -2,6 +2,9 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
+<c:set var="User" value="${sessionScope.User}" />
+<c:if test="${empty User}">
+</c:if>
 <html>
 <head>
 <meta charset="utf-8" />
@@ -9,16 +12,16 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <link rel="stylesheet"
-	href="http://localhost:8001/always5/resources/css/user_css/SignIn.css" />
+	href="${pageContext.request.contextPath}/resources/css/user_css/SignIn.css" />
 </head>
 <body>
-	<form action="signin.ui" class="Signin-Container" method="POST">
+	<form action="signin.u" class="Signin-Container" method="POST">
 		<div class="Signin">
 
 			<!-- 회원가입 로고 -->
 			<div class="Signin-logo-main">
 				<img class="Signin-image"
-					src="http://localhost:8001/always5/resources/file/user_img/SignIn-img/logo.png" />
+					src="${pageContext.request.contextPath}/resources/file/user_img/SignIn-img/logo.png" />
 			</div>
 
 			<div class="Signin-title">회원가입</div>
@@ -77,7 +80,7 @@
 
 			</div>
 			<script
-				src="http://localhost:8001/always5/resources/js/user_js/SignIn.js"></script>
+				src="${pageContext.request.contextPath}/resources/js/user_js/SignIn.js"></script>
 		</div>
 	</form>
 </body>
