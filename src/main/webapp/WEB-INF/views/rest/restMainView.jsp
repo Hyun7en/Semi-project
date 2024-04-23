@@ -98,7 +98,7 @@
                         <p>${rest.restOperDate}</p>
                     </div>
 
-                    <button type="button" id="regist-review" data-toggle="modal" data-target="#myModal">리뷰 작성</button>
+                    <button type="button" id="regist-review" onclick="location.href = '${pageContext.request.contextPath}/enrollReviewForm.re'">리뷰 작성</button>
                 </div>
             </div>
             <div id="rest-detail-page">

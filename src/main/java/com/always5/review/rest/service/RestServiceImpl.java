@@ -65,15 +65,14 @@ public class RestServiceImpl implements RestService{
 	@Override
 	public String updateDibsCount(String restNo, String check) {
 		SqlSession sqlSession = Template.getSqlSession();
+		int result = 0;
 		
-//		if(check == "I") {
-//			restDao.plusDibsCount(sqlSession, restNo);
-//		} else {
-//			restDao.minusDibsCount(sqlSession, restNo);
-//		}
-		
-		int result = restDao.updateDibsCount(sqlSession, restNo);
-		
+		if(check.equals("U")) {
+			result = restDao.plusDibsCount(sqlSession, restNo);
+		} else {
+			result = restDao.minusDibsCount(sqlSession, restNo);
+		}
+		System.out.println(result);
 		String likeNo = (restDao.selectRest(sqlSession, Integer.parseInt(restNo))).getLikeNo();
 		sqlSession.close();
 		return likeNo;
@@ -81,37 +80,22 @@ public class RestServiceImpl implements RestService{
 	
 	// 가게 찜 선택 시 insert
 	@Override
-	public Dibs insertDibs(Dibs dibsInfo) {
+	public int insertDibs(Dibs dibsInfo) {
 		SqlSession sqlSession = Template.getSqlSession();
 		int result = restDao.insertDibs(sqlSession, dibsInfo);
-		Dibs userDibs = null;
 		
-		System.out.println("insert 성공" + result);
-		if (result > 0) {
-			userDibs = restDao.checkDibs(sqlSession, dibsInfo);
-			System.out.println("방금 가져온 거 있니" + userDibs);
-		}
-		
-		System.out.println("insert Service");
 		sqlSession.close();
-		return userDibs;
+		return result;
 	}
 
 	// 가게 찜 선택 시 delete
 	@Override
-	public Dibs deleteDibs(Dibs dibsInfo) {
+	public int deleteDibs(Dibs dibsInfo) {
 		SqlSession sqlSession = Template.getSqlSession();
 		int result = restDao.deleteDibs(sqlSession, dibsInfo);
-		Dibs userDibs = null;
 		
-		System.out.println("dao" + result);
-		if (result > 0) {
-			userDibs = restDao.checkDibs(sqlSession, dibsInfo);
-		}
-		
-		System.out.println("delete Service");
 		sqlSession.close();
-		return userDibs;
+		return result;
 	}
 	
 	// 가게 리뷰 - 리뷰 리스트 조회

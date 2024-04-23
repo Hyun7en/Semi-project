@@ -110,12 +110,12 @@
                     <button onclick="">&gt;</button>
                 </div>
 
-                <div id="rest-review-regist">
+                <!-- <div id="rest-review-regist">
                     <form action="">
                         <div></div>
                         <button type="submit">리뷰 등록</button>
                     </form>
-                </div>
+                </div> -->
             </div>
         </main>
     </div>

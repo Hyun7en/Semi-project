@@ -26,10 +26,10 @@ public interface RestService {
 	public String updateDibsCount(String restNo, String check);
 	
 	// 가게 찜 - 가게 찜 선택 시 update
-	public Dibs insertDibs(Dibs dibsInfo);
+	public int insertDibs(Dibs dibsInfo);
 	
 	// 가게 찜 - 가게 찜 선택 시 delete
-	public Dibs deleteDibs(Dibs dibsInfo);
+	public int deleteDibs(Dibs dibsInfo);
 	
 	// 가게 리뷰 - 리뷰 리스트 조회
 	public ArrayList<Review> selectReviewList(int restNo);

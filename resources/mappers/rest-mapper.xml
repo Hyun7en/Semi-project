@@ -101,11 +101,6 @@
 		WHERE REST_NO = #{restNo}
 	</select>
 	
-	<update id="updateDibsCount">
-		UPDATE REST_INFO
-		SET LIKE_NO
-	</update>
-	
 	<insert id="insertDibs">
 		INSERT INTO DIBS
 		VALUES(#{userNo}, #{restNo})
@@ -116,6 +111,18 @@
 		 WHERE USER_NO = #{userNo}
 		   AND REST_NO = #{restNo}
 	</delete>
+	
+	<update id="plusDibsCount">
+		UPDATE REST_INFO
+		SET LIKE_NO = LIKE_NO + 1
+		WHERE REST_NO = #{restNo}
+	</update>
+	
+	<update id="minusDibsCount">
+		UPDATE REST_INFO
+		SET LIKE_NO = LIKE_NO - 1
+		WHERE REST_NO = #{restNo}
+	</update>
 	
 	<select id="selectReviewList" resultMap="reviewResultSet">
 		SELECT REVIEW_NO,

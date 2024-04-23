@@ -1,0 +1,34 @@
+*{
+    border: 1px solid #B1A8A8;
+}
+
+#review-main{
+    border: 1px solid #B1A8A8;
+    width: 1320px;
+    height: auto;
+    background-color: #F6F6F6;
+    text-align: center;
+    margin: 0px auto;
+    padding-top: 0px;
+}
+
+#review-main>input{
+    width: 700px;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid #B1A8A8;
+    font-size: 15px;
+    margin: 40px 0px;
+    outline: none;
+    padding: 0px 10px;
+}
+
+.black-button{
+    width: 400px;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid #B1A8A8;
+    background-color: #313D40;
+    color: white;
+    font-size: 17px;
+}

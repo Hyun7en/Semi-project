@@ -39,47 +39,33 @@ public class DibsSelectController extends HttpServlet {
 		// 사용자의 찜 여부 확인해서 update 할지 delete 할지 결정
 		Dibs dibsInfo = new Dibs(userNo, restNo);
 		Dibs userDibs = new RestServiceImpl().checkDibs(dibsInfo);
-		String check = "D";
+		System.out.println("null 아니어야 해" + userDibs);
 		
+		int result = 0;
+		String check = null;
 		// update 나 delete 후 해당 rest likeNo 업데이트
-		if (userDibs == null) {
-			userDibs = new RestServiceImpl().insertDibs(dibsInfo);
-			check = "I";
+		if (userDibs != null) {
+			result = new RestServiceImpl().deleteDibs(dibsInfo);
+			if (result > 0) {
+				check = "D";
+			} 
 		} else {
-			userDibs = new RestServiceImpl().deleteDibs(dibsInfo);
+			result = new RestServiceImpl().insertDibs(dibsInfo);
+			if (result > 0) {
+				check = "U";
+			}
 		}
+		System.out.println(result);
+		System.out.println(check);
 		
 		// 수정된 사용자 찜 여부와 수정된 likeNo 보내기
-		String likeNo = new RestServiceImpl().updateDibsCount(restNo, check);
-		
-//		String userNo = request.getParameter("userNo");
-//		String restNo = request.getParameter("restNo");
-//		
-//		Dibs dibsInfo = new Dibs(userNo, restNo);
-//		
-//		Dibs dibs = new RestServiceImpl().checkDibs(dibsInfo);
-//		Dibs userDibs = null;
-//		
-//		System.out.println(dibs);
-//		if (dibs == null) {
-//			userDibs = new RestServiceImpl().insertDibs(dibsInfo);
-//			
-//			System.out.println(userDibs);
-//		} else {
-//			userDibs = new RestServiceImpl().deleteDibs(dibsInfo);
-//		}
-//		
-//		System.out.println("delete 되었을까?");
-//		
-//		Restaurant dibsCount = new RestServiceImpl().selectDibsCount(restNo);
-//		
-//		System.out.println(dibsCount);
-//		
-//		HashMap map = new HashMap<>();
-//		map.put("userDibs", userDibs);
-//		map.put("dibsCount", dibsCount);
-//		response.setContentType("application/json; charset=utf-8");
-//		new Gson().toJson(map, response.getWriter());
+		String dibsCount = new RestServiceImpl().updateDibsCount(restNo, check);
+		System.out.println(dibsCount);
+		HashMap map = new HashMap<>();
+		map.put("userDibs", userDibs);
+		map.put("dibsCount", dibsCount);
+		response.setContentType("application/json; charset=utf-8");
+		new Gson().toJson(map, response.getWriter());
 		
 	}
 
