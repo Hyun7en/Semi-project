@@ -16,15 +16,14 @@ public class AdminRestServiceImpl implements AdminRestService{
 	private RestBoardDao rDao = new RestBoardDao();
 	
 	@Override
-	public ArrayList<Restaurant> selectRestListCount(PageInfo pi) {
+	public int selectRestListCount() {
 		SqlSession sqlSession = Template.getSqlSession();
-		ArrayList<Restaurant> listCount = rDao.selectRestListCount(sqlSession);
+		int listCount = rDao.selectRestListCount(sqlSession);
 		
 		sqlSession.close();
-		
 		return listCount;
 	}
-
+	
 	@Override
 	public ArrayList<Restaurant> selectList(PageInfo pi) {
 		SqlSession sqlSession = Template.getSqlSession();
@@ -36,49 +35,8 @@ public class AdminRestServiceImpl implements AdminRestService{
 
 	}
 
-//	@Override
-//	public int selectSearchCount(HashMap<String, String> map) {
-//		SqlSession sqlSession = Template.getSqlSession();
-//		int searchCount = rDao.selectSearchCount(sqlSession, map);
-//		
-//		sqlSession.close();
-//		
-//		return searchCount;
-//	}
-
-	@Override
-	public ArrayList<Restaurant> selectSearchList(HashMap<String, String> map, PageInfo pi) {
-		SqlSession sqlSession = Template.getSqlSession();
-		ArrayList<Restaurant> list = rDao.selectSearchList(sqlSession, map, pi);
+	public ArrayList<Restaurant> selectRestList() {
 		
-		sqlSession.close();
-		return list;
 	}
 
-	@Override
-	public Restaurant increaseCount(int restNo) {
-		SqlSession sqlSession = Template.getSqlSession();
-		int result = rDao.increaseCount(sqlSession, restNo);
-		
-		Restaurant r = null;
-		if (result > 0) {
-			sqlSession.commit();
-			r = rDao.selectBoard(sqlSession, restNo);
-		} else {
-			sqlSession.rollback();
-		}
-		
-		sqlSession.close();
-		return r;
-	}
-
-	public int selectRestListCount() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	
-	
-	
-		
 }

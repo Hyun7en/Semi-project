@@ -168,11 +168,11 @@
 	<select id="selectRestListCount" resultType="_int">
 		SELECT COUNT(*)
 		  FROM REST_INFO
-		WHERE STATUS = 'Y'
+ 		 WHERE REST_STATUS = 'Y'
 	</select>
 	
 	<!-- Admin 레스토랑 리스트 나열 -->
-	<select id="selectRestList" resultMap="restResultSet">
+	<select id="selectList" resultMap="restResultSet">
 		SELECT REST_NO,
 			   REST_NAME,
 			   REST_MODIFY_DATE
@@ -180,40 +180,8 @@
 		 WHERE R.REST_STATUS = 'Y'
 		 ORDER BY REST_NO DESC
 	</select>
-	<select id="selectSearchList" resultMap="restResultSet">
-		SELECT REST_NO,
-			   REST_NAME,
-			   REST_MODIFY_DATE
-		  FROM REST_INFO R
-		 WHERE R.REST_STATUS = 'Y'
-		<choose>
-			<when test="condition == 'restName'">
-				AND REST_NAME
-			</when>
-			<otherwise>
-			</otherwise>
-		</choose>
-		LIKE '%' || #{keyword} || '%'
-		ORDER BY REST_NO DESC
-	</select>
 	
 	
 	<!-- admin 레스토랑 정보 수정 -->
-	<update id="updateRestBoard" >
-		SELECT REST_NO,
-			   REST_NAME,
-			   REST_ADDRESS,
-			   REST_PHONE,
-			   REST_INTRO,
-			   REST_GRADE,
-			   LIKE_NO,
-			   REST_ENROLL_DATE,
-			   REST_MODIFY_DATE,
-			   REST_OPER_TIME,
-			   FOOD_CATEGORY_NAME
-		FROM REST_INFO
-		JOIN FOOD_CATEGORY USING (FOOD_CATEGORY_NO)
-		WHERE REST_NO = #{restNo}
-		AND REST_STATUS = 'Y'
-	</update>
+	
 </mapper>

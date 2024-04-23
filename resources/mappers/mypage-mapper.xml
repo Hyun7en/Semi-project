@@ -5,7 +5,7 @@
 
 <!-- 미구현 -->
 <mapper namespace="mypageMapper">
-	<resultMap id="mypageResultSet" type="Mypage">
+<!-- 	<resultMap id="mypageResultSet" type="Mypage">
 		<result column="USER_NO" property="userNo" />
 		<result column="AUTHORITY" property="authority" />
 		<result column="USER_ID" property="userId" />
@@ -94,5 +94,5 @@
 				USER_PHONE,
 				USER_ADDRESS
 			FROM USER_INFO
-	</select>
+	</select> -->
 </mapper>
