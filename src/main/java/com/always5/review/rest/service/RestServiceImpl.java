@@ -183,7 +183,7 @@ public class RestServiceImpl implements RestService{
 	@Override
 	public ArrayList<Review> selectReviewList(int restNo, PageInfo pi) {
 		SqlSession sqlSession = Template.getSqlSession();
-		ArrayList<Review> reviewList = restDao.selectReviewList(sqlSession, restNo);
+		ArrayList<Review> reviewList = restDao.selectReviewList(sqlSession, restNo, pi);
 		ArrayList<Review> newReviewList = new ArrayList<>();
 
 		if (!reviewList.isEmpty()) {

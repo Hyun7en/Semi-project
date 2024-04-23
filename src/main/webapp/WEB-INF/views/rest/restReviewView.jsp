@@ -95,18 +95,11 @@
                     </div>
                 </c:forEach>
                 <div class="paging-area" align="center">
-                    <!-- for문으로 수정 필요 -->
-                    <button onclick="">&lt;</button>
-                    <button onclick="">1</button>
-                    <button onclick="">2</button>
-                    <button onclick="">3</button>
-                    <button onclick="">4</button>
-                    <button onclick="">5</button>
-                    <button onclick="">6</button>
-                    <button onclick="">7</button>
-                    <button onclick="">8</button>
-                    <button onclick="">9</button>
-                    <button onclick="">10</button>
+                <button onclick="">&lt;</button>
+                    <c:forEach var="i" begin="${pi.startPage }" end="${pi.endPage }">
+                    	<button onclick="location.href = '${pageContext.request.contextPath}/review.re?rno=${rest.restNo}&pno=${i }'"">${i}</button>
+                    </c:forEach>
+                    
                     <button onclick="">&gt;</button>
                 </div>
 

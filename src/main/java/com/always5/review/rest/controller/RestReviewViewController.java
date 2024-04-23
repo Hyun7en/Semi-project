@@ -41,6 +41,7 @@ public class RestReviewViewController extends HttpServlet {
 
 		PageInfo pi = Pagination.getPageInfo(listCount, currentPage, 10, 10);
 		
+		System.out.println(pi);
 		Restaurant rest = new RestServiceImpl().selectRest(restNo);
 		ArrayList<Review> reviewList = new RestServiceImpl().selectReviewList(restNo, pi);
 		ArrayList<Integer> ratingCount = new RestServiceImpl().selectRatingCount(restNo);
