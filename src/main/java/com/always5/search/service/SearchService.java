@@ -1,13 +1,11 @@
 package com.always5.search.service;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 import org.apache.ibatis.session.SqlSession;
 
 import com.always5.common.template.Template;
 import com.always5.common.vo.PageInfo;
-import com.always5.review.rest.model.vo.Menu;
 import com.always5.review.rest.model.vo.Restaurant;
 import com.always5.search.dao.SearchDao;
 
@@ -32,19 +30,13 @@ public class SearchService {
 	
 	public ArrayList<Restaurant> searchList(){
 		SqlSession sqlSession = Template.getSqlSession();
-		ArrayList<Restaurant> list = rDao.searchList(sqlSession);
+		ArrayList<Restaurant> list = new SearchDao().searchList(sqlSession);
 		sqlSession.close();
 		return list;
 	}
 	
-	// 순수 검색
-	public int searchrListCount(HashMap<String, String> map){
-		SqlSession sqlSession = Template.getSqlSession();
-		int searchListCount = rDao.searchrListCount(sqlSession, map);
-		sqlSession.close();		
-		return searchListCount;
+	public ArrayList<Menu> searchMenuList(){
+		
+		
 	}
-	
-	
-
 }

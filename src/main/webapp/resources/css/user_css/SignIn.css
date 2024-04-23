@@ -103,6 +103,7 @@ input:focus {outline: none;}
 }
 
 .Signin .input-UserId {
+  width: 500px;
   padding-left: 10px;
   border: none;
   font-weight: 300;

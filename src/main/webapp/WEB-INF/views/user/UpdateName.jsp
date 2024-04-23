@@ -8,7 +8,9 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet"
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet"
 	href="http://localhost:8001/always5/resources/css/user_css/UpdateName.css" />
 </head>
 
@@ -20,7 +22,7 @@
 			<div class="updateName-logo-main">
 				<img class="logo-image"
 					src="http://localhost:8001/always5/resources/file/user_img/UpdateName-img/1.png" />
-				
+
 			</div>
 
 			<div class="updateName-title">닉네임 변경</div>
@@ -43,7 +45,8 @@
 					<button type="submit" class="updateName-checkbox-title">다음</button>
 				</div>
 			</div>
-			<script src="http://localhost:8001/always5/resources/js/user_js/updateName.js"></script>
+			<script
+				src="http://localhost:8001/always5/resources/js/user_js/updateName.js"></script>
 		</div>
 	</form>
 </body>

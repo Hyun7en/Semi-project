@@ -59,14 +59,6 @@
  		 WHERE REST_STATUS = 'Y'
 	</select>
 	
-	<!-- 순수 검색 -->
- 	<select id="searchrListCount" resultType="_int">
- 		SELECT COUNT(*)
- 		FROM REST_INFO
- 		WHERE STATUS = 'Y'
-        LIKE '%' || #{keyword} || '%'
- 	<!-- map에서 keyword가 포함된 값을 가져와서 씀 -->
- 	</select>	
 
 	
 </mapper>
