@@ -25,10 +25,11 @@
             <div>
                 <form action="search.sc" id="search-bar" method="GET">
                 	<input type="hidden" name="rpage" value="1">
-                    <input type="text" name="search-keyword" id="search-box" value="${keyword}">
+                    <input type="text" name="keyword" id="search-box" value="${keyword}">
                     <input type="submit" value="검색" id="search-button">
                 </form>
             </div>
+            
             <div id="memberButton">
                 <a href="login.ui">로그인</a>
                 <a href="enrollform.ui">회원가입</a>

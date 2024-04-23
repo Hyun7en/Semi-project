@@ -41,7 +41,15 @@ public class SearchDao {
 	
 	// 순수 검색
 	public int searchrListCount(SqlSession sqlSession, HashMap<String, String> map){
-		return sqlSession.selectOne("searchMapper.searchrListCount");
+		return sqlSession.selectOne("searchMapper.searchrListCount", map);
+	}
+	
+	public ArrayList<Restaurant> selectrSearchList(SqlSession sqlSession, HashMap<String, String> map, PageInfo re) {
+		int offset = (re.getCurrentPage() - 1) * re.getBoardLimit();
+		int limit = re.getBoardLimit();
+		
+		RowBounds rowBounds = new RowBounds(offset, limit);
+		return (ArrayList)sqlSession.selectList("searchMapper.selectrSearchList", map, rowBounds);
 	}
 	
 	

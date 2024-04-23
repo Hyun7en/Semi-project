@@ -38,36 +38,42 @@ public class SearchPageController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// 클라이언트가 검색한 키워드를 header에서 받아서 가져와서
+		// db로 넘겨서 포함된 값을 가져옴
+		// 가져온 값을 페이지몇개로 보여줄건가
+		// 
+		
+		
+		
+		
+		SearchService sService = new SearchService();
 		
 		// 클라이언트가 검색한 키워드를 가져와서
-		String keyword = request.getParameter("search-keyword");
+		String keyword = request.getParameter("keyword");
 		HashMap<String, String> map = new HashMap<>();
-		map.put("search-keyword", keyword);
+		map.put("keyword", keyword);
 		
 		// 그 키워드로 검색한 검색한 레스토랑 수
-		int restCount = new SearchService().searchrListCount(map); // 키워드에 맞는 가게 가져오기
+		int restCount = sService.searchrListCount(map); // 키워드에 맞는 가게 가져오기
+		
+		
+		
+		// 그 키워드로 검색한 검색한 레스토랑 수
+		
 		int currentPage = Integer.parseInt(request.getParameter("rpage"));
 		
 		PageInfo re = Pagination.getPageInfo(restCount, currentPage, 1, 9);
-		
-		
-		
-		
-		
-		PageInfo re = Pagination.getPageInfo(restCount, currentPage, 1, 9);
-		ArrayList<Restaurant> rlist = new SearchService.searchRestList(map, re);
-		
-		
-		
-		
+		ArrayList<Restaurant> rlist = sService.selectrSearchList(map, re);
 		
 		
 		// list 받아와서 Search.jps로 넘기기
-		ArrayList<Restaurant> list = new SearchService().searchList(); // searchKindsList
-		request.setAttribute("list", list);
-		
-		response.setContentType("application/json; charset=UTF-8");
-		new Gson().toJson(list, response.getWriter());
+		request.setAttribute("rlist", rlist);
+		request.setAttribute("re", re);
+		request.setAttribute("keyword", keyword);
+//		
+//		response.setContentType("application/json; charset=UTF-8");
+//		new Gson().toJson(rlist, response.getWriter());
+
 		
 		RequestDispatcher view = request.getRequestDispatcher("WEB-INF/views/search/Search.jsp");
 		view.forward(request, response);

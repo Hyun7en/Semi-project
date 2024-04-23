@@ -37,12 +37,20 @@ public class SearchService {
 		return list;
 	}
 	
-	// 순수 검색
+	// (컨디션 조건 없는)순수 검색: 키워드에 맞는게 몇개냐
 	public int searchrListCount(HashMap<String, String> map){
 		SqlSession sqlSession = Template.getSqlSession();
-		int searchListCount = rDao.searchrListCount(sqlSession, map);
+		int restCount = rDao.searchrListCount(sqlSession, map);
 		sqlSession.close();		
-		return searchListCount;
+		return restCount;
+	}
+	
+	// 순수 검색: 키워드에 맞는 결과를 list에 담아서 들고오기
+	public ArrayList<Restaurant> selectrSearchList(HashMap<String, String> map, PageInfo re) {
+		SqlSession sqlSession = Template.getSqlSession();
+		ArrayList<Restaurant> list = rDao.selectrSearchList(sqlSession, map, re);
+		sqlSession.close();
+		return list;
 	}
 	
 	
