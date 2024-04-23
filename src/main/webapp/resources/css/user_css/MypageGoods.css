@@ -103,6 +103,7 @@ input:focus {
   border-radius: 30px;
 
   margin-bottom: 60px;
+  padding-bottom: 30px;
 }
 
 
@@ -141,35 +142,13 @@ input:focus {
   width: 27px;
 }
 
-.MypageGoods .review-box-deletebox {
-  border: 1px solid #b1a8a8;
-  width: 50px;
-  height: auto;
-  background-color: #f7f7f7;
-  border-radius: 30px;
-
-  margin-left: 10px;
-  padding-top: 3px;
-  padding-bottom: 3px;
-}
-
-.MypageGoods .review-delete {
-  font-weight: 700;
-  color: #000000;
-  font-size: 12px;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
 .MypageGoods .review-box-mainpagebox {
-  float: left;
+  float: right;
   border: 1px solid #b1a8a8;
-  width: 60px;
+  width: 70px;
   height: auto;
   background-color: #f7f7f7;
   border-radius: 30px;
-
-  margin-left: 330px;
 }
 
 .MypageGoods .review-box-mainpage {
@@ -192,9 +171,9 @@ input:focus {
 }
 
 .MypageGoods .reviewbox-text {
-  font-weight: 700;
+  font-weight: 500;
   color: #000000;
-  font-size: 20px;
+  font-size: 15px;
   white-space: nowrap;
   letter-spacing: 0;
   line-height: normal;
@@ -228,23 +207,6 @@ input:focus {
   object-fit: cover;
   border-radius:20px;
 }
-
-.MypageGoods .reviewbox-usermenu {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #b1a8a8;
-  width: 202px;
-  height: 35px;
-  background-color: #f2f2f2;
-  border-radius: 20px;
-
-  margin-top: 15px;
-}
-
-.MypageGoods .reviewbox-usermenu-title {
-  width: 100px;
-}
   
 /*2번 박스*/
 .MypageGoods .reviewbox02{
@@ -256,6 +218,7 @@ input:focus {
   border-radius: 30px;
 
   margin-bottom: 60px;
+  padding-bottom: 30px;
 }
 
 
@@ -294,35 +257,13 @@ input:focus {
   width: 27px;
 }
 
-.MypageGoods .review-box-deletebox02 {
-  border: 1px solid #b1a8a8;
-  width: 50px;
-  height: auto;
-  background-color: #f7f7f7;
-  border-radius: 30px;
-
-  margin-left: 10px;
-  padding-top: 3px;
-  padding-bottom: 3px;
-}
-
-.MypageGoods .review-delete02 {
-  font-weight: 700;
-  color: #000000;
-  font-size: 12px;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
 .MypageGoods .review-box-mainpagebox02 {
-  float: left;
+  float: right;
   border: 1px solid #b1a8a8;
-  width: 60px;
+  width: 70px;
   height: auto;
   background-color: #f7f7f7;
   border-radius: 30px;
-
-  margin-left: 360px;
 }
 
 .MypageGoods .review-box-mainpage02 {
@@ -345,14 +286,13 @@ input:focus {
 }
 
 .MypageGoods .reviewbox-text {
-  font-weight: 700;
-  color: #000000;
-  font-size: 20px;
-  white-space: nowrap;
-  letter-spacing: 0;
-  line-height: normal;
-
-  margin-bottom: 20px;
+     font-weight: 500;
+    color: #000000;
+    font-size: 15px;
+    white-space: nowrap;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-bottom: 20px;
 }
 
 .MypageGoods .reviewbox-preview01 {
@@ -382,22 +322,6 @@ input:focus {
   border-radius:20px;
 }
 
-.MypageGoods .reviewbox-usermenu2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #b1a8a8;
-  width: 202px;
-  height: 35px;
-  background-color: #f2f2f2;
-  border-radius: 20px;
-
-  margin-top: 15px;
-}
-
-.MypageGoods .reviewbox-usermenu-title {
-  width: 100px;
-}
 
 /*3번 박스*/
 .MypageGoods .reviewbox03{
@@ -409,6 +333,7 @@ input:focus {
   border-radius: 30px;
 
   margin-bottom: 60px;
+  padding-bottom: 30px;
 }
 
 
@@ -447,35 +372,13 @@ input:focus {
   width: 27px;
 }
 
-.MypageGoods .review-box-deletebox03 {
-  border: 1px solid #b1a8a8;
-  width: 50px;
-  height: auto;
-  background-color: #f7f7f7;
-  border-radius: 30px;
-
-  margin-left: 10px;
-  padding-top: 3px;
-  padding-bottom: 3px;
-}
-
-.MypageGoods .review-delete03 {
-  font-weight: 700;
-  color: #000000;
-  font-size: 12px;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
 .MypageGoods .review-box-mainpagebox03 {
-  float: left;
+  float: right;
   border: 1px solid #b1a8a8;
-  width: 60px;
+  width: 70px;
   height: auto;
   background-color: #f7f7f7;
   border-radius: 30px;
-
-  margin-left: 340px;
 }
 
 .MypageGoods .review-box-mainpage03 {
@@ -498,14 +401,13 @@ input:focus {
 }
 
 .MypageGoods .reviewbox-text {
-  font-weight: 700;
-  color: #000000;
-  font-size: 20px;
-  white-space: nowrap;
-  letter-spacing: 0;
-  line-height: normal;
-
-  margin-bottom: 20px;
+    font-weight: 500;
+    color: #000000;
+    font-size: 15px;
+    white-space: nowrap;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-bottom: 20px;
 }
 
 .MypageGoods .reviewbox-preview01 {
@@ -535,23 +437,6 @@ input:focus {
   border-radius:20px;
 }
 
-.MypageGoods .reviewbox-usermenu3 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #b1a8a8;
-  width: 202px;
-  height: 35px;
-  background-color: #f2f2f2;
-  border-radius: 20px;
-
-  margin-top: 15px;
-}
-
-.MypageGoods .reviewbox-usermenu-title3 {
-  width: 110px;
-}
-
 /*4번 박스*/
 .MypageGoods .reviewbox04{
   border: 1px solid rgb(210, 206, 206);
@@ -562,6 +447,7 @@ input:focus {
   border-radius: 30px;
 
   margin-bottom: 60px;
+  padding-bottom: 30px;
 }
 
 
@@ -600,35 +486,13 @@ input:focus {
   width: 27px;
 }
 
-.MypageGoods .review-box-deletebox04 {
-  border: 1px solid #b1a8a8;
-  width: 50px;
-  height: auto;
-  background-color: #f7f7f7;
-  border-radius: 30px;
-
-  margin-left: 10px;
-  padding-top: 3px;
-  padding-bottom: 3px;
-}
-
-.MypageGoods .review-delete04 {
-  font-weight: 700;
-  color: #000000;
-  font-size: 12px;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
 .MypageGoods .review-box-mainpagebox04 {
-  float: left;
+  float: right;
   border: 1px solid #b1a8a8;
-  width: 60px;
+  width: 70px;
   height: auto;
   background-color: #f7f7f7;
   border-radius: 30px;
-
-  margin-left: 390px;
 }
 
 .MypageGoods .review-box-mainpage04 {
@@ -651,14 +515,13 @@ input:focus {
 }
 
 .MypageGoods .reviewbox-text {
-  font-weight: 700;
-  color: #000000;
-  font-size: 20px;
-  white-space: nowrap;
-  letter-spacing: 0;
-  line-height: normal;
-
-  margin-bottom: 20px;
+    font-weight: 500;
+    color: #000000;
+    font-size: 15px;
+    white-space: nowrap;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-bottom: 20px;
 }
 
 .MypageGoods .reviewbox-preview01 {
@@ -688,23 +551,6 @@ input:focus {
   border-radius:20px;
 }
 
-.MypageGoods .reviewbox-usermenu4 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #b1a8a8;
-  width: 202px;
-  height: 35px;
-  background-color: #f2f2f2;
-  border-radius: 20px;
-
-  margin-top: 15px;
-}
-
-.MypageGoods .reviewbox-usermenu-title4 {
-  width: 110px;
-}
-
 /*5번 박스*/
 .MypageGoods .reviewbox05{
   border: 1px solid rgb(210, 206, 206);
@@ -715,6 +561,7 @@ input:focus {
   border-radius: 30px;
 
   margin-bottom: 60px;
+  padding-bottom: 30px;
 }
 
 
@@ -753,35 +600,13 @@ input:focus {
   width: 27px;
 }
 
-.MypageGoods .review-box-deletebox05 {
-  border: 1px solid #b1a8a8;
-  width: 50px;
-  height: auto;
-  background-color: #f7f7f7;
-  border-radius: 30px;
-
-  margin-left: 10px;
-  padding-top: 3px;
-  padding-bottom: 3px;
-}
-
-.MypageGoods .review-delete05 {
-  font-weight: 700;
-  color: #000000;
-  font-size: 12px;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
 .MypageGoods .review-box-mainpagebox05 {
-  float: left;
+  float: right;
   border: 1px solid #b1a8a8;
-  width: 60px;
+  width: 70px;
   height: auto;
   background-color: #f7f7f7;
   border-radius: 30px;
-
-  margin-left: 340px;
 }
 
 .MypageGoods .review-box-mainpage05 {
@@ -804,14 +629,13 @@ input:focus {
 }
 
 .MypageGoods .reviewbox-text {
-  font-weight: 700;
-  color: #000000;
-  font-size: 20px;
-  white-space: nowrap;
-  letter-spacing: 0;
-  line-height: normal;
-
-  margin-bottom: 20px;
+    font-weight: 500;
+    color: #000000;
+    font-size: 15px;
+    white-space: nowrap;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-bottom: 20px;
 }
 
 .MypageGoods .reviewbox-preview01 {
@@ -839,21 +663,4 @@ input:focus {
   height: 247px;
   object-fit: cover;
   border-radius:20px;
-}
-
-.MypageGoods .reviewbox-usermenu5 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #b1a8a8;
-  width: 202px;
-  height: 35px;
-  background-color: #f2f2f2;
-  border-radius: 20px;
-
-  margin-top: 15px;
-}
-
-.MypageGoods .reviewbox-usermenu-title5 {
-  width: 120px;
 }

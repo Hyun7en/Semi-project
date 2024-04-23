@@ -84,8 +84,8 @@ input:focus {
 }
 
 .updateName .updateName-title {
-  clear: both;
-	font-weight: 500;
+  	clear: both;
+	font-weight: 700;
 	color: #000000;
 	font-size: 35px;
 	letter-spacing: 0;
@@ -95,18 +95,19 @@ input:focus {
 	width: 754px;
 	height: auto;
 	padding: 0px;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 }
 
 .updateName .updateName-notice {
   font-weight: 500;
-  color: #000000;
-  font-size: 25px;
+  color: rgb(146, 146, 146);
+  font-size: 20px;
   text-align: center;
   letter-spacing: 0;
   line-height: normal;
 
   width: 754px;
+  margin-bottom: 30px;
   
 }
 
