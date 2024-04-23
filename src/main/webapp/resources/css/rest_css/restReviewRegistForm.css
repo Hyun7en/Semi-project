@@ -1,13 +1,25 @@
 *{
     /* border: 1px solid #B1A8A8; */
 }
-
-#rest-regist-main{
+#wrap{
+    border: 1px solid #B1A8A8;
     width: 1320px;
     height: auto;
-    background-color: #F6F6F6;
+    margin: 200px auto auto auto;
+    background-color: #FAF7F7;
+}
+
+main{
+
     text-align: center;
-    margin: 0px auto;
+}
+
+#review-main{
+    width: 1320px;
+    height: auto;
+    background-color: #FAF7F7;
+    text-align: center;
+    margin: auto;
     padding-top: 0px;
 }
 
@@ -44,12 +56,17 @@ table input, select, textarea, button{
     margin: 40px 0px;
     outline: none;
     padding: 0px 10px;
+    background-color: white;
 }
 
 textarea{
     height: 200px;
     padding: 10px 10px;
     resize: none;
+}
+
+#rest-name{
+    background-color: #E7E5DF;
 }
 
 .rest-regist-img{
@@ -71,17 +88,9 @@ textarea{
     color: white;
     font-size: 17px;
 }
-#review-main{
-    border: 1px solid #B1A8A8;
-    width: 1320px;
-    height: auto;
-    background-color: #F6F6F6;
-    text-align: center;
-    margin: 0px auto;
-    padding-top: 0px;
-}
 
-#review-main>input{
+
+#review-main input{
     width: 700px;
     height: 50px;
     border-radius: 10px;

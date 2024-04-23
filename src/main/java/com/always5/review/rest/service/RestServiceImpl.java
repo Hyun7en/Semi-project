@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 
 import com.always5.common.template.Template;
 import com.always5.common.vo.Attachment;
+import com.always5.common.vo.PageInfo;
 import com.always5.review.model.vo.Review;
 import com.always5.review.rest.model.dao.RestDao;
 import com.always5.review.rest.model.vo.Menu;
@@ -63,13 +64,13 @@ public class RestServiceImpl implements RestService{
 	
 	// 가게 찜 - 사용자 찜 여부 수정 및 총 찜 개수 수정
 	@Override
-	public String updateDibs(Dibs dibsInfo) {
+	public HashMap updateDibs(Dibs dibsInfo) {
 		SqlSession sqlSession = Template.getSqlSession();
 		
 		// 사용자 찜 여부 조회
 		Dibs userDibs = new RestServiceImpl().checkDibs(dibsInfo);
 		
-		String dibsCount = null;
+		Restaurant dibsCount = null;
 		
 		// 찜 여부에 따른 insert 혹은 delete
 		
@@ -81,7 +82,7 @@ public class RestServiceImpl implements RestService{
 				
 				if(result2 > 0) { // 찜 개수 수정 성공
 					sqlSession.commit();
-					dibsCount = (restDao.selectRest(sqlSession, Integer.parseInt(dibsInfo.getRestNo()))).getLikeNo();
+					dibsCount = restDao.selectRest(sqlSession, Integer.parseInt(dibsInfo.getRestNo()));
 				} else { // 찜 개수 수정 실패
 					sqlSession.rollback();
 					sqlSession.close();
@@ -98,7 +99,7 @@ public class RestServiceImpl implements RestService{
 				
 				if(result2 > 0) { // 찜 개수 수정 성공
 					sqlSession.commit();
-					dibsCount = (restDao.selectRest(sqlSession, Integer.parseInt(dibsInfo.getRestNo()))).getLikeNo();
+					dibsCount = restDao.selectRest(sqlSession, Integer.parseInt(dibsInfo.getRestNo()));
 				} else { // 찜 개수 수정 실패
 					sqlSession.rollback();
 					sqlSession.close();
@@ -109,7 +110,10 @@ public class RestServiceImpl implements RestService{
 			}
 		}
 		
-		return dibsCount;
+		HashMap map = new HashMap<>();
+		map.put("userDibs", userDibs);
+		map.put("dibsCount", dibsCount);
+		return map;
 	}
 	
 	// 가게 찜 - 가게 총 찜 개수 수정
@@ -149,12 +153,39 @@ public class RestServiceImpl implements RestService{
 //		return result;
 //	}
 	
+	// 가게 리뷰 - 리뷰 리스트 개수 조회
+	@Override
+	public int selectReviewCount(int restNo) {
+		SqlSession sqlSession = Template.getSqlSession();
+		int count = restDao.selectReviewCount(sqlSession, restNo);
+		
+		sqlSession.close();
+		return count;
+	}
+	
 	// 가게 리뷰 - 리뷰 리스트 조회
 	public ArrayList<Review> selectReviewList(int restNo){
 		SqlSession sqlSession = Template.getSqlSession();
 		ArrayList<Review> reviewList = restDao.selectReviewList(sqlSession, restNo);
 		ArrayList<Review> newReviewList = new ArrayList<>();
-		System.out.println(reviewList.get(0));
+
+		if (!reviewList.isEmpty()) {
+			for(Review r : reviewList) {
+				ArrayList<Attachment> reviewAtList = restDao.selectReviewAttachmentList(sqlSession, r.getReviewNo());
+				r.setReviewAtList(reviewAtList);
+				newReviewList.add(r);
+			}
+		}
+		sqlSession.close();
+		return newReviewList;
+	}
+	
+	@Override
+	public ArrayList<Review> selectReviewList(int restNo, PageInfo pi) {
+		SqlSession sqlSession = Template.getSqlSession();
+		ArrayList<Review> reviewList = restDao.selectReviewList(sqlSession, restNo);
+		ArrayList<Review> newReviewList = new ArrayList<>();
+
 		if (!reviewList.isEmpty()) {
 			for(Review r : reviewList) {
 				ArrayList<Attachment> reviewAtList = restDao.selectReviewAttachmentList(sqlSession, r.getReviewNo());
@@ -213,7 +244,51 @@ public class RestServiceImpl implements RestService{
 		return list;
 	}
 
+	// 가게 리뷰 insert
+	public int insertReview(Review r, ArrayList<Attachment> list) {
+		SqlSession sqlSession = Template.getSqlSession();
+		// 리뷰 insert
+		int result1 = restDao.insertReview(sqlSession, r);
+		
+		// 리뷰 사진 insert
+		int result2 = restDao.insertAttachmentList(sqlSession, list);
 
+		// 가게 평점 update
+		// 리뷰 평점 횟수
+		int restNo = Integer.parseInt(r.getRestNo());
+		
+		ArrayList<Integer> ratingList = new RestServiceImpl().selectRatingCount(restNo);
+		
+		// 각 평점 곱하기 평점 별 횟수 나누기 전체 횟수
+		// 각 평점 곱하기 평점 별 횟수
+		double totalRating = 0;
+		for (int i = 1; i <= ratingList.size(); i++) {
+			totalRating += i * ratingList.get(i - 1);
+		}
+		
+		// 전체 횟수
+		int count = 0;
+		for (int i = 1; i <= ratingList.size(); i++) {
+			count += ratingList.get(i - 1);
+		}
+		
+		// 소수점 첫째 자리까지 반올림
+		String restGrade = String.valueOf(Math.round(totalRating / count));
+
+		Restaurant rest = restDao.selectRest(sqlSession, restNo);
+		rest.setRestGrade(restGrade);
+
+		int result3 = restDao.updateRestGrade(sqlSession, rest);
+
+		if(result1 * result2 * result3 == 1) {
+			sqlSession.commit();
+		} else {
+			sqlSession.rollback();
+		}
+		
+		sqlSession.close();
+		return result1 * result2 * result3;
+	}
 	
 
 //	@Override

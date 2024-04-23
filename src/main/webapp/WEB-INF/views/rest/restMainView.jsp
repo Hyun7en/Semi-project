@@ -48,10 +48,20 @@
                             <!-- 평점 데이터 출력 -->
                             <div>${rest.restGrade }</div>
                         </div>
-
-                        <div class="rest-record" id="rest-dibs" onclick="selectDibs()">
+                        
+                        <c:choose>
+                            <c:when test="${not empty loginUser}">
+                                <div class="rest-record" id="rest-dibs" onclick="selectDibs()">
                             
-                        </div>
+                                </div>
+                            </c:when>
+                            <c:otherwise>
+                                <div class="rest-record" id="rest-dibs">
+                            
+                                </div>
+                            </c:otherwise>
+                        </c:choose>
+                        
                     </div>
                 </div>
                 <div id="rest-category">
@@ -98,7 +108,7 @@
                         <p>${rest.restOperDate}</p>
                     </div>
 
-                    <button type="button" id="regist-review" onclick="location.href = '${pageContext.request.contextPath}/enrollReviewForm.re'">리뷰 작성</button>
+                    <button type="button" id="regist-review" onclick="location.href = '${pageContext.request.contextPath}/enrollReviewForm.re?rno=${rest.restNo}'">리뷰 작성</button>
                 </div>
             </div>
             <div id="rest-detail-page">
@@ -224,7 +234,7 @@
                                                         <div id="review-content-image">`
 
                                                 for (let reviewAt of reviewList[num].reviewAtList) {
-                                                    str += `<img src="${pageContext.request.contextPath}/`+reviewAt.filePath+`/`+reviewAt.changeName+`.jpg" alt="">`
+                                                    str += `<img src="${pageContext.request.contextPath}/`+reviewAt.filePath+`/`+reviewAt.changeName+`" alt="">`
                                                 }
                                                 str += `</div>
                                                         <p>`+reviewList[num].reviewContent+`</p>
@@ -232,7 +242,7 @@
                                                 </div>`
                                                 
                                                 if((num == 1) && (reviewList.length > 2)){
-                                                    str += `<div class="more-content" onclick="location.href = '${pageContext.request.contextPath}/review.re'">더보기</div>`
+                                                    str += `<div class="more-content" onclick="location.href = '${pageContext.request.contextPath}/review.re?rno=${rest.restNo}&pno=1'">더보기</div>`
                                                     break;
                                                 }
                                             }
@@ -276,7 +286,7 @@
                         str += `<div id="rest-image-content">
                                     <div>`
                                         for(let img of imgList){
-                                            str += `<img src="${pageContext.request.contextPath}/`+img.filePath+`/`+img.changeName+`.jpg" alt="">`
+                                            str += `<img src="${pageContext.request.contextPath}/`+img.filePath+`/`+img.changeName+`" alt="">`
                                         }
                                     str += `</div>
                                 </div>`
@@ -296,33 +306,64 @@
                     ajaxGetItemList("${pageContext.request.contextPath}/dibsCount.re", 
                                     {restNo : "${rest.restNo}",
                                     userNo : "${loginUser.userNo}"}, 
-                                    function(map){dibsStatusDraw(map)});
+                                    function(map){dibsFirstStatusDraw(map)});
                                     // "" 안 쓰니까 아예 null도 아니고 없는 걸로 인식해서 넣어줌
                 };
+
+                function dibsFirstStatusDraw(map){
+                    const userDibs = map.userDibs;
+                    const dibsCount = map.dibsCount;
+                    console.log(userDibs);
+                    console.log(dibsCount);
+                    // 왜 restNo도 같이 들어오지?
+
+                    // 로그인 되어 있는 경우
+                    if(${not empty loginUser}){
+                        // const dibs = document.createElement('#rest-dibs');
+                        if(userDibs == null){
+                            // > 찜 X -> 찜 O
+                            let str = `<img src="${pageContext.request.contextPath}/resources/file/common_img/찜_선택전.png" alt="">
+                                        <div>`+dibsCount.likeNo+`</div>`;
+                            document.getElementById("rest-dibs").innerHTML = str;
+                        } else {
+                            // > 찜 O -> 찜 X
+                            let str = `<img src="${pageContext.request.contextPath}/resources/file/common_img/찜_선택후.png" alt="">
+                                        <div>`+dibsCount.likeNo+`</div>`;
+                            document.getElementById("rest-dibs").innerHTML = str;
+                        }
+                    } else {
+                        // 로그인 되어 있지 않은 경우
+                        let str = `<img src="${pageContext.request.contextPath}/resources/file/common_img/찜_선택전.png" alt="">
+                                        <div>`+dibsCount.likeNo+`</div>`;
+                        document.getElementById("rest-dibs").innerHTML = str;
+                    }
+                }
 
                 function dibsStatusDraw(map){
                     const userDibs = map.userDibs;
                     const dibsCount = map.dibsCount;
                     console.log(userDibs);
                     console.log(dibsCount);
+                    // 왜 restNo도 같이 들어오지?
+
                     // 로그인 되어 있는 경우
                     if(${not empty loginUser}){
                         // const dibs = document.createElement('#rest-dibs');
-                        if(userDibs == null){
-                            // > 찜 하지 않은 경우
+                        if(userDibs != null){
+                            // > 찜 X -> 찜 O
                             let str = `<img src="${pageContext.request.contextPath}/resources/file/common_img/찜_선택전.png" alt="">
-                                        <div>`+dibsCount.innerText+`</div>`;
+                                        <div>`+dibsCount.likeNo+`</div>`;
                             document.getElementById("rest-dibs").innerHTML = str;
                         } else {
-                            // > 찜 한 경우
+                            // > 찜 O -> 찜 X
                             let str = `<img src="${pageContext.request.contextPath}/resources/file/common_img/찜_선택후.png" alt="">
-                                        <div>`+dibsCount.innerText+`</div>`;
+                                        <div>`+dibsCount.likeNo+`</div>`;
                             document.getElementById("rest-dibs").innerHTML = str;
                         }
                     } else {
                         // 로그인 되어 있지 않은 경우
                         let str = `<img src="${pageContext.request.contextPath}/resources/file/common_img/찜_선택전.png" alt="">
-                                        <div>`+dibsCount+`</div>`;
+                                        <div>`+dibsCount.likeNo+`</div>`;
                         document.getElementById("rest-dibs").innerHTML = str;
                     }
                 }

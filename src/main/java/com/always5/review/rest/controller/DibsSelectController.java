@@ -40,12 +40,11 @@ public class DibsSelectController extends HttpServlet {
 		Dibs userDibs = new Dibs(userNo, restNo);
 		
 		// 가져와서 카운트 업데이트 하는 것까지 한 번에 서비스로 묶어서 트랜잭션 되도록 + 커밋 롤백 해줘야 함
-		String dibsCount = new RestServiceImpl().updateDibs(userDibs);
-		System.out.println(dibsCount);
-//		System.out.println(dibsCount);
-		HashMap map = new HashMap<>();
-		map.put("userDibs", userDibs);
-		map.put("dibsCount", dibsCount);
+		HashMap map = new RestServiceImpl().updateDibs(userDibs);
+
+//		HashMap map = new HashMap<>();
+//		map.put("userDibs", userDibs);
+//		map.put("dibsCount", dibsCount);
 		response.setContentType("application/json; charset=utf-8");
 		new Gson().toJson(map, response.getWriter());
 		

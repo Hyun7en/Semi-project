@@ -78,7 +78,7 @@ public class RestMainViewController extends HttpServlet {
 //			Dibs dibsInfo = new Dibs(String.valueOf(u.getUserNo()), String.valueOf(restNo));
 //			userDibs = rService.selectDibsForUserNo(dibsInfo);
 //		}
-		
+
 		User loginUser = new User();
 		loginUser.setUserNo(1);
 		loginUser.setUserId("ADMIN01");
@@ -94,6 +94,8 @@ public class RestMainViewController extends HttpServlet {
 //			Dibs dibsInfo = new Dibs(String.valueOf(loginUser.getUserNo()), String.valueOf(restNo));
 //			userDibs = rService.selectDibsForUserNo(dibsInfo);
 //		} 
+		
+//		User loginUser = null;
 		
 		request.setAttribute("contextPath", request.getContextPath());
 		request.setAttribute("rest", rest);
