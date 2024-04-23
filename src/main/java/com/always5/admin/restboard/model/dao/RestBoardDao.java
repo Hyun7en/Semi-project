@@ -11,6 +11,7 @@ import com.always5.review.rest.model.vo.Restaurant;
 
 public class RestBoardDao {
 	
+	//레스토랑 리스트 게시판 
 	public ArrayList<Restaurant> selectList(SqlSession sqlSession, PageInfo pi){
 		
 		int offset = (pi.getCurrentPage() - 1) * pi.getBoardLimit();

@@ -1,15 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="com.always5.common.vo.PageInfo, java.util.ArrayList, com.always5.review.rest.model.vo.Restaurant" %>    
-<%
-	PageInfo pi = (PageInfo)request.getAttribute("pi");
-	ArrayList<Restaurant> list = (ArrayList<Restaurant>)request.getAttribute("list");
-	
-	int currentPage = pi.getCurrentPage();
-	int startPage = pi.getStartPage();
-	int endPage = pi.getEndPage();
-	int maxPage = pi.getMaxPage();
-%>    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+  
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,11 +38,11 @@
 	                <c:forEach var="r" items="${list}">
 	            	<!-- list객체를 r에 담아서 tr을 반복해서 만들어줌 -->
 	                <!-- tr 클릭 시 가게 수정 페이지 요청(등록 페이지에 내용 담아 반환) -->
-		                <tr onclick="location.href = 'restdetaillist.ad?rno=${b.restNo}'">
+		                <tr onclick="location.href = 'restenroll.ad?rno=${r.restNo}'">
 		                    <td>${r.restNo }</td>
 		                    <td>${r.restName }</td>
 		                    <!-- <td>admin</td> -->
-		                    <td>${r.restEnrollDate }</td>
+		                    <td>${r.restModifyDate }</td>
 		                </tr>
 		                <!-- 
 		                <tr>
@@ -65,22 +57,34 @@
             </table>
             
             <div class="paging-area" align="center">
-                <!-- for문으로 수정 필요 -->
-                <button onclick="">&lt;</button>
-                <button onclick="">1</button>
-                <button onclick="">2</button>
-                <button onclick="">3</button>
-                <button onclick="">4</button>
-                <button onclick="">5</button>
-                <button onclick="">6</button>
-                <button onclick="">7</button>
-                <button onclick="">8</button>
-                <button onclick="">9</button>
-                <button onclick="">10</button>
-                <button onclick="">&gt;</button>
+                <c:if test="${pi.currentPage ne 1}">
+	        		<button onclick="">
+	        			<a href="adrest.li?cpage=${pi.currentPage - 1}">&lt;</a>
+	        		</button>	
+	        </c:if>
+	        
+	        <c:forEach var="i" begin="${pi.startPage }" end="${pi.endPage }">
+	        	<c:choose>
+		        	<c:when test="${empty condition }">
+		        		<button onclick="">
+		        			<a href="adrest.li?cpage=${i}">${i}</a>
+		        		</button>	
+		        	</c:when>
+		        	<c:otherwise>
+		        		<a href="search.bo?cpage=${i}&condition=${condition}&keyword=${keyword}">${i}</a>
+		        	</c:otherwise>
+	        	</c:choose>
+	        </c:forEach>
+	        
+	        <c:if test="${pi.currentPage ne pi.maxPage}">
+	        	<button onclick="">	
+	        		<a href="adrest.li?cpage=${pi.currentPage + 1}">&gt;</a>
+	        	</button>
+	        </c:if>
+                
 
                 <!-- 등록 페이지 요청 -->
-                <button id="regist-store" onclick="adminRestListView()">가게 등록</button>
+                <button id="regist-store" onclick="location.href='restenroll.ad'">가게 등록</button>
             </div>
             <script>
                 function adminRestListView(){

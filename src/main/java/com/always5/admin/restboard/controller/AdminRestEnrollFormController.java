@@ -31,11 +31,7 @@ public class AdminRestEnrollFormController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ArrayList<Restaurant> list = new AdminRestServiceImpl().selectRestList();
-		
-		//응답뷰 요청
-		request.setAttribute("categorys", list);
-		request.getRequestDispatcher("views/board/boardEnrollForm.jsp").forward(request, response);
+		request.getRequestDispatcher("WEB-INF/views/admin/adminRestEnrollForm.jsp").forward(request, response);
 	}
 
 	/**

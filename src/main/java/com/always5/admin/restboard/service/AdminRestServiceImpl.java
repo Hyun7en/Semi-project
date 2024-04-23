@@ -1,8 +1,9 @@
 package com.always5.admin.restboard.service;
 
+import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.HashMap;
-
+import static com.always5.common.JDBCTemplate.getConnection;
 import org.apache.ibatis.session.SqlSession;
 
 import com.always5.admin.restboard.model.dao.RestBoardDao;
@@ -36,7 +37,12 @@ public class AdminRestServiceImpl implements AdminRestService{
 	}
 
 	public ArrayList<Restaurant> selectRestList() {
+		Connection conn = getConnection();
 		
+		ArrayList<Restaurant> list = new RestBoardDao().selectRestList(conn);
+		close(conn);
+		
+		return list;
 	}
 
 }

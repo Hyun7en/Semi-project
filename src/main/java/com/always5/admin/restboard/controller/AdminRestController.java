@@ -37,7 +37,7 @@ public class AdminRestController extends HttpServlet {
 		int listCount = new AdminRestServiceImpl().selectRestListCount(); //현재 총 게시글 수 
 		int currentPage = Integer.parseInt(request.getParameter("cpage"));
 		
-		PageInfo pi = Pagination.getPageInfo(listCount, currentPage, 10, 5);
+		PageInfo pi = Pagination.getPageInfo(listCount, currentPage, 5, 5);
 		
 		ArrayList<Restaurant> list = new AdminRestServiceImpl().selectList(pi);
 		
