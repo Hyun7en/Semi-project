@@ -1,20 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="../../resources/css/admin_css/style.css">
-<link rel="stylesheet" href="../../resources/css/admin_css/adminView.css">
-<!-- <link rel="stylesheet" href="../../resources/css/admin_css/adminNoticeRegistForm.css"> -->
+<!-- <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/admin_css/style.css"> -->
+<!-- <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/admin_css/adminView.css"> -->
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/admin_css/adminCsListView.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
+</head>
 <body>
     <div id="wrap">
         <%@ include file="adminHeader.jsp"%>
         <div class="outer" align="center">
             <br>
-            <h1 align="center">게시판</h1>
+            <h1 align="center">고객센터 게시판</h1>
             <br>
     
             <div id="search-area">
@@ -22,7 +25,12 @@
                     <input type="hidden" name="cpage" value="1">
                     <select name="condition">
                         <option value="writer">작성자</option>
-                        <option value="title">제목</option>
+                        <option value="title">제</option>
+                        <option  value="content">내용</option>
+                        <option  value="content">내용</option>
+                        <option  value="content">내용</option>
+                        <option  value="content">내용</option>
+                        <option  value="content">내용</option>
                         <option  value="content">내용</option>
                     </select>
                     <input type="text" name="keyword" value="${keyword }">
@@ -43,7 +51,8 @@
                     <tr>
                         <th>글번호</th>
                         <th width="400">제목</th>
-                        <th>작성관리자</th>
+                        <th>작성자</th>
+                        <th>조회수</th>
                         <th>작성일</th>
                     </tr>
                 </thead>

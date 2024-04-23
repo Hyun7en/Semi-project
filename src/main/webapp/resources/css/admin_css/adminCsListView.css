@@ -1,0 +1,15 @@
+@charset "UTF-8";   
+
+#list-area{
+    border: 1px solid white;
+    text-align: center;
+}
+
+.outer a{
+    color: white;
+    text-decoration: none;
+}
+
+#search-area{
+    margin-bottom: 24px;
+}
