@@ -114,6 +114,7 @@
                     <script>                    
                     $(".korean").click(function(){
                         $.ajax({
+                        	type : "POST",
                             url: "korean.sc",
                             data : {
                             	rpage: 1
@@ -135,7 +136,7 @@
 		                                        `<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
 		                                        `<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
 		                                        `<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
-	                                        `</div>`
+	                                        `</div>` +
                                       `</div>`;
                                                                    
                                 }

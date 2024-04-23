@@ -38,8 +38,4 @@ public class UserLoginServletController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}	
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a

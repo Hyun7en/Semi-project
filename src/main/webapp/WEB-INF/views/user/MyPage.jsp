@@ -40,33 +40,21 @@
 				<div class="Mypage-username-box">
 					<div class="profile-username">${User.userName}</div>
 					<div class="profile-username-checkbox">
-<<<<<<< HEAD
 						<div class="profile-username-checkbox-title"><a href="/updatename.ui">수정</a></div>
-=======
-						<button class="profile-username-checkbox-title" onclick="openUpdateName()">수정</button>
->>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
 					</div>
 				</div>
 
 				<div class="Mypage-userid-box">
 					<div class="profile-userid">${User.userId}</div>
 					<div class="profile-userid-checkbox">
-<<<<<<< HEAD
 						<div class="profile-userid-checkbox-title"><a href="/updateid.ui">수정</a></div>
-=======
-						<button class="profile-userid-checkbox-title" onclick="openUpdateId()">수정</button>
->>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
 					</div>
 				</div>
 
 				<div class="Mypage-userpwd-box">
 					<div class="profile-userpwd">${User.userPwd}</div>
 					<div class="profile-userpwd-checkbox">
-<<<<<<< HEAD
 						<div class="profile-userpwd-checkbox-title"><a href="/updatepwd.ui">수정</a></div>
-=======
-						<button class="profile-userpwd-checkbox-title" onclick="openUpdatePwd()">수정</button>
->>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
 					</div>
 				</div>
 			</div>

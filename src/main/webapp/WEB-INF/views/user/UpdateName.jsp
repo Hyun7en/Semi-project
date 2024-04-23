@@ -17,6 +17,7 @@
 <body>
 	<form action="updatename.ui" class="updateName-Container" method="POST">
 		<div class="updateName">
+
 			<!-- 닉네임 변경 로고 -->
 			<div class="updateName-logo-main">
 				<img class="logo-image"
