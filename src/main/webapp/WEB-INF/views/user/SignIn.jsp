@@ -58,8 +58,13 @@
 						placeholder="도로명 주소 입력">
 				</div>
 				<div class="gender-box">
+<<<<<<< HEAD
 					<input type="checkbox" name="userGender" class="gender-male-submit"
 						value="남자">남자 <input type="checkbox" name="userGender"
+=======
+					<input type="checkbox" name="userGender-male" id="usergender-male" class="gender-male-submit"
+						value="남자">남자 <input type="checkbox" id="userGender-female" name="userGender-female"
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
 						class="gender-female-submit" value="여자">여자
 				</div>
 

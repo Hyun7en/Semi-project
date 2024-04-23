@@ -37,11 +37,16 @@
                         <img class="crown" src="http://localhost:8001/always5/resources/file/user_img/MypageReview-img/crown.png" />
                     </div>
 
+<<<<<<< HEAD
                     <button class="review-box-deletebox">
                         <div class="review-delete">삭제</div>
                     </button>
                     <button class="review-box-mainpagebox">
                         <div class="review-box-mainpage">가게보기</div>
+=======
+                    <button class="review-box-mainpagebox">
+                        <div class="review-box-mainpage"><a href="">가게보기</a></div>
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
                     </button>
 
                     <img class="reviewbox-line" src="img/line-50.svg" />
@@ -73,10 +78,14 @@
                     </div>
 
                     <button class="review-box-mainpage02">
+<<<<<<< HEAD
                         <div class="review-box-mainpagebox02">가게보기</div>
                     </button>
                     <button class="review-box-deletebox02">
                         <div class="review-delete02">삭제</div>
+=======
+                        <div class="review-box-mainpagebox02"><a href="">가게보기</a></div>
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
                     </button>
 
                     <img class="reviewbox-line" src="img/line-50.svg" />
@@ -86,7 +95,11 @@
                     <img class="reviewbox-preview02" src="http://localhost:8001/always5/resources/file/user_img/MypageReview-img/쌀국수02.jpg" />
 
                     <div class="reviewbox-usermenu2">
+<<<<<<< HEAD
                         <div class="reviewbox-usermenu-title2">양지쌀국수 + 치킨텐더</div>
+=======
+                        <div class="reviewbox-usermenu-title2">양지쌀국수</div>
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
                     </div>
             </div>
         </div>
@@ -94,7 +107,11 @@
         <!-- 3번 리뷰 -->
         <div class="reviewbox03">
             <div class="reviewbox-wrapper">
+<<<<<<< HEAD
                 <div class="reviewbox-title">육회에빠진연어</div>
+=======
+                <div class="reviewbox-title"><a href="">육회에빠진연어</a></div>
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
                 <div class="reviewbox-grade">평점 5.0</div>
 
                 <div class="crown-rank">
@@ -105,12 +122,18 @@
                     <img class="crown" src="http://localhost:8001/always5/resources/file/user_img/MypageReview-img/crown.png" />
                 </div>
 
+<<<<<<< HEAD
                 <button class="review-box-mainpage03">
                     <div class="review-box-mainpagebox03">가게보기</div>
                 </button>
                 <button class="review-box-deletebox03">
                     <div class="review-delete03">삭제</div>
                 </button>
+=======
+                	<button class="review-box-mainpage03">
+                        <div class="review-box-mainpagebox02"><a href="">가게보기</a></div>
+                    </button>
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
 
                 <img class="reviewbox-line" src="img/line-50.svg" />
                 <div class="reviewbox-text">GOOD!!</div>
@@ -139,11 +162,17 @@
                     </div>
 
                     <button class="review-box-mainpage04">
+<<<<<<< HEAD
                         <div class="review-box-mainpagebox04">가게보기</div>
                     </button>
                     <button class="review-box-deletebox04">
                         <div class="review-delete04">삭제</div>
                     </button>
+=======
+                        <div class="review-box-mainpagebox04"><a href="">가게보기</a></div>
+                    </button>
+ 
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
 
                     <img class="reviewbox-line" src="img/line-50.svg" />
                     <div class="reviewbox-text">냠냠 잘먹었습니다</div>
@@ -172,11 +201,16 @@
                         </div>
 
                         <button class="review-box-mainpage05">
+<<<<<<< HEAD
                             <div class="review-box-mainpagebox05">가게보기</div>
                         </button>
                         <button class="review-box-deletebox05">
                             <div class="review-delete05">삭제</div>
                         </button>
+=======
+                        	<div class="review-box-mainpagebox04"><a href="">가게보기</a></div>
+                    	</button>
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
 
                         <img class="reviewbox-line" src="img/line-50.svg" />
                         <div class="reviewbox-text">식을까봐 허겁지겁 멋었네요</div>
@@ -184,7 +218,11 @@
                         <img class="reviewbox-preview01" src="http://localhost:8001/always5/resources/file/user_img/MypageReview-img/갈비02.jpg" />
 
                         <div class="reviewbox-usermenu5">
+<<<<<<< HEAD
                             <div class="reviewbox-usermenu-title5">막창 소금구이(260g)</div>
+=======
+                            <div class="reviewbox-usermenu-title5">제주대왕양념왕갈비</div>
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
                         </div>
 
                 </div>

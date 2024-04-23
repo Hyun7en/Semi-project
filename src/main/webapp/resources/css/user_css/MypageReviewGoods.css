@@ -49,28 +49,43 @@ input:focus {
 }
 
 /*배경*/
+<<<<<<< HEAD
 .MypageReview-Container{
+=======
+.MypageReviewGoods-Container{
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #fbfaf6;
   width: calc(100% - 48px);
   height: calc(100% - 48px);
+<<<<<<< HEAD
   margin: 24px;
+=======
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   box-sizing: border-box;
 
   height: auto;
 }
   
 /* 작성한 리뷰 */
+<<<<<<< HEAD
 .MypageReview .MypageReview-title-box {
+=======
+.MypageReviewGoods .MypageReviewGoods-title-box {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   display: flex;
 
   margin-top: 30px;
   margin-bottom: 30px;
 }
 
+<<<<<<< HEAD
 .MypageReview .MypageReview-Name {
+=======
+.MypageReviewGoods .MypageReviewGoods-Name {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   font-weight: 700;
   color: #000000;
   font-size: 30px;
@@ -81,7 +96,11 @@ input:focus {
   width: 100px;
 }
 
+<<<<<<< HEAD
 .MypageReview .MypageReview-Name2 {
+=======
+.MypageReviewGoods .MypageReviewGoods-Name2 {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
 
   font-weight: 700;
   color: #000000;
@@ -95,7 +114,11 @@ input:focus {
 }
 
 /*1번 박스*/
+<<<<<<< HEAD
 .MypageReview .reviewbox01{
+=======
+.MypageReviewGoods .reviewbox01{
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   border: 1px solid rgb(210, 206, 206);
   width: 754px;
   height: 452px;
@@ -107,11 +130,19 @@ input:focus {
 }
 
 
+<<<<<<< HEAD
 .MypageReview .reviewbox-wrapper {
   margin: 40px;
 }
 
 .MypageReview .reviewbox-title {
+=======
+.MypageReviewGoods .reviewbox-wrapper {
+  margin: 40px;
+}
+
+.MypageReviewGoods .reviewbox-title {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   font-weight: 700;
   color: #000000;
   font-size: 20px;
@@ -122,7 +153,11 @@ input:focus {
   margin-bottom: 10px;
 }
 
+<<<<<<< HEAD
 .MypageReview .reviewbox-grade {
+=======
+.MypageReviewGoods .reviewbox-grade {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   float: left;
   font-weight: 500;
   color: #787b7d;
@@ -133,16 +168,28 @@ input:focus {
   padding-right: 15px;
 }
 
+<<<<<<< HEAD
 .MypageReview .crown-rank {
   width: 250px;
 }
 
 .MypageReview .crown {
+=======
+.MypageReviewGoods .crown-rank {
+  width: 250px;
+}
+
+.MypageReviewGoods .crown {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   float: left;
   width: 27px;
 }
 
+<<<<<<< HEAD
 .MypageReview .review-box-deletebox {
+=======
+.MypageReviewGoods .review-box-deletebox {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   border: 1px solid #b1a8a8;
   width: 50px;
   height: auto;
@@ -154,7 +201,11 @@ input:focus {
   padding-bottom: 3px;
 }
 
+<<<<<<< HEAD
 .MypageReview .review-delete {
+=======
+.MypageReviewGoods .review-delete {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   font-weight: 700;
   color: #000000;
   font-size: 12px;
@@ -162,7 +213,11 @@ input:focus {
   line-height: normal;
 }
 
+<<<<<<< HEAD
 .MypageReview .review-box-mainpagebox {
+=======
+.MypageReviewGoods .review-box-mainpagebox {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   float: left;
   border: 1px solid #b1a8a8;
   width: 60px;
@@ -170,10 +225,17 @@ input:focus {
   background-color: #f7f7f7;
   border-radius: 30px;
 
+<<<<<<< HEAD
   margin-left: 330px;
 }
 
 .MypageReview .review-box-mainpage {
+=======
+  margin-left: 400px;
+}
+
+.MypageReviewGoods .review-box-mainpage {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   font-weight: 700;
   color: #000000;
   font-size: 12px;
@@ -183,7 +245,11 @@ input:focus {
   padding-bottom: 3px;
 }
 
+<<<<<<< HEAD
 .MypageReview .reviewbox-line {
+=======
+.MypageReviewGoods .reviewbox-line {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   width: 658px;
   height: 1px;
   object-fit: cover;
@@ -192,7 +258,11 @@ input:focus {
   margin-bottom: 10px;
 }
 
+<<<<<<< HEAD
 .MypageReview .reviewbox-text {
+=======
+.MypageReviewGoods .reviewbox-text {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   font-weight: 700;
   color: #000000;
   font-size: 20px;
@@ -203,7 +273,11 @@ input:focus {
   margin-bottom: 20px;
 }
 
+<<<<<<< HEAD
 .MypageReview .reviewbox-preview01 {
+=======
+.MypageReviewGoods .reviewbox-preview01 {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   border: 1px solid #b1a8a8;
   width: 202px;
   height: 147px;
@@ -212,7 +286,11 @@ input:focus {
   
 }
 
+<<<<<<< HEAD
 .MypageReview .reviewbox-preview02 {
+=======
+.MypageReviewGoods .reviewbox-preview02 {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   border: 1px solid #b1a8a8;
   width: 202px;
   height: 147px;
@@ -222,7 +300,11 @@ input:focus {
   margin-right: 25px;
 }
 
+<<<<<<< HEAD
 .MypageReview .reviewbox-preview03 {
+=======
+.MypageReviewGoods .reviewbox-preview03 {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   border: 1px solid #b1a8a8;
   width: 202px;
   height: 147px;
@@ -230,7 +312,11 @@ input:focus {
   border-radius:20px;
 }
 
+<<<<<<< HEAD
 .MypageReview .reviewbox-usermenu {
+=======
+.MypageReviewGoods .reviewbox-usermenu {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   display: flex;
   justify-content: center;
   align-items: center;
@@ -243,12 +329,21 @@ input:focus {
   margin-top: 15px;
 }
 
+<<<<<<< HEAD
 .MypageReview .reviewbox-usermenu-title {
   width: 100px;
 }
   
 /*2번 박스*/
 .MypageReview .reviewbox02{
+=======
+.MypageReviewGoods .reviewbox-usermenu-title {
+  width: 125px;
+}
+  
+/*2번 박스*/
+.MypageReviewGoods .reviewbox02{
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   border: 1px solid rgb(210, 206, 206);
   width: 754px;
   height: 452px;
@@ -257,6 +352,239 @@ input:focus {
   border-radius: 30px;
 
   margin-bottom: 60px;
+}
+
+
+<<<<<<< HEAD
+.MypageReview .reviewbox-wrapper {
+  margin: 40px;
+}
+
+.MypageReview .reviewbox-title {
+=======
+.MypageReviewGoods .reviewbox-wrapper {
+  margin: 40px;
+}
+
+.MypageReviewGoods .reviewbox-title {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
+  font-weight: 700;
+  color: #000000;
+  font-size: 20px;
+  white-space: nowrap;
+  letter-spacing: 0;
+  line-height: normal;
+
+  margin-bottom: 10px;
+}
+
+<<<<<<< HEAD
+.MypageReview .reviewbox-grade {
+=======
+.MypageReviewGoods .reviewbox-grade {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
+  float: left;
+  font-weight: 500;
+  color: #787b7d;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: normal;
+
+  padding-right: 15px;
+}
+
+<<<<<<< HEAD
+.MypageReview .crown-rank {
+  width: 250px;
+}
+
+.MypageReview .crown {
+=======
+.MypageReviewGoods .crown-rank {
+  width: 250px;
+}
+
+.MypageReviewGoods .crown {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
+  float: left;
+  width: 27px;
+}
+
+<<<<<<< HEAD
+.MypageReview .review-box-deletebox {
+=======
+.MypageReviewGoods .review-box-deletebox02 {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
+  border: 1px solid #b1a8a8;
+  width: 50px;
+  height: auto;
+  background-color: #f7f7f7;
+  border-radius: 30px;
+
+  margin-left: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+<<<<<<< HEAD
+.MypageReview .review-delete {
+=======
+.MypageReviewGoods .review-delete02 {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
+  font-weight: 700;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+<<<<<<< HEAD
+.MypageReview .review-box-mainpagebox {
+  float: left;
+  border: 1px solid #b1a8a8;
+  width: 60px;
+=======
+.MypageReviewGoods .review-box-mainpagebox02 {
+  font-weight: 700;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: normal;
+
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.MypageReviewGoods .review-box-mainpage02 {
+  border: 1px solid #b1a8a8;
+  width: 50px;
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
+  height: auto;
+  background-color: #f7f7f7;
+  border-radius: 30px;
+
+<<<<<<< HEAD
+  margin-left: 330px;
+}
+
+.MypageReview .review-box-mainpage {
+  font-weight: 700;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: normal;
+  padding-top: 2px;
+  padding-bottom: 3px;
+}
+
+.MypageReview .reviewbox-line {
+=======
+  width: 60px;
+  margin-left: 430px;
+}
+
+.MypageReviewGoods .reviewbox-line {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
+  width: 658px;
+  height: 1px;
+  object-fit: cover;
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+<<<<<<< HEAD
+.MypageReview .reviewbox-text {
+=======
+.MypageReviewGoods .reviewbox-text {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
+  font-weight: 700;
+  color: #000000;
+  font-size: 20px;
+  white-space: nowrap;
+  letter-spacing: 0;
+  line-height: normal;
+
+  margin-bottom: 20px;
+}
+
+<<<<<<< HEAD
+.MypageReview .reviewbox-preview01 {
+=======
+.MypageReviewGoods .reviewbox-preview01 {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
+  border: 1px solid #b1a8a8;
+  width: 202px;
+  height: 147px;
+  object-fit: cover;
+  border-radius:20px;
+  
+}
+
+<<<<<<< HEAD
+.MypageReview .reviewbox-preview02 {
+=======
+.MypageReviewGoods .reviewbox-preview02 {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
+  border: 1px solid #b1a8a8;
+  width: 202px;
+  height: 147px;
+  object-fit: cover;
+  border-radius:20px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+<<<<<<< HEAD
+.MypageReview .reviewbox-preview03 {
+=======
+.MypageReviewGoods .reviewbox-preview03 {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
+  border: 1px solid #b1a8a8;
+  width: 202px;
+  height: 147px;
+  object-fit: cover;
+  border-radius:20px;
+}
+
+<<<<<<< HEAD
+.MypageReview .reviewbox-usermenu {
+=======
+.MypageReviewGoods .reviewbox-usermenu2 {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #b1a8a8;
+  width: 202px;
+  height: 35px;
+  background-color: #f2f2f2;
+  border-radius: 20px;
+
+  margin-top: 15px;
+}
+
+<<<<<<< HEAD
+.MypageReview .reviewbox-usermenu-title {
+=======
+.MypageReviewGoods .reviewbox-usermenu-title2 {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
+  width: 100px;
+}
+
+/*3번 박스*/
+<<<<<<< HEAD
+.MypageReview .reviewbox03{
+=======
+.MypageReviewGoods .reviewbox03{
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
+  border: 1px solid rgb(210, 206, 206);
+  width: 754px;
+  height: 452px;
+  background-color: #fffefd;
+  box-shadow: 5px 10px 10px 5px #0000000d;
+  border-radius: 30px;
+<<<<<<< HEAD
 }
 
 
@@ -408,167 +736,27 @@ input:focus {
   background-color: #fffefd;
   box-shadow: 5px 10px 10px 5px #0000000d;
   border-radius: 30px;
-}
 
-
-.MypageReview .reviewbox-wrapper {
-  margin: 40px;
-}
-
-.MypageReview .reviewbox-title {
-  font-weight: 700;
-  color: #000000;
-  font-size: 20px;
-  white-space: nowrap;
-  letter-spacing: 0;
-  line-height: normal;
-
-  margin-bottom: 10px;
-}
-
-.MypageReview .reviewbox-grade {
-  float: left;
-  font-weight: 500;
-  color: #787b7d;
-  font-size: 15px;
-  letter-spacing: 0;
-  line-height: normal;
-
-  padding-right: 15px;
-}
-
-.MypageReview .crown-rank {
-  width: 250px;
-}
-
-.MypageReview .crown {
-  float: left;
-  width: 27px;
-}
-
-.MypageReview .review-box-deletebox {
-  border: 1px solid #b1a8a8;
-  width: 50px;
-  height: auto;
-  background-color: #f7f7f7;
-  border-radius: 30px;
-
-  margin-left: 10px;
-  padding-top: 3px;
-  padding-bottom: 3px;
-}
-
-.MypageReview .review-delete {
-  font-weight: 700;
-  color: #000000;
-  font-size: 12px;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.MypageReview .review-box-mainpagebox {
-  float: left;
-  border: 1px solid #b1a8a8;
-  width: 60px;
-  height: auto;
-  background-color: #f7f7f7;
-  border-radius: 30px;
-
-  margin-left: 330px;
-}
-
-.MypageReview .review-box-mainpage {
-  font-weight: 700;
-  color: #000000;
-  font-size: 12px;
-  letter-spacing: 0;
-  line-height: normal;
-  padding-top: 2px;
-  padding-bottom: 3px;
-}
-
-.MypageReview .reviewbox-line {
-  width: 658px;
-  height: 1px;
-  object-fit: cover;
-
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.MypageReview .reviewbox-text {
-  font-weight: 700;
-  color: #000000;
-  font-size: 20px;
-  white-space: nowrap;
-  letter-spacing: 0;
-  line-height: normal;
-
-  margin-bottom: 20px;
-}
-
-.MypageReview .reviewbox-preview01 {
-  border: 1px solid #b1a8a8;
-  width: 202px;
-  height: 147px;
-  object-fit: cover;
-  border-radius:20px;
+=======
   
-}
-
-.MypageReview .reviewbox-preview02 {
-  border: 1px solid #b1a8a8;
-  width: 202px;
-  height: 147px;
-  object-fit: cover;
-  border-radius:20px;
-  margin-left: 25px;
-  margin-right: 25px;
-}
-
-.MypageReview .reviewbox-preview03 {
-  border: 1px solid #b1a8a8;
-  width: 202px;
-  height: 147px;
-  object-fit: cover;
-  border-radius:20px;
-}
-
-.MypageReview .reviewbox-usermenu {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #b1a8a8;
-  width: 202px;
-  height: 35px;
-  background-color: #f2f2f2;
-  border-radius: 20px;
-
-  margin-top: 15px;
-}
-
-.MypageReview .reviewbox-usermenu-title {
-  width: 100px;
-}
-
-/*3번 박스*/
-.MypageReview .reviewbox03{
-  border: 1px solid rgb(210, 206, 206);
-  width: 754px;
-  height: 452px;
-  background-color: #fffefd;
-  box-shadow: 5px 10px 10px 5px #0000000d;
-  border-radius: 30px;
-
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   margin-bottom: 60px;
 }
 
 
+<<<<<<< HEAD
 .MypageReview .reviewbox-wrapper {
   margin: 40px;
 }
 
 .MypageReview .reviewbox-title {
+=======
+.MypageReviewGoods .reviewbox-wrapper {
+  margin: 40px;
+}
+
+.MypageReviewGoods .reviewbox-title {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   font-weight: 700;
   color: #000000;
   font-size: 20px;
@@ -579,7 +767,11 @@ input:focus {
   margin-bottom: 10px;
 }
 
+<<<<<<< HEAD
 .MypageReview .reviewbox-grade {
+=======
+.MypageReviewGoods .reviewbox-grade {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   float: left;
   font-weight: 500;
   color: #787b7d;
@@ -590,16 +782,28 @@ input:focus {
   padding-right: 15px;
 }
 
+<<<<<<< HEAD
 .MypageReview .crown-rank {
   width: 250px;
 }
 
 .MypageReview .crown {
+=======
+.MypageReviewGoods .crown-rank {
+  width: 250px;
+}
+
+.MypageReviewGoods .crown {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   float: left;
   width: 27px;
 }
 
+<<<<<<< HEAD
 .MypageReview .review-box-deletebox {
+=======
+.MypageReviewGoods .review-box-deletebox03 {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   border: 1px solid #b1a8a8;
   width: 50px;
   height: auto;
@@ -611,7 +815,11 @@ input:focus {
   padding-bottom: 3px;
 }
 
+<<<<<<< HEAD
 .MypageReview .review-delete {
+=======
+.MypageReviewGoods .review-delete03 {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   font-weight: 700;
   color: #000000;
   font-size: 12px;
@@ -619,14 +827,32 @@ input:focus {
   line-height: normal;
 }
 
+<<<<<<< HEAD
 .MypageReview .review-box-mainpagebox {
   float: left;
   border: 1px solid #b1a8a8;
   width: 60px;
+=======
+.MypageReviewGoods .review-box-mainpagebox03 {
+  font-weight: 700;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: normal;
+
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.MypageReviewGoods .review-box-mainpage03 {
+  border: 1px solid #b1a8a8;
+  width: 50px;
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   height: auto;
   background-color: #f7f7f7;
   border-radius: 30px;
 
+<<<<<<< HEAD
   margin-left: 330px;
 }
 
@@ -641,6 +867,13 @@ input:focus {
 }
 
 .MypageReview .reviewbox-line {
+=======
+  width: 60px;
+  margin-left: 400px;
+}
+
+.MypageReviewGoods .reviewbox-line {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   width: 658px;
   height: 1px;
   object-fit: cover;
@@ -649,7 +882,11 @@ input:focus {
   margin-bottom: 10px;
 }
 
+<<<<<<< HEAD
 .MypageReview .reviewbox-text {
+=======
+.MypageReviewGoods .reviewbox-text {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   font-weight: 700;
   color: #000000;
   font-size: 20px;
@@ -660,7 +897,11 @@ input:focus {
   margin-bottom: 20px;
 }
 
+<<<<<<< HEAD
 .MypageReview .reviewbox-preview01 {
+=======
+.MypageReviewGoods .reviewbox-preview01 {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   border: 1px solid #b1a8a8;
   width: 202px;
   height: 147px;
@@ -669,7 +910,11 @@ input:focus {
   
 }
 
+<<<<<<< HEAD
 .MypageReview .reviewbox-preview02 {
+=======
+.MypageReviewGoods .reviewbox-preview02 {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   border: 1px solid #b1a8a8;
   width: 202px;
   height: 147px;
@@ -679,7 +924,11 @@ input:focus {
   margin-right: 25px;
 }
 
+<<<<<<< HEAD
 .MypageReview .reviewbox-preview03 {
+=======
+.MypageReviewGoods .reviewbox-preview03 {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   border: 1px solid #b1a8a8;
   width: 202px;
   height: 147px;
@@ -687,7 +936,11 @@ input:focus {
   border-radius:20px;
 }
 
+<<<<<<< HEAD
 .MypageReview .reviewbox-usermenu {
+=======
+.MypageReviewGoods .reviewbox-usermenu3 {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   display: flex;
   justify-content: center;
   align-items: center;
@@ -700,28 +953,49 @@ input:focus {
   margin-top: 15px;
 }
 
+<<<<<<< HEAD
 .MypageReview .reviewbox-usermenu-title {
   width: 100px;
 }
 
 /*4번 박스*/
 .MypageReview .reviewbox04{
+=======
+.MypageReviewGoods .reviewbox-usermenu-title3 {
+  width: 150px;
+}
+
+/*4번 박스*/
+.MypageReviewGoods .reviewbox04{
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   border: 1px solid rgb(210, 206, 206);
   width: 754px;
   height: 452px;
   background-color: #fffefd;
   box-shadow: 5px 10px 10px 5px #0000000d;
   border-radius: 30px;
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   margin-bottom: 60px;
 }
 
 
+<<<<<<< HEAD
 .MypageReview .reviewbox-wrapper {
   margin: 40px;
 }
 
 .MypageReview .reviewbox-title {
+=======
+.MypageReviewGoods .reviewbox-wrapper {
+  margin: 40px;
+}
+
+.MypageReviewGoods .reviewbox-title {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   font-weight: 700;
   color: #000000;
   font-size: 20px;
@@ -732,7 +1006,11 @@ input:focus {
   margin-bottom: 10px;
 }
 
+<<<<<<< HEAD
 .MypageReview .reviewbox-grade {
+=======
+.MypageReviewGoods .reviewbox-grade {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   float: left;
   font-weight: 500;
   color: #787b7d;
@@ -743,16 +1021,28 @@ input:focus {
   padding-right: 15px;
 }
 
+<<<<<<< HEAD
 .MypageReview .crown-rank {
   width: 250px;
 }
 
 .MypageReview .crown {
+=======
+.MypageReviewGoods .crown-rank {
+  width: 250px;
+}
+
+.MypageReviewGoods .crown {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   float: left;
   width: 27px;
 }
 
+<<<<<<< HEAD
 .MypageReview .review-box-deletebox {
+=======
+.MypageReviewGoods .review-box-deletebox04 {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   border: 1px solid #b1a8a8;
   width: 50px;
   height: auto;
@@ -764,7 +1054,11 @@ input:focus {
   padding-bottom: 3px;
 }
 
+<<<<<<< HEAD
 .MypageReview .review-delete {
+=======
+.MypageReviewGoods .review-delete04 {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   font-weight: 700;
   color: #000000;
   font-size: 12px;
@@ -772,14 +1066,32 @@ input:focus {
   line-height: normal;
 }
 
+<<<<<<< HEAD
 .MypageReview .review-box-mainpagebox {
   float: left;
   border: 1px solid #b1a8a8;
   width: 60px;
+=======
+.MypageReviewGoods .review-box-mainpagebox04 {
+  font-weight: 700;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: normal;
+
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.MypageReviewGoods .review-box-mainpage04 {
+  border: 1px solid #b1a8a8;
+  width: 50px;
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   height: auto;
   background-color: #f7f7f7;
   border-radius: 30px;
 
+<<<<<<< HEAD
   margin-left: 330px;
 }
 
@@ -794,6 +1106,13 @@ input:focus {
 }
 
 .MypageReview .reviewbox-line {
+=======
+  width: 60px;
+  margin-left: 450px;
+}
+
+.MypageReviewGoods .reviewbox-line {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   width: 658px;
   height: 1px;
   object-fit: cover;
@@ -802,7 +1121,11 @@ input:focus {
   margin-bottom: 10px;
 }
 
+<<<<<<< HEAD
 .MypageReview .reviewbox-text {
+=======
+.MypageReviewGoods .reviewbox-text {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   font-weight: 700;
   color: #000000;
   font-size: 20px;
@@ -813,7 +1136,11 @@ input:focus {
   margin-bottom: 20px;
 }
 
+<<<<<<< HEAD
 .MypageReview .reviewbox-preview01 {
+=======
+.MypageReviewGoods .reviewbox-preview01 {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   border: 1px solid #b1a8a8;
   width: 202px;
   height: 147px;
@@ -822,7 +1149,11 @@ input:focus {
   
 }
 
+<<<<<<< HEAD
 .MypageReview .reviewbox-preview02 {
+=======
+.MypageReviewGoods .reviewbox-preview02 {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   border: 1px solid #b1a8a8;
   width: 202px;
   height: 147px;
@@ -832,7 +1163,11 @@ input:focus {
   margin-right: 25px;
 }
 
+<<<<<<< HEAD
 .MypageReview .reviewbox-preview03 {
+=======
+.MypageReviewGoods .reviewbox-preview03 {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   border: 1px solid #b1a8a8;
   width: 202px;
   height: 147px;
@@ -840,7 +1175,11 @@ input:focus {
   border-radius:20px;
 }
 
+<<<<<<< HEAD
 .MypageReview .reviewbox-usermenu {
+=======
+.MypageReviewGoods .reviewbox-usermenu4 {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   display: flex;
   justify-content: center;
   align-items: center;
@@ -853,6 +1192,7 @@ input:focus {
   margin-top: 15px;
 }
 
+<<<<<<< HEAD
 .MypageReview .reviewbox-usermenu-title {
   width: 100px;
 }
@@ -1010,6 +1350,14 @@ input:focus {
 
 /*5번 박스*/
 .MypageReview .reviewbox05{
+=======
+.MypageReviewGoods .reviewbox-usermenu-title4 {
+  width: 150px;
+}
+
+/*5번 박스*/
+.MypageReviewGoods .reviewbox05{
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   border: 1px solid rgb(210, 206, 206);
   width: 754px;
   height: 452px;
@@ -1021,11 +1369,19 @@ input:focus {
 }
 
 
+<<<<<<< HEAD
 .MypageReview .reviewbox-wrapper {
   margin: 40px;
 }
 
 .MypageReview .reviewbox-title {
+=======
+.MypageReviewGoods .reviewbox-wrapper {
+  margin: 40px;
+}
+
+.MypageReviewGoods .reviewbox-title {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   font-weight: 700;
   color: #000000;
   font-size: 20px;
@@ -1036,7 +1392,11 @@ input:focus {
   margin-bottom: 10px;
 }
 
+<<<<<<< HEAD
 .MypageReview .reviewbox-grade {
+=======
+.MypageReviewGoods .reviewbox-grade {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   float: left;
   font-weight: 500;
   color: #787b7d;
@@ -1047,16 +1407,28 @@ input:focus {
   padding-right: 15px;
 }
 
+<<<<<<< HEAD
 .MypageReview .crown-rank {
   width: 250px;
 }
 
 .MypageReview .crown {
+=======
+.MypageReviewGoods .crown-rank {
+  width: 250px;
+}
+
+.MypageReviewGoods .crown {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   float: left;
   width: 27px;
 }
 
+<<<<<<< HEAD
 .MypageReview .review-box-deletebox {
+=======
+.MypageReviewGoods .review-box-deletebox05 {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   border: 1px solid #b1a8a8;
   width: 50px;
   height: auto;
@@ -1068,7 +1440,11 @@ input:focus {
   padding-bottom: 3px;
 }
 
+<<<<<<< HEAD
 .MypageReview .review-delete {
+=======
+.MypageReviewGoods .review-delete05 {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   font-weight: 700;
   color: #000000;
   font-size: 12px;
@@ -1076,14 +1452,32 @@ input:focus {
   line-height: normal;
 }
 
+<<<<<<< HEAD
 .MypageReview .review-box-mainpagebox {
   float: left;
   border: 1px solid #b1a8a8;
   width: 60px;
+=======
+.MypageReviewGoods .review-box-mainpagebox05 {
+  font-weight: 700;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: normal;
+
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.MypageReviewGoods .review-box-mainpage05 {
+  border: 1px solid #b1a8a8;
+  width: 50px;
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   height: auto;
   background-color: #f7f7f7;
   border-radius: 30px;
 
+<<<<<<< HEAD
   margin-left: 330px;
 }
 
@@ -1098,6 +1492,13 @@ input:focus {
 }
 
 .MypageReview .reviewbox-line {
+=======
+  width: 60px;
+  margin-left: 470px;
+}
+
+.MypageReviewGoods .reviewbox-line {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   width: 658px;
   height: 1px;
   object-fit: cover;
@@ -1106,7 +1507,11 @@ input:focus {
   margin-bottom: 10px;
 }
 
+<<<<<<< HEAD
 .MypageReview .reviewbox-text {
+=======
+.MypageReviewGoods .reviewbox-text {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   font-weight: 700;
   color: #000000;
   font-size: 20px;
@@ -1117,7 +1522,11 @@ input:focus {
   margin-bottom: 20px;
 }
 
+<<<<<<< HEAD
 .MypageReview .reviewbox-preview01 {
+=======
+.MypageReviewGoods .reviewbox-preview01 {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   border: 1px solid #b1a8a8;
   width: 202px;
   height: 147px;
@@ -1126,7 +1535,11 @@ input:focus {
   
 }
 
+<<<<<<< HEAD
 .MypageReview .reviewbox-preview02 {
+=======
+.MypageReviewGoods .reviewbox-preview02 {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   border: 1px solid #b1a8a8;
   width: 202px;
   height: 147px;
@@ -1136,7 +1549,11 @@ input:focus {
   margin-right: 25px;
 }
 
+<<<<<<< HEAD
 .MypageReview .reviewbox-preview03 {
+=======
+.MypageReviewGoods .reviewbox-preview03 {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   border: 1px solid #b1a8a8;
   width: 202px;
   height: 147px;
@@ -1144,7 +1561,11 @@ input:focus {
   border-radius:20px;
 }
 
+<<<<<<< HEAD
 .MypageReview .reviewbox-usermenu {
+=======
+.MypageReviewGoods .reviewbox-usermenu5 {
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1157,6 +1578,11 @@ input:focus {
   margin-top: 15px;
 }
 
+<<<<<<< HEAD
 .MypageReview .reviewbox-usermenu-title {
   width: 100px;
+=======
+.MypageReviewGoods .reviewbox-usermenu-title5 {
+  width: 150px;
+>>>>>>> c062d2ea2351c21197dde62a21f941c3ed6cdc5a
 }
