@@ -70,7 +70,7 @@ input:focus {
 }
 
 .MypageGoods .MypageGoods-Name {
-  font-weight: 700;
+  font-weight: 500;
   color: #000000;
   font-size: 30px;
   white-space: nowrap;
@@ -82,7 +82,7 @@ input:focus {
 
 .MypageGoods .MypageGoods-Name2 {
 
-  font-weight: 700;
+  font-weight: 300;
   color: #000000;
   font-size: 25px;
   white-space: nowrap;
@@ -162,15 +162,14 @@ input:focus {
 }
 
 .MypageGoods .review-box-mainpagebox {
+  float: left;
   border: 1px solid #b1a8a8;
-  width: 80px;
+  width: 60px;
   height: auto;
   background-color: #f7f7f7;
   border-radius: 30px;
 
-  margin-left: 380px;
-  padding-top: 3px;
-  padding-bottom: 3px;
+  margin-left: 330px;
 }
 
 .MypageGoods .review-box-mainpage {
@@ -179,6 +178,8 @@ input:focus {
   font-size: 12px;
   letter-spacing: 0;
   line-height: normal;
+  padding-top: 2px;
+  padding-bottom: 3px;
 }
 
 .MypageGoods .reviewbox-line {
@@ -204,7 +205,7 @@ input:focus {
 .MypageGoods .reviewbox-preview01 {
   border: 1px solid #b1a8a8;
   width: 202px;
-  height: 147px;
+  height: 447px;
   object-fit: cover;
   border-radius:20px;
   
@@ -242,7 +243,7 @@ input:focus {
 }
 
 .MypageGoods .reviewbox-usermenu-title {
-  width: 125px;
+  width: 100px;
 }
   
 /*2번 박스*/
@@ -314,15 +315,14 @@ input:focus {
 }
 
 .MypageGoods .review-box-mainpagebox02 {
+  float: left;
   border: 1px solid #b1a8a8;
-  width: 80px;
+  width: 60px;
   height: auto;
   background-color: #f7f7f7;
   border-radius: 30px;
 
-  margin-left: 400px;
-  padding-top: 3px;
-  padding-bottom: 3px;
+  margin-left: 360px;
 }
 
 .MypageGoods .review-box-mainpage02 {
@@ -331,6 +331,8 @@ input:focus {
   font-size: 12px;
   letter-spacing: 0;
   line-height: normal;
+  padding-top: 2px;
+  padding-bottom: 3px;
 }
 
 .MypageGoods .reviewbox-line {
@@ -393,7 +395,7 @@ input:focus {
   margin-top: 15px;
 }
 
-.MypageGoods .reviewbox-usermenu-title2 {
+.MypageGoods .reviewbox-usermenu-title {
   width: 100px;
 }
 
@@ -405,7 +407,7 @@ input:focus {
   background-color: #fffefd;
   box-shadow: 5px 10px 10px 5px #0000000d;
   border-radius: 30px;
-  
+
   margin-bottom: 60px;
 }
 
@@ -445,16 +447,35 @@ input:focus {
   width: 27px;
 }
 
-.MypageGoods .review-box-mainpagebox03 {
+.MypageGoods .review-box-deletebox03 {
   border: 1px solid #b1a8a8;
-  width: 80px;
+  width: 50px;
   height: auto;
   background-color: #f7f7f7;
   border-radius: 30px;
 
-  margin-left: 380px;
+  margin-left: 10px;
   padding-top: 3px;
   padding-bottom: 3px;
+}
+
+.MypageGoods .review-delete03 {
+  font-weight: 700;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.MypageGoods .review-box-mainpagebox03 {
+  float: left;
+  border: 1px solid #b1a8a8;
+  width: 60px;
+  height: auto;
+  background-color: #f7f7f7;
+  border-radius: 30px;
+
+  margin-left: 340px;
 }
 
 .MypageGoods .review-box-mainpage03 {
@@ -463,6 +484,8 @@ input:focus {
   font-size: 12px;
   letter-spacing: 0;
   line-height: normal;
+  padding-top: 2px;
+  padding-bottom: 3px;
 }
 
 .MypageGoods .reviewbox-line {
@@ -526,7 +549,7 @@ input:focus {
 }
 
 .MypageGoods .reviewbox-usermenu-title3 {
-  width: 150px;
+  width: 110px;
 }
 
 /*4번 박스*/
@@ -537,7 +560,7 @@ input:focus {
   background-color: #fffefd;
   box-shadow: 5px 10px 10px 5px #0000000d;
   border-radius: 30px;
-  
+
   margin-bottom: 60px;
 }
 
@@ -598,15 +621,14 @@ input:focus {
 }
 
 .MypageGoods .review-box-mainpagebox04 {
+  float: left;
   border: 1px solid #b1a8a8;
-  width: 80px;
+  width: 60px;
   height: auto;
   background-color: #f7f7f7;
   border-radius: 30px;
 
-  margin-left: 440px;
-  padding-top: 3px;
-  padding-bottom: 3px;
+  margin-left: 390px;
 }
 
 .MypageGoods .review-box-mainpage04 {
@@ -615,6 +637,8 @@ input:focus {
   font-size: 12px;
   letter-spacing: 0;
   line-height: normal;
+  padding-top: 2px;
+  padding-bottom: 3px;
 }
 
 .MypageGoods .reviewbox-line {
@@ -678,7 +702,7 @@ input:focus {
 }
 
 .MypageGoods .reviewbox-usermenu-title4 {
-  width: 150px;
+  width: 110px;
 }
 
 /*5번 박스*/
@@ -750,15 +774,14 @@ input:focus {
 }
 
 .MypageGoods .review-box-mainpagebox05 {
+  float: left;
   border: 1px solid #b1a8a8;
-  width: 80px;
+  width: 60px;
   height: auto;
   background-color: #f7f7f7;
   border-radius: 30px;
 
-  margin-left: 380px;
-  padding-top: 3px;
-  padding-bottom: 3px;
+  margin-left: 340px;
 }
 
 .MypageGoods .review-box-mainpage05 {
@@ -767,6 +790,8 @@ input:focus {
   font-size: 12px;
   letter-spacing: 0;
   line-height: normal;
+  padding-top: 2px;
+  padding-bottom: 3px;
 }
 
 .MypageGoods .reviewbox-line {
@@ -792,7 +817,7 @@ input:focus {
 .MypageGoods .reviewbox-preview01 {
   border: 1px solid #b1a8a8;
   width: 202px;
-  height: 147px;
+  height: 247px;
   object-fit: cover;
   border-radius:20px;
   
@@ -801,7 +826,7 @@ input:focus {
 .MypageGoods .reviewbox-preview02 {
   border: 1px solid #b1a8a8;
   width: 202px;
-  height: 147px;
+  height: 247px;
   object-fit: cover;
   border-radius:20px;
   margin-left: 25px;
@@ -811,7 +836,7 @@ input:focus {
 .MypageGoods .reviewbox-preview03 {
   border: 1px solid #b1a8a8;
   width: 202px;
-  height: 147px;
+  height: 247px;
   object-fit: cover;
   border-radius:20px;
 }
@@ -830,5 +855,5 @@ input:focus {
 }
 
 .MypageGoods .reviewbox-usermenu-title5 {
-  width: 150px;
+  width: 120px;
 }

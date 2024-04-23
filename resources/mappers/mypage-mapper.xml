@@ -24,7 +24,7 @@
 		<result column="POINT" property="point" />
 	</resultMap>
 
-	<select id="MyPage" parameterType="Mypage" resultMap="MypageResultSet">
+	<select id="MyPage" parameterType="_int" resultMap="MypageResultSet">
 		SELECT USER_NO,
 				AUTHORITY,
 				USER_ID,
@@ -36,6 +36,9 @@
 				USER_PHONE,
 				USER_ADDRESS
 			FROM USER_INFO
+			WHERE USER_NO = #{userNo}
+			AND USER_STATUS = 'Y'
+			ORDER BY USER_NO DESC
 	</select>
 
 	<select id="MyPageReview" parameterType="Mypage" resultMap="MypageResultSet">

@@ -30,21 +30,14 @@ public class MyPageController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setContentType("text/html; charset=UTF-8");
 		
-		String authority = request.getParameter("authority");
-		String userId = request.getParameter("userId");
-		String userPwd = request.getParameter("userPwd");
-		String nickName = request.getParameter("nickName");
-		String userName = request.getParameter("userName");
-		String userPhone = request.getParameter("userPhone");
-		String userAddress = request.getParameter("userAddress");
-		String userGender = request.getParameter("userGender");
-		String userBirth = request.getParameter("userBirth");
+		Mypage m = new Mypage();
+		ArrayList<MypWage> list = MyPageServiceImpl.MyPage(m);
 		
-		Mypage m = new Mypage(authority, userId, userPwd, userName, nickName, userBirth, userGender, userPhone, userAddress);
+		request.setAttribute("list", list);
+		request.setAttribute("m", m);
 		
-		int result = new MyPageServiceImpl().MyPageGoods(m);
+		request.getRequestDispatcher("views/user/myPage.jsp").forward(request, response);
 	}
 
 	/**

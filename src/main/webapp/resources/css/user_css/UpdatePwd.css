@@ -177,7 +177,6 @@ input:focus {
 
 /* 주의사항 안내 */
 .updatePwd .service-preview {
-	text-align: center;
 	font-weight: 400;
 	color: #b0a4a4;
 	font-size: 15px;
