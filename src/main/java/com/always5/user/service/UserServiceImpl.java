@@ -4,6 +4,7 @@ import org.apache.ibatis.session.SqlSession;
 
 import com.always5.common.template.Template;
 import com.always5.user.model.dao.UserDao;
+import com.always5.user.model.vo.Mypage;
 import com.always5.user.model.vo.User;
 
 public class UserServiceImpl implements UserService{
@@ -102,11 +103,5 @@ public class UserServiceImpl implements UserService{
 		
 		sqlSession.close();
 		return loginUser;
-	}
-	
-	@Override
-	public User updateUser(User u) {
-
-		return null;
 	}
 }

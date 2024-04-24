@@ -21,7 +21,7 @@
 				
 			<!-- 상단 텍스트 -->
 			<div class="id-preview">
-				<div class="id-UserName">${User.userPwd}</div>
+				<div class="id-UserName">${User.nickName}</div>
 				<div class="id-UserName-text01">님의 회원정보 중</div>
 				<div class="id-UserName-text02">비밀번호를 수정하기 위해 인증절차가 필요합니다.</div>
 			</div>
@@ -33,7 +33,7 @@
 			<div class="email-preview">
 				<img class="mdi-email-icon"
 					src="${pageContext.request.contextPath}/resources/file/user_img/UpdatePwd-img/mdi-light-email.svg" />
-				<div class="user-email">${User.userId}</div>
+				<div class="user-email">${User.userEmail}</div>
 			</div>
 
 			<div class="input-email-box">

@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.always5.user.model.vo.Mypage;
+import com.always5.user.model.vo.User;
 import com.always5.user.service.MyPageServiceImpl;
+import com.always5.user.service.UserServiceImpl;
 
 /**
  * Servlet implementation class myPageController
@@ -32,12 +34,16 @@ public class MyPageController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		Mypage m = new Mypage();
-		ArrayList<MypWage> list = MyPageServiceImpl.MyPage(m);
+		m.setUserId(request.getParameter("userId"));
+		m.setUserPwd(request.getParameter("userPwd"));
+		m.setNickName(request.getParameter("NickName"));
+		m.setUserName(request.getParameter("userName"));
+		m.setUserPhone(request.getParameter("phone"));
+		m.setUserEmail(request.getParameter("email"));
+		m.setUserAddress(request.getParameter("address"));
 		
-		request.setAttribute("list", list);
-		request.setAttribute("m", m);
-		
-		request.getRequestDispatcher("views/user/myPage.jsp").forward(request, response);
+		Mypage Mypage = new MyPageServiceImpl().MyPage(m);
+			
 	}
 
 	/**

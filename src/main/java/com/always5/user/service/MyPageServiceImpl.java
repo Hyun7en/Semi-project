@@ -11,15 +11,6 @@ public class MyPageServiceImpl implements MyPageService{
 	private MyPageDao mDao = new MyPageDao();
 	
 	@Override
-	public ArrayList<Mypage> Mypage(Mypage m) {
-		SqlSession sqlSession = Template.getSqlSession();
-		ArrayList<Mypage> list = mDao.MyPage(sqlSession, m);
-		
-		sqlSession.close();
-		return list;
-	}
-	
-	@Override
 	public int MyPageGoods(Mypage m) {
 		SqlSession sqlSession = Template.getSqlSession();
 		int result = mDao.MyPageGoods(sqlSession, m);
@@ -44,5 +35,14 @@ public class MyPageServiceImpl implements MyPageService{
 		
 		sqlSession.close();
 		return result;
+	}
+
+	@Override
+	public Mypage MyPage(Mypage m) {
+		SqlSession sqlSession = Template.getSqlSession();
+		Mypage Mypage = mDao.MyPage(sqlSession, m);
+		
+		sqlSession.close();
+		return Mypage;
 	}
 }

@@ -14,7 +14,7 @@
 	href="${pageContext.request.contextPath}/resources/css/user_css/logIn.css" />
 </head>
 <body>
-	<form action="login.ui" class="login-Container" method="POST">
+	<form action="login.u" class="login-Container" method="POST">
 		<div class="login">
 
 			<!-- 로고 -->
