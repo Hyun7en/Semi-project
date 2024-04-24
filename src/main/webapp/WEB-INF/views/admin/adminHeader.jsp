@@ -11,8 +11,8 @@
 <body>
     <header>
         <div>
-            <img src="${pageContext.request.contextPath}/resources/file/common_img/왕밥빵로고 컬러.png" alt="">
-            <div>관리자 페이지</div>
+            <img onclick="location.href='${pageContext.request.contextPath}'" src="${pageContext.request.contextPath}/resources/file/common_img/왕밥빵로고 컬러.png" alt="">
+            <div><a href="main.ad">관리자 페이지</a></div>
         </div>
     </header>
 </body>

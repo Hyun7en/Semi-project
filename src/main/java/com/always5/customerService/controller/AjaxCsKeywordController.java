@@ -32,7 +32,11 @@ public class AjaxCsKeywordController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ArrayList<CsKeyword> csKeywordList = new CsCenterServiceImpl().selectCskeywordList();
+		
+		int csTypeNo = Integer.parseInt(request.getParameter("csTypeNo"));
+		
+		System.out.println(csTypeNo);
+		ArrayList<CsKeyword> csKeywordList = new CsCenterServiceImpl().selectCskeywordList(csTypeNo );
 		
 		response.setContentType("application/json; charset=utf-8");
 		

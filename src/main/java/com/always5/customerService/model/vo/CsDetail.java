@@ -4,8 +4,8 @@ import java.sql.Date;
 
 public class CsDetail {
 	private int csDetailNo;
-	private String csKeywordNo;
-	private String csTypeNo;
+	private int csKeywordNo;
+	private int csTypeNo;
 	private String csDetailTitle;
 	private String csDetailContent;
 	private Date csDetailEnrollDate;
@@ -17,7 +17,7 @@ public class CsDetail {
 		super();
 	}
 
-	public CsDetail(int csDetailNo, String csKeywordNo, String csTypeNo, String csDetailTitle, String csDetailContent,
+	public CsDetail(int csDetailNo, int csKeywordNo, int csTypeNo, String csDetailTitle, String csDetailContent,
 			Date csDetailEnrollDate, Date csDetailModifyDate, String csDetailStatus, String csDetailWriter) {
 		super();
 		this.csDetailNo = csDetailNo;
@@ -39,19 +39,19 @@ public class CsDetail {
 		this.csDetailNo = csDetailNo;
 	}
 
-	public String getCsKeywordNo() {
+	public int getCsKeywordNo() {
 		return csKeywordNo;
 	}
 
-	public void setCsKeywordNo(String csKeywordNo) {
+	public void setCsKeywordNo(int csKeywordNo) {
 		this.csKeywordNo = csKeywordNo;
 	}
 
-	public String getCsTypeNo() {
+	public int getCsTypeNo() {
 		return csTypeNo;
 	}
 
-	public void setCsTypeNo(String csTypeNo) {
+	public void setCsTypeNo(int csTypeNo) {
 		this.csTypeNo = csTypeNo;
 	}
 
