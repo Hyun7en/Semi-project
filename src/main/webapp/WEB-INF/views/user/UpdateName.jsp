@@ -36,7 +36,7 @@
 				<div class="inputupdateName-box">
 					<div class="inputupdateName-text">
 						<input type="text" name="inputupdateName-phone"
-							class="inputupdateName-phone" value="왕밥빵 아이디 또는 단체 아이디">
+							class="inputupdateName-phone" placeholder="왕밥빵 아이디 또는 단체 아이디">
 					</div>
 				</div>
 			</div>
