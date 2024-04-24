@@ -38,6 +38,12 @@ public class User {
 		this.userPhone = userPhone;
 		this.userAddress = userAddress;
 	}
+	
+	public User(String userId, String userPwd) {
+		super();
+		this.userId = userId;
+		this.userPwd = userPwd;
+	}
 
 	public int getUserNo() {
 		return userNo;
