@@ -14,9 +14,11 @@ import com.always5.user.service.UserServiceImpl;
 /**
  * Servlet implementation class userLoginController
  */
-@WebServlet("/login.ui")
+@WebServlet("/login.u")
 public class UserLoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private Object userPwd;
+	private Object userId;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -34,14 +36,16 @@ public class UserLoginController extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		
 		User u = new User();
+		
 		u.setUserId(request.getParameter("userId"));
 		u.setUserPwd(request.getParameter("userPwd"));
-		
+
 		User loginUser = new UserServiceImpl().loginUser(u);
+		System.out.println(loginUser);
 		
 		if (loginUser == null) {
-			request.setAttribute("message", "로그인 실패");
-			request.getRequestDispatcher("WEB-INF/views/common/errorpage.jsp");
+			request.setAttribute("errorMsg", "로그인 실패");
+			request.getRequestDispatcher("WEB-INF/views/common/errorPage.jsp").forward(request, response);
 		} else {
 			request.getSession().setAttribute("loginUser", loginUser);
 			response.sendRedirect(request.getContextPath());

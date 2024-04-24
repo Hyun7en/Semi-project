@@ -28,20 +28,21 @@ public class CsCenterServiceImpl implements CsCenterService {
 	}
 
 	@Override
-	public ArrayList<CsKeyword> selectCskeywordList() {
+	public ArrayList<CsKeyword> selectCskeywordList(int csTypeNo) {
 		SqlSession sqlSession = Template.getSqlSession();
 		
-		ArrayList<CsKeyword> csKeywordList = csCenterDao.selectCskeywordList(sqlSession);
+		ArrayList<CsKeyword> csKeywordList = csCenterDao.selectCskeywordList(sqlSession,csTypeNo);
 		
 		sqlSession.close();
+		
 		return csKeywordList;
 	}
 
 	@Override
-	public ArrayList<CsDetail> selectCsDetailList() {
+	public ArrayList<CsDetail> selectCsDetailList(int csKeywordNo) {
 		SqlSession sqlSession = Template.getSqlSession();
 		
-		ArrayList<CsDetail> csDetailList = csCenterDao.selectCsDetailList(sqlSession);
+		ArrayList<CsDetail> csDetailList = csCenterDao.selectCsDetailList(sqlSession, csKeywordNo);
 		
 		sqlSession.close();
 		

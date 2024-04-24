@@ -75,7 +75,6 @@
     /* 공지사항 */
 
     #section-2{
-        height: 1000px;
         margin-top: 50px;
         background-color: #F6F6F6;
     }
@@ -107,36 +106,40 @@
         align-items: center;
     }
 
-    #navi-2>li>a{
+    #navi-2>li{
         font-size: 15px;
         font-weight: 900;
         display: block;
         /* vertical-align: middle; 블럭일 때는 안된다 */
-        line-height: 35px;
+        line-height: 60px;
+        text-align: center;
+       
     }
 
-    #navi-2 > li > a:hover{
+    #navi-2 > li:hover{
         color: rgb(124, 124, 124);
         scale: 1.08;
     } 
 
-    .noti_box > div{
+    .csDetail > div{
         background: beige;
         border: 1px solid lavenderblush;
         height: 60px;
         line-height: 30px;
         border-radius: 10px;
         margin-top: 20px;
+        padding-left: 20px;
         cursor: pointer;
         display: flex;
         align-items: center;
     }
 
-    .noti_box > p{
+    .csDetail > p{
         display: none; 
         border: 1px solid whitesmoke;
         height: 100px;
         border-radius: 10px;
         padding: 10px;
+        padding-left: 20px;
         /* box-sizing: border-box; */
     }

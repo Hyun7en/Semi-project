@@ -1,8 +1,9 @@
 package com.always5.admin.restboard.service;
 
+import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.HashMap;
-
+import static com.always5.common.JDBCTemplate.getConnection;
 import org.apache.ibatis.session.SqlSession;
 
 import com.always5.admin.restboard.model.dao.RestBoardDao;
@@ -16,15 +17,14 @@ public class AdminRestServiceImpl implements AdminRestService{
 	private RestBoardDao rDao = new RestBoardDao();
 	
 	@Override
-	public ArrayList<Restaurant> selectRestListCount(PageInfo pi) {
+	public int selectRestListCount() {
 		SqlSession sqlSession = Template.getSqlSession();
-		ArrayList<Restaurant> listCount = rDao.selectRestListCount(sqlSession);
+		int listCount = rDao.selectRestListCount(sqlSession);
 		
 		sqlSession.close();
-		
 		return listCount;
 	}
-
+	
 	@Override
 	public ArrayList<Restaurant> selectList(PageInfo pi) {
 		SqlSession sqlSession = Template.getSqlSession();
@@ -36,49 +36,13 @@ public class AdminRestServiceImpl implements AdminRestService{
 
 	}
 
-//	@Override
-//	public int selectSearchCount(HashMap<String, String> map) {
-//		SqlSession sqlSession = Template.getSqlSession();
-//		int searchCount = rDao.selectSearchCount(sqlSession, map);
-//		
-//		sqlSession.close();
-//		
-//		return searchCount;
-//	}
-
-	@Override
-	public ArrayList<Restaurant> selectSearchList(HashMap<String, String> map, PageInfo pi) {
-		SqlSession sqlSession = Template.getSqlSession();
-		ArrayList<Restaurant> list = rDao.selectSearchList(sqlSession, map, pi);
+	public ArrayList<Restaurant> selectRestList() {
+		Connection conn = getConnection();
 		
-		sqlSession.close();
+		ArrayList<Restaurant> list = new RestBoardDao().selectRestList(conn);
+		close(conn);
+		
 		return list;
 	}
 
-	@Override
-	public Restaurant increaseCount(int restNo) {
-		SqlSession sqlSession = Template.getSqlSession();
-		int result = rDao.increaseCount(sqlSession, restNo);
-		
-		Restaurant r = null;
-		if (result > 0) {
-			sqlSession.commit();
-			r = rDao.selectBoard(sqlSession, restNo);
-		} else {
-			sqlSession.rollback();
-		}
-		
-		sqlSession.close();
-		return r;
-	}
-
-	public int selectRestListCount() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	
-	
-	
-		
 }

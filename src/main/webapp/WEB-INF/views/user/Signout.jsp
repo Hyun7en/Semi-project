@@ -2,25 +2,29 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-
+<c:set var="User" value="${sessionScope.User}" />
+<c:if test="${empty User}">
+</c:if>
 <html>
 
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <link rel="stylesheet"
-	href="http://localhost:8001/always5/resources/css/user_css/Signout.css" />
+	href="${pageContext.request.contextPath}/resources/css/user_css/Signout.css" />
 
 </head>
 
 <body>
-	<form action="signout.ui" class="Signout-Container" method="POST">
+	<form action="signout.u" class="Signout-Container" method="POST">
 		<div class="Signout">
 
 			<!-- 회원탈퇴 로고 -->
 			<div class="signout-logo-main">
 				<img class="signout-image"
-					src="http://localhost:8001/always5/resources/file/user_img/Signout-img/logo.png" />
+					src="${pageContext.request.contextPath}/resources/file/user_img/Signout-img/logo.png" />
 
 			</div>
 
@@ -32,7 +36,7 @@
 
 					<div class="notice-subject">왕밥빵을 탈퇴하면,</div>
 					<div class="notice-title">
-						사용하고 계신 아이디 ${User.userId}는 <br /> 탈퇴할 경우 재사용 및 복구가 불가능합니다.
+						사용하고 계신 아이디 ${User.nickName}는 <br /> 탈퇴할 경우 재사용 및 복구가 불가능합니다.
 					</div>
 					<div class="notice-textbox">
 						<span class="ntext1">탈퇴한 아이디는 본인과 타인 모두 재사용 및 복구가 불가</span> <span
@@ -69,7 +73,7 @@
 
 			</div>
 			<script
-				src="http://localhost:8001/always5/resources/js/user_js/Signout.js"></script>
+				src="${pageContext.request.contextPath}/resources/js/user_js/Signout.js"></script>
 		</div>
 	</form>
 </body>

@@ -59,6 +59,7 @@
  		 WHERE REST_STATUS = 'Y'
 	</select>
 	
+<<<<<<< HEAD
 	<!-- 순수 검색 -->
  	<select id="searchrListCount" resultType="_int">
  		SELECT COUNT(*)
@@ -92,6 +93,8 @@
 
 
 
+=======
+>>>>>>> bf4b416551bfa73eb11e26017c18069091543e3e
 
 	
 </mapper>

@@ -12,35 +12,41 @@
 
 	<resultMap id="csKeywordResultSet" type="CsKeyword">
 		<result column="CS_KEYWORD_NO" property="cskeywordNo"/>
-		<result column="CS_TYPE_NO" property="csTypeNo"/>
+		 <result column="CS_TYPE_NO" property="csTypeNo"/>
 		<result column="CS_KEYWORD_VALUE" property="cskeywordValue"/>
 	</resultMap>
 
 	<resultMap id="csDetailResultSet" type="CsDetail">
-		<result column="CS_DETAIL_NO" property="csDetailNo"/>
+		<!-- <result column="CS_DETAIL_NO" property="csDetailNo"/> -->
+		<!-- <result column="CS_TYPE_NO" property="csTypeNo"/> -->
 		<result column="CS_KEYWORD_NO" property="csKeywordNo"/>
 		<result column="CS_DETAIL_TITLE" property="csDetailTitle"/>
 		<result column="CS_DETAIL_CONTENT" property="csDetailContent"/>
 		<result column="CS_DETAIL_ENROLL_DATE" property="csDetailEnrollDate"/>
-		<result column="CS_DETAIL_MODIFY_DATE" property="csDetailModifyDate"/>
+		<!-- <result column="CS_DETAIL_MODIFY_DATE" property="csDetailModifyDate"/> -->
 		<result column="CS_DETAIL_STATUS" property="csDetailStatus"/>
-		<result column="CS_DETAIL_WRITER" property="csDetailWriter"/>
+		<!-- <result column="CS_DETAIL_WRITER" property="csDetailWriter"/> -->
 	</resultMap>
 
 	<select id="selectCsTypeList" resultMap="csTypeResultSet">
-		SELECT CS_TYPE_VALUE
+		SELECT CS_TYPE_NO,
+			   CS_TYPE_VALUE
 		  FROM CUSTOMER_SERVICE_TYPE
 	</select>
 	
 	<select id="selectCskeywordList" resultMap="csKeywordResultSet">
-		SELECT CS_KEYWORD_VALUE
+		SELECT CS_KEYWORD_NO,
+			   CS_KEYWORD_VALUE
 		  FROM CUSTOMER_SERVICE_KEYWORD
+		 WHERE CS_TYPE_NO = #{csTypeNo} 
 	</select>
 	
 	<select id="selectCsDetailList" resultMap="csDetailResultSet">
 		SELECT CS_DETAIL_TITLE,
 			   CS_DETAIL_CONTENT
 		  FROM CUSTOMER_SERVICE_DETAIL
+		 WHERE CS_DETAIL_STATUS = 'Y' 
+		   AND CS_KEYWORD_NO = #{csKeywordNo}
 		 ORDER BY CS_DETAIL_ENROLL_DATE DESC
 	</select>
 </mapper>

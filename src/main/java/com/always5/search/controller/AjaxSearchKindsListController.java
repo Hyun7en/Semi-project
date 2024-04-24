@@ -15,7 +15,7 @@ import com.google.gson.Gson;
 /**
  * Servlet implementation class searchKindsTest
  */
-@WebServlet("/searchRegionList.sc")
+@WebServlet("/searchKindsList.sc")
 public class AjaxSearchKindsListController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

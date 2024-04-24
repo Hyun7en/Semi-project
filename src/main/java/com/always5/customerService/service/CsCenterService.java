@@ -10,7 +10,7 @@ public interface CsCenterService {
 	
 	ArrayList<CsType> selectCsTypeList();
 	
-	ArrayList<CsKeyword> selectCskeywordList();
+	ArrayList<CsKeyword> selectCskeywordList(int csTypeNo);
 	
-	ArrayList<CsDetail> selectCsDetailList();
+	ArrayList<CsDetail> selectCsDetailList(int csKeywordNo);
 }

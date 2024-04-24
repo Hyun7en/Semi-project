@@ -20,7 +20,4 @@ public interface UserService {
 
 	// 닉네임 수정
 	public abstract User updateUserNickName(User u);
-	
-	// 회원 정보 수정
-	public abstract User updateUser(User u);
 }
