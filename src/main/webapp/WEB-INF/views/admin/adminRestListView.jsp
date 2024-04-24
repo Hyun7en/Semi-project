@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>관리자 - 가게리스트</title>
+<title>왕밥빵 - 가게관리</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/common_css/style.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/admin_css/adminView.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/admin_css/adminRestListView.css">
@@ -93,6 +93,5 @@
             </script>
         </main>
     </div>
-    <%@ include file="../common/footer.jsp" %>  
 </body>
 </html>

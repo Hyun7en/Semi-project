@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>관리자 - 가게 등록</title>
+<title>왕밥빵 - 가게 등록</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/common_css/style.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/admin_css/adminView.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/admin_css/adminRestRegistForm.css">
@@ -76,6 +76,5 @@
             </form>
         </main>
     </div>
-    <%@ include file="../common/footer.jsp" %>
 </body>
 </html>
