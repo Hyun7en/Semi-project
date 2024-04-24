@@ -19,7 +19,7 @@
 		<result column="REST_ADDRESS" property="restAddress"/>
 		<result column="REST_PHONE" property="restPhone"/>
 		<result column="REST_INTRO" property="restIntro"/>
-		<!-- <result column="REST_GRADE" property="restGrade"/> -->
+		<result column="REST_GRADE" property="restGrade"/>
 		<result column="LIKE_NO" property="likeNo"/>
 		<result column="REST_ENROLL_DATE" property="restEnrollDate"/>
 		<result column="REST_MODIFY_DATE" property="restModifyDate"/>
@@ -43,7 +43,7 @@
 			   REST_ADDRESS,
 			   REST_PHONE,
 			   REST_INTRO,
-
+			   REST_GRADE,
 			   LIKE_NO,
 			   REST_ENROLL_DATE,
 			   REST_MODIFY_DATE,
@@ -76,7 +76,7 @@
 			   REST_ADDRESS,
 			   REST_PHONE,
 			   REST_INTRO,
-
+			   REST_GRADE,
 			   LIKE_NO,
 			   REST_ENROLL_DATE,
 			   REST_MODIFY_DATE,

@@ -1,4 +1,4 @@
-package com.always5.review.rest.controller;
+package com.always5.mainPage.controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -9,21 +9,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.always5.common.vo.Attachment;
-import com.always5.review.rest.service.RestServiceImpl;
+import com.always5.review.rest.model.vo.Restaurant;
+import com.always5.search.service.SearchService;
 import com.google.gson.Gson;
 
 /**
- * Servlet implementation class RestDetailImageController
+ * Servlet implementation class mainTopListController
  */
-@WebServlet("/detailImg.re")
-public class RestDetailImageController extends HttpServlet {
+@WebServlet("/topList.ma")
+public class mainTopListController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public RestDetailImageController() {
+    public mainTopListController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,12 +31,12 @@ public class RestDetailImageController extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+    
+    // 조횟수 제일 높은 5개 가져오기
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int restNo = Integer.parseInt(request.getParameter("restNo"));
-		
-		ArrayList<Attachment> list = new RestServiceImpl().selectAttachmentList(restNo);
-		
-		response.setContentType("application/json; charset=utf-8");
+		ArrayList<Restaurant> list = new mainService().searchTopList();
+		request.setAttribute("list", list);
+		response.setContentType("application/json; charset=UTF-8");
 		new Gson().toJson(list, response.getWriter());
 	}
 

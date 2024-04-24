@@ -25,7 +25,7 @@
                     </div>
 
 
-                    <!-- 왕밥빵 BEST5 -->
+                    <!-- 왕밥빵 BEST5, 지수님이 rest_no로 가져온 list 활용 -->
                     <div class="best5">
                         <div>
                             <p class="best5-font">왕밥빵 BEST5</p>
@@ -41,12 +41,12 @@
                                     <div>
                                         <p>베스트 리뷰</p>
                                         <hr width="50" align="left">
-                                        <p>왕고기</p>
-                                        <p>평점</p>
-                                        <p>너무 맛있어요! 너무 맛있어요! 너무 맛있어요! 너무 맛있어요! 너무 맛있어요! 너무 ...</p>
+                                        <p>${rest.restName}</p>
+                                        <p>${rest.restGrade} }</p>
+                                        <p>${restIntro}</p>
                                     </div>
                                 </div>
-                                <div class="best5-slide-set">
+                                <!-- <div class="best5-slide-set">
                                     <div>
                                         <img src="https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp"
                                             alt="">
@@ -97,11 +97,67 @@
                                         <p>평점</p>
                                         <p>너무 맛있어요! 너무 맛있어요! 너무 맛있어요! 너무 맛있어요! 너무 맛있어요! 너무 ...</p>
                                     </div>
-                                </div>
+                                </div> -->
 
                             </div>
                         </div>
                     </div>
+                    
+                    			<script>
+				function init(){
+					// 서버로부터 조회수가 높은 게시글 5개 조회해서 가져오기(ajax)
+					// tbody 요소로써 추가해주기
+
+					getTopRestList(function(list){ //callback 함수를 실행하는 함수
+						drawTpoListBody(list);
+					})
+
+				}
+				
+				function drawTpoListBody(list){
+					const topBody = documnet.querySelector(".slides > .best5-slide-set");
+					$(topBody).empty(); 
+					
+					for(let r of list) {
+						const slides = documnet.dreatElement("div");
+						slides.innerHtml = "<div>"
+										 	+ "<img src='https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp'>"
+										 + "</div>"
+										 + "<div>"
+										 	+ "<p>" + rest.restName + "</p>"
+										 	+ "<p>" + rest.restGrade + "</p>"
+										 	+ "<p>" + rest.restIntro + "</p>"									 
+										 + "</div>"
+						tr.onclick = function(){
+							//location.href = 'detail.bo?bno=' + b.boardNo;
+						}
+					
+
+						topBody.appenChild(div);
+					}
+
+				}
+
+
+				// 서버로부터 조회수가 높은 게시글 5개 조회해서 가져오는 함수
+				function getTopBoardList(callback){
+					$.ajax({
+						url: "topList.ma",
+						success: callback,
+						error: function(){
+							console.log("top5 ajax 실패")
+						}
+					})
+				}
+
+
+
+
+
+
+
+
+
 
 
 
