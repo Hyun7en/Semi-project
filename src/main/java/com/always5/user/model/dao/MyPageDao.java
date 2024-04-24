@@ -8,8 +8,8 @@ import com.always5.user.model.vo.Mypage;
 
 public class MyPageDao {
 	
-	public ArrayList<Mypage> MyPage(SqlSession sqlSession, Mypage m) {
-		return (ArrayList)sqlSession.selectList("mypageMapper.MyPage", m);
+	public Mypage MyPage(SqlSession sqlSession, Mypage m) {
+		return sqlSession.selectOne("mypageMapper.MyPage", m);
 	}
 	
 	public int MyPageGoods(SqlSession sqlSession, Mypage m) {

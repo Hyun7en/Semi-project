@@ -21,7 +21,7 @@ href="${pageContext.request.contextPath}/resources/css/user_css/MypageGoods.css"
 
 			<!-- 찜 목록 -->
 			<div class="MypageGoods-title-box">
-				<div class="MypageGoods-Name">${Mypage.userName}</div>
+				<div class="MypageGoods-Name">${Mypage.nickName}</div>
 				<div class="MypageGoods-Name2">님의 찜 목록</div>
 			</div>
 
