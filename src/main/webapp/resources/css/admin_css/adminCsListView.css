@@ -1,2 +1,23 @@
 @charset "UTF-8";   
 
+
+
+ #search-area > form > select{
+    width: 150px;
+    height: 30px;
+}
+
+ #search-area > form > #search-keyword {
+    width: 350px;
+    height: 30px;
+}
+ #search-area > form > button{
+    height: 30px;
+    line-height: 30px;
+ }
+
+ #paging-area > a{
+    font-size: 20px;
+    margin-right: 40px;
+}
+

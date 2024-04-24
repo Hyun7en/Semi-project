@@ -23,7 +23,7 @@
 
                                 // cskeywordList 출력
                                 drawCsKeywordList(list, function(){
-                                    document.querySelector('.csKeyword').children[1].click();
+                                    document.querySelector('.csKeyword').children[0].click();
 
                                 });
                             });

@@ -27,24 +27,41 @@ public class AdminCsServiceImpl implements AdminCsService {
 	@Override
 	public ArrayList<CsDetail> selectAdminCsList(PageInfo pi) {
 		SqlSession sqlSession = Template.getSqlSession();
-		ArrayList<CsDetail> list = acDao.selectAdminCsList(sqlSession, pi);
+		ArrayList<CsDetail> AdminCsList = acDao.selectAdminCsList(sqlSession, pi);
 		
 		sqlSession.close();
 		
-		return list;
+		return AdminCsList;
 
 	}
 
 	@Override
-	public int selectSearchCount(HashMap<String, String> map) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int selectAdminCsSearchCount(HashMap<String, String> map) {
+		SqlSession sqlSession = Template.getSqlSession();
+		int AdminCsSearchCount = acDao.selectAdminCsSearchCount(sqlSession, map);
+		
+		sqlSession.close();
+		
+		return AdminCsSearchCount;
 	}
 
 	@Override
-	public ArrayList<CsDetail> selectSearchList(HashMap<String, String> map, PageInfo pi) {
-		// TODO Auto-generated method stub
-		return null;
+	public ArrayList<CsDetail> selectAdminCsSearchList(HashMap<String, String> map, PageInfo pi) {
+		SqlSession sqlSession = Template.getSqlSession();
+		ArrayList<CsDetail> AdminCsSearchList = acDao.selectAdminCsSearchList(sqlSession, map, pi);
+		
+		sqlSession.close();
+		return AdminCsSearchList;
+	}
+
+	@Override
+	public CsDetail selectBoard(int boardNo) {
+		SqlSession sqlSession = Template.getSqlSession();
+		 
+		CsDetail csDetail = acDao.selectBoard(sqlSession, boardNo);
+		sqlSession.close();
+
+		return csDetail;
 	}
 
 }

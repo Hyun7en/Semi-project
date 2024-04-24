@@ -49,19 +49,75 @@
 		   AND CS_KEYWORD_NO = #{csKeywordNo}
 		 ORDER BY CS_DETAIL_ENROLL_DATE DESC
 	</select>
+	
 	<select id="selectAdminCsListCount" resultType="_int">
+	
 		SELECT COUNT(*)
 		  FROM CUSTOMER_SERVICE_DETAIL
-		WHERE CS_DETAIL_STATUS = 'Y'
+		 WHERE CS_DETAIL_STATUS = 'Y'
 	</select>
+	
 	<select id="selectAdminCsList" resultMap="csDetailResultSet">
+		SELECT 
+			   CS_DETAIL_NO,
+			   CS_DETAIL_TITLE,
+			   USER_ID,
+			   CS_DETAIL_ENROLL_DATE
+		  FROM CUSTOMER_SERVICE_DETAIL CSD
+		  JOIN USER_INFO ON (CS_DETAIL_WRITER = USER_NO)
+		 WHERE CSD.CS_DETAIL_STATUS = 'Y'
+	  ORDER BY CS_DETAIL_NO DESC
+	</select>
+	
+	<select id="selectAdminCsSearchCount" resultType="_int">
+		SELECT COUNT(*)
+		  FROM CUSTOMER_SERVICE_DETAIL CSD
+		  JOIN USER_INFO ON (CS_DETAIL_WRITER = USER_NO)
+		 WHERE CSD.CS_DETAIL_STATUS = 'Y'
+		<if test="condition == 'writer'">
+		   AND USER_ID
+		</if>
+		<if test="condition == 'title'">
+		   AND CS_DETAIL_TITLE
+		</if>
+		<if test="condition == 'content'">
+		   AND CS_DETAIL_CONTENT
+		</if>
+		  LIKE '%' || #{keyword} || '%'
+	</select>
+	
+	<select id="selectAdminCsSearchList" resultMap="csDetailResultSet">
 		SELECT CS_DETAIL_NO,
 				CS_DETAIL_TITLE,
 				USER_ID,
 				CS_DETAIL_ENROLL_DATE
-		FROM CUSTOMER_SERVICE_DETAIL CSD
-		JOIN USER_INFO ON (CS_DETAIL_WRITER = USER_NO)
-		WHERE CSD.CS_DETAIL_STATUS = 'Y'
-		ORDER BY CS_DETAIL_NO DESC
+		  FROM CUSTOMER_SERVICE_DETAIL CSD
+		  JOIN USER_INFO ON (CS_DETAIL_WRITER = USER_NO)
+		 WHERE CSD.CS_DETAIL_STATUS = 'Y'
+		<choose>
+			<when test="condition == 'writer'">
+				AND USER_ID
+			</when>
+			<when test="condition == 'title'">
+				AND CS_DETAIL_TITLE
+			</when>
+			<otherwise>
+				AND CS_DETAIL_CONTENT
+			</otherwise>
+		</choose>
+		  LIKE '%' || #{keyword} || '%'
+		 ORDER BY CS_DETAIL_NO DESC
+	</select>
+	
+	<select id="selectBoard" parameterType="_int" resultMap="csDetailResultSet">
+		SELECT CS_DETAIL_NO,
+			   CS_DETAIL_TITLE,
+			   USER_ID,
+			   CS_DETAIL_ENROLL_DATE,
+			   CS_DETAIL_CONTENT
+		  FROM CUSTOMER_SERVICE_DETAIL CSD
+		  JOIN USER_INFO ON (CS_DETAIL_WRITER = USER_NO)
+		 WHERE CSD.CS_DETAIL_STATUS = 'Y'
+		   AND CS_DETAIL_NO = #{boardNo}
 	</select>
 </mapper>
