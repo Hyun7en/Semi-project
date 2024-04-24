@@ -38,16 +38,10 @@
 		</environment>
 	</environments>
 
-	<mappers>
-<<<<<<< HEAD
-	   <mapper resource="/mappers/user-mapper.xml"/>	
-	   <mapper resource="/mappers/cs-mapper.xml"/>
-	   <mapper resource="/mappers/rest-mapper.xml"/>	
-=======
+	<mappers>	
 	  <mapper resource="/mappers/user-mapper.xml"/>	 
-	   <!-- <mapper resource="/mappers/cs-mapper.xml"/> -->
-	  <!--  <mapper resource="/mappers/rest-mapper.xml"/>  
->>>>>>> bf4b416551bfa73eb11e26017c18069091543e3e
+	   <mapper resource="/mappers/cs-mapper.xml"/>
+	   <mapper resource="/mappers/rest-mapper.xml"/>  
 	   <mapper resource="/mappers/search-mapper.xml"/>	
 	   <mapper resource="/mappers/mypage-mapper.xml"/>
 	</mappers>

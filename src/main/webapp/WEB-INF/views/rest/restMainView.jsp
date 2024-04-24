@@ -107,8 +107,9 @@
                             alt="">
                         <p>${rest.restOperDate}</p>
                     </div>
-
-                    <button type="button" id="regist-review" onclick="location.href = '${pageContext.request.contextPath}/enrollReviewForm.re?rno=${rest.restNo}'">리뷰 작성</button>
+                    <c:if test="${not empty loginUser}">
+                        <button type="button" id="regist-review" onclick="location.href = '${pageContext.request.contextPath}/enrollReviewForm.re?rno=${rest.restNo}'">리뷰 작성</button>
+                    </c:if>
                 </div>
             </div>
             <div id="rest-detail-page">

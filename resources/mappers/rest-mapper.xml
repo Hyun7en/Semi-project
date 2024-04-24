@@ -183,7 +183,6 @@
 		WHERE REST_NO = #{restNo}
 	</select>
 	
-<<<<<<< HEAD
 	<insert id="insertReview">
 		INSERT INTO REVIEW
 						(REVIEW_NO,

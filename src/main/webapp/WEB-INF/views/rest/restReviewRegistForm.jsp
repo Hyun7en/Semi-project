@@ -19,8 +19,8 @@
                         <td>
                             <input type="text" value="${rest.restName}" id="rest-name" readonly>
                             <input type="hidden" name="restNo" value="${rest.restNo}">
-                            <!-- <input type="hidden" name="userNo" value="${loginUser.userNo}"> -->
-                            <input type="hidden" name="userNo" value="1">
+                            <input type="hidden" name="userNo" value="${loginUser.userNo}">
+                            <!-- <input type="hidden" name="userNo" value="1"> -->
                         </td>
                     </tr>
 
