@@ -14,16 +14,16 @@ import com.always5.review.rest.model.vo.Restaurant;
 import com.google.gson.Gson;
 
 /**
- * Servlet implementation class mainTopListController
+ * Servlet implementation class mainTopListNewController
  */
-@WebServlet("/topList.ma")
-public class mainTopListController extends HttpServlet {
+@WebServlet("/topNewList.ma")
+public class mainTopListNewController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public mainTopListController() {
+    public mainTopListNewController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,13 +31,12 @@ public class mainTopListController extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-    
-    // 조횟수 제일 높은 5개 가져오기
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ArrayList<Restaurant> tlist = new mainService().mainTopList();
-		request.setAttribute("tlist", tlist);
+		ArrayList<Restaurant> nlist = new mainService().mainNewTopList();
+		request.setAttribute("nlist", nlist);
+
 		response.setContentType("application/json; charset=UTF-8");
-		new Gson().toJson(tlist, response.getWriter());
+		new Gson().toJson(nlist, response.getWriter());
 	}
 
 	/**
