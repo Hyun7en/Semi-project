@@ -25,10 +25,6 @@
 
 	<select id="MyPage" parameterType="_int" resultMap="MypageResultSet">
 		SELECT USER_NO,
-				AUTHORITY,
-				USER_ID,
-				USER_PWD,
-				USER_NAME,
 				NICKNAME,
 				USER_BIRTH,
 				USER_GENDER,
@@ -41,44 +37,50 @@
 	</select>
 
 	<select id="MyPageReview" parameterType="Mypage" resultMap="MypageResultSet">
-	SELECT USER_NO,
-				AUTHORITY,
-				USER_ID,
-				USER_PWD,
-				USER_NAME,
+		SELECT 
 				NICKNAME,
-				USER_BIRTH,
-				USER_GENDER,
-				USER_PHONE,
-				USER_ADDRESS
+				REST_NAME,
+				REST_GRADE,
+				REST_NO,
+				REST_INTRO,
+				IMG_URL,
+				IMG
 			FROM USER_INFO
+			JOIN REST_INFO USING(REST_NO)
+			JOIN IMG_LIST USING(IMG_LIST_NO)
+			WHERE USER_NO = #{userNo}
+		    AND USER_STATUS = 'Y'
 	</select>
 	
 	<select id="MyPageGoods" parameterType="Mypage" resultMap="MypageResultSet">
-	SELECT USER_NO,
-				AUTHORITY,
-				USER_ID,
-				USER_PWD,
-				USER_NAME,
+		SELECT 
 				NICKNAME,
-				USER_BIRTH,
-				USER_GENDER,
-				USER_PHONE,
-				USER_ADDRESS
+				REST_NAME,
+				REST_GRADE,
+				REST_NO,
+				REST_INTRO,
+				IMG_URL,
+				IMG
 			FROM USER_INFO
+			JOIN REST_INFO USING(REST_NO)
+			JOIN IMG_LIST USING(IMG_LIST_NO)
+			WHERE USER_NO = #{userNo}
+		    AND USER_STATUS = 'Y'
 	</select>
 	
 	<select id="MyPageReviewGoods" parameterType="Mypage" resultMap="MypageResultSet">
-		SELECT USER_NO,
-				AUTHORITY,
-				USER_ID,
-				USER_PWD,
-				USER_NAME,
+			SELECT 
 				NICKNAME,
-				USER_BIRTH,
-				USER_GENDER,
-				USER_PHONE,
-				USER_ADDRESS
+				REST_NAME,
+				REST_GRADE,
+				REST_NO,
+				REST_INTRO,
+				IMG_URL,
+				IMG
 			FROM USER_INFO
+			JOIN REST_INFO USING(REST_NO)
+			JOIN IMG_LIST USING(IMG_LIST_NO)
+			WHERE USER_NO = #{userNo}
+		    AND USER_STATUS = 'Y'
 	</select>
 </mapper>
