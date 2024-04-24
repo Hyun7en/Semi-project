@@ -30,7 +30,7 @@
             </div>
             <div id="memberButton">
                 <a href="login.ui">로그인</a>
-                <a href="enrollform.ui">회원가입</a>
+                <a href="signin.ui">회원가입</a>
             </div>
         </div>
 
