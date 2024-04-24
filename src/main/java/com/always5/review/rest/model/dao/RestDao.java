@@ -64,7 +64,7 @@ public class RestDao {
 		int limit = pi.getBoardLimit();
 		
 		RowBounds rowBounds = new RowBounds(offset, limit);
-		return (ArrayList)sqlSession.selectList("restMapper.selectReviewCount", restNo, rowBounds);
+		return (ArrayList)sqlSession.selectList("restMapper.selectReviewList", restNo, rowBounds);
 	}
 	
 	public ArrayList<Attachment> selectReviewAttachmentList(SqlSession sqlSession, int reviewNo){

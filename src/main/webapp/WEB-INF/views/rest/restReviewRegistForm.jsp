@@ -12,7 +12,7 @@
     <%@ include file="../common/header.jsp" %>    
     <div id="wrap">
         <main id="review-main">
-            <form action="${pageContext.request.contextPath}/insertReview.re" class="main-form" method="POST" enctype="multipart/form-data">
+            <form action="${pageContext.request.contextPath}/insertReview.re?rno=${rest.restNo}" class="main-form" method="POST" enctype="multipart/form-data">
                 <table>
                     <tr>
                         <th width="20%">가게 이름</th>

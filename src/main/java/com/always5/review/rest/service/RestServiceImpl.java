@@ -262,9 +262,13 @@ public class RestServiceImpl implements RestService{
 		// 각 평점 곱하기 평점 별 횟수 나누기 전체 횟수
 		// 각 평점 곱하기 평점 별 횟수
 		double totalRating = 0;
-		for (int i = 1; i <= ratingList.size(); i++) {
-			totalRating += i * ratingList.get(i - 1);
+		int j = 0;
+		for (int i = 5; i >= 1; i--) {
+			totalRating += i * ratingList.get(j);
+			j++;
 		}
+		
+		System.out.println("totalRating : " + totalRating);
 		
 		// 전체 횟수
 		int count = 0;
@@ -272,9 +276,12 @@ public class RestServiceImpl implements RestService{
 			count += ratingList.get(i - 1);
 		}
 		
+		System.out.println("count : " + count);
+		
 		// 소수점 첫째 자리까지 반올림
-		String restGrade = String.valueOf(Math.round(totalRating / count));
+		String restGrade = String.valueOf(String.format("%.1f", totalRating / count));
 
+		System.out.println("restGrade : " + restGrade);
 		Restaurant rest = restDao.selectRest(sqlSession, restNo);
 		rest.setRestGrade(restGrade);
 

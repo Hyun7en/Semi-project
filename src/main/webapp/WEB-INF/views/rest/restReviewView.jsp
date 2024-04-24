@@ -95,12 +95,16 @@
                     </div>
                 </c:forEach>
                 <div class="paging-area" align="center">
-                <button onclick="">&lt;</button>
+                    <c:if test="${pi.currentPage ne 1}">
+                        <button onclick="location.href = '${pageContext.request.contextPath}/review.re?rno=${rest.restNo}&pno=${i - 1}'">&lt;</button>
+                    </c:if>
                     <c:forEach var="i" begin="${pi.startPage }" end="${pi.endPage }">
-                    	<button onclick="location.href = '${pageContext.request.contextPath}/review.re?rno=${rest.restNo}&pno=${i }'"">${i}</button>
+                    	<button onclick="location.href = '${pageContext.request.contextPath}/review.re?rno=${rest.restNo}&pno=${i }'">${i}</button>
                     </c:forEach>
+                    <c:if test="${pi.currentPage ne pi.maxPage}">
+                        <button onclick="location.href = '${pageContext.request.contextPath}/review.re?rno=${rest.restNo}&pno=${i + 1}'">&gt;</button>
+                    </c:if>
                     
-                    <button onclick="">&gt;</button>
                 </div>
 
                 <!-- <div id="rest-review-regist">

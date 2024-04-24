@@ -51,7 +51,7 @@ public class ReviewInsertController extends HttpServlet {
 			MultipartRequest multiRequest = new MultipartRequest(request, savePath, maxSize, "UTF-8", new MyFileRenamePolicy());
 			System.out.println("userNo 있니?" + multiRequest.getParameter("userNo"));
 			Review r = new Review();
-			r.setRestNo(multiRequest.getParameter("restNo"));
+			r.setRestNo(multiRequest.getParameter("rno"));
 			r.setReviewRating(multiRequest.getParameter("reviewRating"));
 			r.setReviewContent(multiRequest.getParameter("reviewContent"));
 			r.setUserNo(multiRequest.getParameter("userNo"));
@@ -81,12 +81,12 @@ public class ReviewInsertController extends HttpServlet {
 				reviewList = new RestServiceImpl().selectReviewList(restNo);
 				rest = new RestServiceImpl().selectRest(restNo);
 				ratingCount = new RestServiceImpl().selectRatingCount(restNo);
-				System.out.println(rest);
+
 				request.setAttribute("reviewList", reviewList);
 				request.setAttribute("rest", rest);
 				request.setAttribute("ratingCount", ratingCount);
 				request.setAttribute("alertMsg", "리뷰 작성에 성공했습니다.");
-				response.sendRedirect(request.getContextPath() + "/review.re");
+				response.sendRedirect(request.getContextPath() + "/review.re?rno=" + rest.getRestNo() + "&pno=1");
 			} else {
 				request.setAttribute("errorMsg", "리뷰 작성에 실패했습니다.");
 				request.getRequestDispatcher("/WEB-INF/views/common/errorPage").forward(request, response);
