@@ -33,7 +33,7 @@
 		<result column="MENU_NAME" property="menuName"/>
 		<result column="MENU_PRICE" property="menuPrice"/>
 		<result column="REST_NO" property="restNo"/>
-		<result column="MENU_CATEGORY_NAME" property="menuCategoryNo"/>
+		<result column="MENU_CATEGORY_NAME" property="menuCategoryName"/>
 	</resultMap>
 	
 	
@@ -59,7 +59,6 @@
  		 WHERE REST_STATUS = 'Y'
 	</select>
 	
-<<<<<<< HEAD
 	<!-- 순수 검색 -->
  	<select id="searchrListCount" resultType="_int">
  		SELECT COUNT(*)
@@ -93,8 +92,6 @@
 
 
 
-=======
->>>>>>> bf4b416551bfa73eb11e26017c18069091543e3e
 
 	
 </mapper>

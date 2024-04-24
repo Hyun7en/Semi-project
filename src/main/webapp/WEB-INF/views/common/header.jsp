@@ -23,14 +23,9 @@
                 <p onclick="location.href='${pageContext.request.contextPath}'"  id="logo-name">왕밥빵</p>
             </div>
             <div>
-<<<<<<< HEAD
                 <form action="search.sc" id="search-bar" method="GET">
                 	<input type="hidden" name="rpage" value="1">
                     <input type="text" name="keyword" id="search-box" value="${keyword}">
-=======
-                <form action="" id="search-bar" method="GET">
-                    <input type="text" name="search-keyword" id="search-box">
->>>>>>> bf4b416551bfa73eb11e26017c18069091543e3e
                     <input type="submit" value="검색" id="search-button">
                 </form>
             </div>

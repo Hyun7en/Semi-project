@@ -1,13 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
     <!DOCTYPE html>
     <html>
 
     <head>
         <meta charset="UTF-8">
         <title>Insert title here</title>
-        <link rel="stylesheet" href="http://localhost:8001/always5/resources/css/common_css/style.css">
-        <link rel="stylesheet" href="http://localhost:8001/always5/resources/css/search_css/searchKinds.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/common_css/style.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/search_css/searchKinds.css">
 
     </head>
    
@@ -113,7 +115,7 @@
 	                                    alt="">
 	                            </div>
 	                            <div>
-	                                <p class="res-name"><span><b>${sr.restName}</span><span>&nbsp;&nbsp;</span></b></p>
+	                                <p class="res-name"><span><b>${sr.restName}111</span><span>&nbsp;&nbsp;</span></b></p>
 	                                <p class="res-location"><span>한식집</span><span>&nbsp;&nbsp;${sr.restAddress}</span></p>
 	                                <p class="res-explain"><b>${sr.restIntro}</b></p>
 	                            </div>

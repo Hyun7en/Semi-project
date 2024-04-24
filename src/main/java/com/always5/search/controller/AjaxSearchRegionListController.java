@@ -17,14 +17,14 @@ import com.google.gson.Gson;
 /**
  * Servlet implementation class AjaxSearchMenuListController
  */
-@WebServlet("/searchRegionList.sc")
-public class AjaxSearchMenuListController extends HttpServlet {
+@WebServlet("/searchMenuList.sc")
+public class AjaxSearchRegionListController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()searchRegionList.sc
      */
-    public AjaxSearchMenuListController() {
+    public AjaxSearchRegionListController() {
         super();
         // TODO Auto-generated constructor stub
     }
