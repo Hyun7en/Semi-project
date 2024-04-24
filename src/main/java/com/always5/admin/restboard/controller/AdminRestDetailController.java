@@ -39,7 +39,9 @@ public class AdminRestDetailController extends HttpServlet {
 		Restaurant r = new AdminRestServiceImpl().increaseCount(restNo);
 	
 		if(r != null) {
+			System.out.println("controller :" + restNo);
 			
+			request.setAttribute("r", r);
 			request.getRequestDispatcher("WEB-INF/views/admin/adminRestRegistForm.jsp").forward(request, response);
 		} else {
 			request.setAttribute("errorMsg", "상세조회 실패");

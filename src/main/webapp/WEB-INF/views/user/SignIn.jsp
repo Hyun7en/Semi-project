@@ -62,8 +62,9 @@
 				</div>
 				<div class="gender-box">
 					<input type="checkbox" name="userGender" class="gender-male-submit"
-						value="남자">남자 <input type="checkbox" name="userGender"
-						class="gender-female-submit" value="여자">여자
+						value="남자" onclick="gendercheck(this)">남자 
+					<input type="checkbox" name="userGender"
+						class="gender-female-submit" value="여자" onclick="gendercheck(this)">여자
 				</div>
 
 				<div class="signin-notice">

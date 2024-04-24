@@ -4,16 +4,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-<link rel="stylesheet" href="../../resources/css/common_css/style.css">
-<link rel="stylesheet" href="../../resources/css/admin_css/adminView.css">
-<link rel="stylesheet" href="../../resources/css/admin_css/adminRestRegistForm.css">
+<title>관리자 - 가게 수정</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/common_css/style.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/admin_css/adminView.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/admin_css/adminRestRegistForm.css">
 
 <body>
     <div id="wrap">
         <%@ include file="adminHeader.jsp"%>
         <div id="admin-title">
-            가게 등록/수정
+            가게 수정
         </div>
         <main id="rest-regist-main">
             <form action="" class="main-form" method="GET">
@@ -24,7 +24,7 @@
                     </tr>
                     <tr>
                         <th>가게 주소</th>
-                        <td><input type="text" name="restAddress"required></td>
+                        <td><input type="text" name="restAddress" required></td>
                     </tr>
                     <tr>
                         <th>가게 전화번호</th>
@@ -32,6 +32,10 @@
                     </tr>
                     <tr>
                         <th>가게 소개글</th>
+                        <td><textarea name="restIntro" placeholder="가게 특징, 매력포인트를 입력하세요."></textarea></td>
+                    </tr>
+                    <tr>
+                        <th>운영시간</th>
                         <td><textarea name="restIntro" placeholder="휴무일, 운영시간을 함께 입력하세요"></textarea></td>
                     </tr>
                     <tr>

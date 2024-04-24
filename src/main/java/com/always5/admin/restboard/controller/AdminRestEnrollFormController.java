@@ -1,6 +1,7 @@
-package com.always5.user.controller;
+package com.always5.admin.restboard.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,22 +9,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.always5.user.model.vo.Mypage;
-import com.always5.user.model.vo.User;
-import com.always5.user.service.MyPageServiceImpl;
-import com.always5.user.service.UserServiceImpl;
+import com.always5.admin.restboard.service.AdminRestServiceImpl;
+import com.always5.review.rest.model.vo.Restaurant;
 
 /**
- * Servlet implementation class myPageController
+ * Servlet implementation class AdminRestEnrollFormController
  */
-@WebServlet("/mypage.u")
-public class MyPageController extends HttpServlet {
+@WebServlet("/restenroll.ad")
+public class AdminRestEnrollFormController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public MyPageController() {
+    public AdminRestEnrollFormController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,18 +31,7 @@ public class MyPageController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		Mypage m = new Mypage();
-		m.setUserId(request.getParameter("userId"));
-		m.setUserPwd(request.getParameter("userPwd"));
-		m.setNickName(request.getParameter("NickName"));
-		m.setUserName(request.getParameter("userName"));
-		m.setUserPhone(request.getParameter("phone"));
-		m.setUserEmail(request.getParameter("email"));
-		m.setUserAddress(request.getParameter("address"));
-		
-		Mypage Mypage = new MyPageServiceImpl().MyPage(m);
-			
+		request.getRequestDispatcher("WEB-INF/views/admin/adminRestEnrollForm.jsp").forward(request, response);
 	}
 
 	/**

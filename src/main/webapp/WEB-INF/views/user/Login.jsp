@@ -14,7 +14,7 @@
 	href="${pageContext.request.contextPath}/resources/css/user_css/logIn.css" />
 </head>
 <body>
-	<form action="login.ui" class="login-Container" method="POST">
+	<form action="login.u" class="login-Container" method="POST">
 		<div class="login">
 
 			<!-- 로고 -->
@@ -45,29 +45,10 @@
 						<div class="login-checkbox">
 							<button type="submit" class="login-checkbox-title">로그인</button>
 						</div>
-
-						<div class="login-option">
-							<div class="login-option-searchId"><a href="">아이디 변경</a></div>
-							<img class="login-option-line1"
-								src="http://localhost:8001/always5/resources/file/user_img/login-img/line-41.svg" />
-							<div class="login-option-searchPwd"><a href="/csCenter.ax">비밀번호 변경</a></div>
-							<img class="login-option-line2"
-								src="http://localhost:8001/always5/resources/file/user_img/login-img/line-42.svg" />
-							<div class="login-option-signin"><a href="/signin.ui">회원가입</a></div>
-							<div class="login-option-searchId"><a href="${pageContext.request.contextPath}">메인페이지</a></div>
-							<img class="login-option-line1"
-								src="${pageContext.request.contextPath}/resources/file/user_img/login-img/line-41.svg" />
-							<div class="login-option-searchPwd"><a href="#">고객센터</a></div>
-							<img class="login-option-line2"
-								src="${pageContext.request.contextPath}/resources/file/user_img/login-img/line-42.svg" />
-							<div class="login-option-signin"><a href="signin.ui">회원가입</a></div>
-						</div>
-
 					</div>
 				</div>
 
 			</div>
-			<script src="http://localhost:8001/always5/resources/js/user_js/Login.js"></script>
 			<script src="${pageContext.request.contextPath}/resources/js/user_js/login.js"></script>
 		</div>
 	</form>
