@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.always5.user.model.vo.Mypage;
+import com.always5.user.model.vo.User;
 import com.always5.user.service.MyPageServiceImpl;
 
 /**
@@ -30,6 +31,21 @@ public class MyPageServletController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		User loginUser = (User)request.getSession().getAttribute("loginUser");
+		
+//		Mypage m = new Mypage();
+//		m.setUserId(request.getParameter("userId"));
+//		m.setUserPwd(request.getParameter("userPwd"));
+//		m.setNickName(request.getParameter("nickName"));
+//		m.setUserName(request.getParameter("userName"));
+//		m.setUserPhone(request.getParameter("phone"));
+//		m.setUserEmail(request.getParameter("email"));
+//		m.setUserAddress(request.getParameter("address"));
+		
+//		Mypage Mypage = new MyPageServiceImpl().MyPage(m);
+		request.setAttribute("loginUser", loginUser);
+//		System.out.println(Mypage);
+		
 		request.getRequestDispatcher("WEB-INF/views/user/MyPage.jsp").forward(request, response);
 	}
 

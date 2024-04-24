@@ -21,9 +21,9 @@
 
 			<!-- 상단 텍스트 -->
 			<div class="id-preview">
-				<div class="id-UserName">${User.nickName}</div>
+				<div class="id-UserName">${loginUser.userId}</div>
 				<div class="id-UserName-text01">님의 회원정보 중</div>
-				<div class="id-UserName-text02">아이디를 수정하기 위해 인증절차가 필요합니다.</div>
+				<div class="id-UserName-text02">사용하고자 하는 아이디를 입력해주세요.</div>
 			</div>
 
 			<img class="line-pass"
@@ -33,26 +33,26 @@
 			<div class="email-preview">
 				<img class="mdi-email-icon"
 					src="${pageContext.request.contextPath}/resources/file/user_img/UpdateId-img/mdi-light-email.svg" />
-				<div class="user-email">${User.userId}</div>
+				<div class="user-email">${loginUser.userId}</div>
 			</div>
 
 			<div class="input-email-box">
 				<div class="input-email-text">
-					<input type="text" name="input-email" class="input-email"
-						placeholder="현재 이메일 주소 입력">
+					<input type="text" name="userId" class="input-email"
+						placeholder="변경할 아이디 입력">
 				</div>
 			</div>
 
 			<!-- 주의사항 안내 -->
 			<p class="service-preview">
-				왕밥빵 서비스의 변경/종료, 본인 작성 게시물 조치 등 대부분의 왕밥빵 안내에 사용합니다.<br /> 등록된 이메일
-				주소가 기억나지 않는다면 휴대전화 인증 후 이메일을 수정할 수 있습니다.
+				왕밥빵 서비스의 변경/종료, 본인 작성 게시물 조치 등 대부분의 왕밥빵 안내에 사용합니다.<br />
 			</p>
 
 
 			<div class="updateId-checkbox">
 				<button type="submit" class="updateId-checkbox-title">변경</button>
 			</div>
+			
 			<script
 				src="${pageContext.request.contextPath}/resources/js/user_js/UpdateId.js"></script>
 		</div>
