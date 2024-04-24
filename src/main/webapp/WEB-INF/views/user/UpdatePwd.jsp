@@ -2,7 +2,9 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-
+<c:set var="User" value="${sessionScope.User}" />
+<c:if test="${empty User}">
+</c:if>
 <html>
 <head>
 <meta charset="utf-8" />
@@ -10,16 +12,13 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <link rel="stylesheet"
-	href="http://localhost:8001/always5/resources/css/user_css/UpdatePwd.css" />
+	href="${pageContext.request.contextPath}/resources/css/user_css/UpdatePwd.css" />
 </head>
 
 <body>
-	<form action="updatepwd.ui" class="updatePwd-Container" method="POST">
+	<form action="updatepwd.u" class="updatePwd-Container" method="POST">
 		<div class="updatePwd">
-			<!-- X버튼 -->
-			<img class="logo"
-				src="http://localhost:8001/always5/resources/file/user_img/UpdatePwd-img/ph-x-thin.svg" />
-
+				
 			<!-- 상단 텍스트 -->
 			<div class="id-preview">
 				<div class="id-UserName">${User.userPwd}</div>
@@ -28,22 +27,19 @@
 			</div>
 
 			<img class="line-pass"
-				src="http://localhost:8001/always5/resources/file/user_img/UpdatePwd-img/line-47.svg" />
+				src="${pageContext.request.contextPath}/resources/file/user_img/UpdatePwd-img/line-47.svg" />
 
 			<!-- 사용자 이메일 입력 -->
 			<div class="email-preview">
 				<img class="mdi-email-icon"
-					src="http://localhost:8001/always5/resources/file/user_img/UpdatePwd-img/mdi-light-email.svg" />
+					src="${pageContext.request.contextPath}/resources/file/user_img/UpdatePwd-img/mdi-light-email.svg" />
 				<div class="user-email">${User.userId}</div>
 			</div>
 
 			<div class="input-email-box">
 				<div class="input-email-text">
-					<input type="text" name="input-email" class="input-email"
-						value="현재 연락처 이메일 입력.">
-				</div>
-				<div class="input-email-checkbox">
-					<div class="input-email-checkbox-text">확인</div>
+					<input type="text" name="input-id" class="input-email"
+						placeholder="현재 아이디 입력.">
 				</div>
 			</div>
 
@@ -53,34 +49,12 @@
 				주소가 기억나지 않는다면 휴대전화 인증 후 이메일을 수정할 수 있습니다.
 			</p>
 
-			<!--전화번호 인증 -->
-			<div class="phone-title">전화번호 인증</div>
-
-			<div class="input-phone-box">
-				<div class="input-phone-text">
-					<input type="text" name="input-phone" class="input-phone"
-						value="현재 전화번호 입력.">
-				</div>
-				<div class="input-phone-checkbox">
-					<div class="input-phone-checkbox-text">확인</div>
-				</div>
-			</div>
-
-			<div class="input-phone-box2">
-				<div class="input-phone-text2">
-					<input type="text" name="input-phone2" class="input-phone2"
-						value="인증번호 입력.">
-				</div>
-				<div class="input-phone-checkbox2">
-					<div class="input-phone-checkbox-text2">확인</div>
-				</div>
-			</div>
 
 			<div class="updatePwd-checkbox">
 				<button type="submit" class="updatePwd-checkbox-title">변경</button>
 			</div>
 			<script
-				src="http://localhost:8001/always5/resources/js/user_js/UpdatePwd.js"></script>
+				src="${pageContext.request.contextPath}/resources/js/user_js/UpdatePwd.js"></script>
 		</div>
 	</form>
 </body>

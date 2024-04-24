@@ -148,22 +148,26 @@ body {
 
 /*사용자 이름수정*/
 .Mypage .Mypage-username-box {
-	
 	background-color: #fffefe;
 	border: 1px solid #b1a8a8;
-	display: flex;
-	align-items: center;
 	width: 754px;
 	height: auto;
+	float: left;
+	
+	padding-top:5px;
+	padding-bottom:5px;
 }
 
 .Mypage .profile-username {
+	float: left;
 	font-weight: 300;
 	color: #000000;
 	font-size: 15px;
 	letter-spacing: 0;
 	line-height: normal;
-	padding: 15px;
+	
+	padding: 3px;
+	margin-left: 20px;
 }
 
 .Mypage .profile-username-checkbox {
@@ -175,7 +179,8 @@ body {
 	border: 1px solid #b1a8a8;
 	width: 65px;
 	height: 28px;
-	margin-left: 610px;
+	float: right;
+	margin-right: 50px;
 }
 
 .Mypage .profile-username-checkbox-title {
@@ -184,27 +189,34 @@ body {
 	font-size: 15px;
 	letter-spacing: 0;
 	line-height: normal;
+	border: 0;
+  	background-color: transparent;
 }
 
 /*아이디 수정*/
 .Mypage .Mypage-userid-box {
 	background-color: #fffefe;
-	display: flex;
 	border: 1px solid #b1a8a8;
 	border-bottom: none;
-	border-top: none; align-items : center;
+	border-top: none;
 	width: 754px;
 	height: auto;
-	align-items: center;
+	float: left;
+	
+	padding-top:5px;
+	padding-bottom:5px;
 }
 
 .Mypage .profile-userid {
+	float: left;
 	font-weight: 300;
 	color: #000000;
 	font-size: 15px;
 	letter-spacing: 0;
 	line-height: normal;
-	padding: 15px;
+	
+	padding: 3px;
+	margin-left: 20px;
 }
 
 .Mypage .profile-userid-checkbox {
@@ -216,7 +228,8 @@ body {
 	border: 1px solid #b1a8a8;
 	width: 65px;
 	height: 28px;
-	margin-left: 610px;
+	float: right;
+	margin-right: 50px;
 }
 
 .Mypage .profile-userid-checkbox-title {
@@ -225,6 +238,8 @@ body {
 	font-size: 15px;
 	letter-spacing: 0;
 	line-height: normal;
+	border: 0;
+  	background-color: transparent;
 }
 
 /*비밀번호 수정*/
@@ -232,19 +247,25 @@ body {
 	background-color: #fffefe;
 	border-radius: 0px 0px 8px 8px;
 	border: 1px solid #b1a8a8;
-	display: flex;
-	align-items: center;
 	width: 754px;
 	height: auto;
+	float: left;
+	
+	padding-top:5px;
+	padding-bottom:5px;
+	margin-bottom: 60px;
 }
 
 .Mypage .profile-userpwd {
+	float: left;
 	font-weight: 300;
 	color: #000000;
 	font-size: 15px;
 	letter-spacing: 0;
 	line-height: normal;
-	padding: 15px;
+	
+	padding: 3px;
+	margin-left: 20px;
 }
 
 .Mypage .profile-userpwd-checkbox {
@@ -256,7 +277,8 @@ body {
 	border: 1px solid #b1a8a8;
 	width: 65px;
 	height: 28px;
-	margin-left: 610px;
+	float: right;
+	margin-right: 50px;
 }
 
 .Mypage .profile-userpwd-checkbox-title {
@@ -265,6 +287,8 @@ body {
 	font-size: 15px;
 	letter-spacing: 0;
 	line-height: normal;
+	border: 0;
+  	background-color: transparent;
 }
 
 /*활동이력 조회*/
@@ -302,19 +326,24 @@ body {
 	background-color: #fffefe;
 	border: 1px solid #b1a8a8;
 	border-bottom: none;
-	display: flex;
-	align-items: center;
 	width: 754px;
 	height: auto;
+	float: left;
+	
+	padding-top:5px;
+	padding-bottom:5px;
 }
 
 .Mypage .history-goodreview {
+	float: left;
 	font-weight: 300;
 	color: #000000;
 	font-size: 15px;
 	letter-spacing: 0;
 	line-height: normal;
-	padding: 15px;
+	
+	padding: 3px;
+	margin-left: 20px;
 }
 
 .Mypage .history-goodreview-checkbox {
@@ -326,7 +355,8 @@ body {
 	border: 1px solid #b1a8a8;
 	width: 65px;
 	height: 28px;
-	margin-left: 530px;
+	float: right;
+	margin-right: 50px;
 }
 
 .Mypage .history-goodreview-checkbox-title {
@@ -335,6 +365,8 @@ body {
 	font-size: 15px;
 	letter-spacing: 0;
 	line-height: normal;
+	border: 0;
+  	background-color: transparent;
 }
 
 /*작성한 리뷰*/
@@ -342,19 +374,24 @@ body {
 	background-color: #fffefe;
 	border: 1px solid #b1a8a8;
 	border-bottom: none;
-	display: flex;
-	align-items: center;
 	width: 754px;
 	height: auto;
+	float: left;
+	
+	padding-top:5px;
+	padding-bottom:5px;
 }
 
 .Mypage .history-writereview {
+	float: left;
 	font-weight: 300;
 	color: #000000;
 	font-size: 15px;
 	letter-spacing: 0;
 	line-height: normal;
-	padding: 15px;
+	
+	padding: 3px;
+	margin-left: 20px;
 }
 
 .Mypage .history-writereview-checkbox {
@@ -366,7 +403,8 @@ body {
 	border: 1px solid #b1a8a8;
 	width: 65px;
 	height: 28px;
-	margin-left: 530px;
+	float: right;
+	margin-right: 50px;
 }
 
 .Mypage .history-writereview-checkbox-title {
@@ -375,6 +413,8 @@ body {
 	font-size: 15px;
 	letter-spacing: 0;
 	line-height: normal;
+	border: 0;
+  	background-color: transparent;
 }
 
 /*찜 조회*/
@@ -382,19 +422,24 @@ body {
 	background-color: #fffefe;
 	border: 1px solid #b1a8a8;
 	border-bottom: none;
-	display: flex;
-	align-items: center;
 	width: 754px;
 	height: auto;
+	float: left;
+	
+	padding-top:5px;
+	padding-bottom:5px;
 }
 
 .Mypage .history-cart {
+	float: left;
 	font-weight: 300;
 	color: #000000;
 	font-size: 15px;
 	letter-spacing: 0;
 	line-height: normal;
-	padding: 15px;
+	
+	padding: 3px;
+	margin-left: 20px;
 }
 
 .Mypage .history-cart-checkbox {
@@ -406,7 +451,8 @@ body {
 	border: 1px solid #b1a8a8;
 	width: 65px;
 	height: 28px;
-	margin-left: 558px;
+	float: right;
+	margin-right: 50px;
 }
 
 .Mypage .history-cart-checkbox-title {
@@ -415,6 +461,8 @@ body {
 	font-size: 15px;
 	letter-spacing: 0;
 	line-height: normal;
+	border: 0;
+  	background-color: transparent;
 }
 
 /*내 쿠폰 관리*/
@@ -422,19 +470,24 @@ body {
 	background-color: #fffefe;
 	border-radius: 0px 0px 8px 8px;
 	border: 1px solid #b1a8a8;
-	display: flex;
-	align-items: center;
 	width: 754px;
 	height: auto;
+	float: left;
+	
+	padding-top:5px;
+	padding-bottom:5px;
 }
 
 .Mypage .history-coupon {
+	float: left;
 	font-weight: 300;
 	color: #000000;
 	font-size: 15px;
 	letter-spacing: 0;
 	line-height: normal;
-	padding: 15px;
+	
+	padding: 3px;
+	margin-left: 20px;
 }
 
 .Mypage .history-coupon-checkbox {
@@ -446,7 +499,8 @@ body {
 	border: 1px solid #b1a8a8;
 	width: 65px;
 	height: 28px;
-	margin-left: 525px;
+	float: right;
+	margin-right: 50px;
 }
 
 .Mypage .history-coupon-checkbox-title {
@@ -455,6 +509,8 @@ body {
 	font-size: 15px;
 	letter-spacing: 0;
 	line-height: normal;
+	border: 0;
+  	background-color: transparent;
 }
 
 /*로그아웃, 고객센터*/
