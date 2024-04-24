@@ -1,13 +1,18 @@
 package com.always5.admin.restboard.service;
 
+import static com.always5.common.template.JDBCTemplate.close;
+import static com.always5.common.template.JDBCTemplate.commit;
+import static com.always5.common.template.JDBCTemplate.getConnection;
+import static com.always5.common.template.JDBCTemplate.rollback;
 import java.sql.Connection;
 import java.util.ArrayList;
-import java.util.HashMap;
+
 import org.apache.ibatis.session.SqlSession;
 
 import com.always5.admin.restboard.model.dao.RestBoardDao;
 import com.always5.common.template.Template;
 import com.always5.common.vo.PageInfo;
+import com.always5.review.rest.model.vo.FoodCategory;
 import com.always5.review.rest.model.vo.Restaurant;
 
 
@@ -15,6 +20,7 @@ public class AdminRestServiceImpl implements AdminRestService{
 	
 	private RestBoardDao rDao = new RestBoardDao();
 	
+	// admin 레스토랑 리스트 게시판
 	@Override
 	public int selectRestListCount() {
 		SqlSession sqlSession = Template.getSqlSession();
@@ -34,6 +40,40 @@ public class AdminRestServiceImpl implements AdminRestService{
 		return list;
 
 	}
+
+	//레스토랑 등록추가
+	
+	//레스토랑 등록정보 수정
+	public Restaurant getRestaurantByNo(int restNo) {
+		return null;
+	}
+	
+	//음식카테고리 조회
+	
+	//admin 음식 카테고리 추가
+	@Override
+	public int insertFoodCategory(FoodCategory f) {
+		SqlSession sqlSession = Template.getSqlSession();
+		
+		int result = rDao.insertFoodCategory(sqlSession,f);
+		
+		if (result > 0) {
+			sqlSession.commit();
+		} else {
+			sqlSession.rollback();
+		}
+		
+		sqlSession.close();
+		
+		return result;
+	}
+
+	
+
+	
+
+
+	
 
 	
 

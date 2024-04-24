@@ -45,6 +45,22 @@ public class Restaurant {
 		this.foodCategoryNo = foodCategoryNo;
 		this.restAtList = restAtList;
 	}
+	
+	
+
+
+
+	public Restaurant(String restName, String restAddress, String restPhone, String restIntro, String restOperDate,
+			String foodCategoryNo, ArrayList<Attachment> restAtList) {
+		super();
+		this.restName = restName;
+		this.restAddress = restAddress;
+		this.restPhone = restPhone;
+		this.restIntro = restIntro;
+		this.restOperDate = restOperDate;
+		this.foodCategoryNo = foodCategoryNo;
+		this.restAtList = restAtList;
+	}
 
 
 

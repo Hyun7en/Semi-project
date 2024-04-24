@@ -1,9 +1,8 @@
 package com.always5.admin.restboard.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,16 +13,16 @@ import com.always5.admin.restboard.service.AdminRestServiceImpl;
 import com.always5.review.rest.model.vo.Restaurant;
 
 /**
- * Servlet implementation class AdminRestEnrollFormController
+ * Servlet implementation class AdminRestUpdateFormController
  */
-@WebServlet("/restenroll.ad")
-public class AdminRestEnrollFormController extends HttpServlet {
+@WebServlet("/restupdate.ad")
+public class AdminRestUpdateFormController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AdminRestEnrollFormController() {
+    public AdminRestUpdateFormController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,7 +31,17 @@ public class AdminRestEnrollFormController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("WEB-INF/views/admin/adminRestEnrollForm.jsp").forward(request, response);
+		// 가게 번호를 파라미터로 받아옴
+        int restNo = Integer.parseInt(request.getParameter("rno"));
+
+        // MyBatis를 사용하여 가게 정보를 검색
+        AdminRestServiceImpl restService = new AdminRestServiceImpl();
+        Restaurant restaurant = restService.getRestaurantByNo(restNo);
+
+        // 가게 정보를 request에 저장하여 JSP 페이지로 전달
+        request.setAttribute("restaurant", restaurant);
+        request.getRequestDispatcher("/admin/adminRestupdateForm.jsp").forward(request, response);
+	
 	}
 
 	/**
