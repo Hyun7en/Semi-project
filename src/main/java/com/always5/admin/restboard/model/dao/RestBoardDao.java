@@ -11,17 +11,14 @@ import com.always5.review.rest.model.vo.Restaurant;
 
 public class RestBoardDao {
 	
-	public ArrayList<Restaurant> selectRestListCount(SqlSession sqlSession) {
-		return sqlSession.selectOne("restMapper.selectRestListCount");
-	}
-	
+	//레스토랑 리스트 게시판 
 	public ArrayList<Restaurant> selectList(SqlSession sqlSession, PageInfo pi){
 		
 		int offset = (pi.getCurrentPage() - 1) * pi.getBoardLimit();
 		int limit = pi.getBoardLimit();
 		
 		RowBounds rowBounds = new RowBounds(offset, limit);
-		return (ArrayList)sqlSession.selectList("restMapper.selectRestList", null, rowBounds);
+		return (ArrayList)sqlSession.selectList("restMapper.selectList", null, rowBounds);
 	}
 
 	public ArrayList<Restaurant> selectSearchList(SqlSession sqlSession, HashMap<String, String> map, PageInfo pi){
@@ -31,6 +28,12 @@ public class RestBoardDao {
 		RowBounds rowBounds = new RowBounds(offset, limit);
 		return (ArrayList)sqlSession.selectList("restMapper.selectSearchList", map, rowBounds);
 	}
+
+	public int selectRestListCount(SqlSession sqlSession) {
+		return sqlSession.selectOne("restMapper.selectRestListCount");
+	}
+
+	
 	
 	
 	
