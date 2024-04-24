@@ -11,7 +11,7 @@
 		<result column="USER_ID" property="userId" />
 		<result column="USER_PWD" property="userPwd" />
 		<result column="USER_NAME" property="userName" />
-		<result column="NICKNAME" property="nickname" />
+		<result column="NICKNAME" property="nickName" />
 		<result column="USER_BIRTH" property="userBirth" />
 		<result column="USER_GENDER" property="userGender" />
 		<result column="USER_PHONE" property="userPhone" />
@@ -37,12 +37,10 @@
 				USER_ADDRESS,
 				USER_ENROLL_DATE,
 				USER_MODIFY_DATE,
-				USER_STATUS,
 				USER_POINT
 		FROM USER_INFO
 		WHERE USER_ID = #{userId}
 		AND USER_PWD = #{userPwd}
-		AND USER_STATUS = 'Y'
 	</select>
 	
 	<insert id="insertUser" parameterType="User">
