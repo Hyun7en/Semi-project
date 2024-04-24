@@ -16,8 +16,8 @@ public class User {
 	private String userPhone;
 	private String userEmail;
 	private String userAddress;
-	private Date enrollDate;
-	private Date modifyDate;
+	private Date userEnrollDate;
+	private Date userModifyDate;
 	private String status;
 	private int point;
 	
@@ -33,6 +33,21 @@ public class User {
 		this.userPwd = userPwd;
 		this.userName = userName;
 		this.nickName = nickName;
+		this.userBirth = userBirth;
+		this.userGender = userGender;
+		this.userPhone = userPhone;
+		this.userAddress = userAddress;
+	}
+	
+	public User(String authority, String userId, String userPwd, String userEmail, String nickName, String userName, String userBirth, String userGender, String userPhone,
+			String userAddress) {
+		super();
+		this.Authority = authority;
+		this.userId = userId;
+		this.userPwd = userPwd;
+		this.userName = userName;
+		this.nickName = nickName;
+		this.userEmail = userEmail;
 		this.userBirth = userBirth;
 		this.userGender = userGender;
 		this.userPhone = userPhone;
@@ -162,28 +177,28 @@ public class User {
 
 
 	public Date getEnrollDate() {
-		return enrollDate;
+		return userEnrollDate;
 	}
 
 
 
 
 	public void setEnrollDate(Date enrollDate) {
-		this.enrollDate = enrollDate;
+		this.userEnrollDate = enrollDate;
 	}
 
 
 
 
 	public Date getModifyDate() {
-		return modifyDate;
+		return userModifyDate;
 	}
 
 
 
 
 	public void setModifyDate(Date modifyDate) {
-		this.modifyDate = modifyDate;
+		this.userModifyDate = modifyDate;
 	}
 
 
@@ -222,8 +237,8 @@ public class User {
 		return "User [userNo=" + userNo + ", Authority=" + Authority + ", userId=" + userId + ", userPwd=" + userPwd
 				+ ", updatePwd=" + updatePwd + ", updateId=" + updateId + ", userName=" + userName + ", nickName="
 				+ nickName + ", userBirth=" + userBirth + ", userGender=" + userGender + ", userPhone=" + userPhone
-				+ ", userEmail=" + userEmail + ", userAddress=" + userAddress + ", enrollDate=" + enrollDate
-				+ ", modifyDate=" + modifyDate + ", status=" + status + ", point=" + point + "]";
+				+ ", userEmail=" + userEmail + ", userAddress=" + userAddress + ", userEnrollDate=" + userEnrollDate
+				+ ", userModifyDate;=" + userModifyDate + ", status=" + status + ", point=" + point + "]";
 	}
 }
 	

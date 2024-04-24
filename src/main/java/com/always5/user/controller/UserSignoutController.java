@@ -40,21 +40,18 @@ public class UserSignoutController extends HttpServlet {
 		
 		request.setCharacterEncoding("UTF-8");
 		
-		User u = new User();
-		String userId = request.getParameter("userId");
-		String userPwd = request.getParameter("userPwd");
-		
-		int result = new UserServiceImpl().deleteUser(u);
+		User loginUser = (User)request.getSession().getAttribute("loginUser");
+		request.setAttribute("loginUser", loginUser);
 		
 		HttpSession session = request.getSession();
 		
-		if(result > 0) {
-			session.setAttribute("message", "회원탈퇴가 완료되었습니다.");
-			session.removeAttribute("loginUser");
+		if(loginUser != null) {
+			session.setAttribute("loginUser", loginUser);
+			session.invalidate();
 			response.sendRedirect(request.getContextPath());
 		} else {
-			session.setAttribute("message", "회원탈퇴에 실패하였습니다.");
-			response.sendRedirect(request.getContextPath() + "/myPage.me");
+			session.setAttribute("errorMsg", "회원탈퇴에 실패하였습니다.");
+			request.getRequestDispatcher("WEB-INF/views/common/errorPage.jsp").forward(request, response);
 		}
 	}
 

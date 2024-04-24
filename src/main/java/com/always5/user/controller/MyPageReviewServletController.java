@@ -30,6 +30,8 @@ public class MyPageReviewServletController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		User loginUser = (User)request.getSession().getAttribute("loginUser");
+		request.setAttribute("loginUser", loginUser);
 		request.getRequestDispatcher("WEB-INF/views/user/MypageReview.jsp").forward(request, response);
 	}
 

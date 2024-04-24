@@ -21,67 +21,62 @@ href="${pageContext.request.contextPath}/resources/css/user_css/MypageGoods.css"
 
 			<!-- 찜 목록 -->
 			<div class="MypageGoods-title-box">
-				<div class="MypageGoods-Name">${Mypage.nickName}</div>
+				<div class="MypageGoods-Name">${loginUser.nickName}</div>
 				<div class="MypageGoods-Name2">님의 찜 목록</div>
 			</div>
 
 			<!-- 1번 찜 -->
+			<c:forEach var="rest" items="${list}">
 			<div class="reviewbox01">
 				<div class="reviewbox-wrapper">
-					<div class="reviewbox-title">한식 1번가 건대점</div>
-					<div class="reviewbox-grade">평점 5.0</div>
-
+					<div class="reviewbox-title">${rest.restName}</div>
+					<div class="reviewbox-grade">${rest.restGrade}</div>
+			
 					<div class="crown-rank">
+					<c:forEach var="crown" begin="1" end="${rest.restGrade}">
 						<img class="crown"
 							src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/crown.png" />
-						<img class="crown"
-							src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/crown.png" />
-						<img class="crown"
-							src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/crown.png" />
-						<img class="crown"
-							src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/crown.png" />
-						<img class="crown"
-							src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/crown.png" />
+					</c:forEach>
 					</div>
 
 					<button class="review-box-mainpagebox">
 						<div class="review-box-mainpage">
-							<a href="#">가게보기</a>
+							<a href="main.re?rno=${rest.restNo}">가게보기</a>
 						</div>
 					</button>
 
 					<img class="reviewbox-line" src="img/line-50.svg" />
-					<div class="reviewbox-text">(전지로만) 부산식 돼지국밥, 모듬국밥, 살코기 순대국</div>
-
+					<div class="reviewbox-text">${rest.restIntro}</div>
+					
+					<c:forEach var="menu" items="${rest.restAtList}">
 					<img class="reviewbox-preview01"
-						src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/한식01.jpg" />
+						src="${pageContext.request.contextPath}/${menu.filePath}/${menu.changeName}" />
+					</c:forEach>
+					
 					<img class="reviewbox-preview02"
 						src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/한식02.jpg" />
 					<img class="reviewbox-preview03"
 						src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/한식03.jpg" />
 				</div>
 			</div>
-
-			<!-- 2번 찜 -->
+		   </c:forEach>
+		   
+			<%-- <!-- 2번 찜 -->
 			<div class="reviewbox02">
 				<div class="reviewbox-wrapper">
-					<div class="reviewbox-title">미스사이공 세종대점</div>
-					<div class="reviewbox-grade">평점 4.0</div>
+					<div class="reviewbox-title">${rest.restName}</div>
+					<div class="reviewbox-grade">${rest.restGrade}</div>
 
 					<div class="crown-rank">
+					<c:forEach var="crown" items="${rest.restGrade}">
 						<img class="crown"
 							src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/crown.png" />
-						<img class="crown"
-							src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/crown.png" />
-						<img class="crown"
-							src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/crown.png" />
-						<img class="crown"
-							src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/crown.png" />
+						</c:forEach>
 					</div>
 
 					<button class="review-box-mainpagebox02">
 						<div class="review-box-mainpage02">
-							<a href="#">가게보기</a>
+							<a href="main.re">가게보기</a>
 						</div>
 					</button>
 
@@ -105,20 +100,14 @@ href="${pageContext.request.contextPath}/resources/css/user_css/MypageGoods.css"
 					<div class="reviewbox-grade">평점 5.0</div>
 
 					<div class="crown-rank">
+					<c:forEach var="crown" items="${rest.restGrade}">
 						<img class="crown"
 							src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/crown.png" />
-						<img class="crown"
-							src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/crown.png" />
-						<img class="crown"
-							src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/crown.png" />
-						<img class="crown"
-							src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/crown.png" />
-						<img class="crown"
-							src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/crown.png" />
+						</c:forEach>
 					</div>
 
 					<button class="review-box-mainpagebox03">
-						<div class="review-box-mainpage03"><a href="#">가게보기</a></div>
+						<div class="review-box-mainpage03"><a href="main.re">가게보기</a></div>
 					</button>
 
 					<img class="reviewbox-line" src="img/line-50.svg" />
@@ -141,16 +130,14 @@ href="${pageContext.request.contextPath}/resources/css/user_css/MypageGoods.css"
 					<div class="reviewbox-grade">평점 3.0</div>
 
 					<div class="crown-rank">
+					<c:forEach var="crown" items="${rest.restGrade}">
 						<img class="crown"
 							src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/crown.png" />
-						<img class="crown"
-							src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/crown.png" />
-						<img class="crown"
-							src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/crown.png" />
+						</c:forEach>
 					</div>
 
 					<button class="review-box-mainpagebox04">
-						<div class="review-box-mainpage04"><a href="#">가게보기</a></div>
+						<div class="review-box-mainpage04"><a href="main.re">가게보기</a></div>
 					</button>
 
 					<img class="reviewbox-line" src="img/line-50.svg" />
@@ -173,20 +160,14 @@ href="${pageContext.request.contextPath}/resources/css/user_css/MypageGoods.css"
 					<div class="reviewbox-grade">평점 5.0</div>
 
 					<div class="crown-rank">
+					<c:forEach var="crown" items="${rest.restGrade}">
 						<img class="crown"
 							src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/crown.png" />
-						<img class="crown"
-							src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/crown.png" />
-						<img class="crown"
-							src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/crown.png" />
-						<img class="crown"
-							src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/crown.png" />
-						<img class="crown"
-							src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/crown.png" />
+						</c:forEach>
 					</div>
 
 					<button class="review-box-mainpagebox05">
-						<div class="review-box-mainpage05">가게보기</div>
+						<div class="review-box-mainpage05"><a href="main.re">가게보기</a></div>
 					</button>
 
 					<img class="reviewbox-line" src="img/line-50.svg" />
@@ -200,9 +181,9 @@ href="${pageContext.request.contextPath}/resources/css/user_css/MypageGoods.css"
 					<img class="reviewbox-preview03"
 						src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/한식03.jpg" />
 				</div>
-			</div>
+			</div> --%>
 			<script
-				src="${pageContext.request.contextPath}/resources/js/user_js/MyPageGoods.js"></script>
+				src="${pageContext.request.contextPath}/resources/js/user_js/MypageGoods.js"></script>
 		</div>
 	</form>
 </body>

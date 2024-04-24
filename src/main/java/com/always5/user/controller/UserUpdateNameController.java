@@ -31,26 +31,25 @@ public class UserUpdateNameController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
-
-		User u = new User();
-		u.setUserId(request.getParameter("Nickname"));
-		u.setUpdateId(request.getParameter("updateNickName"));
-
-		User updateUserName = new UserServiceImpl().updateUserNickName(u);
-
+		User loginUser = (User)request.getSession().getAttribute("loginUser");
+		
+		
+		request.setAttribute("loginUser", loginUser);
+		System.out.println(loginUser);
+		
+		User updateUserName = new UserServiceImpl().updateUserNickName(loginUser);
+		System.out.println(updateUserName);
+		
 		if (updateUserName == null) {
-			request.setAttribute("errorMsg", "닉네임 수정 실패");
+			request.setAttribute("errorMsg", "아이디 수정 실패");
 			request.getRequestDispatcher("WEB-INF/views/common/errorPage.jsp").forward(request, response);
-		} else { // 성공
-			// 세션에 저장된 loginUser의 닉네임을 수정된 닉네임으로 변경
+		} else {
 			HttpSession session = request.getSession();
-			session.setAttribute("alertMsg", "성공적으로 수정했습니다.");
 			session.setAttribute("loginUser", updateUserName);
-			
-			response.sendRedirect(request.getContextPath() + "/MyPage.ui");
+			request.setAttribute("errorMsg", "성공적으로 수정했습니다.");
+			request.getRequestDispatcher("WEB-INF/views/common/errorPage.jsp").forward(request, response);
 		}
-	}
+	 }
 
 
 	/**

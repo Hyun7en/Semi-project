@@ -20,15 +20,18 @@ public class UserDao {
 	}
 
 	public int updateUserID(SqlSession sqlSession, User u) {
-		return sqlSession.update("userMapper.updateUserID", u);
+		int result = sqlSession.update("userMapper.updateUserID", u);
+		return result;
 	}
 
 	public int updateUserPwd(SqlSession sqlSession, User u) {
-		return sqlSession.update("userMapper.updateUserPwd", u);
+		int result = sqlSession.update("userMapper.updateUserPwd", u);
+		return result;
 	}
 
 	public int updateUserNickName(SqlSession sqlSession, User u) {
-		return sqlSession.update("userMapper.updateUserNickName", u);
+		int result = sqlSession.update("userMapper.updateUserNickName", u);
+		return result;
 	}
 }
 
