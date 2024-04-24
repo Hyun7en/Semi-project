@@ -17,15 +17,15 @@
 	</resultMap>
 
 	<resultMap id="csDetailResultSet" type="CsDetail">
-		<!-- <result column="CS_DETAIL_NO" property="csDetailNo"/> -->
-		<!-- <result column="CS_TYPE_NO" property="csTypeNo"/> -->
+		<result column="CS_DETAIL_NO" property="csDetailNo"/>
+		<result column="CS_TYPE_NO" property="csTypeNo"/>
 		<result column="CS_KEYWORD_NO" property="csKeywordNo"/>
 		<result column="CS_DETAIL_TITLE" property="csDetailTitle"/>
 		<result column="CS_DETAIL_CONTENT" property="csDetailContent"/>
 		<result column="CS_DETAIL_ENROLL_DATE" property="csDetailEnrollDate"/>
-		<!-- <result column="CS_DETAIL_MODIFY_DATE" property="csDetailModifyDate"/> -->
+		<result column="CS_DETAIL_MODIFY_DATE" property="csDetailModifyDate"/>
 		<result column="CS_DETAIL_STATUS" property="csDetailStatus"/>
-		<!-- <result column="CS_DETAIL_WRITER" property="csDetailWriter"/> -->
+		<result column="USER_ID" property="csDetailWriter"/>
 	</resultMap>
 
 	<select id="selectCsTypeList" resultMap="csTypeResultSet">
@@ -48,5 +48,20 @@
 		 WHERE CS_DETAIL_STATUS = 'Y' 
 		   AND CS_KEYWORD_NO = #{csKeywordNo}
 		 ORDER BY CS_DETAIL_ENROLL_DATE DESC
+	</select>
+	<select id="selectAdminCsListCount" resultType="_int">
+		SELECT COUNT(*)
+		  FROM CUSTOMER_SERVICE_DETAIL
+		WHERE CS_DETAIL_STATUS = 'Y'
+	</select>
+	<select id="selectAdminCsList" resultMap="csDetailResultSet">
+		SELECT CS_DETAIL_NO,
+				CS_DETAIL_TITLE,
+				USER_ID,
+				CS_DETAIL_ENROLL_DATE
+		FROM CUSTOMER_SERVICE_DETAIL CSD
+		JOIN USER_INFO ON (CS_DETAIL_WRITER = USER_NO)
+		WHERE CSD.CS_DETAIL_STATUS = 'Y'
+		ORDER BY CS_DETAIL_NO DESC
 	</select>
 </mapper>

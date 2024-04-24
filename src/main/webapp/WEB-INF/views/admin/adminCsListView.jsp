@@ -24,7 +24,7 @@
 
 
                             <div id="search-area">
-                                <form action="search.bo" method="get">
+                                <form action="#" method="get">
                                     <input type="hidden" name="cpage" value="1">
                                     <select name="condition">
                                         <option value="all">전체</option>
@@ -62,10 +62,10 @@
                                 <tbody>
                                     <c:forEach var="ac" items="${list}">
                                         <tr>
-                                            <td>${ac.boardNo }</td>
-                                            <td><a href="detail.AdminCs?bno=${ac.boardNo}">${ac.boardTitle }</a></td>
-                                            <td>${ac.boardWriter }</td>
-                                            <td>${ac.createDate }</td>
+                                            <td>${ac.csDetailNo }</td>
+                                            <td><a href="detail.AdminCs?bno=${ac.csDetailNo}">${ac.csDetailTitle }</a></td>
+                                            <td>${ac.csDetailWriter}</td>
+                                            <td>${ac.csDetailEnrollDate }</td>
                                         </tr>
                                     </c:forEach>
                                 </tbody>

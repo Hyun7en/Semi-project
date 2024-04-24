@@ -1,6 +1,8 @@
 package com.always5.admin.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.always5.admin.service.AdminCsServiceImpl;
 import com.always5.common.template.Pagination;
 import com.always5.common.vo.PageInfo;
+import com.always5.customerService.model.vo.CsDetail;
 
 /**
  * Servlet implementation class AdminCsListController
@@ -31,14 +34,14 @@ public class AdminCsListController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 				//----------- 페이징처리---------------------------
-//				int AdminCslistCount = new AdminCsServiceImpl().selectAdminCsListCount(); //현재 총 게시글 수 
-				int currentPage = Integer.parseInt(request.getParameter("cpage"));
-//				
+				int AdminCslistCount = new AdminCsServiceImpl().selectAdminCsListCount(); //현재 총 게시글 수 
+//				int currentPage = Integer.parseInt(request.getParameter("cpage"));
+				int currentPage = 1;
 				PageInfo pi = Pagination.getPageInfo(AdminCslistCount, currentPage, 10, 5);
-//				
-//				ArrayList<Board> list = new BoardServiceImpl().selectList(pi);
-//				
-//				request.setAttribute("list", list);
+				
+				ArrayList<CsDetail> list = new AdminCsServiceImpl().selectAdminCsList(pi);
+				
+				request.setAttribute("list", list);
 				request.setAttribute("pi", pi);
 				
 				request.getRequestDispatcher("WEB-INF/views/admin/adminCsListView.jsp").forward(request, response);
