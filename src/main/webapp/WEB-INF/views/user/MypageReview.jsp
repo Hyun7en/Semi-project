@@ -21,7 +21,7 @@
 
             <!-- 작성 리뷰 -->
             <div class="MypageReview-title-box">
-                <div class="MypageReview-Name">${Mypage.userName}</div>
+                <div class="MypageReview-Name">${Mypage.nickName}</div>
                 <div class="MypageReview-Name2">님의 작성 리뷰</div>
             </div>
 

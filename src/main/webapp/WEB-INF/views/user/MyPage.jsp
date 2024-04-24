@@ -21,7 +21,7 @@
 
 			<!-- 회원정보 상단 -->
 			<div class="Mypage-main-logo">
-				<div class="Mypage-username">${Mypage.userName}</div>
+				<div class="Mypage-username">${Mypage.nickName}</div>
 				<div class="Mypage-usergrade">밥백성(회원)</div>
 
 				<div class="Mypage-main-icon">
