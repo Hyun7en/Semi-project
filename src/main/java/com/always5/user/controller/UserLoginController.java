@@ -40,8 +40,8 @@ public class UserLoginController extends HttpServlet {
 		User loginUser = new UserServiceImpl().loginUser(u);
 		
 		if (loginUser == null) {
-			request.setAttribute("message", "로그인 실패");
-			request.getRequestDispatcher("WEB-INF/views/common/errorpage.jsp");
+			request.setAttribute("errorMsg", "로그인 실패");
+			request.getRequestDispatcher("WEB-INF/views/common/errorPage.jsp").forward(request, response);
 		} else {
 			request.getSession().setAttribute("loginUser", loginUser);
 			response.sendRedirect(request.getContextPath());

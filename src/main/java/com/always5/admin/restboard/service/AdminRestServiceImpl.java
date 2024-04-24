@@ -35,17 +35,6 @@ public class AdminRestServiceImpl implements AdminRestService{
 
 	}
 
-	public ArrayList<Restaurant> selectRestList() {
-		Connection conn = getConnection();
-		
-		ArrayList<Restaurant> list = new RestBoardDao().selectRestList(conn);
-		close(conn);
-		
-		return list;
-	}
-
-	public Restaurant increaseCount(int restNo) {
-		return null;
-	}
+	
 
 }
