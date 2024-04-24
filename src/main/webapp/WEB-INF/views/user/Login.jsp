@@ -34,11 +34,11 @@
 					<div class="login-input-box">
 
 						<div class="login-id-wrapper">
-							<input type="text" name="login-input-id" class="login-input-id"
+							<input type="text" name="userId" class="login-input-id"
 								placeholder="아이디 (현재 이메일 주소)">
 						</div>
 						<div class="login-Pwd-wrapper">
-							<input type="password" name="login-input-Pwd" class="login-input-Pwd"
+							<input type="password" name="userPwd" class="login-input-Pwd"
 								placeholder="비밀번호를 입력하세요.">
 						</div>
 
