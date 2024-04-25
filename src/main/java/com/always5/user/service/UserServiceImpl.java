@@ -58,52 +58,45 @@ public class UserServiceImpl implements UserService{
     }
 	
 	@Override
-	public User updateUserID(User u) {
+	public int updateUserID(User u) {
+
 		SqlSession sqlSession = Template.getSqlSession();
-		//아이디 변경
+		
 		int result = uDao.updateUserID(sqlSession, u);
 		
-		//변경된 아이디를 담을 변수
-		User updateUserID = null;
-		
-		//아이디 변경 성공 시 commit, 실패 시 rollback
 		if(result > 0) {
 			sqlSession.commit();
 		} else {
 			sqlSession.rollback();
 		}
 		
-		//아이디 변경 후 변경된 아이디로 다시 로그인
-		User userId = uDao.loginUser(sqlSession, u);
 		sqlSession.close();
-		//변경된 아이디 반환
-		return userId;
-    }
+		return result;
+	}
+	
 	
 	@Override
-	public User updateUserPwd(User u) {
+	public int updateUserPwd(User u) {
 		SqlSession sqlSession = Template.getSqlSession();
+		
 		int result = uDao.updateUserPwd(sqlSession, u);
 		
-		User updateUserPwd = null;
-		
 		if(result > 0) {
 			sqlSession.commit();
 		} else {
 			sqlSession.rollback();
 		}
 		
-		User userPwd = uDao.loginUser(sqlSession, u);
 		sqlSession.close();
-		return userPwd;
-    }
+		return result;
+	}
+
 	
 	@Override
-	public User updateUserNickName(User u) {
+	public int updateUserNickName(User u) {
 		SqlSession sqlSession = Template.getSqlSession();
-		int result = uDao.updateUserNickName(sqlSession, u);
 		
-		User updateUserNickName = null;
+		int result = uDao.updateUserNickName(sqlSession, u);
 		
 		if(result > 0) {
 			sqlSession.commit();
@@ -111,8 +104,7 @@ public class UserServiceImpl implements UserService{
 			sqlSession.rollback();
 		}
 		
-		User nickName = uDao.loginUser(sqlSession, u);
 		sqlSession.close();
-		return nickName;
-    }
+		return result;
+	}
 }

@@ -43,9 +43,7 @@ public class MyPageReviewServletController extends HttpServlet {
 		
 	    request.setAttribute("list", list);
 	    request.setAttribute("loginUser", loginUser);
-		for (Review r : list) {
-			System.out.println(r);
-		}
+
 		request.getRequestDispatcher("WEB-INF/views/user/MypageReview.jsp").forward(request, response);
 	}
 
