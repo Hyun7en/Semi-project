@@ -66,7 +66,7 @@
                         <div align="center">
                             <a href="list.AdminCs" class="btn btn-sm btn-secondary">목록가기</a>
                             <a href="update.AdminCs" class="btn btn-sm btn-warning">수정하기</a>
-                            <a href="delete.AdminCs" class="btn btn-sm btn-danger">삭제하기</a>
+                            <a href="delete.AdminCs?csDetail=${csDetail.csDetailNo}" class="btn btn-sm btn-danger">삭제하기</a>
                         </div>
 
 
