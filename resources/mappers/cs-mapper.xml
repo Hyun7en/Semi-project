@@ -11,21 +11,21 @@
 	</resultMap>
 
 	<resultMap id="csKeywordResultSet" type="CsKeyword">
-		<result column="CS_KEYWORD_NO" property="cskeywordNo"/>
+		<result column="CS_KEYWORD_NO" property="csKeywordNo"/>
 		 <result column="CS_TYPE_NO" property="csTypeNo"/>
-		<result column="CS_KEYWORD_VALUE" property="cskeywordValue"/>
+		<result column="CS_KEYWORD_VALUE" property="csKeywordValue"/>
 	</resultMap>
 
 	<resultMap id="csDetailResultSet" type="CsDetail">
-		<!-- <result column="CS_DETAIL_NO" property="csDetailNo"/> -->
-		<!-- <result column="CS_TYPE_NO" property="csTypeNo"/> -->
+		<result column="CS_DETAIL_NO" property="csDetailNo"/>
+		<result column="CS_TYPE_NO" property="csTypeNo"/>
 		<result column="CS_KEYWORD_NO" property="csKeywordNo"/>
 		<result column="CS_DETAIL_TITLE" property="csDetailTitle"/>
 		<result column="CS_DETAIL_CONTENT" property="csDetailContent"/>
 		<result column="CS_DETAIL_ENROLL_DATE" property="csDetailEnrollDate"/>
-		<!-- <result column="CS_DETAIL_MODIFY_DATE" property="csDetailModifyDate"/> -->
+		<result column="CS_DETAIL_MODIFY_DATE" property="csDetailModifyDate"/>
 		<result column="CS_DETAIL_STATUS" property="csDetailStatus"/>
-		<!-- <result column="CS_DETAIL_WRITER" property="csDetailWriter"/> -->
+		<result column="USER_ID" property="csDetailWriter"/>
 	</resultMap>
 
 	<select id="selectCsTypeList" resultMap="csTypeResultSet">
@@ -49,4 +49,108 @@
 		   AND CS_KEYWORD_NO = #{csKeywordNo}
 		 ORDER BY CS_DETAIL_ENROLL_DATE DESC
 	</select>
+	
+	<select id="selectAdminCsListCount" resultType="_int">
+	
+		SELECT COUNT(*)
+		  FROM CUSTOMER_SERVICE_DETAIL
+		 WHERE CS_DETAIL_STATUS = 'Y'
+	</select>
+	
+	<select id="selectAdminCsList" resultMap="csDetailResultSet">
+		SELECT 
+			   CS_DETAIL_NO,
+			   CS_DETAIL_TITLE,
+			   USER_ID,
+			   CS_DETAIL_ENROLL_DATE
+		  FROM CUSTOMER_SERVICE_DETAIL CSD
+		  JOIN USER_INFO ON (CS_DETAIL_WRITER = USER_NO)
+		 WHERE CSD.CS_DETAIL_STATUS = 'Y'
+	  ORDER BY CS_DETAIL_NO DESC
+	</select>
+	
+	<select id="selectAdminCsSearchCount" resultType="_int">
+		SELECT COUNT(*)
+		  FROM CUSTOMER_SERVICE_DETAIL CSD
+		  JOIN USER_INFO ON (CS_DETAIL_WRITER = USER_NO)
+		 WHERE CSD.CS_DETAIL_STATUS = 'Y'
+		<if test="condition == 'writer'">
+		   AND USER_ID
+		</if>
+		<if test="condition == 'title'">
+		   AND CS_DETAIL_TITLE
+		</if>
+		<if test="condition == 'content'">
+		   AND CS_DETAIL_CONTENT
+		</if>
+		  LIKE '%' || #{keyword} || '%'
+	</select>
+	
+	<select id="selectAdminCsSearchList" resultMap="csDetailResultSet">
+		SELECT CS_DETAIL_NO,
+				CS_DETAIL_TITLE,
+				USER_ID,
+				CS_DETAIL_ENROLL_DATE
+		  FROM CUSTOMER_SERVICE_DETAIL CSD
+		  JOIN USER_INFO ON (CS_DETAIL_WRITER = USER_NO)
+		 WHERE CSD.CS_DETAIL_STATUS = 'Y'
+		<choose>
+			<when test="condition == 'writer'">
+				AND USER_ID
+			</when>
+			<when test="condition == 'title'">
+				AND CS_DETAIL_TITLE
+			</when>
+			<otherwise>
+				AND CS_DETAIL_CONTENT
+			</otherwise>
+		</choose>
+		  LIKE '%' || #{keyword} || '%'
+		 ORDER BY CS_DETAIL_NO DESC
+	</select>
+	
+	<select id="selectBoard" parameterType="_int" resultMap="csDetailResultSet">
+		SELECT CS_DETAIL_NO,
+			   CS_DETAIL_TITLE,
+			   USER_ID,
+			   CS_DETAIL_ENROLL_DATE,
+			   CS_DETAIL_CONTENT
+		  FROM CUSTOMER_SERVICE_DETAIL CSD
+		  JOIN USER_INFO ON (CS_DETAIL_WRITER = USER_NO)
+		 WHERE CSD.CS_DETAIL_STATUS = 'Y'
+		   AND CS_DETAIL_NO = #{boardNo}
+	</select>
+	
+	<insert id="insertAdminCs">
+		INSERT 
+		  INTO CUSTOMER_SERVICE_DETAIL
+		  	   (
+	  			   CS_DETAIL_NO,
+				   CS_KEYWORD_NO,
+				   CS_DETAIL_TITLE,
+				   CS_DETAIL_CONTENT,
+			       CS_DETAIL_ENROLL_DATE,
+				   CS_DETAIL_MODIFY_DATE,
+				   CS_DETAIL_STATUS,
+				   CS_DETAIL_WRITER	
+	  			)
+	  	VALUES
+	  			(
+	  			 SEQ_CSDNO.NEXTVAL,
+		  		 #{csKeywordNo},
+		  		 #{csDetailTitle},
+		  		 #{csDetailContent},
+	  			 DEFAULT,
+	  			 DEFAULT,
+	  			 DEFAULT,
+	  			 TO_NUMBER(#{csDetailWriter})
+	  			)	
+	  			 
+	</insert>
+	
+	<!--<delete id="">
+	</delete>
+	<update id="">
+	</update> -->
+	
 </mapper>
