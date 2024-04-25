@@ -11,7 +11,7 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet implementation class UserLogoutController
  */
-@WebServlet("/logout.u")
+@WebServlet("/logout.ui")
 public class UserLogoutController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -27,10 +27,13 @@ public class UserLogoutController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// 로그아웃 처리용 컨트롤러
+		// 세션을 무효화 시킨다.
+		
+		//
 		// 세션을 무효화 시킨다.
 		HttpSession Session = request.getSession();
 		Session.invalidate();
-		Session.removeAttribute("loginUser");
 		
 		// 메인 페이지로 이동한다.
 		response.sendRedirect(request.getContextPath());
