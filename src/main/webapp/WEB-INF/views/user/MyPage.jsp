@@ -95,7 +95,7 @@
 
 			<!-- 로그아웃, 고객센터 -->
 			<div class="Mypage-option">
-				<div class="Mypage-option-logout"><a href="logout.u">로그아웃</a></div>
+				<div class="Mypage-option-logout"><a href="logout.ui">로그아웃</a></div>
 				<img class="Mypage-option-img"
 					src="${pageContext.request.contextPath}/resources/file/user_img/Mypage-img/line-44.svg" />
 				<div class="Mypage-option-service"><a href="CsCenter">고객센터</a></div>
