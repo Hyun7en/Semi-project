@@ -120,4 +120,11 @@
 		 WHERE CSD.CS_DETAIL_STATUS = 'Y'
 		   AND CS_DETAIL_NO = #{boardNo}
 	</select>
+	<insert id="">
+	</insert>
+	<delete id="">
+	</delete>
+	<update id="">
+	</update>
+	
 </mapper>
