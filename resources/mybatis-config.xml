@@ -9,14 +9,14 @@
 
 	<typeAliases>
 	  
-		<!-- <typeAlias type="com.always5.review.rest.model.vo.Restaurant" alias="Restaurant" />
+		<typeAlias type="com.always5.review.rest.model.vo.Restaurant" alias="Restaurant" />
 		<typeAlias type="com.always5.review.rest.model.vo.Menu" alias="Menu" />
-		<typeAlias type="com.always5.common.vo.Attachment" alias="Attachment" />  -->
+		<typeAlias type="com.always5.common.vo.Attachment" alias="Attachment" />  
 		<typeAlias type="com.always5.user.model.vo.User" alias="User" />
-		<!--<typeAlias type="com.always5.user.model.vo.Dibs" alias="Dibs" />
+		<typeAlias type="com.always5.user.model.vo.Dibs" alias="Dibs" />
 		<typeAlias type="com.always5.user.model.vo.Mypage" alias="Mypage" />
 		<typeAlias type="com.always5.review.rest.model.vo.MenuCategory" alias="MenuCategory" />
-		<typeAlias type="com.always5.review.model.vo.Review" alias="Review" /> -->
+		<typeAlias type="com.always5.review.model.vo.Review" alias="Review" /> 
 		<typeAlias type="com.always5.customerService.model.vo.CsType" alias="csType" />
 		<typeAlias type="com.always5.customerService.model.vo.CsKeyword" alias="CsKeyword" />
 		<typeAlias type="com.always5.customerService.model.vo.CsDetail" alias="CsDetail" />		
