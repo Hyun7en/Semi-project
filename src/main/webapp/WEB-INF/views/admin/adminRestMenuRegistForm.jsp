@@ -5,9 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="../../resources/css/common_css/style.css">
-<link rel="stylesheet" href="../../resources/css/admin_css/adminView.css">
-<link rel="stylesheet" href="../../resources/css/admin_css/adminRestMenuRegistForm.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/common_css/style.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/admin_css/adminView.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/admin_css/adminRestMenuRegistForm.css">
 
 <body>
     <div id="wrap">
@@ -20,7 +20,7 @@
                 <table id="regist-menu">
                     <tr>
                         <th width="20%">가게 이름</th>
-                        <td><input type="text" name="restName" value="왕밥빵 1호점" id="rest-name" readonly></td>
+                        <td><input type="text" name="restName" value="${r.restName }" id="rest-name" readonly></td>
                         <!-- 방금 등록된 가게 이름 가져와야 함 -->
                     </tr>
                     <tr>
