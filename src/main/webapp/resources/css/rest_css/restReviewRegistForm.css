@@ -1,0 +1,112 @@
+*{
+    /* border: 1px solid #B1A8A8; */
+}
+#wrap{
+    border: 1px solid #B1A8A8;
+    width: 1320px;
+    height: auto;
+    margin: 200px auto auto auto;
+    background-color: #FAF7F7;
+}
+
+main{
+
+    text-align: center;
+}
+
+#review-main{
+    width: 1320px;
+    height: auto;
+    background-color: #FAF7F7;
+    text-align: center;
+    margin: auto;
+    padding-top: 0px;
+}
+
+.main-form{
+    display: flex;
+    justify-content: center;
+}
+
+table{
+    margin: 60px auto 20px auto;
+    width: 1000px;
+    font-size: 17px;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+table *{
+    vertical-align: middle;
+}
+
+tr{
+    height: 40px;
+    border: 1px solid #B1A8A8;
+    border-left: none;
+    border-right: none;
+}
+
+table input, select, textarea, button{
+    width: 700px;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid #B1A8A8;
+    font-size: 15px;
+    margin: 40px 0px;
+    outline: none;
+    padding: 0px 10px;
+    background-color: white;
+}
+
+textarea{
+    height: 200px;
+    padding: 10px 10px;
+    resize: none;
+}
+
+#rest-name{
+    background-color: #E7E5DF;
+}
+
+.rest-regist-img{
+    width: 100%;
+    display: flex;
+}
+.rest-regist-img>img{
+    width: 10%;
+    margin: 30px 20px 30px 45px;
+    cursor: pointer;
+}
+
+.black-button{
+    width: 400px;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid #B1A8A8;
+    background-color: #313D40;
+    color: white;
+    font-size: 17px;
+}
+
+
+#review-main input{
+    width: 700px;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid #B1A8A8;
+    font-size: 15px;
+    margin: 40px 0px;
+    outline: none;
+    padding: 0px 10px;
+}
+
+.black-button{
+    width: 400px;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid #B1A8A8;
+    background-color: #313D40;
+    color: white;
+    font-size: 17px;
+}
