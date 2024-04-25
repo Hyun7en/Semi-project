@@ -1,49 +1,52 @@
 package com.always5.customerService.model.vo;
 
 public class CsKeyword {
-	private int cskeywordNo;
+	private int csKeywordNo;
 	private int csTypeNo;
-	private String cskeywordValue;
+	private String csKeywordValue;
 	
 	public CsKeyword() {
 		super();
 	}
 	
-	public CsKeyword(int cskeywordNo, int csTypeNo, String cskeywordValue) {
+	public CsKeyword(int csKeywordNo, int csTypeNo, String csKeywordValue) {
 		super();
-		this.cskeywordNo = cskeywordNo;
+		this.csKeywordNo = csKeywordNo;
 		this.csTypeNo = csTypeNo;
-		this.cskeywordValue = cskeywordValue;
+		this.csKeywordValue = csKeywordValue;
 	}
-
-	public int getCskeywordNo() {
-		return cskeywordNo;
+	
+	public int getCsKeywordNo() {
+		return csKeywordNo;
 	}
-
-	public void setCskeywordNo(int cskeywordNo) {
-		this.cskeywordNo = cskeywordNo;
+	
+	public void setCsKeywordNo(int csKeywordNo) {
+		this.csKeywordNo = csKeywordNo;
 	}
-
+	
 	public int getCsTypeNo() {
 		return csTypeNo;
 	}
-
+	
 	public void setCsTypeNo(int csTypeNo) {
 		this.csTypeNo = csTypeNo;
 	}
-
-	public String getCskeywordValue() {
-		return cskeywordValue;
+	
+	public String getCsKeywordValue() {
+		return csKeywordValue;
 	}
-
-	public void setCskeywordValue(String cskeywordValue) {
-		this.cskeywordValue = cskeywordValue;
+	
+	public void setCsKeywordValue(String csKeywordValue) {
+		this.csKeywordValue = csKeywordValue;
 	}
-
+	
 	@Override
 	public String toString() {
-		return "CsKeyword//// cskeywordNo=" + cskeywordNo + ", csTypeNo=" + csTypeNo + ", cskeywordValue=" + cskeywordValue +"/";
+		return "CsKeyword [csKeywordNo=" + csKeywordNo + ", csTypeNo=" + csTypeNo + ", csKeywordValue=" + csKeywordValue
+				+ "]";
 	}
+	
+	
 	
 	
 	

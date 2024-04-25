@@ -5,7 +5,6 @@ import java.sql.Date;
 public class CsDetail {
 	private int csDetailNo;
 	private int csKeywordNo;
-	private int csTypeNo;
 	private String csDetailTitle;
 	private String csDetailContent;
 	private Date csDetailEnrollDate;
@@ -16,13 +15,24 @@ public class CsDetail {
 	public CsDetail() {
 		super();
 	}
+	
+	
+	
+	public CsDetail(int csKeywordNo, String csDetailTitle, String csDetailContent, String csDetailWriter) {
+		super();
+		this.csKeywordNo = csKeywordNo;
+		this.csDetailTitle = csDetailTitle;
+		this.csDetailContent = csDetailContent;
+		this.csDetailWriter = csDetailWriter;
+	}
 
-	public CsDetail(int csDetailNo, int csKeywordNo, int csTypeNo, String csDetailTitle, String csDetailContent,
+
+
+	public CsDetail(int csDetailNo, int csKeywordNo, String csDetailTitle, String csDetailContent,
 			Date csDetailEnrollDate, Date csDetailModifyDate, String csDetailStatus, String csDetailWriter) {
 		super();
 		this.csDetailNo = csDetailNo;
 		this.csKeywordNo = csKeywordNo;
-		this.csTypeNo = csTypeNo;
 		this.csDetailTitle = csDetailTitle;
 		this.csDetailContent = csDetailContent;
 		this.csDetailEnrollDate = csDetailEnrollDate;
@@ -45,14 +55,6 @@ public class CsDetail {
 
 	public void setCsKeywordNo(int csKeywordNo) {
 		this.csKeywordNo = csKeywordNo;
-	}
-
-	public int getCsTypeNo() {
-		return csTypeNo;
-	}
-
-	public void setCsTypeNo(int csTypeNo) {
-		this.csTypeNo = csTypeNo;
 	}
 
 	public String getCsDetailTitle() {
@@ -105,11 +107,12 @@ public class CsDetail {
 
 	@Override
 	public String toString() {
-		return "CsDetail [csDetailNo=" + csDetailNo + ", csKeywordNo=" + csKeywordNo + ", csTypeNo=" + csTypeNo
-				+ ", csDetailTitle=" + csDetailTitle + ", csDetailContent=" + csDetailContent + ", csDetailEnrollDate="
-				+ csDetailEnrollDate + ", csDetailModifyDate=" + csDetailModifyDate + ", csDetailStatus="
-				+ csDetailStatus + ", csDetailWriter=" + csDetailWriter + "]";
+		return "CsDetail [csDetailNo=" + csDetailNo + ", csKeywordNo=" + csKeywordNo + ", csDetailTitle="
+				+ csDetailTitle + ", csDetailContent=" + csDetailContent + ", csDetailEnrollDate=" + csDetailEnrollDate
+				+ ", csDetailModifyDate=" + csDetailModifyDate + ", csDetailStatus=" + csDetailStatus
+				+ ", csDetailWriter=" + csDetailWriter + "]";
 	}
+	
 	
 	
 	
