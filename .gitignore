@@ -156,3 +156,4 @@ index.jsp
 */WEB-INF/lib/
 src/main/webapp/WEB-INF/classes/
 Servers/
+src/main/webapp/META-INF/classes/

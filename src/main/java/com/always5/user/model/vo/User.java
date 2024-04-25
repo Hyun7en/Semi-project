@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class User {
 	private int userNo;
-	private String Authority;
+	private String authority;
 	private String userId;
 	private String userPwd;
 	private String updatePwd;
@@ -18,46 +18,48 @@ public class User {
 	private String userAddress;
 	private Date userEnrollDate;
 	private Date userModifyDate;
-	private String status;
+	private String userStatus;
 	private int point;
-	
+
 	public User() {
 		super();
 	}
-	
-	public User(String authority, String userId, String userPwd, String nickName, String userName, String userBirth, String userGender, String userPhone,
-			String userAddress) {
+
+	public User(int userNo, String authority, String userId, String userPwd, String updatePwd, String updateId,
+			String userName, String nickName, String userBirth, String userGender, String userPhone, String userEmail,
+			String userAddress, Date userEnrollDate, Date userModifyDate, String userStatus, int point) {
 		super();
-		this.Authority = authority;
+		this.userNo = userNo;
+		this.authority = authority;
 		this.userId = userId;
 		this.userPwd = userPwd;
+		this.updatePwd = updatePwd;
+		this.updateId = updateId;
 		this.userName = userName;
 		this.nickName = nickName;
 		this.userBirth = userBirth;
 		this.userGender = userGender;
 		this.userPhone = userPhone;
-		this.userAddress = userAddress;
-	}
-	
-	public User(String authority, String userId, String userPwd, String userEmail, String nickName, String userName, String userBirth, String userGender, String userPhone,
-			String userAddress) {
-		super();
-		this.Authority = authority;
-		this.userId = userId;
-		this.userPwd = userPwd;
-		this.userName = userName;
-		this.nickName = nickName;
 		this.userEmail = userEmail;
+		this.userAddress = userAddress;
+		this.userEnrollDate = userEnrollDate;
+		this.userModifyDate = userModifyDate;
+		this.userStatus = userStatus;
+		this.point = point;
+	}
+
+	public User(String authority, String userId, String userPwd, String userName, String nickName,
+			String userBirth, String userGender, String userPhone, String userAddress) {
+		super();
+		this.authority = authority;
+		this.userId = userId;
+		this.userPwd = userPwd;
+		this.userName = userName;
+		this.nickName = nickName;
 		this.userBirth = userBirth;
 		this.userGender = userGender;
 		this.userPhone = userPhone;
 		this.userAddress = userAddress;
-	}
-	
-	public User(String userId, String userPwd) {
-		super();
-		this.userId = userId;
-		this.userPwd = userPwd;
 	}
 
 	public int getUserNo() {
@@ -67,13 +69,13 @@ public class User {
 	public void setUserNo(int userNo) {
 		this.userNo = userNo;
 	}
-	
+
 	public String getAuthority() {
-		return Authority;
+		return authority;
 	}
 
 	public void setAuthority(String authority) {
-		Authority = authority;
+		this.authority = authority;
 	}
 
 	public String getUserId() {
@@ -119,7 +121,7 @@ public class User {
 	public String getNickName() {
 		return nickName;
 	}
-	
+
 	public void setNickName(String nickName) {
 		this.nickName = nickName;
 	}
@@ -152,94 +154,58 @@ public class User {
 		return userEmail;
 	}
 
-
-
-
 	public void setUserEmail(String userEmail) {
 		this.userEmail = userEmail;
 	}
-
-
-
 
 	public String getUserAddress() {
 		return userAddress;
 	}
 
-
-
-
 	public void setUserAddress(String userAddress) {
 		this.userAddress = userAddress;
 	}
 
-
-
-
-	public Date getEnrollDate() {
+	public Date getUserEnrollDate() {
 		return userEnrollDate;
 	}
 
-
-
-
-	public void setEnrollDate(Date enrollDate) {
-		this.userEnrollDate = enrollDate;
+	public void setUserEnrollDate(Date userEnrollDate) {
+		this.userEnrollDate = userEnrollDate;
 	}
 
-
-
-
-	public Date getModifyDate() {
+	public Date getUserModifyDate() {
 		return userModifyDate;
 	}
 
-
-
-
-	public void setModifyDate(Date modifyDate) {
-		this.userModifyDate = modifyDate;
+	public void setUserModifyDate(Date userModifyDate) {
+		this.userModifyDate = userModifyDate;
 	}
 
-
-
-
-	public String getStatus() {
-		return status;
+	public String getUserStatus() {
+		return userStatus;
 	}
 
-
-
-
-	public void setStatus(String status) {
-		this.status = status;
+	public void setUserStatus(String userStatus) {
+		this.userStatus = userStatus;
 	}
-
-
-
 
 	public int getPoint() {
 		return point;
 	}
 
-
-
-
 	public void setPoint(int point) {
 		this.point = point;
 	}
 
-
-
-
 	@Override
 	public String toString() {
-		return "User [userNo=" + userNo + ", Authority=" + Authority + ", userId=" + userId + ", userPwd=" + userPwd
+		return "User [userNo=" + userNo + ", authority=" + authority + ", userId=" + userId + ", userPwd=" + userPwd
 				+ ", updatePwd=" + updatePwd + ", updateId=" + updateId + ", userName=" + userName + ", nickName="
 				+ nickName + ", userBirth=" + userBirth + ", userGender=" + userGender + ", userPhone=" + userPhone
 				+ ", userEmail=" + userEmail + ", userAddress=" + userAddress + ", userEnrollDate=" + userEnrollDate
-				+ ", userModifyDate;=" + userModifyDate + ", status=" + status + ", point=" + point + "]";
+				+ ", userModifyDate=" + userModifyDate + ", userStatus=" + userStatus + ", point=" + point + "]";
 	}
 }
-	
+
 

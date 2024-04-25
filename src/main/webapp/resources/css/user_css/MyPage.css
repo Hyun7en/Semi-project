@@ -9,6 +9,8 @@
 	font-style: normal;
 }
 
+
+
 @import
 	url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
@@ -21,11 +23,17 @@ a {
 	text-decoration-line: none;
 	color: #b1a8a8;
 }
+
 body {
 	margin: 0px;
 	background-color: #FBFAF6;
 	width: 100vw;
 	height: 100vh;
+}
+
+.Mypage  * {
+	margin: 0;
+	padding: 0;
 }
 
 input:focus {
@@ -40,7 +48,6 @@ input:focus {
 	background-color: #fbfaf6;
 	width: calc(100% - 48px);
 	height: calc(100% - 48px);
-	margin: 24px;
 	box-sizing: border-box;
 }
 
@@ -50,13 +57,10 @@ body {
 
 .Mypage {
 	position: relative;
+	margin-top: 250px;
 	width: 754px;
 	background-color: #fbfaf6;
-	margin: 0 auto;
 	width: 754px;
-	padding: 80px;
-	padding-top: 40px;
-	padding-bottom: 120px;
 }
 
 /*메인페이지 상단*/
@@ -68,6 +72,8 @@ body {
 }
 
 .Mypage .Mypage-username {
+	float: center;
+	justify-content: center;
 	font-weight: 600;
 	color: #313d40;
 	text-align: center;
