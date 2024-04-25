@@ -7,12 +7,13 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/common_css/style.css">
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/user_css/MyPage.css" />
 </head>
 
 <body>
-	 <%@ include file="UserHeader.jsp"%>
+	 <%@ include file="../common/header.jsp"%>
 		<div class="Mypage">
 
 			<!-- 회원정보 상단 -->
@@ -91,14 +92,6 @@
 					</div>
 				</div>
 
-			</div>
-
-			<!-- 로그아웃, 고객센터 -->
-			<div class="Mypage-option">
-				<div class="Mypage-option-logout"><a href="logout.u">로그아웃</a></div>
-				<img class="Mypage-option-img"
-					src="${pageContext.request.contextPath}/resources/file/user_img/Mypage-img/line-44.svg" />
-				<div class="Mypage-option-service"><a href="CsCenter">고객센터</a></div>
 			</div>
 			<script src="${pageContext.request.contextPath}/resources/js/user_js/MyPage.js"></script>
 		</div>
