@@ -36,7 +36,7 @@
 
 					<div class="notice-subject">왕밥빵을 탈퇴하면,</div>
 					<div class="notice-title">
-						사용하고 계신 아이디 ${User.nickName}는 <br /> 탈퇴할 경우 재사용 및 복구가 불가능합니다.
+						사용하고 계신 아이디 ${loginUser.userId}는 <br /> 탈퇴할 경우 재사용 및 복구가 불가능합니다.
 					</div>
 					<div class="notice-textbox">
 						<span class="ntext1">탈퇴한 아이디는 본인과 타인 모두 재사용 및 복구가 불가</span> <span

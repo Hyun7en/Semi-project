@@ -1,10 +1,11 @@
 package com.always5.user.service;
 
+import java.sql.Connection;
+
 import org.apache.ibatis.session.SqlSession;
 
 import com.always5.common.template.Template;
 import com.always5.user.model.dao.UserDao;
-import com.always5.user.model.vo.Mypage;
 import com.always5.user.model.vo.User;
 
 public class UserServiceImpl implements UserService{
@@ -57,9 +58,9 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public User updateUserID(User u) {
 		SqlSession sqlSession = Template.getSqlSession();
-		
-		User loginUser = uDao.loginUser(sqlSession, u);
 		int result = uDao.updateUserID(sqlSession, u);
+		
+		User updateUserID = null;
 		
 		if(result > 0) {
 			sqlSession.commit();
@@ -67,16 +68,17 @@ public class UserServiceImpl implements UserService{
 			sqlSession.rollback();
 		}
 		
+		User userId = uDao.loginUser(sqlSession, u);
 		sqlSession.close();
-		return loginUser;
+		return userId;
     }
 	
 	@Override
 	public User updateUserPwd(User u) {
 		SqlSession sqlSession = Template.getSqlSession();
-		
-		User loginUser = uDao.loginUser(sqlSession, u);
 		int result = uDao.updateUserPwd(sqlSession, u);
+		
+		User updateUserPwd = null;
 		
 		if(result > 0) {
 			sqlSession.commit();
@@ -84,16 +86,17 @@ public class UserServiceImpl implements UserService{
 			sqlSession.rollback();
 		}
 		
+		User userPwd = uDao.loginUser(sqlSession, u);
 		sqlSession.close();
-		return loginUser;
+		return userPwd;
     }
 	
 	@Override
 	public User updateUserNickName(User u) {
 		SqlSession sqlSession = Template.getSqlSession();
-		
-		User loginUser = uDao.loginUser(sqlSession, u);
 		int result = uDao.updateUserNickName(sqlSession, u);
+		
+		User updateUserNickName = null;
 		
 		if(result > 0) {
 			sqlSession.commit();
@@ -101,7 +104,8 @@ public class UserServiceImpl implements UserService{
 			sqlSession.rollback();
 		}
 		
+		User nickName = uDao.loginUser(sqlSession, u);
 		sqlSession.close();
-		return loginUser;
-	}
+		return nickName;
+    }
 }

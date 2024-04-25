@@ -2,9 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<c:set var="Mypage" value="${sessionScope.Mypage}" />
-<c:if test="${empty Mypage}">
-</c:if>
 <html>
 
 <head>
@@ -21,7 +18,7 @@
 
             <!-- 작성 리뷰 -->
             <div class="MypageReviewGoods-title-box">
-                <div class="MypageReviewGoods-Name">${Mypage.nickName}</div>
+                <div class="MypageReviewGoods-Name">${loginUser.nickName}</div>
                 <div class="MypageReviewGoods-Name2">님의 추천 리뷰</div>
             </div>
 

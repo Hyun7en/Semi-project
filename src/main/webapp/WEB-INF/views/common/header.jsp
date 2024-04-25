@@ -44,9 +44,8 @@
                     </div>
                 </c:otherwise>
             </c:choose>
-
         </div>
-
+	
         <!-- nav -->
         <nav id="nav-1">
                 <ul id="navi-1">

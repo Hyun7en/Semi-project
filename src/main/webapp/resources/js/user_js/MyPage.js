@@ -5,4 +5,4 @@
 	window.open("updateId.ui", "a", "width=754, height=900, left=100, top=50"); }
 	
  function openUpdatePwd() { 
-	window.open("updatePwd.ui", "a", "width=754, height=900, left=100, top=50"); }
+	window.open("updatepwd.ui", "a", "width=754, height=900, left=100, top=50"); }

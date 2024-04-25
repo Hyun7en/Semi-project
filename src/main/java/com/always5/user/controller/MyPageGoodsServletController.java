@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.always5.user.model.vo.User;
+
 /**
  * Servlet implementation class myPageController
  */
@@ -27,7 +29,8 @@ public class MyPageGoodsServletController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//MypageGoods.jsp 연결
+		User loginUser = (User)request.getSession().getAttribute("loginUser");
+		request.setAttribute("loginUser", loginUser);
 		request.getRequestDispatcher("WEB-INF/views/user/MypageGoods.jsp").forward(request, response);
 		
 		
