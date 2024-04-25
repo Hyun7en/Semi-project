@@ -36,6 +36,7 @@ public class mainTopListController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ArrayList<Restaurant> tlist = new mainService().mainTopList();
 		request.setAttribute("tlist", tlist);
+		System.out.println(tlist);
 		response.setContentType("application/json; charset=UTF-8");
 		new Gson().toJson(tlist, response.getWriter());
 	}

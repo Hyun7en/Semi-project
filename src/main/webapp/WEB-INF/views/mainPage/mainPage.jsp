@@ -18,7 +18,6 @@
                 <main>
             
                 
-
                     <!-- 큰 메인 사진 -->
                     <div class="main-pic">
                         <p align="center">왕밥빵</p>
@@ -35,7 +34,7 @@
                         </div>
                         
                         <div class="slider">
-                            <div class="slides">
+                            <div class="slides" id="slider1">
                                 <div class="best5-slide-set">
                                 	
                                     	<div>
@@ -52,72 +51,10 @@
 	                                    </div>
                                   
                                 </div>
-                                
-                                
-                          
-                                
-                                <!-- <div class="best5-slide-set">
-                                    <div>
-                                        <img src="https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp"
-                                            alt="">
-                                    </div>
-                                    <div>
-                                        <p>베스트 리뷰</p>
-                                        <hr width="50" align="left">
-                                        <p>왕고기</p>
-                                        <p>평점</p>
-                                        <p>너무 맛있어요! 너무 맛있어요! 너무 맛있어요! 너무 맛있어요! 너무 맛있어요! 너무 ...</p>
-                                    </div>
-                                </div>
-                                <div class="best5-slide-set">
-                                    <div>
-                                        <img src="https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp"
-                                            alt="">
-                                    </div>
-                                    <div>
-                                        <p>베스트 리뷰</p>
-                                        <hr width="50" align="left">
-                                        <p>왕고기</p>
-                                        <p>평점</p>
-                                        <p>너무 맛있어요! 너무 맛있어요! 너무 맛있어요! 너무 맛있어요! 너무 맛있어요! 너무 ...</p>
-                                    </div>
-                                </div>
-                                <div class="best5-slide-set">
-                                    <div>
-                                        <img src="https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp"
-                                            alt="">
-                                    </div>
-                                    <div>
-                                        <p>베스트 리뷰</p>
-                                        <hr width="50" align="left">
-                                        <p>왕고기</p>
-                                        <p>평점</p>
-                                        <p>너무 맛있어요! 너무 맛있어요! 너무 맛있어요! 너무 맛있어요! 너무 맛있어요! 너무 ...</p>
-                                    </div>
-                                </div>
-                                <div class="best5-slide-set">
-                                    <div>
-                                        <img src="https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp"
-                                            alt="">
-                                    </div>
-                                    <div>
-                                        <p>베스트 리뷰</p>
-                                        <hr width="50" align="left">
-                                        <p>왕고기</p>
-                                        <p>평점</p>
-                                        <p>너무 맛있어요! 너무 맛있어요! 너무 맛있어요! 너무 맛있어요! 너무 맛있어요! 너무 ...</p>
-                                    </div>
-                                </div> -->
-
                             </div>
                         </div>
                     </div>
                     
-                    
-                    
-                    
-                    
-                <!-- 왜!!!!!!!!!!!!!!!!!!!!!!! css 안먹는가!!!!!!!!!!!!!!!!!!!!!!! -->
                		<script>
                		
                		$(document).ready(function(){
@@ -126,16 +63,19 @@
                		
 				function init(){
 					// 서버로부터 조회수가 높은 게시글 5개 조회해서 가져오기(ajax)
-					// tbody 요소로써 추가해주기
-
 					getTopRestList(function(tlist){ //callback 함수를 실행하는 함수
 						drawTopListBody(tlist);
+					})
+					
+					// 서버로부터 조회수가 높은 게시글 5개 조회해서 가져오기(ajax)
+					getNewTopRestList(function(tlist){ //callback 함수를 실행하는 함수
+						drawNewTopListBody(tlist);
 					})
 
 				}
 				
 				function drawTopListBody(tlist){
-					const topBody = document.querySelector(".slides");
+					const topBody = document.querySelector("#slider1");
 					$(topBody).empty(); 
 					
 					for(let r of tlist) {
@@ -177,14 +117,6 @@
 				}
 
 				</script>
-
-
-
-
-
-
-
-
 
 
                     <!-- 요즘 핫한 검색어 -->
@@ -254,7 +186,7 @@
                             <p class="best5-font-small">새로 등록되어 당신의 평가를 기다리는 곳입니다.</p>
                         </div>
                         <div class="slider">
-                            <div class="slides">
+                            <div class="slides" id="slider2">
      
                                 <div class="best5-slide-set">
                                 	
@@ -276,24 +208,11 @@
                             </div>
                         </div>
                     </div>
-               		<script>
+                                   		<script>
                		
-               		$(document).ready(function(){
-                        init();
-                    });
-               		
-				function init(){
-					// 서버로부터 조회수가 높은 게시글 5개 조회해서 가져오기(ajax)
-					// tbody 요소로써 추가해주기
-
-					getTopRestList(function(nlist){ //callback 함수를 실행하는 함수
-						drawTopListBody(nlist);
-					})
-
-				}
 				
-				function drawTopListBody(nlist){
-					const topBody = document.querySelector(".slides");
+				function drawNewTopListBody(nlist){
+					const topBody = document.querySelector("#slider2");
 					$(topBody).empty(); 
 					
 					for(let r of nlist) {
@@ -324,10 +243,11 @@
 
 
 				// 서버로부터 조회수가 높은 게시글 5개 조회해서 가져오는 함수
-				function getTopRestList(callback){
+				function getNewTopRestList(callback){
 					$.ajax({
 						url: "topNewList.ma",
 						success: callback,
+						async    : false,
 						error: function(){
 							console.log("top5 ajax 실패")
 						}
