@@ -17,11 +17,11 @@
             가게 등록
         </div>
         <main id="rest-regist-main">
-            <form action="" class="main-form" method="GET">
+            <form action="restinsert.ad" class="main-form" method="POST" id="restRegistForm" enctype="multipart/form-data">
                 <table>
                     <tr>
                         <th width="20%">가게 이름</th>
-                        <td><input type="text" name="restName" required>${r.restName }</td>
+                        <td><input type="text" name="restName" required></td>
                     </tr>
                     <tr>
                         <th>가게 주소</th>
@@ -60,6 +60,10 @@
                         </td>
                     </tr>
 
+                    <tr>
+                        <td colspan="2"><button type="submit" class="black-button" onclick="">메뉴 등록 가기</button></td>
+                    </tr>
+                    
                     <script>
                         function selectImage() {
                             document.getElementById('restImgInput').click();
@@ -76,11 +80,10 @@
                                 reader.readAsDataURL(input.files[0]);
                             }
                         }
+                        
+                       
                     </script>
                     
-                    <tr>
-                        <td colspan="2"><button type="submit" class="black-button" onclick="location.href='RestMenu.ad'">메뉴 등록 가기</button></td>
-                    </tr>
                 </table>
             
             </form>

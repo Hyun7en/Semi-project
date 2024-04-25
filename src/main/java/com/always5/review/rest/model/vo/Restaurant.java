@@ -48,10 +48,8 @@ public class Restaurant {
 	
 	
 
-
-
 	public Restaurant(String restName, String restAddress, String restPhone, String restIntro, String restOperDate,
-			String foodCategoryNo, ArrayList<Attachment> restAtList) {
+			String foodCategoryNo) {
 		super();
 		this.restName = restName;
 		this.restAddress = restAddress;
@@ -59,7 +57,6 @@ public class Restaurant {
 		this.restIntro = restIntro;
 		this.restOperDate = restOperDate;
 		this.foodCategoryNo = foodCategoryNo;
-		this.restAtList = restAtList;
 	}
 
 
