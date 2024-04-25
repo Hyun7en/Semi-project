@@ -17,7 +17,7 @@
             가게 등록
         </div>
         <main id="rest-regist-main">
-            <form action="" class="main-form" method="GET">
+            <form action="restinsert.ad" class="main-form" method="POST" id="restRegistForm" enctype="multipart/form-data">
                 <table>
                     <tr>
                         <th width="20%">가게 이름</th>
@@ -44,10 +44,10 @@
                         <td>
                             <div>
                                 <!-- for문으로 데이터 가져와서 출력 필요 -->
-                                <select name="" id="">
-                                    <option value="양식">양식</option>
-                                    <option value="한식">한식</option>
-                                    <option value="중식">중식</option>
+                                <select name="foodCategoryNo" id="">
+                                    <option value="1">양식</option>
+                                    <option value="2">한식</option>
+                                    <option value="3">중식</option>
                                 </select>
                             </div>
                         </td>
@@ -55,22 +55,35 @@
                     <tr>
                         <th>가게 사진</th>
                         <td class="rest-regist-img">
-                            <img src="${pageContext.request.contextPath}/resources/file/common_img/free-icon-plus-5054075.png" alt="" name="restImg1" onclick="restImg()">
-                            <img src="${pageContext.request.contextPath}/resources/file/common_img/free-icon-plus-5054075.png" alt="" onclick="restImg()">
-                            <img src="${pageContext.request.contextPath}/resources/file/common_img/free-icon-plus-5054075.png" alt="" onclick="restImg()">
-                            <img src="${pageContext.request.contextPath}/resources/file/common_img/free-icon-plus-5054075.png" alt="" onclick="restImg()">
-                            <img src="${pageContext.request.contextPath}/resources/file/common_img/free-icon-plus-5054075.png" alt="" onclick="restImg()">
+                            <img id="restImgPreview" src="${pageContext.request.contextPath}/resources/file/common_img/free-icon-plus-5054075.png" alt="" onclick="selectImage();">
+                            <input type="file" id="restImgInput" name="restImg" style="display: none;" accept="image/*" onchange="displayPreview(this);">
                         </td>
+                    </tr>
 
-                        <script>
-                            function restImg(){
-                                
-                            }
-                        </script>
-                    </tr>
                     <tr>
-                        <td colspan="2"><button type="" class="black-button">메뉴 등록 가기</button></td>
+                        <td colspan="2"><button type="submit" class="black-button" onclick="">메뉴 등록 가기</button></td>
                     </tr>
+                    
+                    <script>
+                        function selectImage() {
+                            document.getElementById('restImgInput').click();
+                        }
+
+                        function displayPreview(input) {
+                            if (input.files && input.files[0]) {
+                                var reader = new FileReader();
+
+                                reader.onload = function (e) {
+                                    document.getElementById('restImgPreview').src = e.target.result;
+                                }
+
+                                reader.readAsDataURL(input.files[0]);
+                            }
+                        }
+                        
+                       
+                    </script>
+                    
                 </table>
             
             </form>

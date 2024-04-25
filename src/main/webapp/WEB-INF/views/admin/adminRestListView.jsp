@@ -38,20 +38,12 @@
 	                <c:forEach var="r" items="${list}">
 	            	<!-- list객체를 r에 담아서 tr을 반복해서 만들어줌 -->
 	                <!-- tr 클릭 시 가게 수정 페이지 요청(등록 페이지에 내용 담아 반환) -->
-		                <tr onclick="location.href = 'restenroll.ad?rno=${r.restNo}'">
+		                <tr onclick="location.href = 'restupdate.ad?rno=${r.restNo}'">
 		                    <td>${r.restNo }</td>
 		                    <td>${r.restName }</td>
 		                    <!-- <td>admin</td> -->
 		                    <td>${r.restModifyDate }</td>
 		                </tr>
-		                <!-- 
-		                <tr>
-		                    <td>1</td>
-		                    <td>떡볶이 스타</td>
-		                    <td>admin</td>
-		                    <td>2024-03-20</td>
-		                </tr>
-		                 -->
 		             </c:forEach>
                 </tbody>
             </table>

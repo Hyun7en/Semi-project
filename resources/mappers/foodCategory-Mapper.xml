@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="foodCategoryMapper">
+	<resultMap id="FoodCategory" type="FoodCategory">
+		<result column="FOOD_CATEGORY_NO" property="foodCategoryNo"/>
+		<result column="FOOD_CATEGORY_NAME" property="foodCategoryName"/>
+	</resultMap>
+	
+	<insert id="insertFoodCategory" parameterType="FoodCategory">
+		INSERT 
+	  	INTO FOOD_CATEGORY
+	  	(
+			FOOD_CATEGORY_NAME
+	  	)
+	  	VALUES
+	  	(
+	  		SEQ_UNO.NEXTVAL,
+	  		#{foodCategoryName}
+	  	)
+	</insert>
+	
+</mapper>  
+  

@@ -14,6 +14,11 @@ public class FoodCategory {
 		this.foodCategoryNo = foodCategoryNo;
 		this.foodCategoryName = foodCategoryName;
 	}
+	
+	public FoodCategory(String foodCategoryName) {
+		super();
+		this.foodCategoryName = foodCategoryName;
+	}
 
 	public int getFoodCategoryNo() {
 		return foodCategoryNo;

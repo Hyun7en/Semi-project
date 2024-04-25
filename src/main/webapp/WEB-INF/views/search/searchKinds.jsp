@@ -8,8 +8,8 @@
         <meta charset="UTF-8">
         <title>Insert title here</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-        <link rel="stylesheet" href="http://localhost:8001/always5/resources/css/common_css/style.css">
-        <link rel="stylesheet" href="http://localhost:8001/always5/resources/css/search_css/searchKinds.css">
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/common_css/style.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/search_css/searchKinds.css">
 
     </head>
     
@@ -139,7 +139,7 @@
 												str +=  `<div>`+
 														`<div>` +
 															`<div class='search-best-crownSmall'>` +
-															`<img src='https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp' alt=''>` +
+															`<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
 															`<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
 															`</div>` +
 														`</div>` +	                                    		
@@ -165,7 +165,7 @@
 												str +=  `<div>`+
 														`<div>` +
 															`<div class='search-best-crownSmall'>` +
-															`<img src='https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp' alt=''>` +
+															`<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
 															`<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
 															`</div>` +
 														`</div>` +	                                    		
@@ -187,12 +187,15 @@
 										let str = "";
 										// 클릭 이벤트가 발생했을 때의 처리
 										
+										
 										for (let r of list) {
+
 											if(r.foodCategoryNo == 3){
 												str +=  `<div>`+
 														`<div>` +
 															`<div class='search-best-crownSmall'>` +
-															`<img src='https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp' alt=''>` +
+															// + `<img src='${pageContext.request.contextPath}"` + r.at.filePath + r.at.changeName + `"'>`
+															`<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
 															`<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
 															`</div>` +
 														`</div>` +	                                    		
@@ -219,7 +222,7 @@
 												str +=  `<div>`+
 														`<div>` +
 															`<div class='search-best-crownSmall'>` +
-															`<img src='https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp' alt=''>` +
+															`<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
 															`<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
 															`</div>` +
 														`</div>` +	                                    		
@@ -246,7 +249,7 @@
 												str +=  `<div>`+
 														`<div>` +
 															`<div class='search-best-crownSmall'>` +
-															`<img src='https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp' alt=''>` +
+															`<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
 															`<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
 															`</div>` +
 														`</div>` +	                                    		
@@ -274,7 +277,7 @@
 												str +=  `<div>`+
 														`<div>` +
 															`<div class='search-best-crownSmall'>` +
-															`<img src='https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp' alt=''>` +
+															`<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
 															`<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
 															`</div>` +
 														`</div>` +	                                    		

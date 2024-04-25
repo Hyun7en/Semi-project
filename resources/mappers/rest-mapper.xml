@@ -229,5 +229,54 @@
 		WHERE REST_NO = #{restNo}
 	</update>
 	
+	<!-- admin 레스토랑 총 리스트 -->
+	<select id="selectList" resultMap="restResultSet">
+		SELECT REST_NO,
+			   REST_NAME,
+			   REST_MODIFY_DATE
+		  FROM REST_INFO R
+		 WHERE R.REST_STATUS = 'Y'
+		 ORDER BY REST_NO DESC
+	</select>
+	
+	<!-- Admin 레스토랑 리스트 나열 -->
+	<select id="selectRestListCount" resultType="_int">
+		SELECT COUNT(*)
+		  FROM REST_INFO
+		 WHERE REST_STATUS = 'Y'
+	</select>
+	
+	<select id="selectRestNo" resultType="_int">
+        	SELECT SEQ_RNO.NEXTVAL 
+        	FROM dual
+    </select>
+    	
+	<!-- Admin 레스토랑 추가 -->
+	<insert id="insertRestaurant" parameterType="com.always5.review.rest.model.vo.Restaurant">
+        INSERT INTO REST_INFO (
+        						REST_NO,
+        						REST_NAME,
+        						REST_ADDRESS,
+        						REST_PHONE,
+        						REST_INTRO,
+        						REST_OPER_TIME,
+        						FOOD_CATEGORY_NO
+        						)
+        				VALUES (
+        						#{restNo},
+        						#{restName}, 
+        						#{restAddress}, 
+        						#{restPhone}, 
+        						#{restIntro}, 
+        						#{restOperDate}, 
+        						#{foodCategoryNo}
+        						)
+    </insert>
+    
+    <!-- admin 레스토랑 이름 가져오기 -->
+    <select id="selectRestName" resultMap="restResultSet" >
+	    SELECT *
+	</select>
+	
 	
 </mapper>

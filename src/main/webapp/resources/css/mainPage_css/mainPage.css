@@ -107,12 +107,14 @@ overflow: hidden;
 .slides {
 display: flex;
 /* 슬라이드 항목이 가로로 배치되도록 flex 속성을 사용합니다 */
+width: 100%;
+
 }
 .slides img {
 padding-left: 3px;
 padding-right: 3px;
-width: 100%;
-height: 100%;
+width: 250px;
+height: 150px;
 
 /* 이미지가 슬라이더에 꽉 차도록 설정합니다 */
 transition: transform 3s;

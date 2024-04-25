@@ -49,7 +49,7 @@ public class AuthorityFilter implements Filter {
 		} else {
 			//로그인 한 경우
 			//로그인한 사용자가 관리자인 경우
-			if (((String) httpRequest.getSession().getAttribute("loginUser")).equals("Y")) {
+			if (httpRequest.getSession().getAttribute("loginUser.getAuthority()") == "Y") {
 				//관리자 페이지 접근 가능
 				chain.doFilter(request, response);
 				//로그인한 사용자가 일반 사용자인 경우

@@ -10,6 +10,15 @@ public class Attachment {
 	public Attachment() {
 		super();
 	}
+	
+	
+
+	public Attachment(String restNo) {
+		super();
+		this.restNo = restNo;
+	}
+
+
 
 	public Attachment(int fileNo, String changeName, String filePath, String reviewNo, String restNo) {
 		super();
