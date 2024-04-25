@@ -85,8 +85,8 @@
 
                     <section class="search-best">
                         <div>
-                            <h1>지역별 맛집 결과 "서울"</h1>
-                            <h4>추천 맛집 매장 방문 고객님과 왕밤빵이 함께 엄선한 인기 맛집입니다.${region}</h4>
+                            <h1>종류별 맛집 결과 "국밥"</h1>
+                            <h4>추천 맛집 매장 방문 고객님과 왕밤빵이 함께 엄선한 인기 맛집입니다.</h4>
                         </div>
                         <div>
                             <h3>BEST 3 리뷰로 검증된 맛집입니다.</h3>
@@ -148,19 +148,20 @@
 										// 클릭 이벤트가 발생했을 때의 처리
 										for (let r of list) {
 											if(r.restAddress.substring(0, 2) === "서울"){
-												str +=  `<div>`+
-                                                            `<div>` +
-                                                                `<div class='search-best-crownSmall'>` +
-                                                                `<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
-                                                                `<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
-                                                                `</div>` +
-                                                            `</div>` +	                                    		
-                                                            `<div>` +
-                                                                `<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
-                                                                `<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
-                                                                `<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
-                                                            `</div>` +
-												        `</div>`;
+												str +=  `<a href='main.re?rno=` + r.restNo + `'>`+
+												`<div>` +
+													`<div class='search-best-crownSmall'>` +
+													// + `<img src='${pageContext.request.contextPath}"` + r.at.filePath + r.at.changeName + `"'>`
+													`<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
+													`<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
+													`</div>` +
+												`</div>` +	                                    		
+												`<div>` +
+													`<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
+													`<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
+													`<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
+												`</div>` +
+												`</a>`;	
 											}
 										}
 
@@ -225,19 +226,20 @@
 										// 클릭 이벤트가 발생했을 때의 처리
 										for (let r of list) {
 											if(r.restAddress.substring(0, 2) === "대전"){
-												str +=  `<div>`+
-                                                            `<div>` +
-                                                                `<div class='search-best-crownSmall'>` +
-                                                                `<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
-                                                                `<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
-                                                                `</div>` +
-                                                            `</div>` +	                                    		
-                                                            `<div>` +
-                                                                `<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
-                                                                `<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
-                                                                `<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
-                                                            `</div>` +
-												        `</div>`;
+												str +=  `<a href='main.re?rno=` + r.restNo + `'>`+
+												`<div>` +
+													`<div class='search-best-crownSmall'>` +
+													// + `<img src='${pageContext.request.contextPath}"` + r.at.filePath + r.at.changeName + `"'>`
+													`<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
+													`<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
+													`</div>` +
+												`</div>` +	                                    		
+												`<div>` +
+													`<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
+													`<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
+													`<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
+												`</div>` +
+												`</a>`;	
 											}
 										}
 
@@ -251,19 +253,20 @@
 										// 클릭 이벤트가 발생했을 때의 처리
 										for (let r of list) {
 											if(r.restAddress.substring(0, 2) === "대구"){
-												str +=  `<div>`+
-                                                            `<div>` +
-                                                                `<div class='search-best-crownSmall'>` +
-                                                                `<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
-                                                                `<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
-                                                                `</div>` +
-                                                            `</div>` +	                                    		
-                                                            `<div>` +
-                                                                `<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
-                                                                `<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
-                                                                `<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
-                                                            `</div>` +
-												        `</div>`;
+												str +=  `<a href='main.re?rno=` + r.restNo + `'>`+
+												`<div>` +
+													`<div class='search-best-crownSmall'>` +
+													// + `<img src='${pageContext.request.contextPath}"` + r.at.filePath + r.at.changeName + `"'>`
+													`<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
+													`<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
+													`</div>` +
+												`</div>` +	                                    		
+												`<div>` +
+													`<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
+													`<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
+													`<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
+												`</div>` +
+												`</a>`;	
 											}
 										}
 
@@ -277,19 +280,20 @@
 										// 클릭 이벤트가 발생했을 때의 처리
 										for (let r of list) {
 											if(r.restAddress.substring(0, 2) === "광주"){
-												str +=  `<div>`+
-                                                            `<div>` +
-                                                                `<div class='search-best-crownSmall'>` +
-                                                                `<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
-                                                                `<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
-                                                                `</div>` +
-                                                            `</div>` +	                                    		
-                                                            `<div>` +
-                                                                `<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
-                                                                `<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
-                                                                `<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
-                                                            `</div>` +
-												        `</div>`;
+												str +=  `<a href='main.re?rno=` + r.restNo + `'>`+
+												`<div>` +
+													`<div class='search-best-crownSmall'>` +
+													// + `<img src='${pageContext.request.contextPath}"` + r.at.filePath + r.at.changeName + `"'>`
+													`<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
+													`<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
+													`</div>` +
+												`</div>` +	                                    		
+												`<div>` +
+													`<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
+													`<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
+													`<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
+												`</div>` +
+												`</a>`;	
 											}
 										}
 
@@ -303,19 +307,20 @@
 										// 클릭 이벤트가 발생했을 때의 처리
 										for (let r of list) {
 											if(r.restAddress.substring(0, 2) === "울산"){
-												str +=  `<div>`+
-                                                            `<div>` +
-                                                                `<div class='search-best-crownSmall'>` +
-                                                                `<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
-                                                                `<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
-                                                                `</div>` +
-                                                            `</div>` +	                                    		
-                                                            `<div>` +
-                                                                `<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
-                                                                `<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
-                                                                `<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
-                                                            `</div>` +
-												        `</div>`;
+												str +=  `<a href='main.re?rno=` + r.restNo + `'>`+
+												`<div>` +
+													`<div class='search-best-crownSmall'>` +
+													// + `<img src='${pageContext.request.contextPath}"` + r.at.filePath + r.at.changeName + `"'>`
+													`<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
+													`<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
+													`</div>` +
+												`</div>` +	                                    		
+												`<div>` +
+													`<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
+													`<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
+													`<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
+												`</div>` +
+												`</a>`;	
 											}
 										}
 
@@ -329,19 +334,20 @@
 										// 클릭 이벤트가 발생했을 때의 처리
 										for (let r of list) {
 											if(r.restAddress.substring(0, 2) === "강원"){
-												str +=  `<div>`+
-                                                            `<div>` +
-                                                                `<div class='search-best-crownSmall'>` +
-                                                                `<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
-                                                                `<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
-                                                                `</div>` +
-                                                            `</div>` +	                                    		
-                                                            `<div>` +
-                                                                `<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
-                                                                `<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
-                                                                `<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
-                                                            `</div>` +
-												        `</div>`;
+												str +=  `<a href='main.re?rno=` + r.restNo + `'>`+
+												`<div>` +
+													`<div class='search-best-crownSmall'>` +
+													// + `<img src='${pageContext.request.contextPath}"` + r.at.filePath + r.at.changeName + `"'>`
+													`<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
+													`<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
+													`</div>` +
+												`</div>` +	                                    		
+												`<div>` +
+													`<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
+													`<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
+													`<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
+												`</div>` +
+												`</a>`;	
 											}
 										}
 
@@ -355,19 +361,20 @@
 										// 클릭 이벤트가 발생했을 때의 처리
 										for (let r of list) {
 											if(r.restAddress.substring(0, 2) === "충청"){
-												str +=  `<div>`+
-                                                            `<div>` +
-                                                                `<div class='search-best-crownSmall'>` +
-                                                                `<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
-                                                                `<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
-                                                                `</div>` +
-                                                            `</div>` +	                                    		
-                                                            `<div>` +
-                                                                `<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
-                                                                `<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
-                                                                `<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
-                                                            `</div>` +
-												        `</div>`;
+												str +=  `<a href='main.re?rno=` + r.restNo + `'>`+
+												`<div>` +
+													`<div class='search-best-crownSmall'>` +
+													// + `<img src='${pageContext.request.contextPath}"` + r.at.filePath + r.at.changeName + `"'>`
+													`<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
+													`<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
+													`</div>` +
+												`</div>` +	                                    		
+												`<div>` +
+													`<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
+													`<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
+													`<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
+												`</div>` +
+												`</a>`;	
 											}
 										}
 
@@ -382,19 +389,20 @@
 										// 클릭 이벤트가 발생했을 때의 처리
 										for (let r of list) {
 											if(r.restAddress.substring(0, 2) === "전라"){
-												str +=  `<div>`+
-                                                            `<div>` +
-                                                                `<div class='search-best-crownSmall'>` +
-                                                                `<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
-                                                                `<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
-                                                                `</div>` +
-                                                            `</div>` +	                                    		
-                                                            `<div>` +
-                                                                `<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
-                                                                `<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
-                                                                `<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
-                                                            `</div>` +
-												        `</div>`;
+												str +=  `<a href='main.re?rno=` + r.restNo + `'>`+
+												`<div>` +
+													`<div class='search-best-crownSmall'>` +
+													// + `<img src='${pageContext.request.contextPath}"` + r.at.filePath + r.at.changeName + `"'>`
+													`<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
+													`<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
+													`</div>` +
+												`</div>` +	                                    		
+												`<div>` +
+													`<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
+													`<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
+													`<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
+												`</div>` +
+												`</a>`;	
 											}
 										}
 
@@ -409,19 +417,20 @@
 										// 클릭 이벤트가 발생했을 때의 처리
 										for (let r of list) {
 											if(r.restAddress.substring(0, 2) === "경상"){
-												str +=  `<div>`+
-                                                            `<div>` +
-                                                                `<div class='search-best-crownSmall'>` +
-                                                                `<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
-                                                                `<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
-                                                                `</div>` +
-                                                            `</div>` +	                                    		
-                                                            `<div>` +
-                                                                `<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
-                                                                `<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
-                                                                `<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
-                                                            `</div>` +
-												        `</div>`;
+												str +=  `<a href='main.re?rno=` + r.restNo + `'>`+
+												`<div>` +
+													`<div class='search-best-crownSmall'>` +
+													// + `<img src='${pageContext.request.contextPath}"` + r.at.filePath + r.at.changeName + `"'>`
+													`<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
+													`<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
+													`</div>` +
+												`</div>` +	                                    		
+												`<div>` +
+													`<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
+													`<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
+													`<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
+												`</div>` +
+												`</a>`;	
 											}
 										}
 

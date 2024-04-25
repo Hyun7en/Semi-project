@@ -139,19 +139,20 @@
 									// 메뉴카테고리 조인해서 넘겨 받아야함
 									for (let r of list) {
 										if(r.menuCategoryName === "백반"){
-											str +=  `<div>`+
-													`<div>` +
-														`<div class='search-best-crownSmall'>` +
-														`<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
-														`<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
-														`</div>` +
-													`</div>` +	                                    		
-													`<div>` +
-														`<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
-														`<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
-														`<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
-													`</div>` +
-											`</div>`;
+											str +=  `<a href='main.re?rno=` + r.restNo + `'>`+
+											`<div>` +
+												`<div class='search-best-crownSmall'>` +
+												// + `<img src='${pageContext.request.contextPath}"` + r.at.filePath + r.at.changeName + `"'>`
+												`<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
+												`<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
+												`</div>` +
+											`</div>` +	                                    		
+											`<div>` +
+												`<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
+												`<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
+												`<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
+											`</div>` +
+											`</a>`;	
 										}
 									}
 
@@ -192,19 +193,20 @@
 									
 									for (let r of list) {
 										if(r.menuCategoryName === "국밥"){
-											str +=  `<div>`+
-													`<div>` +
-														`<div class='search-best-crownSmall'>` +
-														`<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
-														`<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
-														`</div>` +
-													`</div>` +	                                    		
-													`<div>` +
-														`<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
-														`<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
-														`<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
-													`</div>` +
-											`</div>`;
+											str +=  `<a href='main.re?rno=` + r.restNo + `'>`+
+											`<div>` +
+												`<div class='search-best-crownSmall'>` +
+												// + `<img src='${pageContext.request.contextPath}"` + r.at.filePath + r.at.changeName + `"'>`
+												`<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
+												`<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
+												`</div>` +
+											`</div>` +	                                    		
+											`<div>` +
+												`<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
+												`<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
+												`<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
+											`</div>` +
+											`</a>`;	
 										}
 									}
 
@@ -219,19 +221,20 @@
 									
 									for (let r of list) {
 										if(r.menuCategoryName === "제육"){
-											str +=  `<div>`+
-													`<div>` +
-														`<div class='search-best-crownSmall'>` +
-														`<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
-														`<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
-														`</div>` +
-													`</div>` +	                                    		
-													`<div>` +
-														`<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
-														`<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
-														`<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
-													`</div>` +
-											`</div>`;
+											str +=  `<a href='main.re?rno=` + r.restNo + `'>`+
+											`<div>` +
+												`<div class='search-best-crownSmall'>` +
+												// + `<img src='${pageContext.request.contextPath}"` + r.at.filePath + r.at.changeName + `"'>`
+												`<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
+												`<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
+												`</div>` +
+											`</div>` +	                                    		
+											`<div>` +
+												`<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
+												`<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
+												`<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
+											`</div>` +
+											`</a>`;	
 										}
 									}
 
@@ -246,19 +249,20 @@
 									
 									for (let r of list) {
 										if(r.menuCategoryName === "돈가스"){
-											str +=  `<div>`+
-													`<div>` +
-														`<div class='search-best-crownSmall'>` +
-														`<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
-														`<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
-														`</div>` +
-													`</div>` +	                                    		
-													`<div>` +
-														`<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
-														`<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
-														`<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
-													`</div>` +
-											`</div>`;
+											str +=  `<a href='main.re?rno=` + r.restNo + `'>`+
+											`<div>` +
+												`<div class='search-best-crownSmall'>` +
+												// + `<img src='${pageContext.request.contextPath}"` + r.at.filePath + r.at.changeName + `"'>`
+												`<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
+												`<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
+												`</div>` +
+											`</div>` +	                                    		
+											`<div>` +
+												`<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
+												`<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
+												`<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
+											`</div>` +
+											`</a>`;	
 										}
 									}
 
@@ -274,19 +278,20 @@
 									
 									for (let r of list) {
 										if(r.menuCategoryName === "김밥"){
-											str +=  `<div>`+
-													`<div>` +
-														`<div class='search-best-crownSmall'>` +
-														`<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
-														`<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
-														`</div>` +
-													`</div>` +	                                    		
-													`<div>` +
-														`<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
-														`<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
-														`<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
-													`</div>` +
-											`</div>`;
+											str +=  `<a href='main.re?rno=` + r.restNo + `'>`+
+											`<div>` +
+												`<div class='search-best-crownSmall'>` +
+												// + `<img src='${pageContext.request.contextPath}"` + r.at.filePath + r.at.changeName + `"'>`
+												`<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
+												`<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
+												`</div>` +
+											`</div>` +	                                    		
+											`<div>` +
+												`<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
+												`<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
+												`<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
+											`</div>` +
+											`</a>`;	
 										}
 									}
 
@@ -301,19 +306,20 @@
 									
 									for (let r of list) {
 										if(r.menuCategoryName === "초밥"){
-											str +=  `<div>`+
-													`<div>` +
-														`<div class='search-best-crownSmall'>` +
-														`<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
-														`<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
-														`</div>` +
-													`</div>` +	                                    		
-													`<div>` +
-														`<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
-														`<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
-														`<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
-													`</div>` +
-											`</div>`;
+											str +=  `<a href='main.re?rno=` + r.restNo + `'>`+
+											`<div>` +
+												`<div class='search-best-crownSmall'>` +
+												// + `<img src='${pageContext.request.contextPath}"` + r.at.filePath + r.at.changeName + `"'>`
+												`<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
+												`<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
+												`</div>` +
+											`</div>` +	                                    		
+											`<div>` +
+												`<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
+												`<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
+												`<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
+											`</div>` +
+											`</a>`;	
 										}
 									}
 
@@ -328,19 +334,20 @@
 									
 									for (let r of list) {
 										if(r.menuCategoryName === "패스트푸드"){
-											str +=  `<div>`+
-													`<div>` +
-														`<div class='search-best-crownSmall'>` +
-														`<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
-														`<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
-														`</div>` +
-													`</div>` +	                                    		
-													`<div>` +
-														`<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
-														`<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
-														`<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
-													`</div>` +
-											`</div>`;
+											str +=  `<a href='main.re?rno=` + r.restNo + `'>`+
+											`<div>` +
+												`<div class='search-best-crownSmall'>` +
+												// + `<img src='${pageContext.request.contextPath}"` + r.at.filePath + r.at.changeName + `"'>`
+												`<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
+												`<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
+												`</div>` +
+											`</div>` +	                                    		
+											`<div>` +
+												`<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
+												`<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
+												`<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
+											`</div>` +
+											`</a>`;	
 										}
 									}
 

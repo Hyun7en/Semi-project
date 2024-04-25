@@ -40,6 +40,11 @@
     margin: 20px 0 20px 0;
 
 }
+.search-best-img > div {
+  
+    margin: 0px 17px 0px 17px;
+
+}
 
 .search-best-crown {
     position: relative;
@@ -113,6 +118,7 @@ border-radius: 4px;
     column-gap: 0px;
     row-gap: 50px;
     margin-bottom: 50px;
+
 }
 
 .search-best-crownSmall {
