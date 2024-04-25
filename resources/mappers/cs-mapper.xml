@@ -145,12 +145,15 @@
 	  			 DEFAULT,
 	  			 TO_NUMBER(#{csDetailWriter})
 	  			)	
-	  			 
 	</insert>
 	
-	<!--<delete id="">
-	</delete>
-	<update id="">
-	</update> -->
+	<update id="deleteAdminCs" >
+		UPDATE CUSTOMER_SERVICE_DETAIL
+		SET CS_DETAIL_STATUS = 'N'
+		WHERE CS_DETAIL_NO = #{boardNo}
+	</update>
+	
+	<!-- <update id="">
+	     </update> -->
 	
 </mapper>

@@ -35,7 +35,6 @@ public class AjaxCsKeywordController extends HttpServlet {
 		
 		int csTypeNo = Integer.parseInt(request.getParameter("csTypeNo"));
 		
-		System.out.println(csTypeNo);
 		ArrayList<CsKeyword> csKeywordList = new CsCenterServiceImpl().selectCskeywordList(csTypeNo );
 		
 		response.setContentType("application/json; charset=utf-8");

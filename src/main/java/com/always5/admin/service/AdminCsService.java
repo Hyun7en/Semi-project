@@ -21,4 +21,6 @@ public interface AdminCsService {
 	public CsDetail selectBoard(int boardNo);
 	
 	public int insertAdminCs(CsDetail cs);
+	
+	public int deleteAdminCs(int boardNo);
 }
