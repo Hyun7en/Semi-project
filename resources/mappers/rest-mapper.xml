@@ -42,7 +42,7 @@
 	
 	<resultMap id="attachmentResultSet" type="Attachment">
 		<result column="IMG_LIST_NO" property="fileNo"/>
-		<result column="IMG" property="changeName"/>
+		<result column="IMG_NAME" property="changeName"/>
 		<result column="IMG_URL" property="filePath"/>
 		<result column="REVIEW_NO" property="reviewNo"/>
 		<result column="REST_NO" property="restNo"/>
@@ -73,15 +73,14 @@
 	
 	<select id="selectRestAttachmentList" resultMap="attachmentResultSet">
 		SELECT IMG_LIST_NO,
-			   IMG,
+			   IMG_NAME,
 			   IMG_URL
 		FROM IMG_LIST
 		WHERE REST_NO = #{restNo}
 	</select>
 	
 	<select id="selectMenuCategoryList" resultMap="menuResultSet">
-		SELECT MENU_NO,
-			   MENU_CATEGORY_NAME
+		SELECT DISTINCT MENU_CATEGORY_NAME
 		FROM MENU
 		JOIN MENU_CATEGORY USING (MENU_CATEGORY_NO)
 		WHERE REST_NO = #{restNo}
@@ -113,21 +112,41 @@
 		   AND REST_NO = #{restNo}
 	</delete>
 	
+	<update id="plusDibsCount">
+		UPDATE REST_INFO
+		SET LIKE_NO = LIKE_NO + 1
+		WHERE REST_NO = #{restNo}
+	</update>
+	
+	<update id="minusDibsCount">
+		UPDATE REST_INFO
+		SET LIKE_NO = LIKE_NO - 1
+		WHERE REST_NO = #{restNo}
+	</update>
+	
+	<select id="selectReviewCount" resultType="_int">
+		SELECT COUNT(*) AS "count"
+		FROM REVIEW
+		WHERE REST_NO = #{restNo}
+		AND REVIEW_STATUS = 'Y'
+	</select>
+	
 	<select id="selectReviewList" resultMap="reviewResultSet">
 		SELECT REVIEW_NO,
 			   REVIEW_RATING,
 			   REVIEW_CONTENT,
-			   REVIEW_ENROLL_DATE,
+			   TO_CHAR(REVIEW_ENROLL_DATE, 'YYYY-MM-DD') AS "REVIEW_ENROLL_DATE",
 			   NICKNAME
 		FROM REVIEW
 		JOIN USER_INFO USING (USER_NO)
 		WHERE REST_NO = #{restNo}
 		AND REVIEW_STATUS = 'Y'
+		ORDER BY REVIEW_NO DESC
 	</select>
 	
 	<select id="selectReviewAttachmentList" resultMap="attachmentResultSet">
 		SELECT IMG_LIST_NO,
-			   IMG,
+			   IMG_NAME,
 			   IMG_URL
 		FROM IMG_LIST
 		WHERE REVIEW_NO = #{reviewNo}
@@ -164,24 +183,51 @@
 		WHERE REST_NO = #{restNo}
 	</select>
 	
-	<!-- admin 레스토랑 총 리스트 -->
-	<select id="selectRestListCount" resultType="_int">
-		SELECT COUNT(*)
-		  FROM REST_INFO
- 		 WHERE REST_STATUS = 'Y'
+	<insert id="insertReview">
+		INSERT INTO REVIEW
+						(REVIEW_NO,
+						REVIEW_RATING,
+						REVIEW_CONTENT,
+						REST_NO,
+						USER_NO
+						)
+				  VALUES(
+				  		SEQ_RVNO.NEXTVAL,
+				  		#{reviewRating},
+				  		#{reviewContent},
+				  		#{restNo},
+				  		#{userNo}
+				  		)
+	</insert>
+	<select id="selectReview" resultMap="reviewResultSet">
+		SELECT REVIEW_NO,
+			   REVIEW_RATING,
+			   REVIEW_CONTENT,
+			   REVIEW_ENROLL_DATE,
+			   REST_NO,
+			   USER_NO
+		FROM REVIEW
+		WHERE REVIEW_NO = #{reviewNo}
 	</select>
+	<insert id="insertReviewAttachment">
+		INSERT INTO IMG_LIST
+						(IMG_LIST_NO,
+						IMG_NAME,
+						IMG_URL,
+						REVIEW_NO
+						)
+				  VALUES(
+				  		SEQ_ILNO.NEXTVAL,
+				  		#{changeName},
+				  		#{filePath},
+				  		SEQ_RVNO.CURRVAL
+				  		)
+	</insert>
+	<update id="updateRestGrade">
+		UPDATE REST_INFO
+		SET REST_GRADE = #{restGrade}
+		WHERE REST_NO = #{restNo}
+	</update>
 	
-	<!-- Admin 레스토랑 리스트 나열 -->
-	<select id="selectList" resultMap="restResultSet">
-		SELECT REST_NO,
-			   REST_NAME,
-			   REST_MODIFY_DATE
-		  FROM REST_INFO R
-		 WHERE R.REST_STATUS = 'Y'
-		 ORDER BY REST_NO DESC
-	</select>
-	
-	
-	<!-- admin 레스토랑 정보 수정 -->
 	
 </mapper>

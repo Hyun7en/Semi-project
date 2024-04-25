@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,6 +29,7 @@
                     <input type="submit" value="검색" id="search-button">
                 </form>
             </div>
+            
             <c:choose>
                 <c:when test="${empty loginUser}">
                     <div id="memberButton">
@@ -38,7 +39,7 @@
                 </c:when>
                 <c:otherwise>
                     <div id="memberButton">
-                        <a href="">${loginUser.nickName}님</a>
+                        <a href="">${loginUser.userName }님</a>
                         <a href="mypage.ui">마이페이지</a>
                     </div>
                 </c:otherwise>

@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.always5.common.template.Pagination;
+import com.always5.common.vo.PageInfo;
 import com.always5.review.model.vo.Review;
 import com.always5.review.rest.model.vo.Restaurant;
 import com.always5.review.rest.service.RestServiceImpl;
@@ -32,12 +34,18 @@ public class RestReviewViewController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		int restNo = Integer.parseInt(request.getParameter("restNo"));
-		int restNo = 1;
-		Restaurant rest = new RestServiceImpl().selectRest(restNo);
-		ArrayList<Review> reviewList = new RestServiceImpl().selectReviewList(restNo);
-		ArrayList<Integer> ratingCount = new RestServiceImpl().selectRatingCount(restNo);
+		int restNo = Integer.parseInt(request.getParameter("rno"));
 		
+		int listCount = new RestServiceImpl().selectReviewCount(restNo);
+		int currentPage = Integer.parseInt(request.getParameter("pno"));
+
+		PageInfo pi = Pagination.getPageInfo(listCount, currentPage, 10, 10);
+		
+		System.out.println(pi);
+		Restaurant rest = new RestServiceImpl().selectRest(restNo);
+		ArrayList<Review> reviewList = new RestServiceImpl().selectReviewList(restNo, pi);
+		ArrayList<Integer> ratingCount = new RestServiceImpl().selectRatingCount(restNo);
+		System.out.println(reviewList.size());
 //		int[] reviewList = new int[5];
 //		for(int i = 0; i < ratingCount.size(); i++) {
 //			reviewList[i] = ratingCount.get(i);
@@ -46,6 +54,7 @@ public class RestReviewViewController extends HttpServlet {
 		request.setAttribute("rest", rest);
 		request.setAttribute("reviewList", reviewList);
 		request.setAttribute("ratingCount", ratingCount);
+		request.setAttribute("pi", pi);
 		request.getRequestDispatcher("WEB-INF/views/rest/restReviewView.jsp").forward(request, response);
 	}
 
