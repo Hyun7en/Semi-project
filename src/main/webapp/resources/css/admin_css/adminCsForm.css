@@ -1,0 +1,5 @@
+@charset "UTF-8";   
+
+form > div > button{
+    margin-right: 20px;
+}
