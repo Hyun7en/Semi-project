@@ -50,7 +50,7 @@
 						</c:when>
 						<c:otherwise> 
 							<div id="memberButton">
-								<a href="">${loginUser.userName}님</a> <a href="adminPage.ad">관리자페이지</a>
+								<a href="">${loginUser.userName}님</a> <a href="main.ad">관리자페이지</a>
 								<a href="logout.ui">로그아웃</a>
 							</div>
 						</c:otherwise>
