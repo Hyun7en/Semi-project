@@ -33,7 +33,7 @@ href="${pageContext.request.contextPath}/resources/css/user_css/MypageGoods.css"
 					<div class="reviewbox-grade">${rest.restGrade}</div>
 			
 					<div class="crown-rank">
-					<c:forEach var="crown" begin="1" end="${rest.restGrade}">
+					<c:forEach begin="1" end="${rest.restGrade}">
 						<img class="crown"
 							src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/crown.png" />
 					</c:forEach>
@@ -53,10 +53,15 @@ href="${pageContext.request.contextPath}/resources/css/user_css/MypageGoods.css"
 						src="${pageContext.request.contextPath}/${menu.filePath}/${menu.changeName}" />
 					</c:forEach>
 					
+					<c:forEach var="menu2" items="${rest.restAtList}">
 					<img class="reviewbox-preview02"
-						src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/한식02.jpg" />
+						src="${pageContext.request.contextPath}/${menu.filePath}/${menu.changeName}" />
+					</c:forEach>
+					
+					<c:forEach var="menu3" items="${rest.restAtList}">
 					<img class="reviewbox-preview03"
-						src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/한식03.jpg" />
+						src="${pageContext.request.contextPath}/${menu.filePath}/${menu.changeName}" />
+					</c:forEach>
 				</div>
 			</div>
 		   </c:forEach>

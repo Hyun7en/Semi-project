@@ -37,7 +37,7 @@
 				</div>
 
 				<div class="Mypage-username-box">
-					<div class="profile-username">${loginUser.nickName}</div>
+					<div class="profile-username">${loginUser.userName}</div>
 					<div class="profile-username-checkbox">
 						<button class="profile-username-checkbox-title" onclick='openUpdateName()'>수정</button>
 					</div>

@@ -34,19 +34,24 @@ public class UserUpdateIdController extends HttpServlet {
 
 		User loginUser = (User)request.getSession().getAttribute("loginUser");
 		
-		
+		// 로그인한 유저의 정보를 가져와서 loginUser에 담기
 		request.setAttribute("loginUser", loginUser);
 		System.out.println(loginUser);
 		
+		// 로그인한 유저의 아이디를 변경할 아이디로 수정
 		User updateUserID = new UserServiceImpl().updateUserID(loginUser);
 		System.out.println(updateUserID);
 		
 		if (updateUserID == null) {
+			// 실패 메세지 출력 후 에러페이지로 이동
 			request.setAttribute("errorMsg", "아이디 수정 실패");
 			request.getRequestDispatcher("WEB-INF/views/common/errorPage.jsp").forward(request, response);
 		} else {
+			// 세션에 있는 loginUser의 아이디를 수정된 아이디로 변경	
 			HttpSession session = request.getSession();
 			session.setAttribute("loginUser", updateUserID);
+			
+			// 성공 메세지 출력 후 마이페이지로 이동
 			request.setAttribute("errorMsg", "성공적으로 수정했습니다.");
 			request.getRequestDispatcher("WEB-INF/views/common/errorPage.jsp").forward(request, response);
 		}

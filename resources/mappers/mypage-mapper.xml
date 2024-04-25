@@ -23,8 +23,32 @@
 		<result column="USER_STATUS" property="userStatus" />
 		<result column="POINT" property="point" />
 	</resultMap>
-
-	<select id="MyPage" parameterType="_int" resultMap="MypageResultSet">
+	
+	<resultMap id="restResultSet" type="Restaurant">
+		<result column="REST_NO" property="restNo"/>
+		<result column="REST_NAME" property="restName"/>
+		<result column="REST_ADDRESS" property="restAddress"/>
+		<result column="REST_PHONE" property="restPhone"/>
+		<result column="REST_INTRO" property="restIntro"/>
+		<result column="REST_GRADE" property="restGrade"/>
+		<result column="LIKE_NO" property="likeNo"/>
+		<result column="REST_ENROLL_DATE" property="restEnrollDate"/>
+		<result column="REST_MODIFY_DATE" property="restModifyDate"/>
+		<result column="REST_OPER_TIME" property="restOperDate"/>
+		<result column="REST_STATUS" property="restStatus"/>
+		<result column="FOOD_CATEGORY_NAME" property="foodCategoryNo"/>
+	</resultMap>
+	
+	<resultMap id="reviewResultSet" type="Review">
+		<result column="REVIEW_NO" property="reviewNo"/>
+		<result column="REVIEW_RATING" property="reviewRating"/>
+		<result column="REVIEW_CONTENT" property="reviewContent"/>
+		<result column="REVIEW_ENROLL_DATE" property="reviewEnrollDate"/>
+		<result column="REST_NO" property="restNo"/>
+		<result column="NICKNAME" property="userNo"/>
+	</resultMap>
+	
+	<select id="MyPage" resultMap="MypageResultSet">
 		SELECT USER_NO,
 				NICKNAME,
 				USER_BIRTH,
@@ -36,40 +60,8 @@
 			AND USER_STATUS = 'Y'
 			ORDER BY USER_NO DESC
 	</select>
-
-	<select id="MyPageReview" parameterType="Mypage" resultMap="MypageResultSet">
-		SELECT 
-				NICKNAME,
-				REST_NAME,
-				REST_GRADE,
-				REST_NO,
-				REST_INTRO,
-				IMG_URL,
-				IMG
-			FROM USER_INFO
-			JOIN REST_INFO USING(REST_NO)
-			JOIN IMG_LIST USING(IMG_LIST_NO)
-			WHERE USER_NO = #{userNo}
-		    AND USER_STATUS = 'Y'
-	</select>
 	
-	<select id="MyPageGoods" parameterType="Mypage" resultMap="MypageResultSet">
-		SELECT 
-				NICKNAME,
-				REST_NAME,
-				REST_GRADE,
-				REST_NO,
-				REST_INTRO,
-				IMG_URL,
-				IMG
-			FROM USER_INFO
-			JOIN REST_INFO USING(REST_NO)
-			JOIN IMG_LIST USING(IMG_LIST_NO)
-			WHERE USER_NO = #{userNo}
-		    AND USER_STATUS = 'Y'
-	</select>
-	
-	<select id="MyPageReviewGoods" parameterType="Mypage" resultMap="MypageResultSet">
+	<select id="MyPageReviewGoods" resultMap="MypageResultSet">
 			SELECT 
 				NICKNAME,
 				REST_NAME,
@@ -83,5 +75,36 @@
 			JOIN IMG_LIST USING(IMG_LIST_NO)
 			WHERE USER_NO = #{userNo}
 		    AND USER_STATUS = 'Y'
+	</select>
+	
+	<select id="selectRestList" resultMap="restResultSet">
+			SELECT
+				REST_NAME,
+				REST_GRADE,
+				REST_NO,
+				REST_INTRO
+			FROM DIBS
+			JOIN REST_INFO USING(REST_NO)
+			WHERE USER_NO = #{userNo}
+
+	</select>
+	
+	<select id="selectRestAttachmentList" resultMap="restResultSet">
+		SELECT IMG_LIST_NO,
+			   IMG_NAME,
+			   IMG_URL
+		FROM IMG_LIST
+		WHERE REST_NO = #{restNo}
+	</select>
+		
+	<select id="selectReviewList" resultMap="reviewResultSet">
+			SELECT
+				REST_NAME,
+				REVIEW_RATING,
+				REVIEW_NO,
+				REVIEW_CONTENT
+			FROM REVIEW
+			JOIN REST_INFO USING(REST_NO)
+			WHERE USER_NO = #{userNo}
 	</select>
 </mapper>

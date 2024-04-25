@@ -106,7 +106,7 @@ input:focus {
 
 
 .MypageGoods .reviewbox-wrapper {
-  margin: 40px;
+  /* margin: 40px; */
 }
 
 .MypageGoods .reviewbox-title {
@@ -124,7 +124,7 @@ input:focus {
   float: left;
   font-weight: 500;
   color: #787b7d;
-  font-size: 15px;
+  font-size: 25px;
   letter-spacing: 0;
   line-height: normal;
 
@@ -132,7 +132,8 @@ input:focus {
 }
 
 .MypageGoods .crown-rank {
-  width: 250px;
+	float: left;
+  	width: 250px;
 }
 
 .MypageGoods .crown {
@@ -194,7 +195,6 @@ input:focus {
   height: 147px;
   object-fit: cover;
   border-radius:20px;
-  margin-left: 25px;
   margin-right: 25px;
 }
 
