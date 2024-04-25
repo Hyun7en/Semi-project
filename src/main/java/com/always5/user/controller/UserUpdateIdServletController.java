@@ -15,7 +15,7 @@ import com.always5.user.service.UserServiceImpl;
 /**
  * Servlet implementation class userIdUpdateController
  */
-@WebServlet("/updateid.ui")
+@WebServlet("/updateId.ui")
 public class UserUpdateIdServletController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

@@ -38,10 +38,6 @@ public class RestDetailImageController extends HttpServlet {
 		
 		response.setContentType("application/json; charset=utf-8");
 		new Gson().toJson(list, response.getWriter());
-<<<<<<< HEAD
-=======
-	
->>>>>>> bf4b416551bfa73eb11e26017c18069091543e3e
 	}
 
 	/**

@@ -2,9 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<c:set var="Mypage" value="${sessionScope.Mypage}" />
-<c:if test="${empty Mypage}">
-</c:if>
 <html>
 
 <head>
@@ -21,7 +18,7 @@
 
             <!-- 작성 리뷰 -->
             <div class="MypageReview-title-box">
-                <div class="MypageReview-Name">${Mypage.nickName}</div>
+                <div class="MypageReview-Name">${loginUser.nickName}</div>
                 <div class="MypageReview-Name2">님의 작성 리뷰</div>
             </div>
 
@@ -30,7 +27,8 @@
                 <div class="reviewbox-wrapper">
                     <div class="reviewbox-title">한식 1번가 건대점</div>
                     <div class="reviewbox-grade">평점 5.0</div>
-
+					
+						
                     <div class="crown-rank">
                         <img class="crown" src="${pageContext.request.contextPath}/resources/file/user_img/MypageReview-img/crown.png" />
                         <img class="crown" src="${pageContext.request.contextPath}/resources/file/user_img/MypageReview-img/crown.png" />
@@ -40,7 +38,7 @@
                     </div>
 
                     <div class="review-box-mainpage">
-                        <button class="review-box-mainpagebox"><a href="#">가게보기</a></button>
+                        <button class="review-box-mainpagebox"><a href="main.re?rno=">가게보기</a></button>
                     </div>
 
                     <img class="reviewbox-line" src="img/line-50.svg" />

@@ -1,4 +1,4 @@
-package com.always5.user.controller;
+package com.always5.review.rest.controller;
 
 import java.io.IOException;
 
@@ -8,22 +8,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.always5.user.model.vo.Mypage;
-import com.always5.user.model.vo.User;
-import com.always5.user.service.MyPageServiceImpl;
-import com.always5.user.service.UserServiceImpl;
+import com.always5.review.rest.model.vo.Restaurant;
+import com.always5.review.rest.service.RestServiceImpl;
 
 /**
- * Servlet implementation class myPageController
+ * Servlet implementation class ReviewEnrollFormController
  */
-@WebServlet("/mypage.u")
-public class MyPageController extends HttpServlet {
+@WebServlet("/enrollReviewForm.re")
+public class ReviewEnrollFormController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public MyPageController() {
+    public ReviewEnrollFormController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,18 +30,12 @@ public class MyPageController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		int restNo = Integer.parseInt(request.getParameter("rno"));
 		
-		Mypage m = new Mypage();
-		m.setUserId(request.getParameter("userId"));
-		m.setUserPwd(request.getParameter("userPwd"));
-		m.setNickName(request.getParameter("NickName"));
-		m.setUserName(request.getParameter("userName"));
-		m.setUserPhone(request.getParameter("phone"));
-		m.setUserEmail(request.getParameter("email"));
-		m.setUserAddress(request.getParameter("address"));
+		Restaurant rest = new RestServiceImpl().selectRest(restNo);
 		
-		Mypage Mypage = new MyPageServiceImpl().MyPage(m);
-			
+		request.setAttribute("rest", rest);
+		request.getRequestDispatcher("WEB-INF/views/rest/restReviewRegistForm.jsp").forward(request, response);
 	}
 
 	/**

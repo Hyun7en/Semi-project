@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,12 +31,29 @@
                 </form>
             </div>
             
+<<<<<<< HEAD
             <div id="memberButton">
                 <a href="login.ui">로그인</a>
                 <a href="signin.ui">회원가입</a>
             </div>
+=======
+            <c:choose>
+                <c:when test="${empty loginUser}">
+                    <div id="memberButton">
+                        <a href="login.ui">로그인</a>
+                        <a href="signin.ui">회원가입</a>
+                    </div>
+                </c:when>
+                <c:otherwise>
+                    <div id="memberButton">
+                        <a href="">${loginUser.userName }님</a>
+                        <a href="mypage.ui">마이페이지</a>
+                    </div>
+                </c:otherwise>
+            </c:choose>
+>>>>>>> d16092d3f6ac28cfe586f54957dfdd0708ad974c
         </div>
-
+	
         <!-- nav -->
         <nav id="nav-1">
                 <ul id="navi-1">

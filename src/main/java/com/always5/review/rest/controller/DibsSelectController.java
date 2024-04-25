@@ -37,40 +37,16 @@ public class DibsSelectController extends HttpServlet {
 		String restNo = request.getParameter("restNo");
 		
 		// 사용자의 찜 여부 확인해서 update 할지 delete 할지 결정
+		Dibs userDibs = new Dibs(userNo, restNo);
 		
-		// update 나 delete 후 해당 rest likeNo 업데이트
-		
-		// 수정된 사용자 찜 여부와 수정된 likeNo 보내기
-		
-		
-//		String userNo = request.getParameter("userNo");
-//		String restNo = request.getParameter("restNo");
-//		
-//		Dibs dibsInfo = new Dibs(userNo, restNo);
-//		
-//		Dibs dibs = new RestServiceImpl().checkDibs(dibsInfo);
-//		Dibs userDibs = null;
-//		
-//		System.out.println(dibs);
-//		if (dibs == null) {
-//			userDibs = new RestServiceImpl().insertDibs(dibsInfo);
-//			
-//			System.out.println(userDibs);
-//		} else {
-//			userDibs = new RestServiceImpl().deleteDibs(dibsInfo);
-//		}
-//		
-//		System.out.println("delete 되었을까?");
-//		
-//		Restaurant dibsCount = new RestServiceImpl().selectDibsCount(restNo);
-//		
-//		System.out.println(dibsCount);
-//		
+		// 가져와서 카운트 업데이트 하는 것까지 한 번에 서비스로 묶어서 트랜잭션 되도록 + 커밋 롤백 해줘야 함
+		HashMap map = new RestServiceImpl().updateDibs(userDibs);
+
 //		HashMap map = new HashMap<>();
 //		map.put("userDibs", userDibs);
 //		map.put("dibsCount", dibsCount);
-//		response.setContentType("application/json; charset=utf-8");
-//		new Gson().toJson(map, response.getWriter());
+		response.setContentType("application/json; charset=utf-8");
+		new Gson().toJson(map, response.getWriter());
 		
 	}
 

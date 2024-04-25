@@ -35,8 +35,8 @@
 			<div class="inputupdateName-wrapper">
 				<div class="inputupdateName-box">
 					<div class="inputupdateName-text">
-						<input type="text" name="inputupdateName-phone"
-							class="inputupdateName-phone" placeholder="왕밥빵 아이디 또는 단체 아이디">
+						<input type="text" name="nickName"
+							class="inputupdateName-phone" placeholder="변경할 닉네임 입력">
 					</div>
 				</div>
 			</div>
