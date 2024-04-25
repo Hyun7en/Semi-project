@@ -9,6 +9,8 @@ import com.always5.admin.model.dao.AdminCsDao;
 import com.always5.common.template.Template;
 import com.always5.common.vo.PageInfo;
 import com.always5.customerService.model.vo.CsDetail;
+import com.always5.customerService.model.vo.CsKeyword;
+import com.always5.customerService.model.vo.CsType;
 
 public class AdminCsServiceImpl implements AdminCsService {
 	
@@ -64,4 +66,22 @@ public class AdminCsServiceImpl implements AdminCsService {
 		return csDetail;
 	}
 
+	@Override
+	public int insertAdminCs(CsDetail cs) {
+		SqlSession sqlSession = Template.getSqlSession();
+		
+		int result = acDao.insertAdminCs(sqlSession, cs);
+		
+		if (result > 0) {
+			sqlSession.commit();
+		} else {
+			sqlSession.rollback();
+		}
+		
+		sqlSession.close();
+		
+		return result;
+	}
+	
+	
 }

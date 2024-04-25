@@ -6,9 +6,11 @@ import java.util.HashMap;
 import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 
+import com.always5.common.template.Template;
 import com.always5.common.vo.PageInfo;
 import com.always5.customerService.model.vo.CsDetail;
 import com.always5.customerService.model.vo.CsKeyword;
+import com.always5.customerService.model.vo.CsType;
 
 public class AdminCsDao {
 	
@@ -48,5 +50,10 @@ public class AdminCsDao {
 	
 	public CsDetail selectBoard(SqlSession sqlSession, int boardNo) {
 		return sqlSession.selectOne("csMapper.selectBoard", boardNo);
+	}
+
+	
+	public int insertAdminCs(SqlSession sqlSession, CsDetail cs) {
+		return sqlSession.insert("csMapper.insertAdminCs", cs);
 	}
 }

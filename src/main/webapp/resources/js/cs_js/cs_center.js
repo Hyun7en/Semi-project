@@ -1,6 +1,3 @@
-/**
- * 
- */
 
 
             $(document).ready(function() {
@@ -72,9 +69,9 @@
                 // csKeyword 목록 생성
                 $.each(keywordlist, function(index, item) {
                     let csKeywordBtn = document.createElement('li');
-                    csKeywordBtn.innerText = item.cskeywordValue;
+                    csKeywordBtn.innerText = item.csKeywordValue;
                     csKeywordBtn.onclick = function(){
-                        selectCsDetailList(item.cskeywordNo)
+                        selectCsDetailList(item.csKeywordNo)
                     }
 
                     document.querySelector('.csKeyword').appendChild(csKeywordBtn);

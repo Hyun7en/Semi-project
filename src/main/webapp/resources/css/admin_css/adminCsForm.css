@@ -3,3 +3,22 @@
 form > div > button{
     margin-right: 20px;
 }
+
+#select-csType{
+    width: 200px;
+}
+
+#select-csKeyword{
+    width: 200px;
+}
+
+#csTitle{
+    border: none;
+    width: 1217.700px;
+    height: 23;
+}
+#csContent{
+    border: none;
+    width: 1217.700px;
+    height: 245;
+}

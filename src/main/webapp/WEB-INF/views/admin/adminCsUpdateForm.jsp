@@ -8,8 +8,10 @@
             <meta charset="UTF-8">
             <title>Insert title here</title>
             <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/common_css/style.css">
+            <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/admin_css/adminCsForm.css">
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+            <script src="${pageContext.request.contextPath}/resources/js/cs_js/adminCsForm.js"></script>
         </head>
 
         <body>
@@ -27,29 +29,38 @@
                             <h2 align="center">고객센터 글 등록</h2>
                             <br>
 
-                            <form id="enroll-form" action="insert.bo" method="post" enctype="multipart/form-data">
-                                <input type="hidden" name="userNo" value="${loginUser.userNo}">
+                            <form id="enroll-form" action="insert.AdminCs" method="post">
+                                <input type="hidden" name="csDetailWriter" value="${loginUser.userNo}">
                                 <table class="table table-bordered">
                                     <tr>
-                                        <th width="70">카테고리</th>
+                                        <th width="80">대분류</th>
                                         <td width="500">
-                                            <select name="category">
-                                                <!-- category 테이블로부터 조회해오기 -->
-                                                <c:forEach var="keyword" items="${list}">
-                                                    <option value="${keyword.csKeywordNo}">${keyword.keywordValue}
-                                                    </option>
+                                            <select id="select-csType" name="csType" required >
+                                                <!-- csType 테이블로부터 조회해오기 -->
+                                                <c:forEach var="Type" items="${csTypelist}">
+                                                    <option value="${Type.csTypeNo}">${Type.csTypeValue}</option>
+                                                </c:forEach>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>중분류</th>
+                                        <td>
+                                            <select id="select-csKeyword" required name="csKeyword">
+                                                <!-- csKeyword 테이블로부터 조회해오기 -->
+                                                <c:forEach var="keyword" items="${csKeywordlist}">
+                                                    <option value="${keyword.csKeywordNo}">${keyword.csKeywordValue}</option>
                                                 </c:forEach>
                                             </select>
                                         </td>
                                     </tr>
                                     <tr>
                                         <th>제목</th>
-                                        <td><input type="text" name="title" required></td>
+                                        <td><input type="text" name="csDetailTitle" id="csTitle" autofocus  required></td>
                                     </tr>
                                     <tr>
                                         <th>내용</th>
-                                        <td><textarea name="content" rows="10" style="resize: none;"
-                                                required></textarea></td>
+                                        <td><textarea name="csDetailContent" rows="10" id="csContent" style="resize: none;" required></textarea></td>
                                     </tr>
                                 </table>
 
@@ -64,6 +75,7 @@
                         </div>
                     </main>
             </div>
+
         </body>
 
     </html>

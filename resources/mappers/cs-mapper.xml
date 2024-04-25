@@ -11,9 +11,9 @@
 	</resultMap>
 
 	<resultMap id="csKeywordResultSet" type="CsKeyword">
-		<result column="CS_KEYWORD_NO" property="cskeywordNo"/>
+		<result column="CS_KEYWORD_NO" property="csKeywordNo"/>
 		 <result column="CS_TYPE_NO" property="csTypeNo"/>
-		<result column="CS_KEYWORD_VALUE" property="cskeywordValue"/>
+		<result column="CS_KEYWORD_VALUE" property="csKeywordValue"/>
 	</resultMap>
 
 	<resultMap id="csDetailResultSet" type="CsDetail">
@@ -120,9 +120,35 @@
 		 WHERE CSD.CS_DETAIL_STATUS = 'Y'
 		   AND CS_DETAIL_NO = #{boardNo}
 	</select>
-	<!-- <insert id="">
+	
+	<insert id="insertAdminCs">
+		INSERT 
+		  INTO CUSTOMER_SERVICE_DETAIL
+		  	   (
+	  			   CS_DETAIL_NO,
+				   CS_KEYWORD_NO,
+				   CS_DETAIL_TITLE,
+				   CS_DETAIL_CONTENT,
+			       CS_DETAIL_ENROLL_DATE,
+				   CS_DETAIL_MODIFY_DATE,
+				   CS_DETAIL_STATUS,
+				   CS_DETAIL_WRITER	
+	  			)
+	  	VALUES
+	  			(
+	  			 SEQ_CSDNO.NEXTVAL,
+		  		 #{csKeywordNo},
+		  		 #{csDetailTitle},
+		  		 #{csDetailContent},
+	  			 DEFAULT,
+	  			 DEFAULT,
+	  			 DEFAULT,
+	  			 TO_NUMBER(#{csDetailWriter})
+	  			)	
+	  			 
 	</insert>
-	<delete id="">
+	
+	<!--<delete id="">
 	</delete>
 	<update id="">
 	</update> -->

@@ -29,25 +29,33 @@
                     
                             <table align="center" border="1" class="table table-bordered">
                                 <tr>
-                                    <td width="100">글번호</td>
+                                    <th width="100">대분류</th>
+                                    <td width="500"></td>
+                                </tr>
+                                <tr>
+                                    <th>중분류</th>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th width="100">글번호</th>
                                     <td width="500">${ csDetail.csDetailNo }</td>
                                 </tr>
                                 <tr>
-                                    <td>제목</td>
+                                    <th>제목</th>
                                     <td>${ csDetail.csDetailTitle }</td>
                                 </tr>
                                 <tr>
-                                    <td>작성 관리자</td>
+                                    <th>작성 관리자</th>
                                     <td>${ csDetail.csDetailWriter }</td>
                                 </tr>
                                 <tr>
-                                    <td>작성일</td>
+                                    <th>작성일</th>
                                     <td>${ csDetail.csDetailEnrollDate }</td>
 
                 
                                 </tr>
                                 <tr>
-                                    <td>내용</td>
+                                    <th>내용</th>
                                     <td height="100">
                                         ${ csDetail.csDetailContent }
                                     </td>

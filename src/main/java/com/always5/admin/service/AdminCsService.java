@@ -6,6 +6,7 @@ import java.util.HashMap;
 import com.always5.common.vo.PageInfo;
 import com.always5.customerService.model.vo.CsDetail;
 import com.always5.customerService.model.vo.CsKeyword;
+import com.always5.customerService.model.vo.CsType;
 
 public interface AdminCsService {
 	
@@ -19,4 +20,5 @@ public interface AdminCsService {
 	
 	public CsDetail selectBoard(int boardNo);
 	
+	public int insertAdminCs(CsDetail cs);
 }

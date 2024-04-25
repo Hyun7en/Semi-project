@@ -11,7 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.always5.admin.service.AdminCsService;
 import com.always5.admin.service.AdminCsServiceImpl;
-import com.always5.customerService.model.vo.CsDetail;
+import com.always5.customerService.model.vo.CsKeyword;
+import com.always5.customerService.model.vo.CsType;
 
 
 /**
@@ -33,13 +34,8 @@ public class AdminCsEnrollController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		AdminCsService adcsService = new AdminCsServiceImpl();
 		
-//		AdminCsService adcsService = new AdminCsServiceImpl();
-//		
-//		ArrayList<CsDetail> list = adcsService.selectCategoryList();
-//		
-//		//응답뷰 요청
-//		request.setAttribute("categorys", list);
 		request.getRequestDispatcher("WEB-INF/views/admin/adminCsEnrollForm.jsp").forward(request, response);
 	}
 
