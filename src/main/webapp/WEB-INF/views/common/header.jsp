@@ -31,12 +31,6 @@
                 </form>
             </div>
             
-<<<<<<< HEAD
-            <div id="memberButton">
-                <a href="login.ui">로그인</a>
-                <a href="signin.ui">회원가입</a>
-            </div>
-=======
             <c:choose>
                 <c:when test="${empty loginUser}">
                     <div id="memberButton">
@@ -51,7 +45,6 @@
                     </div>
                 </c:otherwise>
             </c:choose>
->>>>>>> d16092d3f6ac28cfe586f54957dfdd0708ad974c
         </div>
 	
         <!-- nav -->

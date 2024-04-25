@@ -6,6 +6,7 @@ import java.util.HashMap;
 import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 
+import com.always5.common.vo.Attachment;
 import com.always5.common.vo.PageInfo;
 import com.always5.review.rest.model.vo.Restaurant;
 
@@ -49,6 +50,10 @@ public class SearchDao {
 		
 		RowBounds rowBounds = new RowBounds(offset, limit);
 		return (ArrayList)sqlSession.selectList("searchMapper.selectrSearchList", map, rowBounds);
+	}
+	
+	public Attachment pickRestPic(SqlSession sqlSession, int restNo){
+		return sqlSession.selectOne("searchMapper.pickRestPic", restNo);
 	}
 	
 	

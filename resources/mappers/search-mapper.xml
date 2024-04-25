@@ -89,6 +89,19 @@
 	        OR REST_INTRO LIKE '%' || #{keyword} || '%'
 	        OR FOOD_CATEGORY_NO LIKE '%' || #{keyword} || '%')
  	</select>
+ 	
+ 	<resultMap id="attachmentResultSet" type="Attachment">
+		<result column="IMG_NAME" property="changeName"/>
+		<result column="IMG_URL" property="filePath"/>
+		<result column="REST_NO" property="restNo"/>
+	</resultMap>
+	
+	<select id="pickRestPic" resultMap="attachmentResultSet">
+		  SELECT IMG_NAME,
+				 IMG_URL
+		    FROM IMG_LIST
+			WHERE REST_NO = #{restNo}
+	</select>
 
 
 

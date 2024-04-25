@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.apache.ibatis.session.SqlSession;
 
+import com.always5.common.vo.Attachment;
 import com.always5.review.rest.model.vo.Restaurant;
 
 public class mainDao {
@@ -16,6 +17,10 @@ public class mainDao {
 	public ArrayList<Restaurant> mainNewTopList(SqlSession sqlSession) {
 		return (ArrayList)sqlSession.selectList("mainPageMapper.mainNewTopList");
 		
+	}
+	
+	public Attachment pickRestPic(SqlSession sqlSession, int restNo){
+		return sqlSession.selectOne("mainPageMapper.pickRestPic", restNo);
 	}
 	
 }

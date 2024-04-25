@@ -151,7 +151,7 @@
 												str +=  `<div>`+
                                                             `<div>` +
                                                                 `<div class='search-best-crownSmall'>` +
-                                                                `<img src='https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp' alt=''>` +
+                                                                `<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
                                                                 `<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
                                                                 `</div>` +
                                                             `</div>` +	                                    		
@@ -176,7 +176,7 @@
 												str +=  `<div>`+
                                                             `<div>` +
                                                                 `<div class='search-best-crownSmall'>` +
-                                                                `<img src='https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp' alt=''>` +
+                                                                `<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
                                                                 `<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
                                                                 `</div>` +
                                                             `</div>` +	                                    		
@@ -202,7 +202,7 @@
 												str +=  `<div>`+
                                                             `<div>` +
                                                                 `<div class='search-best-crownSmall'>` +
-                                                                `<img src='https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp' alt=''>` +
+                                                                `<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
                                                                 `<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
                                                                 `</div>` +
                                                             `</div>` +	                                    		
@@ -228,7 +228,7 @@
 												str +=  `<div>`+
                                                             `<div>` +
                                                                 `<div class='search-best-crownSmall'>` +
-                                                                `<img src='https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp' alt=''>` +
+                                                                `<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
                                                                 `<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
                                                                 `</div>` +
                                                             `</div>` +	                                    		
@@ -254,7 +254,7 @@
 												str +=  `<div>`+
                                                             `<div>` +
                                                                 `<div class='search-best-crownSmall'>` +
-                                                                `<img src='https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp' alt=''>` +
+                                                                `<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
                                                                 `<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
                                                                 `</div>` +
                                                             `</div>` +	                                    		
@@ -280,7 +280,7 @@
 												str +=  `<div>`+
                                                             `<div>` +
                                                                 `<div class='search-best-crownSmall'>` +
-                                                                `<img src='https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp' alt=''>` +
+                                                                `<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
                                                                 `<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
                                                                 `</div>` +
                                                             `</div>` +	                                    		
@@ -306,7 +306,7 @@
 												str +=  `<div>`+
                                                             `<div>` +
                                                                 `<div class='search-best-crownSmall'>` +
-                                                                `<img src='https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp' alt=''>` +
+                                                                `<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
                                                                 `<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
                                                                 `</div>` +
                                                             `</div>` +	                                    		
@@ -332,7 +332,7 @@
 												str +=  `<div>`+
                                                             `<div>` +
                                                                 `<div class='search-best-crownSmall'>` +
-                                                                `<img src='https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp' alt=''>` +
+                                                                `<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
                                                                 `<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
                                                                 `</div>` +
                                                             `</div>` +	                                    		
@@ -358,7 +358,7 @@
 												str +=  `<div>`+
                                                             `<div>` +
                                                                 `<div class='search-best-crownSmall'>` +
-                                                                `<img src='https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp' alt=''>` +
+                                                                `<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
                                                                 `<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
                                                                 `</div>` +
                                                             `</div>` +	                                    		
@@ -385,7 +385,7 @@
 												str +=  `<div>`+
                                                             `<div>` +
                                                                 `<div class='search-best-crownSmall'>` +
-                                                                `<img src='https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp' alt=''>` +
+                                                                `<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
                                                                 `<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
                                                                 `</div>` +
                                                             `</div>` +	                                    		
@@ -412,7 +412,7 @@
 												str +=  `<div>`+
                                                             `<div>` +
                                                                 `<div class='search-best-crownSmall'>` +
-                                                                `<img src='https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp' alt=''>` +
+                                                                `<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
                                                                 `<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
                                                                 `</div>` +
                                                             `</div>` +	                                    		

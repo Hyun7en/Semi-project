@@ -6,6 +6,7 @@ import java.util.HashMap;
 import org.apache.ibatis.session.SqlSession;
 
 import com.always5.common.template.Template;
+import com.always5.common.vo.Attachment;
 import com.always5.common.vo.PageInfo;
 import com.always5.review.rest.model.vo.Restaurant;
 import com.always5.search.dao.SearchDao;
@@ -50,5 +51,13 @@ public class SearchService {
 		ArrayList<Restaurant> list = rDao.selectrSearchList(sqlSession, map, re);
 		sqlSession.close();
 		return list;
+	}
+	
+	public Attachment pickRestPic(int restNo) {
+		SqlSession sqlSession = Template.getSqlSession();
+		Attachment at = rDao.pickRestPic(sqlSession, restNo);
+		sqlSession.close();	
+		return at;
+		
 	}
 }

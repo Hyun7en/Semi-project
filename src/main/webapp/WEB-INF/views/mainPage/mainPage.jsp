@@ -36,19 +36,19 @@
                         <div class="slider">
                             <div class="slides" id="slider1">
                                 <div class="best5-slide-set">
-                                	
-                                    	<div>
-	                                        <img src="https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp"
-	                                            alt="">
-	                                    </div>
-	                                    <div>
-	                                        <p>베스트 리뷰</p>
-	                                        <hr width="50" align="left">
-	                                        <p>${rest.restName}</p>
-	                                        <p>${rest.restIntro}</p>
-	                                        <p>${rest.restGrade}</p>
-	                                        <p>${rest.restAddress}</p>
-	                                    </div>
+  									<div id="rest-img">
+						
+								            <img src="${rest.at.filePath}" alt="가게 사진">
+						
+	                                </div>
+	                                <div>
+	                                    <p>베스트 리뷰</p>
+	                                    <hr width="50" align="left">
+	                                    <p>${rest.restName}</p>
+	                                    <p>${rest.restIntro}</p>
+	                                    <p>${rest.restGrade}</p>
+	                                    <p>${rest.restAddress}</p>
+	                                </div>
                                   
                                 </div>
                             </div>
@@ -85,7 +85,7 @@
 						slides.classList.add("best5-slide-set");
 						
 						slides.innerHTML = "<div>"
-										 	+ "<img src='https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp'>"
+										 + "<img src='${pageContext.request.contextPath}" + r.at.filePath + r.at.changeName + "'>"
 										 + "</div>"
 										 + "<div>"
 										 	+ "<p>" + r.restName + "</p>"
@@ -191,8 +191,7 @@
                                 <div class="best5-slide-set">
                                 	
                                     	<div>
-	                                        <img src="https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp"
-	                                            alt="">
+	                                        <img src="${rest.at.filePath}" alt="가게 사진">
 	                                    </div>
 	                                    <div>
 	                                        <p>베스트 리뷰</p>
@@ -222,7 +221,7 @@
 						slides.classList.add("best5-slide-set");
 						
 						slides.innerHTML = "<div>"
-										 	+ "<img src='https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp'>"
+											+ "<img src='${pageContext.request.contextPath}" + r.at.filePath + r.at.changeName + "'>"
 										 + "</div>"
 										 + "<div>"
 										 	+ "<p>" + r.restName + "</p>"

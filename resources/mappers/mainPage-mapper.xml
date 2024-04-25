@@ -19,6 +19,12 @@
 		<result column="REST_STATUS" property="restStatus"/>
 		<result column="FOOD_CATEGORY_NO" property="foodCategoryNo"/>
 	</resultMap>
+	<resultMap id="attachmentResultSet" type="Attachment">
+		<result column="IMG_NAME" property="changeName"/>
+		<result column="IMG_URL" property="filePath"/>
+		<result column="REST_NO" property="restNo"/>
+	</resultMap>
+	
 	
 	<select id="mainTopList" resultMap="restResultSet">
 		SELECT *
@@ -46,10 +52,11 @@
 		WHERE ROWNUM BETWEEN 1 AND 5
 	</select>
 	
+	<select id="pickRestPic" resultMap="attachmentResultSet">
+		  SELECT IMG_NAME,
+				 IMG_URL
+		    FROM IMG_LIST
+			WHERE REST_NO = #{restNo}
+	</select>
 	
-	
-	
-	
-	
-  
   </mapper>

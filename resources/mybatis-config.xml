@@ -19,13 +19,8 @@
 		<typeAlias type="com.always5.review.model.vo.Review" alias="Review" />
 		<typeAlias type="com.always5.customerService.model.vo.CsType" alias="csType" />
 		<typeAlias type="com.always5.customerService.model.vo.CsKeyword" alias="CsKeyword" />
-<<<<<<< HEAD
 		<typeAlias type="com.always5.customerService.model.vo.CsDetail" alias="CsDetail" />		
 		
-=======
-		<typeAlias type="com.always5.customerService.model.vo.CsDetail" alias="CsDetail" />
-
->>>>>>> d16092d3f6ac28cfe586f54957dfdd0708ad974c
 	</typeAliases>
 		
 	<environments default="development">
