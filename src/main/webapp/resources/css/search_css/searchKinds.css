@@ -8,12 +8,14 @@
 .search-nav img {
     height: 70px;
     width: 70px;
+    margin-top: 10px;
 }
 
 .search-nav p {
     text-align: center;
     padding: 2px 20px;
     border-radius: 10px;
+
     
 }
 

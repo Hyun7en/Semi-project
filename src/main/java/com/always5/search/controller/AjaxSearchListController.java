@@ -14,17 +14,18 @@ import com.always5.mainPage.service.mainService;
 import com.always5.review.rest.model.vo.Restaurant;
 import com.always5.search.service.SearchService;
 import com.google.gson.Gson;
+
 /**
- * Servlet implementation class searchKindsTest
+ * Servlet implementation class AjaxSearchListController
  */
-@WebServlet("/searchKindsList.sc")
-public class AjaxSearchKindsListController extends HttpServlet {
+@WebServlet("/searchList.sc")
+public class AjaxSearchListController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AjaxSearchKindsListController() {
+    public AjaxSearchListController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,9 +34,6 @@ public class AjaxSearchKindsListController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-//		int restNo = Integer.parseInt(request.getParameter("rpage"));
-		
 		ArrayList<Restaurant> list = new SearchService().searchList();
 		
 		for (Restaurant r : list) {
@@ -44,7 +42,6 @@ public class AjaxSearchKindsListController extends HttpServlet {
 			r.setAt(at);
 			
 		}
-
 		request.setAttribute("list", list);
 		response.setContentType("application/json; charset=UTF-8");
 		new Gson().toJson(list, response.getWriter());

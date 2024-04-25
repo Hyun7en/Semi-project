@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="mainPageMapper">
+  
+  	<resultMap id="restResultSet" type="Restaurant">
+		<result column="REST_NO" property="restNo"/>
+		<result column="REST_NAME" property="restName"/>
+		<result column="REST_ADDRESS" property="restAddress"/>
+		<result column="REST_PHONE" property="restPhone"/>
+		<result column="REST_INTRO" property="restIntro"/>
+		<result column="REST_GRADE" property="restGrade"/>
+		<result column="LIKE_NO" property="likeNo"/>
+		<result column="REST_ENROLL_DATE" property="restEnrollDate"/>
+		<result column="REST_MODIFY_DATE" property="restModifyDate"/>
+		<result column="REST_OPER_TIME" property="restOperDate"/>
+		<result column="REST_STATUS" property="restStatus"/>
+		<result column="FOOD_CATEGORY_NO" property="foodCategoryNo"/>
+	</resultMap>
+	<resultMap id="attachmentResultSet" type="Attachment">
+		<result column="IMG_NAME" property="changeName"/>
+		<result column="IMG_URL" property="filePath"/>
+		<result column="REST_NO" property="restNo"/>
+	</resultMap>
+	
+	
+	<select id="mainTopList" resultMap="restResultSet">
+		SELECT *
+		FROM(SELECT REST_NO,
+				   REST_NAME,
+				   REST_GRADE,
+				   REST_INTRO,
+				   REST_ADDRESS
+		    FROM REST_INFO
+		    WHERE REST_STATUS = 'Y'
+		    ORDER BY LIKE_NO DESC)
+		WHERE ROWNUM BETWEEN 1 AND 5
+	</select>
+	
+	<select id="mainNewTopList" resultMap="restResultSet">
+		SELECT *
+		FROM(SELECT REST_NO,
+				   REST_NAME,
+				   REST_GRADE,
+				   REST_INTRO,
+				   REST_ADDRESS
+		    FROM REST_INFO
+		    WHERE REST_STATUS = 'Y'
+		    ORDER BY REST_ENROLL_DATE)
+		WHERE ROWNUM BETWEEN 1 AND 5
+	</select>
+	
+	<select id="pickRestPic" resultMap="attachmentResultSet">
+		  SELECT IMG_NAME,
+				 IMG_URL
+		    FROM IMG_LIST
+			WHERE REST_NO = #{restNo}
+	</select>
+	
+  </mapper>

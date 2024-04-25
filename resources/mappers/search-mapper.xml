@@ -19,7 +19,7 @@
 		<result column="REST_ADDRESS" property="restAddress"/>
 		<result column="REST_PHONE" property="restPhone"/>
 		<result column="REST_INTRO" property="restIntro"/>
-		<!-- <result column="REST_GRADE" property="restGrade"/> -->
+		<result column="REST_GRADE" property="restGrade"/>
 		<result column="LIKE_NO" property="likeNo"/>
 		<result column="REST_ENROLL_DATE" property="restEnrollDate"/>
 		<result column="REST_MODIFY_DATE" property="restModifyDate"/>
@@ -33,7 +33,7 @@
 		<result column="MENU_NAME" property="menuName"/>
 		<result column="MENU_PRICE" property="menuPrice"/>
 		<result column="REST_NO" property="restNo"/>
-		<result column="MENU_CATEGORY_NAME" property="menuCategoryNo"/>
+		<result column="MENU_CATEGORY_NAME" property="menuCategoryName"/>
 	</resultMap>
 	
 	
@@ -43,7 +43,7 @@
 			   REST_ADDRESS,
 			   REST_PHONE,
 			   REST_INTRO,
-
+			   REST_GRADE,
 			   LIKE_NO,
 			   REST_ENROLL_DATE,
 			   REST_MODIFY_DATE,
@@ -59,6 +59,52 @@
  		 WHERE REST_STATUS = 'Y'
 	</select>
 	
+	<!-- 순수 검색 -->
+ 	<select id="searchrListCount" resultType="_int">
+ 		SELECT COUNT(*)
+ 		FROM REST_INFO
+ 		WHERE REST_STATUS = 'Y'
+        AND (REST_NAME LIKE '%' || #{keyword} || '%'
+	        OR REST_INTRO LIKE '%' || #{keyword} || '%'
+	        OR FOOD_CATEGORY_NO LIKE '%' || #{keyword} || '%')
+ 	<!-- map에서 keyword가 포함된 값을 가져와서 씀 -->
+ 	</select>
+ 	
+ 	<select id="selectrSearchList" resultMap="restResultSet">
+		SELECT REST_NO,
+			   REST_NAME,
+			   REST_ADDRESS,
+			   REST_PHONE,
+			   REST_INTRO,
+			   REST_GRADE,
+			   LIKE_NO,
+			   REST_ENROLL_DATE,
+			   REST_MODIFY_DATE,
+			   REST_OPER_TIME,
+			   REST_STATUS,
+			   FOOD_CATEGORY_NO
+		FROM REST_INFO
+ 		WHERE REST_STATUS = 'Y'
+        AND (REST_NAME LIKE '%' || #{keyword} || '%'
+	        OR REST_INTRO LIKE '%' || #{keyword} || '%'
+	        OR FOOD_CATEGORY_NO LIKE '%' || #{keyword} || '%')
+ 	</select>
+ 	
+ 	<resultMap id="attachmentResultSet" type="Attachment">
+		<result column="IMG_NAME" property="changeName"/>
+		<result column="IMG_URL" property="filePath"/>
+		<result column="REST_NO" property="restNo"/>
+	</resultMap>
+	
+	<select id="pickRestPic" resultMap="attachmentResultSet">
+		  SELECT IMG_NAME,
+				 IMG_URL
+		    FROM IMG_LIST
+			WHERE REST_NO = #{restNo}
+	</select>
+
+
+
 
 	
 </mapper>
