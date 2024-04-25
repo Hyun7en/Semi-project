@@ -1,6 +1,8 @@
 package com.always5.user.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,8 +10,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.always5.user.model.vo.Mypage;
-import com.always5.user.service.MyPageServiceImpl;
+import com.always5.common.vo.Attachment;
+import com.always5.review.rest.model.vo.Menu;
+import com.always5.review.rest.model.vo.Restaurant;
+import com.always5.user.model.vo.User;
 
 /**
  * Servlet implementation class myPageController
@@ -30,22 +34,34 @@ public class MyPageGoodsController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setContentType("text/html; charset=UTF-8");
+		/*
+		 * User loginUser = (User)request.getSession().getAttribute("loginUser");
+		 * request.setAttribute("loginUser", loginUser);
+		 * request.getRequestDispatcher("WEB-INF/views/user/MypageGoods.jsp").forward(
+		 * request, response);
+		 */
+		request.setCharacterEncoding("UTF-8");
 		
-		String authority = request.getParameter("authority");
-		String userId = request.getParameter("userId");
-		String userPwd = request.getParameter("userPwd");
-		String nickName = request.getParameter("nickName");
-		String userName = request.getParameter("userName");
-		String userPhone = request.getParameter("userPhone");
-		String userAddress = request.getParameter("userAddress");
-		String userGender = request.getParameter("userGender");
-		String userBirth = request.getParameter("userBirth");
+		User loginUser = (User)request.getSession().getAttribute("loginUser");
 		
-		Mypage m = new Mypage(authority, userId, userPwd, userName, nickName, userBirth, userGender, userPhone, userAddress);
+		List<String> list = new ArrayList<>();
+		Restaurant r = (Restaurant)request.getSession().getAttribute("rest");
+		System.out.println(r);
+		Attachment m = (Attachment)request.getSession().getAttribute("menu");
+		System.out.println(m);
 		
-		int result = new MyPageServiceImpl().MyPageGoods(m);
-		
+		list.add(r.getRestName());
+		list.add(r.getRestGrade());
+		list.add(String.valueOf(r.getRestNo()));
+		list.add(r.getRestIntro());
+		list.add(String.valueOf(r.getRestAtList()));
+		list.add(m.getFilePath());
+		list.add(m.getChangeName());
+	    
+	    request.setAttribute("list", list);
+	    System.out.println(list);
+	    request.setAttribute("loginUser", loginUser);
+		request.getRequestDispatcher("WEB-INF/views/user/MypageGoods.jsp").forward(request, response);
 		
 	}
 

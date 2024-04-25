@@ -71,18 +71,17 @@ input:focus {
 }
 
 .MypageReviewGoods .MypageReviewGoods-Name {
+	float: left;
   font-weight: 700;
   color: #000000;
   font-size: 30px;
   white-space: nowrap;
   letter-spacing: 0;
   line-height: normal;
-
-  width: 100px;
 }
 
 .MypageReviewGoods .MypageReviewGoods-Name2 {
-
+	float: left;
   font-weight: 700;
   color: #000000;
   font-size: 25px;
@@ -91,7 +90,6 @@ input:focus {
   line-height: normal;
 
   padding-top: 5px;
-  width: 200px;
 }
 
 /*1번 박스*/

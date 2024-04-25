@@ -62,7 +62,6 @@ input:focus {
 
 /* 상단 텍스트 */
 .updateId .id-preview {
-	width: 100px;
 	margin-top: 80px;
 }
 
@@ -73,17 +72,16 @@ input:focus {
 	font-size: 30px;
 	letter-spacing: 0;
 	line-height: normal;
-	width: 100px;
 }
 
 .updateId .id-UserName-text01 {
+	float: left;
 	font-weight: 300;
 	color: #000000;
 	font-size: 25px;
 	letter-spacing: 0;
 	line-height: normal;
 	padding-top: 5px;
-	width: 300px;
 }
 
 .updateId .id-UserName-text02 {

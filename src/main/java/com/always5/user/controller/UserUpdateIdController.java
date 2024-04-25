@@ -31,27 +31,27 @@ public class UserUpdateIdController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
-		
-		User u = new User();
-		u.setUserId(request.getParameter("userId"));
-		u.setUserPwd(request.getParameter("userPwd"));
-		u.setUpdateId(request.getParameter("updateId"));
-		
-		User updateUserID = new UserServiceImpl().updateUserID(u);
 
+		User loginUser = (User)request.getSession().getAttribute("loginUser");
+		
+		
+		request.setAttribute("loginUser", loginUser);
+		System.out.println(loginUser);
+		
+		User updateUserID = new UserServiceImpl().updateUserID(loginUser);
+		System.out.println(updateUserID);
+		
 		if (updateUserID == null) {
 			request.setAttribute("errorMsg", "아이디 수정 실패");
 			request.getRequestDispatcher("WEB-INF/views/common/errorPage.jsp").forward(request, response);
 		} else {
 			HttpSession session = request.getSession();
-			session.setAttribute("alertMsg", "성공적으로 수정했습니다.");
 			session.setAttribute("loginUser", updateUserID);
-			
-			response.sendRedirect(request.getContextPath() + "/MyPage.ui");
+			request.setAttribute("errorMsg", "성공적으로 수정했습니다.");
+			request.getRequestDispatcher("WEB-INF/views/common/errorPage.jsp").forward(request, response);
 		}
-		
-	}
+	 }
+	 
 
 
 	/**
