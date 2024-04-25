@@ -86,7 +86,7 @@
                         <!-- 리뷰 사진 -->
                         <div id="review-content-image">
                             <c:forEach var="reviewAt" items="${review.reviewAtList}">
-                                <img src="${pageContext.request.contextPath}/${reviewAt.filePath}/${reviewAt.changeName}.jpg" alt="">
+                                <img src="${pageContext.request.contextPath}/${reviewAt.filePath}/${reviewAt.changeName}" alt="">
                             </c:forEach>
                         </div>
     
@@ -94,7 +94,25 @@
                         <p>${review.reviewContent}</p>
                     </div>
                 </c:forEach>
-                <!-- 더보기 버튼 -->
+                <div class="paging-area" align="center">
+                    <c:if test="${pi.currentPage ne 1}">
+                        <button onclick="location.href = '${pageContext.request.contextPath}/review.re?rno=${rest.restNo}&pno=${i - 1}'">&lt;</button>
+                    </c:if>
+                    <c:forEach var="i" begin="${pi.startPage }" end="${pi.endPage }">
+                    	<button onclick="location.href = '${pageContext.request.contextPath}/review.re?rno=${rest.restNo}&pno=${i }'">${i}</button>
+                    </c:forEach>
+                    <c:if test="${pi.currentPage ne pi.maxPage}">
+                        <button onclick="location.href = '${pageContext.request.contextPath}/review.re?rno=${rest.restNo}&pno=${i + 1}'">&gt;</button>
+                    </c:if>
+                    
+                </div>
+
+                <!-- <div id="rest-review-regist">
+                    <form action="">
+                        <div></div>
+                        <button type="submit">리뷰 등록</button>
+                    </form>
+                </div> -->
             </div>
         </main>
     </div>

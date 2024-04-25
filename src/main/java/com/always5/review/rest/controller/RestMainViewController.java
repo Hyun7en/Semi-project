@@ -59,46 +59,9 @@ public class RestMainViewController extends HttpServlet {
 		// 메뉴 카테고리명
 		ArrayList<Menu> mcList = rService.selectMenuCategoryList(restNo);
 
-		
-		
-//		for(int i = 0; i < list.size(); i++) {
-//			int num = i;
-//			for(int j = 0; j < num; j++) {
-//				if(list.get(j).getMenuNo() == list.get(i).getMenuNo()) {
-//					list.remove(i);
-//				}
-//			}
-//		}
-//	}
-		
-		// 현재 로그인한 사용자가 찜 했는지
-//		User u = (User)request.getSession().getAttribute("loginUser");
-//		Dibs userDibs = null;
-//		if (u != null) {
-//			Dibs dibsInfo = new Dibs(String.valueOf(u.getUserNo()), String.valueOf(restNo));
-//			userDibs = rService.selectDibsForUserNo(dibsInfo);
-//		}
-		
-		User loginUser = new User();
-		loginUser.setUserNo(1);
-		loginUser.setUserId("ADMIN01");
-		loginUser.setUserPwd("WANG1BAB1BBANG1");
-
-//		User loginUser = new User();
-//		loginUser.setUserNo(2);
-//		loginUser.setUserId("ADMIN02");
-//		loginUser.setUserPwd("WANG2BAB2BBANG2");
-		
-//		Dibs userDibs = null;
-//		if (loginUser != null) {
-//			Dibs dibsInfo = new Dibs(String.valueOf(loginUser.getUserNo()), String.valueOf(restNo));
-//			userDibs = rService.selectDibsForUserNo(dibsInfo);
-//		} 
-		
 		request.setAttribute("contextPath", request.getContextPath());
 		request.setAttribute("rest", rest);
 		request.setAttribute("mcList", mcList);
-		request.setAttribute("loginUser", loginUser);
 		
 		request.getRequestDispatcher("WEB-INF/views/rest/restMainView.jsp").forward(request, response);
 	}

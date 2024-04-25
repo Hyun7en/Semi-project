@@ -35,10 +35,10 @@ public class DibsInfoController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String userNo = request.getParameter("userNo");
 		String restNo = request.getParameter("restNo");
-		
+
 		Dibs dibsInfo = new Dibs(userNo, restNo);
-		
 		Dibs userDibs = new RestServiceImpl().checkDibs(dibsInfo);
+		
 		Restaurant dibsCount = new RestServiceImpl().selectDibsCount(restNo);
 		
 		HashMap map = new HashMap<>();

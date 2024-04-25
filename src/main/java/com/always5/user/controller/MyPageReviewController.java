@@ -30,21 +30,9 @@ public class MyPageReviewController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setContentType("text/html; charset=UTF-8");
-		
-		String authority = request.getParameter("authority");
-		String userId = request.getParameter("userId");
-		String userPwd = request.getParameter("userPwd");
-		String nickName = request.getParameter("nickName");
-		String userName = request.getParameter("userName");
-		String userPhone = request.getParameter("userPhone");
-		String userAddress = request.getParameter("userAddress");
-		String userGender = request.getParameter("userGender");
-		String userBirth = request.getParameter("userBirth");
-		
-		Mypage m = new Mypage(authority, userId, userPwd, userName, nickName, userBirth, userGender, userPhone, userAddress);
-		
-		int result = new MyPageServiceImpl().MyPageGoods(m);
+		User loginUser = (User)request.getSession().getAttribute("loginUser");
+		request.setAttribute("loginUser", loginUser);
+		request.getRequestDispatcher("WEB-INF/views/user/MypageReview.jsp").forward(request, response);
 	}
 
 	/**

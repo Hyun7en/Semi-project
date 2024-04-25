@@ -121,10 +121,6 @@ input:focus {
 	width: 480px;
 }
 
-.login .login-input-id:hover{
-	color: green;
-}
-
 .login .login-Pwd-wrapper {
 	background-color: #fffefe;
 	border-radius: 0px 0px 8px 8px;
@@ -145,10 +141,6 @@ input:focus {
 	padding: 20px;
 	padding-left: 30px;
 	width: 480px;
-}
-
-.login .login-input-Pwd:hover{
-	color: green;
 }
 
 /* 회원가입 */

@@ -4,14 +4,15 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <!-- 미구현 -->
+
 <mapper namespace="mypageMapper">
-<!-- 	<resultMap id="mypageResultSet" type="Mypage">
+	<resultMap id="MypageResultSet" type="Mypage">
 		<result column="USER_NO" property="userNo" />
 		<result column="AUTHORITY" property="authority" />
 		<result column="USER_ID" property="userId" />
 		<result column="USER_PWD" property="userPwd" />
 		<result column="USER_NAME" property="userName" />
-		<result column="NICKNAME" property="nickname" />
+		<result column="NICKNAME" property="nickName" />
 		<result column="USER_BIRTH" property="userBirth" />
 		<result column="USER_GENDER" property="userGender" />
 		<result column="USER_PHONE" property="userPhone" />
@@ -68,20 +69,6 @@
 			FROM USER_INFO
 	</select>
 	
-	<select id="MyPageReview" parameterType="Mypage" resultMap="MypageResultSet">
-		SELECT USER_NO,
-				AUTHORITY,
-				USER_ID,
-				USER_PWD,
-				USER_NAME,
-				NICKNAME,
-				USER_BIRTH,
-				USER_GENDER,
-				USER_PHONE,
-				USER_ADDRESS
-			FROM USER_INFO
-	</select>
-	
 	<select id="MyPageReviewGoods" parameterType="Mypage" resultMap="MypageResultSet">
 		SELECT USER_NO,
 				AUTHORITY,
@@ -94,5 +81,5 @@
 				USER_PHONE,
 				USER_ADDRESS
 			FROM USER_INFO
-	</select> -->
+	</select>
 </mapper>

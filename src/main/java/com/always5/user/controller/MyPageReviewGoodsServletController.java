@@ -9,12 +9,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.always5.user.model.vo.Mypage;
+import com.always5.user.model.vo.User;
 import com.always5.user.service.MyPageServiceImpl;
 
 /**
  * Servlet implementation class myPageController
  */
-@WebServlet("/myreviewgoods.ui")
+@WebServlet("/myreviewgoods.u")
 public class MyPageReviewGoodsServletController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -30,6 +31,8 @@ public class MyPageReviewGoodsServletController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		User loginUser = (User)request.getSession().getAttribute("loginUser");
+		request.setAttribute("loginUser", loginUser);
 		request.getRequestDispatcher("WEB-INF/views/user/MypageReviewGoods.jsp").forward(request, response);
 		
 	}

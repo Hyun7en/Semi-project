@@ -71,17 +71,16 @@ input:focus {
 	font-size: 30px;
 	letter-spacing: 0;
 	line-height: normal;
-	width: 100px;
 }
 
 .updatePwd .id-UserName-text01 {
+	float: left;
 	font-weight: 300;
 	color: #000000;
 	font-size: 25px;
 	letter-spacing: 0;
 	line-height: normal;
 	padding-top: 5px;
-	width: 300px;
 }
 
 .updatePwd .id-UserName-text02 {

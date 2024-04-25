@@ -1,4 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 
@@ -36,14 +38,20 @@
 				</div>
 
 				<!-- 회원가입, 로그인 -->
-				<div class="member-Button">
-					<div class="loginButton">
-						<a href="login.ui">로그인</a>
-					</div>
-					<div class="SigninButton">
-						<a href="signin.ui">회원가입</a>
-					</div>
-				</div>
+				<c:choose>
+					<c:when test="${empty loginUser}">
+						<div class="member-Button">
+							<a class="loginButton" href="login.ui">로그인</a> 
+							<a class="SigninButton" href="signin.ui">회원가입</a>
+						</div>
+					</c:when>
+					<c:otherwise>
+						<div class="member-Button">
+							<a class="loginButton" href="">${loginUser.nickName}님</a> 
+							<a class="SigninButton" href="mypage.ui">마이페이지</a>
+						</div>
+					</c:otherwise>
+				</c:choose>
 			</div>
 
 			<!-- 카테고리 -->
