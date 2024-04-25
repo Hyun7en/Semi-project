@@ -46,7 +46,7 @@
                                         <th>중분류</th>
                                         <td>
                                             <!-- csKeyword 테이블로부터 조회해오기 -->
-                                            <select id="select-csKeyword" required name="csKeyword">
+                                            <select id="select-csKeyword" name="csKeyword" required >
                                                 
                                                
                                             </select>

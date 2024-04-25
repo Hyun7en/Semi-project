@@ -1,57 +1,36 @@
-
 $(document).ready(function() {
-    //페이지 로드시 바로 csTypeValue 가져오기
-    selectCsTypeList(null, function(res){
-
-        let csTypeList = [];
-        for(let csType of res){
-            csTypeList.push({
-                ...csType,
-                SelectEvent: function(item){
-                    //선택시
-
-                    //csKeywordList 가져오기
-                    selectCsKeywordList({ "csTypeNo": item.csTypeNo}, function(list){
-
-                        // csKeywordList 출력
-                        drawCsKeywordList(list, function(){
-                            document.querySelector('#select-csType').children[0].click();
-
-                        });
-                    });
-                } 
+    // 페이지 로드시 csType 목록 가져오고 첫 번째 항목을 클릭
+    selectCsTypeList(function(csTypeList){
+        drawCsTypeList(csTypeList);
+        if(csTypeList.length > 0) {
+            selectCsKeywordList({ "csTypeNo": csTypeList[0].csTypeNo }, function(keywordList) {
+                drawCsKeywordList(keywordList);
             });
         }
+    });
 
-        //CsTypeList 출력
-        drawCsTypeList(csTypeList, document.querySelector("#select-csType"), function(){
-            document.querySelector("#select-csType").children[0].click();
+    // csType 선택 시 csKeyword 목록 업데이트
+    $('#select-csType').on('change', function() {
+        let csTypeNo = $(this).val();
+        selectCsKeywordList({ "csTypeNo": csTypeNo }, function(keywordList) {
+            drawCsKeywordList(keywordList);
         });
     });
 });
 
-function drawCsTypeList(list, parent, callback){
-    $(parent).empty();
-    // csType 목록 생성
-    $.each(list, function(index, item) {
-        let csTypeBtn = document.createElement('option');
-        csTypeBtn.innerText = item.csTypeValue;
-        csTypeBtn.onclick = function(){
-            item.clickEvent(item);
-        }
-
-        parent.appendChild(csTypeBtn);
+function drawCsTypeList(csTypeList){
+    let $selectCsType = $('#select-csType');
+    $selectCsType.empty();
+    $.each(csTypeList, function(index, csType) {
+        $selectCsType.append($('<option>').text(csType.csTypeValue).val(csType.csTypeNo));
     });
-
-    callback();
 }
 
-function selectCsTypeList(data, callback) {
+function selectCsTypeList(callback) {
     $.ajax({
         url: "csType.ax", 
-        data: data,
         success: function(res) {
-            callback(res)
+            callback(res);
         },
         error: function() {
             console.log("csType.ax 통신 실패");
@@ -59,28 +38,19 @@ function selectCsTypeList(data, callback) {
     });
 }
 
-function drawCsKeywordList(keywordlist, callback){
-    $(document.querySelector('#select-csKeyword')).empty();
-    // csKeyword 목록 생성
-    $.each(keywordlist, function(index, item) {
-        let csKeywordBtn = document.createElement('option');
-        csKeywordBtn.innerText = item.csKeywordValue;
-        csKeywordBtn.onclick = function(){
-            selectCsDetailList(item.csKeywordNo)
-        }
-
-        document.querySelector('#select-csKeyword').appendChild(csKeywordBtn);
+function drawCsKeywordList(keywordList){
+    let $selectCsKeyword = $('#select-csKeyword');
+    $selectCsKeyword.empty();
+    $.each(keywordList, function(index, keyword) {
+        $selectCsKeyword.append($('<option>').text(keyword.csKeywordValue).val(keyword.csKeywordNo));
     });
-
-    callback();        
-                
 }
 
 function selectCsKeywordList(data, callback) {
     $.ajax({
         url: "csKeyword.ax", 
         method: "GET", 
-        data: data, // 선택한 csTypeNo를 서버에 전달
+        data: data,
         success: function(res) {
             callback(res);
         },
