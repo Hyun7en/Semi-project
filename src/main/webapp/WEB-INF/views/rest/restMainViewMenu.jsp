@@ -84,28 +84,27 @@
                 
 
 
-                // <c:choose>
+                <c:choose>
+                    <c:when test="${(not empty loginUser) and (not empty userDibs)}">
+                        <img src="${pageContext.request.contextPath}/resources/file/common_img/찜_선택후.png" alt="" onclick="selectDibs('off')">
+                        <div>${rest.likeNo}</div>
+                     </c:when>   
 
-                //                 <c:when test="${(not empty loginUser) and (not empty userDibs)}">
-                //                     <img src="${pageContext.request.contextPath}/resources/file/common_img/찜_선택후.png" alt="" onclick="selectDibs('off')">
-                //                     <div>${rest.likeNo}</div>
-                //                 </c:when>   
+    //                 <c:otherwise>
+    //                     <c:choose>
 
-                //                 <c:otherwise>
-                //                     <c:choose>
-
-                //                         <c:when test="${(not empty loginUser)}">
-                //                             <img src="${pageContext.request.contextPath}/resources/file/common_img/찜_선택전.png" alt="" onclick="selectDibs('on')">
-                //                             <div>${rest.likeNo}</div>
-                //                         </c:when>
+    //                         <c:when test="${(not empty loginUser)}">
+    //                             <img src="${pageContext.request.contextPath}/resources/file/common_img/찜_선택전.png" alt="" onclick="selectDibs('on')">
+    //                             <div>${rest.likeNo}</div>
+    //                         </c:when>
 
 
-                //                         <img src="${pageContext.request.contextPath}/resources/file/common_img/찜_선택전.png" alt="">
-                //                         <div>${rest.likeNo}</div>
-                                        
-                //                     </c:choose>
-                //                 </c:otherwise>
-                //             </c:choose>
+    //                         <img src="${pageContext.request.contextPath}/resources/file/common_img/찜_선택전.png" alt="">
+    //                         <div>${rest.likeNo}</div>
+                            
+    //                     </c:choose>
+    //                 </c:otherwise>
+    //             </c:choose>
                 
 </body>
 </html>

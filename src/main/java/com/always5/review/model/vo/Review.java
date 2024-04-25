@@ -9,8 +9,8 @@ public class Review {
 	private int reviewNo;
 	private String reviewRating; // 별점
 	private String reviewContent; // 내용
-	private Date reviewEnrollDate; // 등록일
-	private Date reviewModifyDate; // 수정일
+	private String reviewEnrollDate; // 등록일
+	private String reviewModifyDate; // 수정일
 	private String status; // 상태
 	private String restNo; // 가게 번호
 	private String userNo; // 회원 번호
@@ -20,7 +20,7 @@ public class Review {
 		super();
 	}
 	
-	public Review(int reviewNo, String reviewRating, String reviewContent, Date reviewEnrollDate, Date reviewModifyDate,
+	public Review(int reviewNo, String reviewRating, String reviewContent, String reviewEnrollDate, String reviewModifyDate,
 			String status, String restNo, String userNo, ArrayList<Attachment> reviewAt) {
 		super();
 		this.reviewNo = reviewNo;
@@ -58,19 +58,19 @@ public class Review {
 		this.reviewContent = reviewContent;
 	}
 
-	public Date getReviewEnrollDate() {
+	public String getReviewEnrollDate() {
 		return reviewEnrollDate;
 	}
 
-	public void setReviewEnrollDate(Date reviewEnrollDate) {
+	public void setReviewEnrollDate(String reviewEnrollDate) {
 		this.reviewEnrollDate = reviewEnrollDate;
 	}
 
-	public Date getReviewModifyDate() {
+	public String getReviewModifyDate() {
 		return reviewModifyDate;
 	}
 
-	public void setReviewModifyDate(Date reviewModifyDate) {
+	public void setReviewModifyDate(String reviewModifyDate) {
 		this.reviewModifyDate = reviewModifyDate;
 	}
 
