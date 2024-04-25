@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <form action="myreview.u" class="MypageReview-Container" method="POST">
+    <form action="myreview.ui" class="MypageReview-Container" method="POST">
         <div class="MypageReview">
 
             <!-- 작성 리뷰 -->
@@ -23,40 +23,44 @@
             </div>
 
             <!-- 1번 리뷰 -->
+            <c:forEach var="review" items="${list}">
             <div class="reviewbox01">
                 <div class="reviewbox-wrapper">
-                    <div class="reviewbox-title">한식 1번가 건대점</div>
-                    <div class="reviewbox-grade">평점 5.0</div>
+                    <div class="reviewbox-title">${review.restName}</div>
+                    <div class="reviewbox-grade">${review.reviewRating}</div>
 					
-						
                     <div class="crown-rank">
-                        <img class="crown" src="${pageContext.request.contextPath}/resources/file/user_img/MypageReview-img/crown.png" />
-                        <img class="crown" src="${pageContext.request.contextPath}/resources/file/user_img/MypageReview-img/crown.png" />
-                        <img class="crown" src="${pageContext.request.contextPath}/resources/file/user_img/MypageReview-img/crown.png" />
-                        <img class="crown" src="${pageContext.request.contextPath}/resources/file/user_img/MypageReview-img/crown.png" />
-                        <img class="crown" src="${pageContext.request.contextPath}/resources/file/user_img/MypageReview-img/crown.png" />
-                    </div>
+					<c:forEach begin="1" end="${review.reviewRating}">
+						<img class="crown"
+							src="${pageContext.request.contextPath}/resources/file/user_img/MypageGoods-img/crown.png" />
+					</c:forEach>
+					</div>
 
                     <div class="review-box-mainpage">
-                        <button class="review-box-mainpagebox"><a href="main.re?rno=">가게보기</a></button>
+                        <button class="review-box-mainpagebox"><a href="main.re?rno=${review.restNo}">가게보기</a></button>
                     </div>
-
+					
                     <img class="reviewbox-line" src="img/line-50.svg" />
-                    <div class="reviewbox-text">푸짐하고 맛있어염</div>
-
-                    <img class="reviewbox-preview01" src="${pageContext.request.contextPath}/resources/file/user_img/MypageReview-img/한식01.jpg" />
-                    <img class="reviewbox-preview02" src="${pageContext.request.contextPath}/resources/file/user_img/MypageReview-img/한식02.jpg" />
-                    <img class="reviewbox-preview03" src="${pageContext.request.contextPath}/resources/file/user_img/MypageReview-img/한식03.jpg" />
-
-                    <div class="reviewbox-usermenu">
-                        <div class="reviewbox-usermenu-title">찌개세트</div>
-                    </div>
+                    <div class="reviewbox-text">${review.reviewContent}</div>
+                    
+					<c:forEach var="menu" items="${review.restAtList}">
+                    <img class="reviewbox-preview01" src="${pageContext.request.contextPath}/${menu.filePath}/${menu.changeName}" />
+                    </c:forEach>
+                    
+                    <c:forEach var="menu" items="${rest.restAtList}">
+                    <img class="reviewbox-preview02" src="${pageContext.request.contextPath}/${menu.filePath}/${menu.changeName}" />
+                   	</c:forEach>
+                   
+                   	<c:forEach var="menu" items="${rest.restAtList}">
+                    <img class="reviewbox-preview03" src="${pageContext.request.contextPath}/${menu.filePath}/${menu.changeName}" />
+					</c:forEach>
 
                 </div>
             </div>
+            </c:forEach>
 
     
-        <!-- 2번 리뷰 -->
+       <%--  <!-- 2번 리뷰 -->
         <div class="reviewbox02">
             <div class="reviewbox-wrapper">
                     <div class="reviewbox-title">미스사이공 세종대점</div>
@@ -177,6 +181,6 @@
 			<script src="${pageContext.request.contextPath}/resources/js/user_js/MyPageReview.js"></script>
         </div>
     </form>
-</body>
+</body> --%>
 
 </html>
