@@ -20,7 +20,7 @@
             <div>
                 <div><a onclick="location.href='adrest.li?cpage=1'">가게 관리</a>
                 </div>
-                <div><a href="">음식 카테고리 관리</a></div>
+                <div><a href="fcategory.ad">음식 카테고리 관리</a></div>
                 <div><a href="list.AdminCs">고객센터 관리</a></div>
             </div>
             <div>

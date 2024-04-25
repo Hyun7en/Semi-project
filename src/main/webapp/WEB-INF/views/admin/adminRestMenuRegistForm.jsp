@@ -56,66 +56,13 @@
                     <td>떡볶이</td>
                     <td>10000원</td>
                 </tr>
-                <tr>
+                <!-- <tr>
                     <td>1</td>
                     <td>마라로제떡볶이</td>
                     <td>떡볶이</td>
                     <td>10000원</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>마라로제떡볶이</td>
-                    <td>떡볶이</td>
-                    <td>10000원</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>마라로제떡볶이</td>
-                    <td>떡볶이</td>
-                    <td>10000원</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>마라로제떡볶이</td>
-                    <td>떡볶이</td>
-                    <td>10000원</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>마라로제떡볶이</td>
-                    <td>떡볶이</td>
-                    <td>10000원</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>마라로제떡볶이</td>
-                    <td>떡볶이</td>
-                    <td>10000원</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>마라로제떡볶이</td>
-                    <td>떡볶이</td>
-                    <td>10000원</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>마라로제떡볶이</td>
-                    <td>떡볶이</td>
-                    <td>10000원</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>마라로제떡볶이</td>
-                    <td>떡볶이</td>
-                    <td>10000원</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>마라로제떡볶이</td>
-                    <td>떡볶이</td>
-                    <td>10000원</td>
-                </tr>
+                </tr> -->
+                
 
                 <tr style="border: none;">
                     <td colspan="4"><button type="submit" class="black-button">가게 등록 종료</button></td>

@@ -30,7 +30,7 @@ public class FoodCategory {
 	public void setFoodCategoryName(String foodCategoryName) {
 		this.foodCategoryName = foodCategoryName;
 	}
-
+	
 	@Override
 	public String toString() {
 		return "FoodCategory [foodCategoryNo=" + foodCategoryNo + ", foodCategoryName=" + foodCategoryName + "]";
