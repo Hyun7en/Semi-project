@@ -41,6 +41,7 @@
                     <div id="memberButton">
                         <a href="">${loginUser.userName }님</a>
                         <a href="mypage.ui">마이페이지</a>
+                        <a href="logout.ui">로그아웃</a>
                     </div>
                 </c:otherwise>
             </c:choose>
