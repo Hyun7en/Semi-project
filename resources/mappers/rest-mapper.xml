@@ -229,5 +229,24 @@
 		WHERE REST_NO = #{restNo}
 	</update>
 	
+	<!-- admin 레스토랑 총 리스트 -->
+	<select id="selectList" resultMap="restResultSet">
+		SELECT REST_NO,
+			   REST_NAME,
+			   REST_MODIFY_DATE
+		  FROM REST_INFO R
+		 WHERE R.REST_STATUS = 'Y'
+		 ORDER BY REST_NO DESC
+	</select>
+	
+	<!-- Admin 레스토랑 리스트 나열 -->
+	<select id="selectRestListCount" resultType="_int">
+		SELECT COUNT(*)
+		  FROM REST_INFO
+		 WHERE REST_STATUS = 'Y'
+	</select>
+	
+	
+	
 	
 </mapper>

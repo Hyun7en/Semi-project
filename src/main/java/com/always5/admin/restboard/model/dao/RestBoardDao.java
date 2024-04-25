@@ -25,7 +25,8 @@ public class RestBoardDao {
 		RowBounds rowBounds = new RowBounds(offset, limit);
 		return (ArrayList)sqlSession.selectList("restMapper.selectList", null, rowBounds);
 	}
-
+	
+	//등록된 레스토랑 리스트 검색
 	public ArrayList<Restaurant> selectSearchList(SqlSession sqlSession, HashMap<String, String> map, PageInfo pi){
 		int offset = (pi.getCurrentPage() - 1) * pi.getBoardLimit();
 		int limit = pi.getBoardLimit();
