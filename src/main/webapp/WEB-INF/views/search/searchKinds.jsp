@@ -75,7 +75,8 @@
                             	<c:forEach var="sr" begin="1" end="3" items="${list}">
 	                                <div>
 	                                    <div class="search-best-crown">
-	                                    	<img src="${pageContext.request.contextPath}${sr.at.filePath}${sr.at.changeName}">
+	                                    	<img src="https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp"
+			                                    alt="">
 	                                        <img id="crown"
 	                                            src="${pageContext.request.contextPath}/resources/file/search_img/searchCrownBig.png"
 	                                            alt="">
