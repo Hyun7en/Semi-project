@@ -36,7 +36,8 @@ public class UserUpdatePwdController extends HttpServlet {
 		System.out.println(loginUser);
 		
 		String updatePwd = request.getParameter("updatePwd");
-		User u = new User(updatePwd);
+		User u = new User();
+		u.setUserPwd(updatePwd);
 		
 		u.setUserNo(loginUser.getUserNo());
 		

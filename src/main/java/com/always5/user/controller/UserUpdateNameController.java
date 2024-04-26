@@ -38,6 +38,7 @@ public class UserUpdateNameController extends HttpServlet {
 		
 		String updateName = request.getParameter("updateName");
 		User u = new User(updateName);
+		u.setNickName(updateName);
 		
 		u.setUserNo(loginUser.getUserNo());
 		System.out.println(loginUser);
