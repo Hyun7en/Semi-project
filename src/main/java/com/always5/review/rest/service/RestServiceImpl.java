@@ -267,21 +267,17 @@ public class RestServiceImpl implements RestService{
 			totalRating += i * ratingList.get(j);
 			j++;
 		}
-		
-		System.out.println("totalRating : " + totalRating);
+		totalRating += Integer.parseInt(r.getReviewRating());
 		
 		// 전체 횟수
-		int count = 0;
+		int count = 1;
 		for (int i = 1; i <= ratingList.size(); i++) {
 			count += ratingList.get(i - 1);
 		}
 		
-		System.out.println("count : " + count);
-		
 		// 소수점 첫째 자리까지 반올림
 		String restGrade = String.valueOf(String.format("%.1f", totalRating / count));
 
-		System.out.println("restGrade : " + restGrade);
 		Restaurant rest = restDao.selectRest(sqlSession, restNo);
 		rest.setRestGrade(restGrade);
 

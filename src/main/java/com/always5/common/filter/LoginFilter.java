@@ -35,7 +35,7 @@ public class LoginFilter implements Filter {
 	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
 	 */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-		System.out.println("필터적용");
+		
 		HttpServletRequest httpRequest = (HttpServletRequest)request;
 		HttpServletResponse httpResponse = (HttpServletResponse)response;
 		
@@ -45,8 +45,6 @@ public class LoginFilter implements Filter {
 			chain.doFilter(request, response);
 		}
 
-		// pass the request along the filter chain
-		chain.doFilter(request, response);
 	}
 
 	/**
