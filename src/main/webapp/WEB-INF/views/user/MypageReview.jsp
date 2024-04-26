@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html>
 
@@ -24,6 +25,11 @@
 
             <!-- 1번 리뷰 -->
             <c:forEach var="review" items="${list}">
+            <script>
+            console.log("실행됨");
+            console.log(${review});
+            </script>
+        	
             <div class="reviewbox01">
                 <div class="reviewbox-wrapper">
                     <div class="reviewbox-title">${review.restNo}</div>
@@ -44,15 +50,16 @@
                     <div class="reviewbox-text">${review.reviewContent}</div>
                     
 					<c:forEach var="menu" items="${review.reviewAtList}">
-                    <img class="reviewbox-preview01" src="${pageContext.request.contextPath}/${menu.filePath}/${menu.changeName}" />
+                    <img class="reviewbox-preview01" src="${pageContext.request.contextPath}${menu.filePath}${menu.changeName}" />
                     </c:forEach>
                     
                     <c:forEach var="menu" items="${review.reviewAtList}">
-                    <img class="reviewbox-preview02" src="${pageContext.request.contextPath}/${menu.filePath}/${menu.changeName}" />
+                    <img class="reviewbox-preview02" src="${pageContext.request.contextPath}${menu.filePath}${menu.changeName}" />
                    	</c:forEach>
+                   	
                    
                    	<c:forEach var="menu" items="${review.reviewAtList}">
-                    <img class="reviewbox-preview03" src="${pageContext.request.contextPath}/${menu.filePath}/${menu.changeName}" />
+                    <img class="reviewbox-preview03" src="${pageContext.request.contextPath}${menu.filePath}${menu.changeName}" />
 					</c:forEach>
 
                 </div>

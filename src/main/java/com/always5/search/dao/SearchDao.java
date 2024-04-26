@@ -58,6 +58,7 @@ public class SearchDao {
 	}
 	
 	public Attachment pickRestPic(SqlSession sqlSession, int restNo){
+		System.out.println(restNo);
 		return sqlSession.selectOne("searchMapper.pickRestPic", restNo);
 	}
 	
