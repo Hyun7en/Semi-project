@@ -55,6 +55,10 @@ public class UserSignoutController extends HttpServlet {
 			session.setAttribute("errorMsg", "회원탈퇴에 실패하였습니다.");
 			request.getRequestDispatcher("WEB-INF/views/common/errorPage.jsp").forward(request, response);
 		}
+		
+		//null값 예외처리
+		//로그인이 되어있지 않은 상태에서 회원탈퇴를 시도하면 에러페이지로 이동
+
 	}
 
 
