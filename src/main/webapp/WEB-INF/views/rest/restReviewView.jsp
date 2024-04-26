@@ -86,7 +86,7 @@
                         <!-- 리뷰 사진 -->
                         <div id="review-content-image">
                             <c:forEach var="reviewAt" items="${review.reviewAtList}">
-                                <img src="${pageContext.request.contextPath}/${reviewAt.filePath}/${reviewAt.changeName}" alt="">
+                                <img src="${pageContext.request.contextPath}${reviewAt.filePath}${reviewAt.changeName}" alt="">
                             </c:forEach>
                         </div>
     
