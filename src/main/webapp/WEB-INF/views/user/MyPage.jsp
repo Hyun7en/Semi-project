@@ -22,9 +22,9 @@
 
 				<div class="Mypage-main-icon">
 					<img class="Mypage-icon-crown"
-						src="${pageContext.request.contextPath}/resources/file/user_img/Mypage-img/image.png" />
+						src="${pageContext.request.contextPath}/resources/file/user_img/mypage-img/image.png" />
 					<img class="Mypage-line"
-						src="${pageContext.request.contextPath}/resources/file/user_img/Mypage-img/line-44.svg" />
+						src="${pageContext.request.contextPath}/resources/file/user_img/mypage-img/line-44.svg" />
 					<div class="Mypage-icon-number">140</div>
 				</div>
 			</div>
