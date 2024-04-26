@@ -24,7 +24,7 @@
 
                     <section class="search-best">
                         <div>
-                            <h1>검색 결과 "떡볶이"</h1>
+                            <h1>검색 결과 "${keyword }"</h1>
                             <h4>추천 맛집 매장 방문 고객님과 왕밤빵이 함께 엄선한 인기 맛집입니다.</h4>
                         </div>
                         <div>
