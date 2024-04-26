@@ -47,9 +47,9 @@ public class UserSignoutController extends HttpServlet {
 		
 		if(loginUser != null) {
 			//user_status를 n으로 변경
-			session.setAttribute("loginUser", loginUser);
 			int result = new UserServiceImpl().deleteUser(loginUser);
-			
+			HttpSession Session = request.getSession();
+			Session.invalidate();
 			response.sendRedirect(request.getContextPath());
 		} else {
 			session.setAttribute("errorMsg", "회원탈퇴에 실패하였습니다.");
