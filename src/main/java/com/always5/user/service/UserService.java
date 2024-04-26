@@ -13,11 +13,11 @@ public interface UserService {
 	public abstract int deleteUser(User u);
 
 	// 아이디 수정
-	public User updateUserID(User u);
+	public abstract int updateUserID(User u);
 
 	// 비밀번호 수정
-	public User updateUserPwd(User u);
+	public abstract int updateUserPwd(User u);
 
 	// 닉네임 수정
-	public User updateUserNickName(User u);
+	public abstract int updateUserNickName(User u);
 }

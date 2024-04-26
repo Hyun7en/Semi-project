@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <form action="myreview.ui" class="MypageReview-Container" method="POST">
+    <div class="MypageReview-Container">
         <div class="MypageReview">
 
             <!-- 작성 리뷰 -->
@@ -26,7 +26,7 @@
             <c:forEach var="review" items="${list}">
             <div class="reviewbox01">
                 <div class="reviewbox-wrapper">
-                    <div class="reviewbox-title">${review.restName}</div>
+                    <div class="reviewbox-title">${review.restNo}</div>
                     <div class="reviewbox-grade">${review.reviewRating}</div>
 					
                     <div class="crown-rank">
@@ -43,15 +43,15 @@
                     <img class="reviewbox-line" src="img/line-50.svg" />
                     <div class="reviewbox-text">${review.reviewContent}</div>
                     
-					<c:forEach var="menu" items="${review.restAtList}">
+					<c:forEach var="menu" items="${review.reviewAtList}">
                     <img class="reviewbox-preview01" src="${pageContext.request.contextPath}/${menu.filePath}/${menu.changeName}" />
                     </c:forEach>
                     
-                    <c:forEach var="menu" items="${rest.restAtList}">
+                    <c:forEach var="menu" items="${review.reviewAtList}">
                     <img class="reviewbox-preview02" src="${pageContext.request.contextPath}/${menu.filePath}/${menu.changeName}" />
                    	</c:forEach>
                    
-                   	<c:forEach var="menu" items="${rest.restAtList}">
+                   	<c:forEach var="menu" items="${review.reviewAtList}">
                     <img class="reviewbox-preview03" src="${pageContext.request.contextPath}/${menu.filePath}/${menu.changeName}" />
 					</c:forEach>
 
@@ -179,8 +179,8 @@
                 </div>
             </div>
 			<script src="${pageContext.request.contextPath}/resources/js/user_js/MyPageReview.js"></script>
-        </div>
-    </form>
-</body> --%>
+       --%> </div>
+    </div>
+</body> 
 
 </html>
