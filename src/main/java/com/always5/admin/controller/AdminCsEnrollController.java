@@ -34,7 +34,6 @@ public class AdminCsEnrollController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		AdminCsService adcsService = new AdminCsServiceImpl();
 		
 		request.getRequestDispatcher("WEB-INF/views/admin/adminCsEnrollForm.jsp").forward(request, response);
 	}

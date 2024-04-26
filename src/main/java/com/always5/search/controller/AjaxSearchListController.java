@@ -39,9 +39,9 @@ public class AjaxSearchListController extends HttpServlet {
 		for (Restaurant r : list) {
 			//Restaurant의 key를 이용해서 Attachment가져오기
 			Attachment at = new SearchService().pickRestPic(r.getRestNo()); 
-			r.setAt(at);
-			
+			r.setAt(at);	
 		}
+		
 		request.setAttribute("list", list);
 		response.setContentType("application/json; charset=UTF-8");
 		new Gson().toJson(list, response.getWriter());

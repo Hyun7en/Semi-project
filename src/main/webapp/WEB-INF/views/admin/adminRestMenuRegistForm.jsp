@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" import="com.always5.review.rest.model.vo.Restaurant"%>
     
 <%
+Restaurant r = new Restaurant();
 // 세션에서 가게 이름을 가져온다.
 String restName = (String) session.getAttribute("${r.restName }");
 %>    
@@ -25,7 +26,7 @@ String restName = (String) session.getAttribute("${r.restName }");
                 <table id="regist-menu">
                     <tr>
                         <th width="20%">가게 이름</th>
-                        <td><input type="text" name="restName" value="${restNo}" id="rest-name" readonly></td>
+                        <td><input type="text" name="restName" value="<%= r %>" id="rest-name" readonly></td>
                         <!-- 방금 등록된 가게 이름 가져와야 함 -->
                     </tr>
                     <tr>

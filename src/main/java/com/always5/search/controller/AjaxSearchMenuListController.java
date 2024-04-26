@@ -19,7 +19,7 @@ import com.google.gson.Gson;
 /**
  * Servlet implementation class AjaxSearchMenuListController
  */
-@WebServlet("/searchRegionList.sc")
+@WebServlet("/searchMenuList.sc")
 public class AjaxSearchMenuListController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -36,19 +36,19 @@ public class AjaxSearchMenuListController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		ArrayList<Restaurant> list = new SearchService().searchList(); // searchKindsList
+		ArrayList<Restaurant> mlist = new SearchService().MenuSelectSearchRest(); // searchKindsList
 		
-		for (Restaurant r : list) {
+		for (Restaurant r : mlist) {
 			//Restaurant의 key를 이용해서 Attachment가져오기
 			Attachment at = new SearchService().pickRestPic(r.getRestNo()); 
 			r.setAt(at);
 			
 		}
 		
-		request.setAttribute("list", list);
+		request.setAttribute("mlist", mlist);
 		
 		response.setContentType("application/json; charset=UTF-8");
-		new Gson().toJson(list, response.getWriter());
+		new Gson().toJson(mlist, response.getWriter());
 		
 		
 		

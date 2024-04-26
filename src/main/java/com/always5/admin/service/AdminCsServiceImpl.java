@@ -82,6 +82,23 @@ public class AdminCsServiceImpl implements AdminCsService {
 		
 		return result;
 	}
+
+	@Override
+	public int deleteAdminCs(int boardNo) {
+SqlSession sqlSession = Template.getSqlSession();
+		
+		int result = acDao.deleteAdminCs(sqlSession, boardNo);
+		
+		if (result > 0) {
+			sqlSession.commit();
+		} else {
+			sqlSession.rollback();
+		}
+		
+		sqlSession.close();
+		
+		return result;
+	}
 	
 	
 }

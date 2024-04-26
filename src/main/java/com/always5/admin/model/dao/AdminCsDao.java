@@ -56,4 +56,8 @@ public class AdminCsDao {
 	public int insertAdminCs(SqlSession sqlSession, CsDetail cs) {
 		return sqlSession.insert("csMapper.insertAdminCs", cs);
 	}
+	
+	public int deleteAdminCs(SqlSession sqlSession, int boardNo) {
+		return sqlSession.update("csMapper.deleteAdminCs", boardNo);
+	}
 }

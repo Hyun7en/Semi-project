@@ -39,6 +39,11 @@ public class SearchDao {
 		return (ArrayList)sqlSession.selectList("searchMapper.selectSearchRest");
 	}
 	
+	public ArrayList<Restaurant> MenuSelectSearchRest(SqlSession sqlSession){
+		return (ArrayList)sqlSession.selectList("searchMapper.MenuSelectSearchRest");
+	}
+	
+	
 	// 순수 검색
 	public int searchrListCount(SqlSession sqlSession, HashMap<String, String> map){
 		return sqlSession.selectOne("searchMapper.searchrListCount", map);

@@ -19,7 +19,7 @@ import com.google.gson.Gson;
 /**
  * Servlet implementation class AjaxSearchMenuListController
  */
-@WebServlet("/searchMenuList.sc")
+@WebServlet("/searchRegionList.sc")
 public class AjaxSearchRegionListController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

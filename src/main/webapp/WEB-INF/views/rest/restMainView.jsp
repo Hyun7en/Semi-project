@@ -27,7 +27,7 @@
         <main>
             <div id="rest-img">
                 <c:forEach var="restAt" items="${rest.restAtList}">
-                    <img src="${pageContext.request.contextPath}/${restAt.filePath}/${restAt.changeName}.jpg" alt="가게 사진">
+                    <img src="${pageContext.request.contextPath}${restAt.filePath}${restAt.changeName}" alt="가게 사진">
                 </c:forEach>
             </div>
 
@@ -235,7 +235,7 @@
                                                         <div id="review-content-image">`
 
                                                 for (let reviewAt of reviewList[num].reviewAtList) {
-                                                    str += `<img src="${pageContext.request.contextPath}/`+reviewAt.filePath+`/`+reviewAt.changeName+`" alt="">`
+                                                    str += `<img src="${pageContext.request.contextPath}`+reviewAt.filePath+reviewAt.changeName+`" alt="">`
                                                 }
                                                 str += `</div>
                                                         <p>`+reviewList[num].reviewContent+`</p>
@@ -287,7 +287,7 @@
                         str += `<div id="rest-image-content">
                                     <div>`
                                         for(let img of imgList){
-                                            str += `<img src="${pageContext.request.contextPath}/`+img.filePath+`/`+img.changeName+`" alt="">`
+                                            str += `<img src="${pageContext.request.contextPath}`+img.filePath+img.changeName+`" alt="">`
                                         }
                                     str += `</div>
                                 </div>`

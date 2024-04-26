@@ -31,9 +31,23 @@
 	<resultMap id="menuResultSet" type="Menu">
 		<result column="MENU_NO" property="menuNo"/>
 		<result column="MENU_NAME" property="menuName"/>
-		<result column="MENU_PRICE" property="menuPrice"/>
 		<result column="REST_NO" property="restNo"/>
-		<result column="MENU_CATEGORY_NAME" property="menuCategoryName"/>
+		<result column="MENU_CATEGORY_NO" property="menuCategoryNo"/>
+	</resultMap>
+	
+	<resultMap id="MenuRestResultSet" type="Restaurant">
+		<result column="REST_NO" property="restNo"/>
+		<result column="REST_NAME" property="restName"/>
+		<result column="REST_ADDRESS" property="restAddress"/>
+		<result column="REST_PHONE" property="restPhone"/>
+		<result column="REST_INTRO" property="restIntro"/>
+		<result column="REST_GRADE" property="restGrade"/>
+		<result column="LIKE_NO" property="likeNo"/>
+		<result column="REST_ENROLL_DATE" property="restEnrollDate"/>
+		<result column="REST_MODIFY_DATE" property="restModifyDate"/>
+		<result column="REST_OPER_TIME" property="restOperDate"/>
+		<result column="REST_STATUS" property="restStatus"/>
+		<result column="MENU_CATEGORY_NO" property="foodCategoryNo"/>
 	</resultMap>
 	
 	
@@ -42,7 +56,7 @@
 			   REST_NAME,
 			   REST_ADDRESS,
 			   REST_PHONE,
-			   REST_INTRO,
+			   SUBSTR(REST_INTRO, 0, 25) AS "REST_INTRO",
 			   REST_GRADE,
 			   LIKE_NO,
 			   REST_ENROLL_DATE,
@@ -52,6 +66,26 @@
 			   FOOD_CATEGORY_NO
 		FROM REST_INFO
 	</select>
+	
+	<select id="MenuSelectSearchRest" resultMap="MenuRestResultSet">
+		SELECT REST_NO,
+			   REST_NAME,
+			   REST_ADDRESS,
+			   REST_PHONE,
+			   SUBSTR(REST_INTRO, 0, 25) AS "REST_INTRO",
+			   REST_GRADE,
+			   LIKE_NO,
+			   REST_ENROLL_DATE,
+			   REST_MODIFY_DATE,
+			   REST_OPER_TIME,
+			   REST_STATUS,
+			   MENU_CATEGORY_NO
+		FROM REST_INFO
+		JOIN MENU USING (REST_NO)
+	</select>
+	
+	
+	
 	
 	<select id="searchListCount" resultType="_int">
  		SELECT COUNT(*)

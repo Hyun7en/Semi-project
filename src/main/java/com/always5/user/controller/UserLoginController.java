@@ -39,9 +39,6 @@ public class UserLoginController extends HttpServlet {
 		u.setUserPwd(request.getParameter("userPwd"));
 		u.setAuthority(request.getParameter("authority"));
 		
-		HttpSession session = request.getSession();
-		session.setAttribute("loginUser", u);
-		
 		User loginUser = new UserServiceImpl().loginUser(u);
 		
 		if (loginUser == null) {

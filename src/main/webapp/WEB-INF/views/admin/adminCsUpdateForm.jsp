@@ -67,8 +67,9 @@
                                 <br>
 
                                 <div align="center">
-                                    <button type="submit">작성하기</button>
-                                    <button type="reset">취소하기</button>
+                                    <button type="submit" class="btn  btn-primary btn-sm">작성하기</button>
+                                    <button type="reset" class="btn btn-sm btn-danger">취소하기</button>
+                                    <button type="button" onclick="history.back()" class="btn btn-sm btn-secondary" >뒤로가기</button>
                                 </div>
                             </form>
 

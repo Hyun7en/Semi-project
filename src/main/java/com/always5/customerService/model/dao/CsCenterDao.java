@@ -15,7 +15,6 @@ public class CsCenterDao {
 	}
 	
 	public ArrayList<CsKeyword> selectCskeywordList(SqlSession sqlSession, int csTypeNo){
-		System.out.println((ArrayList)sqlSession.selectList("csMapper.selectCskeywordList", csTypeNo));
 		return (ArrayList)sqlSession.selectList("csMapper.selectCskeywordList", csTypeNo);
 	}
 	
