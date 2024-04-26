@@ -10,8 +10,8 @@
    
 
     <!-- css 파일연결 -->
-    <link rel="stylesheet" href="../../resources/css/common_css/style.css" />
-    <link rel="stylesheet" href="../../resources/css/coupon_css/myPage-point.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/common_css/style.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/coupon_css/myPage-point.css" />
     
     </head>
     <body>

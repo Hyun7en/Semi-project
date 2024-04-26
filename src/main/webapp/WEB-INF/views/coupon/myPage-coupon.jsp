@@ -10,8 +10,8 @@
    
 
     <!-- css 파일연결 -->
-    <link rel="stylesheet" href="../../resources/css/common_css/style.css" />
-    <link rel="stylesheet" href="../../resources/css/coupon_css/myPage-coupon.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/common_css/style.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/coupon_css/myPage-coupon.css" />
     
     </head>
     <body>
@@ -27,7 +27,7 @@
                         <div class="head_title">
                             <!-- 로고 -->
                             <div>
-                                <img src="../../resources/file/common_img/브레드3세컬러왼쪽.png" alt="브레드3세" style="width: 50px;">
+                                <img src="${pageContext.request.contextPath}/resources/file/common_img/브레드3세컬러왼쪽.png" alt="브레드3세" style="width: 50px;">
                             </div>
 
                             <!-- My 쿠폰 -->
