@@ -115,24 +115,23 @@
 
                     </section>
 
-                    <section class="search-result">
-
+                     <section class="search-result">
                         <c:forEach var="sr" items="${list}">
-                            <div>
-                                <div class="search-best-crownSmall">
-                                    <img src="https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp"
-                                        alt="">
-                                    <img id="smallCrown"
-                                        src="${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png"
-                                        alt="">
-                                </div>
-                                <div>
-                                    <p class="res-name"><span><b>${sr.restName}1111</span><span>&nbsp;&nbsp;</span></b></p>
-                                    <p class="res-location"><span>한식집</span><span>&nbsp;&nbsp;${sr.restAddress}</span></p>
-                                    <p class="res-explain"><b>${sr.restIntro}</b></p>
-                                </div>
-                            </div>
-                        </c:forEach>
+	                        <a a href="main.re?rno=${sr.restNo}">
+	                            <div class="search-best-crownSmall">
+	                                <img src="https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp"
+	                                    alt="">
+	                                <img id="smallCrown"
+	                                    src="${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png"
+	                                    alt="">
+	                            </div>
+	                            <div>
+	                                <p class="res-name"><span><b>${sr.restName}</span><span>&nbsp;&nbsp;</span></b></p>
+	                                <p class="res-location"><span>한식집</span><span>&nbsp;&nbsp;${sr.restAddress}</span></p>
+	                                <p class="res-explain"><b>${sr.restIntro}</b></p>
+	                            </div>
+	                        </a>
+	                    </c:forEach>
                     </section>
 
                     <script>
