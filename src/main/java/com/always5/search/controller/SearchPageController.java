@@ -70,6 +70,7 @@ public class SearchPageController extends HttpServlet {
 		request.setAttribute("rlist", rlist);
 		request.setAttribute("re", re);
 		request.setAttribute("keyword", keyword);
+		System.out.println(rlist);
 //		
 //		response.setContentType("application/json; charset=UTF-8");
 //		new Gson().toJson(rlist, response.getWriter());
