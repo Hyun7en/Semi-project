@@ -28,7 +28,7 @@
 
 			</div>
 
-			<div class="signout-title">닉네임 변경</div>
+			<div class="signout-title">회원탈퇴</div>
 
 			<!-- 회원탈퇴 박스 -->
 			<div class="input-signout">
