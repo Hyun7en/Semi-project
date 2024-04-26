@@ -26,7 +26,7 @@ String restName = (String) session.getAttribute("${r.restName }");
                 <table id="regist-menu">
                     <tr>
                         <th width="20%">가게 이름</th>
-                        <td><input type="text" name="restName" value="<%= r %>" id="rest-name" readonly></td>
+                        <td><input type="text" name="restName" value="<%= r.getRestName() %>" id="rest-name" readonly></td>
                         <!-- 방금 등록된 가게 이름 가져와야 함 -->
                     </tr>
                     <tr>

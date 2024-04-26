@@ -48,7 +48,8 @@ public class AdminRestServiceImpl implements AdminRestService{
 		SqlSession sqlSession = Template.getSqlSession();
 		RestBoardDao rDao = new RestBoardDao();
 		int restNo = rDao.selectRestNo(sqlSession);
-		r.setRestNo(restNo);
+        String restNoStr = String.valueOf(restNo);
+        r.setRestName(restNoStr); // Restaurant 객체에 할당
 		int result1 = rDao.insertRestaurant(sqlSession, r);
 		int result2 = 1;
 		

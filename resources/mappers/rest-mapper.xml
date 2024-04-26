@@ -275,7 +275,9 @@
     
     <!-- admin 레스토랑 이름 가져오기 -->
     <select id="selectRestName" resultMap="restResultSet" >
-	    SELECT *
+	    SELECT REST_NAME
+	      FROM REST_INFO
+	     WHERE
 	</select>
 	
 	
