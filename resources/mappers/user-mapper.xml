@@ -20,7 +20,7 @@
 		<result column="USER_ENROLL_DATE" property="userEnrollDate" />
 		<result column="USER_MODIFY_DATE" property="userModifyDate" />
 		<result column="USER_STATUS" property="userStatus" />
-		<result column="POINT" property="point" />
+		<result column="USER_POINT" property="point" />
 	</resultMap>
 
 	<select id="loginUser" parameterType="User" resultMap="userResultSet">
@@ -33,7 +33,6 @@
 				USER_BIRTH,
 				USER_GENDER,
 				USER_PHONE,
-				USER_EMAIL,
 				USER_ADDRESS,
 				USER_ENROLL_DATE,
 				USER_MODIFY_DATE,
@@ -41,6 +40,7 @@
 		FROM USER_INFO
 		WHERE USER_ID = #{userId}
 		AND USER_PWD = #{userPwd}
+		AND USER_STATUS = 'Y'
 	</select>
 	
 	<insert id="insertUser" parameterType="User">
@@ -50,19 +50,22 @@
 		(
 		USER_NO,
 		AUTHORITY,
-		USER_ID,
-		USER_PWD,
-		USER_NAME,
-		NICKNAME,
-		USER_BIRTH,
-		USER_GENDER,
-		USER_PHONE,
-		USER_ADDRESS
+				USER_ID,
+				USER_PWD,
+				USER_NAME,
+				NICKNAME,
+				USER_BIRTH,
+				USER_GENDER,
+				USER_PHONE,
+				USER_ADDRESS,
+				USER_ENROLL_DATE,
+				USER_MODIFY_DATE,
+				USER_STATUS
 		)
 		VALUES
 		(
 		SEQ_UNO.NEXTVAL,
-		'N',
+		DEFAULT,
 		#{userId},
 		#{userPwd},
 		#{userName},
@@ -70,7 +73,10 @@
 		#{userBirth},
 		#{userGender},
 		#{userPhone},
-		#{userAddress}
+		#{userAddress},
+		DEFAULT,
+		DEFAULT,
+		DEFAULT
 		)
 	</insert>
     
