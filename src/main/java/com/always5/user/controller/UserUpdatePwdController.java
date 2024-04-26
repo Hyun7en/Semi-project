@@ -30,25 +30,31 @@ public class UserUpdatePwdController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		
 		User loginUser = (User)request.getSession().getAttribute("loginUser");
-		
-		
-		request.setAttribute("loginUser", loginUser);
 		System.out.println(loginUser);
 		
-		User updateUserPwd = new UserServiceImpl().updateUserPwd(loginUser);
-		System.out.println(updateUserPwd);
+		String updatePwd = request.getParameter("updatePwd");
+		User u = new User();
+		u.setUserPwd(updatePwd);
 		
-		if (updateUserPwd == null) {
-			request.setAttribute("errorMsg", "아이디 수정 실패");
-			request.getRequestDispatcher("WEB-INF/views/common/errorPage.jsp").forward(request, response);
-		} else {
-			HttpSession session = request.getSession();
-			session.setAttribute("loginUser", updateUserPwd);
-			request.setAttribute("errorMsg", "성공적으로 수정했습니다.");
-			request.getRequestDispatcher("WEB-INF/views/common/errorPage.jsp").forward(request, response);
+		u.setUserNo(loginUser.getUserNo());
+		
+		int result = new UserServiceImpl().updateUserPwd(u);
+		System.out.println(u);
+		
+		if(result > 0) {
+            HttpSession session = request.getSession();
+           
+            request.setAttribute("errorMsg", "비밀번호	 변경 성공");
+            request.getRequestDispatcher("WEB-INF/views/common/errorPage.jsp").forward(request, response);
+        } else {
+            request.setAttribute("errorMsg", "비밀번호 변경 실패");
+            request.getRequestDispatcher("WEB-INF/views/common/errorPage.jsp").forward(request, response);
+		
 		}
-	 }
+	}
 
 
 	/**

@@ -9,6 +9,7 @@ public class User {
 	private String userPwd;
 	private String updatePwd;
 	private String updateId;
+	private String updateName;
 	private String userName;
 	private String nickName;
 	private String userBirth;
@@ -48,6 +49,11 @@ public class User {
 		this.point = point;
 	}
 
+	public User(String userId) {
+		super();
+		this.userId = userId;
+	}
+
 	public User(String authority, String userId, String userPwd, String userName, String nickName,
 			String userBirth, String userGender, String userPhone, String userAddress) {
 		super();
@@ -61,150 +67,165 @@ public class User {
 		this.userPhone = userPhone;
 		this.userAddress = userAddress;
 	}
-
-	public int getUserNo() {
-		return userNo;
-	}
-
-	public void setUserNo(int userNo) {
-		this.userNo = userNo;
+	
+	public User(String userId, String userPwd) {
+		super();
+		this.userId = userId;
+		this.userPwd = userPwd;
 	}
 
 	public String getAuthority() {
 		return authority;
 	}
 
-	public void setAuthority(String authority) {
-		this.authority = authority;
-	}
-
-	public String getUserId() {
-		return userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
-
-	public String getUserPwd() {
-		return userPwd;
-	}
-
-	public void setUserPwd(String userPwd) {
-		this.userPwd = userPwd;
-	}
-
-	public String getUpdatePwd() {
-		return updatePwd;
-	}
-
-	public void setUpdatePwd(String updatePwd) {
-		this.updatePwd = updatePwd;
-	}
-
-	public String getUpdateId() {
-		return updateId;
-	}
-
-	public void setUpdateId(String updateId) {
-		this.updateId = updateId;
-	}
-
-	public String getUserName() {
-		return userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-
 	public String getNickName() {
 		return nickName;
-	}
-
-	public void setNickName(String nickName) {
-		this.nickName = nickName;
-	}
-
-	public String getUserBirth() {
-		return userBirth;
-	}
-
-	public void setUserBirth(String userBirth) {
-		this.userBirth = userBirth;
-	}
-
-	public String getUserGender() {
-		return userGender;
-	}
-
-	public void setUserGender(String userGender) {
-		this.userGender = userGender;
-	}
-
-	public String getUserPhone() {
-		return userPhone;
-	}
-
-	public void setUserPhone(String userPhone) {
-		this.userPhone = userPhone;
-	}
-
-	public String getUserEmail() {
-		return userEmail;
-	}
-
-	public void setUserEmail(String userEmail) {
-		this.userEmail = userEmail;
-	}
-
-	public String getUserAddress() {
-		return userAddress;
-	}
-
-	public void setUserAddress(String userAddress) {
-		this.userAddress = userAddress;
-	}
-
-	public Date getUserEnrollDate() {
-		return userEnrollDate;
-	}
-
-	public void setUserEnrollDate(Date userEnrollDate) {
-		this.userEnrollDate = userEnrollDate;
-	}
-
-	public Date getUserModifyDate() {
-		return userModifyDate;
-	}
-
-	public void setUserModifyDate(Date userModifyDate) {
-		this.userModifyDate = userModifyDate;
-	}
-
-	public String getUserStatus() {
-		return userStatus;
-	}
-
-	public void setUserStatus(String userStatus) {
-		this.userStatus = userStatus;
 	}
 
 	public int getPoint() {
 		return point;
 	}
 
+	public String getUpdateId() {
+		return updateId;
+	}
+
+	public String getUpdateName() {
+		return updateName;
+	}
+
+	public String getUpdatePwd() {
+		return updatePwd;
+	}
+
+	public String getUserAddress() {
+		return userAddress;
+	}
+
+	public String getUserBirth() {
+		return userBirth;
+	}
+
+	public String getUserEmail() {
+		return userEmail;
+	}
+
+	public Date getUserEnrollDate() {
+		return userEnrollDate;
+	}
+
+	public String getUserGender() {
+		return userGender;
+	}
+
+	public String getUserId() {
+		return userId;
+	}
+
+	public Date getUserModifyDate() {
+		return userModifyDate;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public int getUserNo() {
+		return userNo;
+	}
+
+	public String getUserPhone() {
+		return userPhone;
+	}
+
+	public String getUserPwd() {
+		return userPwd;
+	}
+
+	public String getUserStatus() {
+		return userStatus;
+	}
+
+	public void setAuthority(String authority) {
+		this.authority = authority;
+	}
+
+	public void setNickName(String nickName) {
+		this.nickName = nickName;
+	}
+
 	public void setPoint(int point) {
 		this.point = point;
+	}
+
+	public void setUpdateId(String updateId) {
+		this.updateId = updateId;
+	}
+
+	public void setUpdateName(String updateName) {
+		this.updateName = updateName;
+	}
+
+	public void setUpdatePwd(String updatePwd) {
+		this.updatePwd = updatePwd;
+	}
+
+	public void setUserAddress(String userAddress) {
+		this.userAddress = userAddress;
+	}
+
+	public void setUserBirth(String userBirth) {
+		this.userBirth = userBirth;
+	}
+
+	public void setUserEmail(String userEmail) {
+		this.userEmail = userEmail;
+	}
+
+	public void setUserEnrollDate(Date userEnrollDate) {
+		this.userEnrollDate = userEnrollDate;
+	}
+
+	public void setUserGender(String userGender) {
+		this.userGender = userGender;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
+	public void setUserModifyDate(Date userModifyDate) {
+		this.userModifyDate = userModifyDate;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public void setUserNo(int userNo) {
+		this.userNo = userNo;
+	}
+
+	public void setUserPhone(String userPhone) {
+		this.userPhone = userPhone;
+	}
+	
+	public void setUserPwd(String userPwd) {
+		this.userPwd = userPwd;
+	}
+	
+	public void setUserStatus(String userStatus) {
+		this.userStatus = userStatus;
 	}
 
 	@Override
 	public String toString() {
 		return "User [userNo=" + userNo + ", authority=" + authority + ", userId=" + userId + ", userPwd=" + userPwd
-				+ ", updatePwd=" + updatePwd + ", updateId=" + updateId + ", userName=" + userName + ", nickName="
-				+ nickName + ", userBirth=" + userBirth + ", userGender=" + userGender + ", userPhone=" + userPhone
-				+ ", userEmail=" + userEmail + ", userAddress=" + userAddress + ", userEnrollDate=" + userEnrollDate
-				+ ", userModifyDate=" + userModifyDate + ", userStatus=" + userStatus + ", point=" + point + "]";
+				+ ", updatePwd=" + updatePwd + ", updateId=" + updateId + ", updateName=" + updateName + ", userName="
+				+ userName + ", nickName=" + nickName + ", userBirth=" + userBirth + ", userGender=" + userGender
+				+ ", userPhone=" + userPhone + ", userEmail=" + userEmail + ", userAddress=" + userAddress
+				+ ", userEnrollDate=" + userEnrollDate + ", userModifyDate=" + userModifyDate + ", userStatus="
+				+ userStatus + ", point=" + point + "]";
 	}
 }
 

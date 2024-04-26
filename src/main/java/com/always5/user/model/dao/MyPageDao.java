@@ -23,7 +23,6 @@ public class MyPageDao {
 	}
 	
 	public ArrayList<Review> selectReviewList(SqlSession sqlSession, int userNo) {
-		System.out.println(userNo);
 		return (ArrayList)sqlSession.selectList("mypageMapper.selectReviewList", userNo);
 	}
 	

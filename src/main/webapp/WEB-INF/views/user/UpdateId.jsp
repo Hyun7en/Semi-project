@@ -38,7 +38,7 @@
 
 			<div class="input-email-box">
 				<div class="input-email-text">
-					<input type="text" name="userId" class="input-email"
+					<input type="text" name="updateId" class="input-email"
 						placeholder="변경할 아이디 입력">
 				</div>
 			</div>

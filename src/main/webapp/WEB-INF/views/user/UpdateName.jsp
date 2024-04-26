@@ -35,7 +35,7 @@
 			<div class="inputupdateName-wrapper">
 				<div class="inputupdateName-box">
 					<div class="inputupdateName-text">
-						<input type="text" name="nickName"
+						<input type="text" name="updateName"
 							class="inputupdateName-phone" placeholder="변경할 닉네임 입력">
 					</div>
 				</div>
