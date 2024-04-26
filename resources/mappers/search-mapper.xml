@@ -29,8 +29,6 @@
 	</resultMap>
 	
 	<resultMap id="menuResultSet" type="Menu">
-		<result column="MENU_NO" property="menuNo"/>
-		<result column="MENU_NAME" property="menuName"/>
 		<result column="REST_NO" property="restNo"/>
 		<result column="MENU_CATEGORY_NO" property="menuCategoryNo"/>
 	</resultMap>

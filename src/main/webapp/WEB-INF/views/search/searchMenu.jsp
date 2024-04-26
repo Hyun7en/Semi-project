@@ -138,7 +138,7 @@
 									
 									// 메뉴카테고리 조인해서 넘겨 받아야함
 									for (let r of mlist) {
-										if(r.foodCategoryNo == 1){
+										if(r.foodCategoryNo === "1"){
 											str +=  `<a href='main.re?rno=` + r.restNo + `'>`+
 											`<div>` +
 												`<div class='search-best-crownSmall'>` +

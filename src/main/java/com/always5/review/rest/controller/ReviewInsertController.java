@@ -63,14 +63,14 @@ public class ReviewInsertController extends HttpServlet {
 				if(multiRequest.getOriginalFileName(key) != null) {
 					Attachment at = new Attachment();
 					at.setChangeName(multiRequest.getFilesystemName(key));
-					at.setFilePath("resources/file/upfile/review_upfile/");
+					at.setFilePath("/resources/file/upfile/review_upfile/");
 					
 					list.add(at);
 				}
 			}
 
 			int result = new RestServiceImpl().insertReview(r, list);
-			System.out.println(result);
+
 			int restNo = Integer.parseInt(multiRequest.getParameter("restNo"));
 			ArrayList<Review> reviewList = new ArrayList<>();
 			Restaurant rest = null;
