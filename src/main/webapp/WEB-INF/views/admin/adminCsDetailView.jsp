@@ -28,14 +28,14 @@
                             <br>
                     
                             <table align="center" border="1" class="table table-bordered">
-                                <tr>
+                                <!-- <tr>
                                     <th width="100">대분류</th>
                                     <td width="500">${ csDetail.csDetailNo }</td>
                                 </tr>
                                 <tr>
                                     <th>중분류</th>
                                     <td>${ csDetail.csDetailNo }</td>
-                                </tr>
+                                </tr> -->
                                 <tr>
                                     <th width="100">글번호</th>
                                     <td width="500">${ csDetail.csDetailNo }</td>
@@ -65,7 +65,7 @@
 
                         <div align="center">
                             <a href="list.AdminCs" class="btn btn-sm btn-secondary">목록가기</a>
-                            <a href="update.AdminCs" class="btn btn-sm btn-warning">수정하기</a>
+                            <!-- <a href="update.AdminCs" class="btn btn-sm btn-warning">수정하기</a> -->
                             <a href="delete.AdminCs?bno=${csDetail.csDetailNo}" class="btn btn-sm btn-danger">삭제하기</a>
                         </div>
 
