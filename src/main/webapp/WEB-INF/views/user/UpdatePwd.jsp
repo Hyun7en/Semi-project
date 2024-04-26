@@ -33,12 +33,12 @@
 			<div class="email-preview">
 				<img class="mdi-email-icon"
 					src="${pageContext.request.contextPath}/resources/file/user_img/UpdatePwd-img/mdi-light-email.svg" />
-				<div class="user-email">${loginUser.userId}</div>
+				<div class="user-email">${loginUser.userPwd}</div>
 			</div>
 
 			<div class="input-email-box">
 				<div class="input-email-text">
-					<input type="text" name="userPwd" class="input-email"
+					<input type="text" name="updatePwd" class="input-email"
 						placeholder="변경할 비밀번호 입력">
 				</div>
 			</div>

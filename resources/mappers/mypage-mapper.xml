@@ -44,7 +44,7 @@
 		<result column="REVIEW_RATING" property="reviewRating"/>
 		<result column="REVIEW_CONTENT" property="reviewContent"/>
 		<result column="REVIEW_ENROLL_DATE" property="reviewEnrollDate"/>
-		<result column="REST_NO" property="restNo"/>
+		<result column="REST_NAME" property="restNo"/>
 		<result column="NICKNAME" property="userNo"/>
 	</resultMap>
 	

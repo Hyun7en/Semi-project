@@ -73,7 +73,7 @@
 		#{userAddress}
 		)
 	</insert>
-
+    
 	<update id="deleteUser" parameterType="User">
 		UPDATE USER_INFO
 		SET USER_STATUS = 'N'
@@ -86,23 +86,20 @@
 		UPDATE USER_INFO
 		SET USER_PWD = #{userPwd}
 		, USER_MODIFY_DATE = SYSDATE
-		WHERE USER_ID = #{userId}
-		AND USER_PWD = #{userPwd}
+		WHERE USER_NO = #{userNo}
 	</update>
 
 	<update id="updateUserID" parameterType="User">
 		UPDATE USER_INFO
 		SET USER_ID = #{userId}
 		, USER_MODIFY_DATE = SYSDATE
-		WHERE USER_ID = #{userId}
-		AND USER_PWD = #{userPwd}
+		WHERE USER_NO = #{userNo}
 	</update>
 	
 	<update id="updateUserNickName" parameterType="User">
 		UPDATE USER_INFO
 		SET NICKNAME = #{nickName}
 		, USER_MODIFY_DATE = SYSDATE
-		WHERE USER_PWD = #{userPwd}
-		AND USER_ID = #{userId}
+		WHERE USER_NO = #{userNo}
 	</update>
 </mapper>
