@@ -49,8 +49,7 @@ public class RestMainViewController extends HttpServlet {
 		// - 리뷰 사진
 		
 		int restNo = Integer.parseInt(request.getParameter("rno"));
-//		int restNo = 19;
-		
+
 		RestServiceImpl rService = new RestServiceImpl();
 		
 		// 가게 정보, 가게 사진, 음식 카테고리명

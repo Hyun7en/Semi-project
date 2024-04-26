@@ -37,6 +37,15 @@ public class SearchService {
 		return list;
 	}
 	
+	public ArrayList<Restaurant> MenuSelectSearchRest(){
+		SqlSession sqlSession = Template.getSqlSession();
+		ArrayList<Restaurant> list = new SearchDao().MenuSelectSearchRest(sqlSession);
+		sqlSession.close();
+		return list;
+	}
+	
+	
+	
 	// (컨디션 조건 없는)순수 검색: 키워드에 맞는게 몇개냐
 	public int searchrListCount(HashMap<String, String> map){
 		SqlSession sqlSession = Template.getSqlSession();

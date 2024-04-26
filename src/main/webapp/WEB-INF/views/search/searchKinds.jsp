@@ -66,7 +66,7 @@
 
                     <section class="search-best">
                         <div>
-                            <h1>종류별 맛집 결과 "한식"</h1>
+                            <h1>종류별 맛집 결과 "국밥"</h1>
                             <h4>추천 맛집 매장 방문 고객님과 왕밤빵이 함께 엄선한 인기 맛집입니다.</h4>
                         </div>
                         <div>
@@ -75,8 +75,7 @@
                             	<c:forEach var="sr" begin="1" end="3" items="${list}">
 	                                <div>
 	                                    <div class="search-best-crown">
-	                                        <img src="https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp"
-	                                            alt="">
+	                                    	<img src="${pageContext.request.contextPath}${sr.at.filePath}${sr.at.changeName}">
 	                                        <img id="crown"
 	                                            src="${pageContext.request.contextPath}/resources/file/search_img/searchCrownBig.png"
 	                                            alt="">
@@ -97,10 +96,11 @@
                     </section>
 
 
+
                     <section class="search-result">
 
 		                        <c:forEach var="sr" items="${list}">
-			                        <div>
+			                        <a href="main.re?rno=${sr.restNo}">
 			                            <div class="search-best-crownSmall">
 			                                <img src="https://cdn.kormedi.com/wp-content/uploads/2023/08/unnamed-file-27-18.jpg.webp"
 			                                    alt="">
@@ -109,21 +109,18 @@
 			                                    alt="">
 			                            </div>
 			                            <div>
-			                                <p class="res-name"><span><b>${sr.restName}1111</span><span>&nbsp;&nbsp;</span></b></p>
+			                                <p class="res-name"><span><b>${sr.restName}</span><span>&nbsp;&nbsp;</span></b></p>
 			                                <p class="res-location"><span>한식집</span><span>&nbsp;&nbsp;${sr.restAddress}</span></p>
 			                                <p class="res-explain"><b>${sr.restIntro}</b></p>
 			                            </div>
-			                        </div>
+			                        </a>
 			                    </c:forEach>
 
                     </section>
-                    
+                    	
                    <script>
-
-
-
-				                        
 						$(document).ready(function() {
+							
 							// AJAX 요청
 							$.ajax({
 								type: "POST",
@@ -135,20 +132,22 @@
 										// 클릭 이벤트가 발생했을 때의 처리
 										
 										for (let r of list) {
+											
 											if(r.foodCategoryNo == 1){
-												str +=  `<div>`+
-														`<div>` +
-															`<div class='search-best-crownSmall'>` +
-															`<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
-															`<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
-															`</div>` +
-														`</div>` +	                                    		
-														`<div>` +
-															`<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
-															`<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
-															`<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
-														`</div>` +
-												`</div>`;
+												str +=  `<a href='main.re?rno=` + r.restNo + `'>`+
+												`<div>` +
+													`<div class='search-best-crownSmall'>` +
+													// + `<img src='${pageContext.request.contextPath}"` + r.at.filePath + r.at.changeName + `"'>`
+													`<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
+													`<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
+													`</div>` +
+												`</div>` +	                                    		
+												`<div>` +
+													`<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
+													`<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
+													`<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
+												`</div>` +
+												`</a>`;	
 											}
 										}
 
@@ -162,19 +161,20 @@
 										
 										for (let r of list) {
 											if(r.foodCategoryNo == 2){
-												str +=  `<div>`+
-														`<div>` +
-															`<div class='search-best-crownSmall'>` +
-															`<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
-															`<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
-															`</div>` +
-														`</div>` +	                                    		
-														`<div>` +
-															`<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
-															`<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
-															`<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
-														`</div>` +
-												`</div>`;
+												str +=  `<a href='main.re?rno=` + r.restNo + `'>`+
+												`<div>` +
+													`<div class='search-best-crownSmall'>` +
+													// + `<img src='${pageContext.request.contextPath}"` + r.at.filePath + r.at.changeName + `"'>`
+													`<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
+													`<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
+													`</div>` +
+												`</div>` +	                                    		
+												`<div>` +
+													`<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
+													`<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
+													`<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
+												`</div>` +
+												`</a>`;	
 											}
 										}
 
@@ -182,16 +182,15 @@
 										$(".search-result").html(str);
 									});
 
+								
 
 									$(".chinese").click(function() {
 										let str = "";
 										// 클릭 이벤트가 발생했을 때의 처리
 										
-										
 										for (let r of list) {
-
 											if(r.foodCategoryNo == 3){
-												str +=  `<div>`+
+												str +=  `<a href='main.re?rno=` + r.restNo + `'>`+
 														`<div>` +
 															`<div class='search-best-crownSmall'>` +
 															// + `<img src='${pageContext.request.contextPath}"` + r.at.filePath + r.at.changeName + `"'>`
@@ -204,7 +203,7 @@
 															`<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
 															`<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
 														`</div>` +
-												`</div>`;
+														`</a>`;	
 											}
 										}
 
@@ -219,19 +218,20 @@
 										
 										for (let r of list) {
 											if(r.foodCategoryNo == 4){
-												str +=  `<div>`+
-														`<div>` +
-															`<div class='search-best-crownSmall'>` +
-															`<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
-															`<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
-															`</div>` +
-														`</div>` +	                                    		
-														`<div>` +
-															`<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
-															`<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
-															`<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
-														`</div>` +
-												`</div>`;
+												str +=  `<a href='main.re?rno=` + r.restNo + `'>`+
+												`<div>` +
+													`<div class='search-best-crownSmall'>` +
+													// + `<img src='${pageContext.request.contextPath}"` + r.at.filePath + r.at.changeName + `"'>`
+													`<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
+													`<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
+													`</div>` +
+												`</div>` +	                                    		
+												`<div>` +
+													`<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
+													`<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
+													`<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
+												`</div>` +
+												`</a>`;	
 											}
 										}
 
@@ -246,19 +246,20 @@
 										
 										for (let r of list) {
 											if(r.foodCategoryNo == 5){
-												str +=  `<div>`+
-														`<div>` +
-															`<div class='search-best-crownSmall'>` +
-															`<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
-															`<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
-															`</div>` +
-														`</div>` +	                                    		
-														`<div>` +
-															`<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
-															`<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
-															`<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
-														`</div>` +
-												`</div>`;
+												str +=  `<a href='main.re?rno=` + r.restNo + `'>`+
+												`<div>` +
+													`<div class='search-best-crownSmall'>` +
+													// + `<img src='${pageContext.request.contextPath}"` + r.at.filePath + r.at.changeName + `"'>`
+													`<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
+													`<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
+													`</div>` +
+												`</div>` +	                                    		
+												`<div>` +
+													`<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
+													`<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
+													`<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
+												`</div>` +
+												`</a>`;	
 											}
 										}
 
@@ -274,19 +275,20 @@
 										
 										for (let r of list) {
 											if(r.foodCategoryNo == 6){
-												str +=  `<div>`+
-														`<div>` +
-															`<div class='search-best-crownSmall'>` +
-															`<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
-															`<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
-															`</div>` +
-														`</div>` +	                                    		
-														`<div>` +
-															`<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
-															`<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
-															`<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
-														`</div>` +
-												`</div>`;
+												str +=  `<a href='main.re?rno=` + r.restNo + `'>`+
+												`<div>` +
+													`<div class='search-best-crownSmall'>` +
+													// + `<img src='${pageContext.request.contextPath}"` + r.at.filePath + r.at.changeName + `"'>`
+													`<img src='${pageContext.request.contextPath}` + r.at.filePath + r.at.changeName + `'>` +
+													`<img id='smallCrown' src='${pageContext.request.contextPath}/resources/file/search_img/searchCrownSmall.png' alt=''>` +
+													`</div>` +
+												`</div>` +	                                    		
+												`<div>` +
+													`<p class='res-name'><span><b>` + r.restName + `</b></span><span>&nbsp;&nbsp;</span></p>` +
+													`<p class='res-location'><span>한식집</span><span>&nbsp;&nbsp;` + r.restAddress + `</span></p>` +
+													`<p class='res-explain'><b>` + r.restIntro + `</b></p>` + 
+												`</div>` +
+												`</a>`;	
 											}
 										}
 

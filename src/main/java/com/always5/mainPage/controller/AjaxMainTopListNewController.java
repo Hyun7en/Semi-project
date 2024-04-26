@@ -39,7 +39,7 @@ public class AjaxMainTopListNewController extends HttpServlet {
 			//Restaurant의 key를 이용해서 Attachment가져오기
 			Attachment at = new mainService().pickRestPic(r.getRestNo()); 
 			r.setAt(at);
-			System.out.println(nlist);
+
 		}
 	
 		request.setAttribute("nlist", nlist);
